@@ -29,6 +29,7 @@
   "educationUniversity4": "Graduated from Five Types of Higher Education",
   "educationUniversity6": "University Student",
   "educationUniversity8": "Bachelor's Graduate (No Degree)",
+  "employees": "Employees",
   "idUser": "User",
   "isLegalPerson": "Is business",
   "isOrg": "Is my org",
@@ -63,7 +64,11 @@
   "politicalStatus": "Political status",
   "profiles": "Profiles",
   "purchases": "Purchases",
+  "products": "Products",
   "regions": "Regions",
+  "reports": "Reports",
+  "stockIn": "Stock in",
+  "stockOut": "Stock out",
   "system": "System",
   "suppliers": "Suppliers"
 }

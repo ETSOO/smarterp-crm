@@ -8,6 +8,7 @@ import { ListType } from "@etsoo/shared";
 import { MaritalStatus } from "./dto/person/MaritalStatus";
 import { PersonDegree } from "./dto/person/PersonDegree";
 import { PersonEducation } from "./dto/person/PersonEducation";
+import { PersonProfileApi } from "./PersonProfileApi";
 
 /**
  * Get CRM app context hook
@@ -47,6 +48,12 @@ export interface ICrmApp {
    * 人员接口
    */
   readonly personApi: PersonApi;
+
+  /**
+   * Person profile API
+   * 人员档案接口
+   */
+  readonly personProfileApi: PersonProfileApi;
 
   /**
    * Get marital status
@@ -129,6 +136,18 @@ export class CrmApp implements ICrmApp {
    */
   get personApi() {
     return (this._personApi ??= new PersonApi(this.app, this.api));
+  }
+
+  private _personProfileApi?: PersonProfileApi;
+  /**
+   * Person profile API
+   * 人员档案接口
+   */
+  get personProfileApi() {
+    return (this._personProfileApi ??= new PersonProfileApi(
+      this.app,
+      this.api
+    ));
   }
 
   /**

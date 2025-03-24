@@ -7,5 +7,9 @@ await app.changeCulture(app.settings.cultures[0]);
 
 const api = new PersonApi(app);
 
+test("Empty tests", () => {
+  expect(api).not.toBeNull();
+});
+
 if (isLocalTest) {
 }

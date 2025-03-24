@@ -29,6 +29,7 @@
   "educationUniversity4": "五大學歷畢業（自考、電大、夜大、黨校、函授）",
   "educationUniversity6": "大學在讀",
   "educationUniversity8": "大學本科畢業（無學士學位）",
+  "employees": "員工",
   "idUser": "用戶",
   "isLegalPerson": "是否企業",
   "isOrg": "是否本機構",
@@ -62,8 +63,12 @@
   "personWeight": "體重 (公斤)",
   "politicalStatus": "政治面貌",
   "profiles": "檔案",
+  "products": "產品",
   "purchases": "採購",
   "regions": "國家或地區",
+  "reports": "報表",
+  "stockIn": "入庫",
+  "stockOut": "出庫",
   "system": "系統",
   "suppliers": "供應商"
 }

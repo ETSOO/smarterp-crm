@@ -29,6 +29,7 @@
   "educationUniversity4": "五大学历毕业（自考、电大、夜大、党校、函授）",
   "educationUniversity6": "大学在读",
   "educationUniversity8": "大学本科毕业（无学士学位）",
+  "employees": "员工",
   "idUser": "用户",
   "isLegalPerson": "是否企业",
   "isOrg": "是否本机构",
@@ -62,8 +63,12 @@
   "personWeight": "体重 (公斤)",
   "politicalStatus": "政治面貌",
   "profiles": "档案",
+  "products": "产品",
   "purchases": "采购",
   "regions": "国家或地区",
+  "reports": "报表",
+  "stockIn": "入库",
+  "stockOut": "出库",
   "system": "系统",
   "suppliers": "供应商"
 }
