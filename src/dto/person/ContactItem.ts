@@ -8,7 +8,7 @@ export type IdentityTypeData = {
   /**
    * Identity type
    */
-  identityType: IdentityTypeFlags;
+  identityType?: IdentityTypeFlags;
 
   /**
    * Is organization

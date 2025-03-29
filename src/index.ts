@@ -10,7 +10,11 @@ export * from "./rq/person/PersonListRQ";
 export * from "./rq/person/PersonQueryRQ";
 
 // PersonProfile
+export * from "./dto/personProfile/PersonProfileAttachmentItem";
+export * from "./dto/personProfile/PersonProfileInnerViewData";
 export * from "./dto/personProfile/PersonProfileKind";
+export * from "./dto/personProfile/PersonProfileLinkItem";
+export * from "./dto/personProfile/PersonProfileLinkKind";
 export * from "./dto/personProfile/PersonProfileListData";
 export * from "./dto/personProfile/PersonProfileQueryData";
 export * from "./dto/personProfile/PersonProfileUpdateReadData";
@@ -19,6 +23,7 @@ export * from "./dto/personProfile/PersonProfileViewData";
 export * from "./rq/personProfile/PersonProfileCreateRQ";
 export * from "./rq/personProfile/PersonProfileListRQ";
 export * from "./rq/personProfile/PersonProfileQueryRQ";
+export * from "./rq/personProfile/PersonProfileUpdateRQ";
 
 // i18n
 export * from "./i18n/CrmCulture";

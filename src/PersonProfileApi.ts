@@ -12,6 +12,8 @@ import { PersonProfileUpdateReadData } from "./dto/personProfile/PersonProfileUp
 import { PersonProfileQueryData } from "./dto/personProfile/PersonProfileQueryData";
 import { PersonProfileViewData } from "./dto/personProfile/PersonProfileViewData";
 import { PersonProfileCreateRQ } from "./rq/personProfile/PersonProfileCreateRQ";
+import { PersonProfileInnerViewData } from "./dto/personProfile/PersonProfileInnerViewData";
+import { PersonProfileUpdateRQ } from "./rq/personProfile/PersonProfileUpdateRQ";
 
 /**
  * Person profile API
@@ -67,6 +69,30 @@ export class PersonProfileApi extends EntityApi {
    */
   read(id: number, payload?: IApiPayload<PersonProfileViewData>) {
     return this.readBase(id, payload);
+  }
+
+  /**
+   * Read for query view
+   * @param id Id
+   * @param payload Payload
+   * @returns Result
+   */
+  readInner(id: number, payload?: IApiPayload<PersonProfileInnerViewData>) {
+    return this.api.get<PersonProfileInnerViewData>(
+      `${this.flag}/ReadInner/${id}`,
+      undefined,
+      payload
+    );
+  }
+
+  /**
+   * Update
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  update(rq: PersonProfileUpdateRQ, payload?: IdResultPayload) {
+    return this.updateBase(rq, payload);
   }
 
   /**

@@ -24,7 +24,7 @@ export class PersonApi extends EntityApi {
    * @param payload Payload
    * @returns Result
    */
-  list(rq: PersonListRQ, payload: IApiPayload<PersonListDto[]>) {
+  list(rq: PersonListRQ, payload?: IApiPayload<PersonListDto[]>) {
     return this.listBase(rq, payload);
   }
 

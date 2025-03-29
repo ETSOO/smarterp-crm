@@ -1,2 +1,3 @@
 // person
-export * from "./person/PersonTiplist";
+export * from "./person/PersonList";
+export * from "./person/PersonsList";

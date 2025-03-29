@@ -3,15 +3,15 @@ import { PersonProfileKind } from "../../dto/personProfile/PersonProfileKind";
 import { PersonProfileImportance } from "../../dto/personProfile/PersonProfileImportance";
 
 /**
- * Person profile create request data
- * 人员档案创建请求数据
+ * Person profile update request data
+ * 人员档案更新请求数据
  */
-export type PersonProfileCreateRQ = {
+export type PersonProfileUpdateRQ = {
   /**
    * Person id
    * 人员编号
    */
-  personId: number;
+  personId?: number;
 
   /**
    * Other participants
@@ -29,19 +29,19 @@ export type PersonProfileCreateRQ = {
    * Kind
    * 类型
    */
-  kind: PersonProfileKind;
+  kind?: PersonProfileKind;
 
   /**
    * Title
    * 标题
    */
-  title: string;
+  title?: string;
 
   /**
    * Comment
    * 评论
    */
-  comment: string;
+  comment?: string;
 
   /**
    * Location
@@ -59,13 +59,13 @@ export type PersonProfileCreateRQ = {
    * Happen date
    * 发生日期
    */
-  happenDate?: string;
+  happenDate?: string; // ISO 8601 date string
 
   /**
    * Happen date end
    * 发生日期结束
    */
-  happenDateEnd?: string;
+  happenDateEnd?: string; // ISO 8601 date string
 
   /**
    * User role for privacy
@@ -83,7 +83,7 @@ export type PersonProfileCreateRQ = {
    * Status
    * 状况
    */
-  status: EntityStatus;
+  status?: EntityStatus;
 
   /**
    * Importance
@@ -93,7 +93,7 @@ export type PersonProfileCreateRQ = {
 
   /**
    * Assignee id
-   * 执行用户编号
+   * 执行人编号
    */
   assigneeId?: number;
 };

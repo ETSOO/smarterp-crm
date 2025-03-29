@@ -16,6 +16,7 @@ import {
   IUser
 } from "@etsoo/appscript";
 import { DataTypes, DomUtils, Utils, WindowStorage } from "@etsoo/shared";
+import { CrmCulture } from "../../src";
 
 // Detected country or region
 const { detectedCountry } = DomUtils;
@@ -25,8 +26,8 @@ const { detectedCulture } = DomUtils;
 
 // Supported cultures
 const supportedCultures: DataTypes.CultureDefinition[] = [
-  Culture.zhHans({}),
-  Culture.en({})
+  Culture.zhHans(CrmCulture.zhHans()),
+  Culture.en(CrmCulture.en())
 ];
 
 // Supported regions

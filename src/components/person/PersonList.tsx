@@ -1,13 +1,14 @@
 import { Tiplist, TiplistProps } from "@etsoo/materialui";
 import { PersonListDto } from "../../dto/person/PersonListDto";
 import { PersonListRQ } from "../../rq/person/PersonListRQ";
-import { useRequiredCrmContext } from "../../CrmApp";
+import { useRequiredCrmApp } from "../../CrmApp";
+import { PersonUtils } from "../../utils/Person";
 
 /**
- * Person tiplist properties
+ * Person list properties
  * 人员提示列表属性
  */
-export type PersonTiplistProps = Omit<
+export type PersonListProps = Omit<
   TiplistProps<PersonListDto, "id">,
   "loadData" | "label" | "name"
 > & {
@@ -28,21 +29,21 @@ export type PersonTiplistProps = Omit<
 };
 
 /**
- * Person tiplist
+ * Person list
  * 人员提示列表
  * @param props Properties
  * @returns Component
  */
-export function PersonTiplist(props: PersonTiplistProps) {
+export function PersonList(props: PersonListProps) {
   // CRM app
-  const crm = useRequiredCrmContext();
+  const crm = useRequiredCrmApp();
 
   // Destruct
   const {
     fullWidth = true,
     label = crm.app.get("user")!,
     maxItems = 10,
-    getOptionLabel = (data) => data.name,
+    getOptionLabel = PersonUtils.getListLabel(crm),
     name = "personId",
     rq = { enabled: true },
     ...rest

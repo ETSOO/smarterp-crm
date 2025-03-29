@@ -1,5 +1,6 @@
 import { QueryRQ } from "@etsoo/appscript";
 import { PersonProfileKind } from "../../dto/personProfile/PersonProfileKind";
+import { PersonProfileImportance } from "../../dto/personProfile/PersonProfileImportance";
 
 /**
  * Person profile list request data
@@ -7,16 +8,16 @@ import { PersonProfileKind } from "../../dto/personProfile/PersonProfileKind";
  */
 export type PersonProfileListRQ = QueryRQ & {
   /**
-   * Core user id who created the profile
-   * 创建档案的核心用户id
-   */
-  coreUserId?: number;
-
-  /**
    * Person id
    * 人员编号
    */
   personId?: number;
+
+  /**
+   * Participant id, 0 for current user
+   * 参与者编号，0为当前用户
+   */
+  participantId?: number;
 
   /**
    * Kind
@@ -53,4 +54,16 @@ export type PersonProfileListRQ = QueryRQ & {
    * 登记日期结束
    */
   creationEnd?: string | Date;
+
+  /**
+   * Importance
+   * 重要性
+   */
+  importance?: PersonProfileImportance;
+
+  /**
+   * Assignee id
+   * 分配用户id
+   */
+  assigneeId?: number;
 };

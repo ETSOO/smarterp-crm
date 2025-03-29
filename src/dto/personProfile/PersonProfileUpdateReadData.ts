@@ -1,5 +1,6 @@
 import { EntityStatus } from "@etsoo/appscript";
 import { PersonProfileKind } from "./PersonProfileKind";
+import { PersonProfileImportance } from "./PersonProfileImportance";
 
 /**
  * Person profile update read data
@@ -83,4 +84,16 @@ export type PersonProfileUpdateReadData = {
    * JSON 数据
    */
   data?: string;
+
+  /**
+   * Importance
+   * 重要性
+   */
+  importance?: PersonProfileImportance;
+
+  /**
+   * Assignee id
+   * 执行人编号
+   */
+  assigneeId?: number;
 };
