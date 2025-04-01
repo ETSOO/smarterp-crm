@@ -14,6 +14,7 @@ import { PersonProfileViewData } from "./dto/personProfile/PersonProfileViewData
 import { PersonProfileCreateRQ } from "./rq/personProfile/PersonProfileCreateRQ";
 import { PersonProfileInnerViewData } from "./dto/personProfile/PersonProfileInnerViewData";
 import { PersonProfileUpdateRQ } from "./rq/personProfile/PersonProfileUpdateRQ";
+import { PersonTaskCreateRQ } from "./rq/personProfile/PersonTaskCreateRQ";
 
 /**
  * Person profile API
@@ -36,6 +37,16 @@ export class PersonProfileApi extends EntityApi {
    */
   create(rq: PersonProfileCreateRQ, payload?: IdResultPayload) {
     return this.createBase(rq, payload);
+  }
+
+  /**
+   * Create task
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  createTask(rq: PersonTaskCreateRQ, payload?: IdResultPayload) {
+    return this.api.post(`${this.flag}/CreateTask`, rq, payload);
   }
 
   /**
