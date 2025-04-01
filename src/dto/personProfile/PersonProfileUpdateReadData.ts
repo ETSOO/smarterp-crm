@@ -1,6 +1,7 @@
-import { EntityStatus } from "@etsoo/appscript";
+import { EntityStatus, UserRole } from "@etsoo/appscript";
 import { PersonProfileKind } from "./PersonProfileKind";
 import { PersonProfileImportance } from "./PersonProfileImportance";
+import { DataTypes } from "@etsoo/shared";
 
 /**
  * Person profile update read data
@@ -20,10 +21,10 @@ export type PersonProfileUpdateReadData = {
   personId: number;
 
   /**
-   * Other participants
+   * Other persons
    * 其他参与者
    */
-  persons?: number[];
+  persons?: DataTypes.IdNameItem[];
 
   /**
    * Order id
@@ -65,13 +66,19 @@ export type PersonProfileUpdateReadData = {
    * Happen date
    * 发生日期
    */
-  happenDate: string;
+  happenDate: string | Date;
 
   /**
    * Happen date end
    * 发生日期结束
    */
-  happenDateEnd?: string;
+  happenDateEnd?: string | Date;
+
+  /**
+   * User role for privacy control
+   * 隐私控制的用户角色
+   */
+  userRole?: UserRole;
 
   /**
    * Status

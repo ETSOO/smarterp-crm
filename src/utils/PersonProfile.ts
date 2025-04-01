@@ -11,6 +11,19 @@ export class PersonProfile {
   constructor(private crm: ICrmApp) {}
 
   /**
+   * Get future date
+   * 获取未来日期
+   * @param spanHours Span hours
+   */
+  getFutureDate(spanHours: number = 1) {
+    const date = new Date();
+    const m = date.getMinutes();
+    const minutes = m > 15 && m < 45 ? 30 : 0;
+    date.setHours(date.getHours() + spanHours, minutes, 0, 0);
+    return date;
+  }
+
+  /**
    * Get kind
    * 获取类型
    * @param kind

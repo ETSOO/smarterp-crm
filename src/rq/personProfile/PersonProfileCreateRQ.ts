@@ -59,13 +59,13 @@ export type PersonProfileCreateRQ = {
    * Happen date
    * 发生日期
    */
-  happenDate?: string;
+  happenDate?: string | Date;
 
   /**
    * Happen date end
    * 发生日期结束
    */
-  happenDateEnd?: string;
+  happenDateEnd?: string | Date;
 
   /**
    * User role for privacy
