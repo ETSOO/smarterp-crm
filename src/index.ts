@@ -11,6 +11,7 @@ export * from "./rq/person/PersonQueryRQ";
 
 // PersonProfile
 export * from "./dto/personProfile/PersonProfileAttachmentItem";
+export * from "./dto/personProfile/PersonProfileImportance";
 export * from "./dto/personProfile/PersonProfileInnerViewData";
 export * from "./dto/personProfile/PersonProfileKind";
 export * from "./dto/personProfile/PersonProfileLinkItem";

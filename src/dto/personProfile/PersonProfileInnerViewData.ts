@@ -2,7 +2,6 @@ import { UserRole } from "@etsoo/appscript";
 import { PersonProfileAttachmentItem } from "./PersonProfileAttachmentItem";
 import { PersonProfileLinkItem } from "./PersonProfileLinkItem";
 import { DataTypes } from "@etsoo/shared";
-import { PersonProfileImportance } from "./PersonProfileImportance";
 
 /**
  * Person profile inner view data
@@ -80,12 +79,6 @@ export type PersonProfileInnerViewData = {
    * 索引键
    */
   indexKey?: string;
-
-  /**
-   * Importance
-   * 重要性
-   */
-  importance?: PersonProfileImportance;
 
   /**
    * Assignee id

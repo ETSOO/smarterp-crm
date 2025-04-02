@@ -1,5 +1,6 @@
 import { EntityStatus } from "@etsoo/appscript";
 import { PersonProfileKind } from "./PersonProfileKind";
+import { PersonProfileImportance } from "./PersonProfileImportance";
 
 /**
  * Person profile query data
@@ -35,6 +36,12 @@ export type PersonProfileQueryData = {
    * 发生日期结束
    */
   happenDateEnd?: string;
+
+  /**
+   * Importance
+   * 重要性
+   */
+  importance?: PersonProfileImportance;
 
   /**
    * Status
