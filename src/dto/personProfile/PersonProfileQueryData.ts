@@ -26,6 +26,12 @@ export type PersonProfileQueryData = {
   title: string;
 
   /**
+   * User name
+   * 用户姓名
+   */
+  userName: string;
+
+  /**
    * Happen date
    * 发生日期
    */
@@ -42,6 +48,12 @@ export type PersonProfileQueryData = {
    * 重要性
    */
   importance?: PersonProfileImportance;
+
+  /**
+   * Is the author of self
+   * 自己是否为作者
+   */
+  isSelf: boolean;
 
   /**
    * Status

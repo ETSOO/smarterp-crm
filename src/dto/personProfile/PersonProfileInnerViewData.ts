@@ -57,12 +57,6 @@ export type PersonProfileInnerViewData = {
   userId: number;
 
   /**
-   * User name
-   * 用户姓名
-   */
-  userName: string;
-
-  /**
    * User role for privacy control
    * 隐私控制的用户角色
    */
@@ -97,12 +91,6 @@ export type PersonProfileInnerViewData = {
    * 是否为管理员
    */
   isAdmin: boolean;
-
-  /**
-   * Is the author of self
-   * 自己是否为作者
-   */
-  isSelf: boolean;
 
   /**
    * Links

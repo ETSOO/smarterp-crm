@@ -1,4 +1,4 @@
-import { QueryRQ } from "@etsoo/appscript";
+import { StatusQueryRQ } from "@etsoo/appscript";
 import { PersonProfileKind } from "../../dto/personProfile/PersonProfileKind";
 import { PersonProfileImportance } from "../../dto/personProfile/PersonProfileImportance";
 
@@ -6,7 +6,7 @@ import { PersonProfileImportance } from "../../dto/personProfile/PersonProfileIm
  * Person profile list request data
  * 人员档案列表请求数据
  */
-export type PersonProfileListRQ = QueryRQ & {
+export type PersonProfileListRQ = StatusQueryRQ & {
   /**
    * Person id
    * 人员编号
@@ -66,4 +66,10 @@ export type PersonProfileListRQ = QueryRQ & {
    * 分配用户id
    */
   assigneeId?: number;
+
+  /**
+   * Is task or not
+   * 是否为任务
+   */
+  isTask?: boolean;
 };
