@@ -50,6 +50,20 @@ export class PersonProfileApi extends EntityApi {
   }
 
   /**
+   * Delete attachment
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  deleteAttachment(id: number, payload?: IdResultPayload) {
+    return this.api.delete(
+      `${this.flag}/DeleteAttachment/${id}`,
+      undefined,
+      payload
+    );
+  }
+
+  /**
    * List
    * @param rq Request data
    * @param payload Payload
@@ -104,6 +118,16 @@ export class PersonProfileApi extends EntityApi {
    */
   update(rq: PersonProfileUpdateRQ, payload?: IdResultPayload) {
     return this.updateBase(rq, payload);
+  }
+
+  /**
+   * Update attachment
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  updateAttachment(rq: PersonProfileUpdateRQ, payload?: IdResultPayload) {
+    return this.api.put(`${this.flag}/UpdateAttachment`, rq, payload);
   }
 
   /**

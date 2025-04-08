@@ -68,6 +68,12 @@ export type PersonProfileListRQ = StatusQueryRQ & {
   assigneeId?: number;
 
   /**
+   * Owner user id
+   * 拥有者用户id
+   */
+  userId?: number;
+
+  /**
    * Is task or not
    * 是否为任务
    */

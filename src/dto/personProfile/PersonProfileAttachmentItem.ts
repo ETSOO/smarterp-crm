@@ -10,12 +10,6 @@ export type PersonProfileAttachmentItem = {
   id: number;
 
   /**
-   * File name
-   * 文件名
-   */
-  fileName: string;
-
-  /**
    * File size
    * 文件大小
    */

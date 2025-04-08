@@ -44,11 +44,17 @@ export function ImportanceText(props: ImportanceTextProps) {
   const crm = useRequiredCrmApp();
 
   // Destruct
-  const { importance, color = getImportanceColor(importance), ...rest } = props;
+  const {
+    importance,
+    component = "span",
+    color = getImportanceColor(importance),
+    variant = "body2",
+    ...rest
+  } = props;
 
   // Layout
   return (
-    <Typography color={color} {...rest}>
+    <Typography component={component} color={color} variant={variant} {...rest}>
       {crm.profile.getImportance(importance)}
     </Typography>
   );

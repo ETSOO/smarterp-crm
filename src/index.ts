@@ -21,6 +21,7 @@ export * from "./dto/personProfile/PersonProfileQueryData";
 export * from "./dto/personProfile/PersonProfileUpdateReadData";
 export * from "./dto/personProfile/PersonProfileViewData";
 
+export * from "./rq/personProfile/PersonProfileAttachmentUpdateRQ";
 export * from "./rq/personProfile/PersonProfileCreateRQ";
 export * from "./rq/personProfile/PersonProfileListRQ";
 export * from "./rq/personProfile/PersonProfileQueryRQ";
