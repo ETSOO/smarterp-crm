@@ -28,6 +28,12 @@ export type PersonProfileAttachmentItem = {
   description: string;
 
   /**
+   * File extension
+   * 文件扩展名
+   */
+  extension: string;
+
+  /**
    * User id
    * 用户编号
    */

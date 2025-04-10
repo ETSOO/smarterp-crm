@@ -15,6 +15,7 @@ import { PersonProfileCreateRQ } from "./rq/personProfile/PersonProfileCreateRQ"
 import { PersonProfileInnerViewData } from "./dto/personProfile/PersonProfileInnerViewData";
 import { PersonProfileUpdateRQ } from "./rq/personProfile/PersonProfileUpdateRQ";
 import { PersonTaskCreateRQ } from "./rq/personProfile/PersonTaskCreateRQ";
+import { PersonProfileAttachmentUpdateRQ } from "./rq/personProfile/PersonProfileAttachmentUpdateRQ";
 
 /**
  * Person profile API
@@ -126,7 +127,10 @@ export class PersonProfileApi extends EntityApi {
    * @param payload Payload
    * @returns Result
    */
-  updateAttachment(rq: PersonProfileUpdateRQ, payload?: IdResultPayload) {
+  updateAttachment(
+    rq: PersonProfileAttachmentUpdateRQ,
+    payload?: IdResultPayload
+  ) {
     return this.api.put(`${this.flag}/UpdateAttachment`, rq, payload);
   }
 

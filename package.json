@@ -57,7 +57,7 @@
     "@etsoo/materialui": "^1.5.20",
     "@etsoo/react": "^1.8.38",
     "@etsoo/shared": "^1.2.66",
-    "@mui/material": "^7.0.0",
+    "@mui/material": "^7.0.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   }
