@@ -1,4 +1,5 @@
 {
+  "addComment": "添加評論",
   "allTasks": "所有任務",
   "assets": "資產",
   "assignee": "經辦人",
@@ -101,6 +102,7 @@
   "products": "產品",
   "purchases": "採購",
   "regions": "國家或地區",
+  "relatedProfile": "相關檔案",
   "reporter": "報告人",
   "reports": "報表",
   "stockIn": "入庫",

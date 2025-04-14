@@ -1,4 +1,5 @@
 {
+  "addComment": "Add comment",
   "allTasks": "All tasks",
   "assets": "Assets",
   "assignee": "Assignee",
@@ -101,6 +102,7 @@
   "purchases": "Purchases",
   "products": "Products",
   "regions": "Regions",
+  "relatedProfile": "Related profile",
   "reporter": "Reporter",
   "reports": "Reports",
   "stockIn": "Stock in",

@@ -14,4 +14,10 @@ export type PersonProfileListData = {
    * 标题
    */
   title: string;
+
+  /**
+   * Creation
+   * 创建时间
+   */
+  creation: string | Date;
 };

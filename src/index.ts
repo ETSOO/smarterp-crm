@@ -23,6 +23,8 @@ export * from "./dto/personProfile/PersonProfileViewData";
 
 export * from "./rq/personProfile/PersonProfileAttachmentUpdateRQ";
 export * from "./rq/personProfile/PersonProfileCreateRQ";
+export * from "./rq/personProfile/PersonProfileLinkCreateRQ";
+export * from "./rq/personProfile/PersonProfileLinkUpdateRQ";
 export * from "./rq/personProfile/PersonProfileListRQ";
 export * from "./rq/personProfile/PersonProfileQueryRQ";
 export * from "./rq/personProfile/PersonProfileUpdateRQ";

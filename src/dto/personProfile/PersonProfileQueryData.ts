@@ -17,7 +17,7 @@ export type PersonProfileQueryData = {
    * Kind
    * 类型
    */
-  kind?: PersonProfileKind;
+  kind: PersonProfileKind;
 
   /**
    * Title

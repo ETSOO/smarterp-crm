@@ -16,6 +16,8 @@ import { PersonProfileInnerViewData } from "./dto/personProfile/PersonProfileInn
 import { PersonProfileUpdateRQ } from "./rq/personProfile/PersonProfileUpdateRQ";
 import { PersonTaskCreateRQ } from "./rq/personProfile/PersonTaskCreateRQ";
 import { PersonProfileAttachmentUpdateRQ } from "./rq/personProfile/PersonProfileAttachmentUpdateRQ";
+import { PersonProfileLinkCreateRQ } from "./rq/personProfile/PersonProfileLinkCreateRQ";
+import { PersonProfileLinkUpdateRQ } from "./rq/personProfile/PersonProfileLinkUpdateRQ";
 
 /**
  * Person profile API
@@ -41,6 +43,16 @@ export class PersonProfileApi extends EntityApi {
   }
 
   /**
+   * Create profile link
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  createLink(rq: PersonProfileLinkCreateRQ, payload?: IdResultPayload) {
+    return this.api.post(`${this.flag}/CreateLink`, rq, payload);
+  }
+
+  /**
    * Create task
    * @param rq Request data
    * @param payload Payload
@@ -62,6 +74,16 @@ export class PersonProfileApi extends EntityApi {
       undefined,
       payload
     );
+  }
+
+  /**
+   * Delete link
+   * @param id Id
+   * @param payload Payload
+   * @returns Result
+   */
+  deleteLink(id: number, payload?: IdResultPayload) {
+    return this.api.delete(`${this.flag}/DeleteLink/${id}`, undefined, payload);
   }
 
   /**
@@ -132,6 +154,16 @@ export class PersonProfileApi extends EntityApi {
     payload?: IdResultPayload
   ) {
     return this.api.put(`${this.flag}/UpdateAttachment`, rq, payload);
+  }
+
+  /**
+   * Update link
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  updateLink(rq: PersonProfileLinkUpdateRQ, payload?: IdResultPayload) {
+    return this.api.put(`${this.flag}/UpdateLink`, rq, payload);
   }
 
   /**

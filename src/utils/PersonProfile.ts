@@ -2,6 +2,24 @@ import { ICrmApp } from "../CrmApp";
 import { PersonProfileImportance } from "../dto/personProfile/PersonProfileImportance";
 import { PersonProfileKind } from "../dto/personProfile/PersonProfileKind";
 import { PersonProfileLinkKind } from "../dto/personProfile/PersonProfileLinkKind";
+import { PersonProfileListData } from "../dto/personProfile/PersonProfileListData";
+
+/**
+ * Person profile utils
+ * 人员档案工具类
+ */
+export namespace PersonProfileUtils {
+  /**
+   * Get list label function
+   * 获取列表标签函数
+   * @param crm CRM app
+   * @returns Get list label function
+   */
+  export const getListLabel =
+    (crm: ICrmApp) => (data: PersonProfileListData) => {
+      return `${data.title}, ${crm.app.formatDate(data.creation)}`;
+    };
+}
 
 /**
  * Person Profile
