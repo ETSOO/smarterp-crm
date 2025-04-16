@@ -1,5 +1,6 @@
 {
   "addComment": "添加評論",
+  "addProfile": "添加檔案",
   "allTasks": "所有任務",
   "assets": "資產",
   "assignee": "經辦人",
@@ -15,6 +16,7 @@
   "degreeDoctor": "博士",
   "degreeMaster": "碩士",
   "degreePreBachelor": "副學士",
+  "editProfile": "編輯檔案",
   "educationHighSchool": "高中",
   "educationHighSchool1": "高中1年級",
   "educationHighSchool2": "高中2年級",

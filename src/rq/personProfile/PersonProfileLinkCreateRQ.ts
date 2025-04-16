@@ -1,10 +1,11 @@
+import { TokenAuthRQ } from "@etsoo/appscript";
 import { PersonProfileLinkKind } from "../../dto/personProfile/PersonProfileLinkKind";
 
 /**
  * Person profile link create request data
  * 人员档案关联创建请求数据
  */
-export type PersonProfileLinkCreateRQ = {
+export type PersonProfileLinkCreateRQ = TokenAuthRQ & {
   /**
    * Person profile id
    * 人员档案编号

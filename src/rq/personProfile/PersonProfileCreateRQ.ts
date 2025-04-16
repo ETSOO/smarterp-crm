@@ -1,4 +1,4 @@
-import { EntityStatus, UserRole } from "@etsoo/appscript";
+import { EntityStatus, TokenAuthRQ, UserRole } from "@etsoo/appscript";
 import { PersonProfileKind } from "../../dto/personProfile/PersonProfileKind";
 import { PersonProfileImportance } from "../../dto/personProfile/PersonProfileImportance";
 
@@ -6,7 +6,7 @@ import { PersonProfileImportance } from "../../dto/personProfile/PersonProfileIm
  * Person profile create request data
  * 人员档案创建请求数据
  */
-export type PersonProfileCreateRQ = {
+export type PersonProfileCreateRQ = TokenAuthRQ & {
   /**
    * Person id
    * 人员编号

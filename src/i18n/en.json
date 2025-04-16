@@ -1,5 +1,6 @@
 {
   "addComment": "Add comment",
+  "addProfile": "Add profile",
   "allTasks": "All tasks",
   "assets": "Assets",
   "assignee": "Assignee",
@@ -15,6 +16,7 @@
   "degreeDoctor": "Doctor",
   "degreeMaster": "Master",
   "degreePreBachelor": "Pre-bachelor",
+  "editProfile": "Edit profile",
   "educationHighSchool": "High school",
   "educationHighSchool1": "Year 10",
   "educationHighSchool2": "Year 11",

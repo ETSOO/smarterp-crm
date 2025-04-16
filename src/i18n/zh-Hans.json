@@ -1,5 +1,6 @@
 {
   "addComment": "添加评论",
+  "addProfile": "添加档案",
   "allTasks": "所有任务",
   "assets": "资产",
   "assignee": "经办人",
@@ -15,6 +16,7 @@
   "degreeDoctor": "博士",
   "degreeMaster": "硕士",
   "degreePreBachelor": "副学士",
+  "editProfile": "编辑档案",
   "educationHighSchool": "高中",
   "educationHighSchool1": "高中1年级",
   "educationHighSchool2": "高中2年级",
