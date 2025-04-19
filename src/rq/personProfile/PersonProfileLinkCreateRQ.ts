@@ -5,7 +5,13 @@ import { PersonProfileLinkKind } from "../../dto/personProfile/PersonProfileLink
  * Person profile link create request data
  * 人员档案关联创建请求数据
  */
-export type PersonProfileLinkCreateRQ = TokenAuthRQ & {
+export type PersonProfileLinkCreateRQ = {
+  /**
+   * Token auth data
+   * 令牌认证数据
+   */
+  auth: TokenAuthRQ;
+
   /**
    * Person profile id
    * 人员档案编号

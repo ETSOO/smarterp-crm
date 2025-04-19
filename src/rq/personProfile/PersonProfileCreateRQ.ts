@@ -6,7 +6,13 @@ import { PersonProfileImportance } from "../../dto/personProfile/PersonProfileIm
  * Person profile create request data
  * 人员档案创建请求数据
  */
-export type PersonProfileCreateRQ = TokenAuthRQ & {
+export type PersonProfileCreateRQ = {
+  /**
+   * Token auth data
+   * 令牌认证数据
+   */
+  auth: TokenAuthRQ;
+
   /**
    * Person id
    * 人员编号

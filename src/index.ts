@@ -27,6 +27,7 @@ export * from "./rq/personProfile/PersonProfileLinkCreateRQ";
 export * from "./rq/personProfile/PersonProfileLinkUpdateRQ";
 export * from "./rq/personProfile/PersonProfileListRQ";
 export * from "./rq/personProfile/PersonProfileQueryRQ";
+export * from "./rq/personProfile/PersonProfileSendEmailRQ";
 export * from "./rq/personProfile/PersonProfileUpdateRQ";
 export * from "./rq/personProfile/PersonTaskCreateRQ";
 
