@@ -4,6 +4,8 @@ import { PersonQueryRQ } from "./rq/person/PersonQueryRQ";
 import { PersonListDto } from "./dto/person/PersonListDto";
 import { PersonQueryData } from "./dto/person/PersonQueryData";
 import { PersonViewData } from "./dto/person/PersonReadDto";
+import { ChoosePersonsRQ } from "./rq/person/ChoosePersonsRQ";
+import { ChoosePersonsData } from "./dto/person/ChoosePersonsData";
 
 /**
  * Person API
@@ -16,6 +18,16 @@ export class PersonApi extends EntityApi {
    */
   constructor(app: IApp, api: IApi = app.api) {
     super("Person", app, api);
+  }
+
+  /**
+   * Choose persons
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  choose(rq: ChoosePersonsRQ, payload?: IApiPayload<ChoosePersonsData>) {
+    return this.api.post(`${this.flag}/Choose`, rq, payload);
   }
 
   /**

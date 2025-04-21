@@ -3,8 +3,7 @@ import {
   IApi,
   IApiPayload,
   IApp,
-  IdResultPayload,
-  ResultPayload
+  IdResultPayload
 } from "@etsoo/appscript";
 import { PersonProfileListData } from "./dto/personProfile/PersonProfileListData";
 import { PersonProfileListRQ } from "./rq/personProfile/PersonProfileListRQ";
@@ -19,7 +18,6 @@ import { PersonTaskCreateRQ } from "./rq/personProfile/PersonTaskCreateRQ";
 import { PersonProfileAttachmentUpdateRQ } from "./rq/personProfile/PersonProfileAttachmentUpdateRQ";
 import { PersonProfileLinkCreateRQ } from "./rq/personProfile/PersonProfileLinkCreateRQ";
 import { PersonProfileLinkUpdateRQ } from "./rq/personProfile/PersonProfileLinkUpdateRQ";
-import { PersonProfileSendEmailRQ } from "./rq/personProfile/PersonProfileSendEmailRQ";
 
 /**
  * Person profile API
@@ -133,16 +131,6 @@ export class PersonProfileApi extends EntityApi {
       undefined,
       payload
     );
-  }
-
-  /**
-   * Send email
-   * @param rq Request data
-   * @param payload Payload
-   * @returns Result
-   */
-  sendEmail(rq: PersonProfileSendEmailRQ, payload?: ResultPayload) {
-    return this.api.post(`${this.flag}/SendEmail`, rq, payload);
   }
 
   /**

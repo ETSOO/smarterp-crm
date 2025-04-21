@@ -1,38 +1,19 @@
-import { IdentityTypeFlags } from "@etsoo/appscript";
-
-/**
- * Identity type data
- * 身份类型数据
- */
-export type IdentityTypeData = {
-  /**
-   * Identity type
-   */
-  identityType?: IdentityTypeFlags;
-
-  /**
-   * Is organization
-   */
-  isOrg: boolean;
-};
+import { IdentityTypeData } from "./IdentityTypeData";
+import { PersonListItem } from "./PersonListItem";
 
 /**
  * Contact item
  * 联系人项
  */
-export type ContactItem = IdentityTypeData & {
-  /**
-   * Id
-   */
-  id: number;
+export type ContactItem = IdentityTypeData &
+  PersonListItem & {
+    /**
+     * Id
+     */
+    id: number;
 
-  /**
-   * Name
-   */
-  name: string;
-
-  /*
-   * Preferred name
-   */
-  preferredName?: string;
-};
+    /*
+     * Preferred name
+     */
+    preferredName?: string;
+  };

@@ -1,4 +1,4 @@
-import { UserRole } from "@etsoo/appscript";
+import { IdentityTypeFlags, UserRole } from "@etsoo/appscript";
 import { PersonProfileAttachmentItem } from "./PersonProfileAttachmentItem";
 import { PersonProfileLinkItem } from "./PersonProfileLinkItem";
 import { DataTypes } from "@etsoo/shared";
@@ -19,6 +19,12 @@ export type PersonProfileInnerViewData = {
    * 人员名称 / 姓名
    */
   personName: string;
+
+  /**
+   * Person identity type
+   * 人员身份类型
+   */
+  personIdentityType: IdentityTypeFlags;
 
   /**
    * Other persons

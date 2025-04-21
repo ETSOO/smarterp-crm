@@ -1,11 +1,11 @@
-import { IdentityType } from "@etsoo/appscript";
+import { IdentityTypeFlags } from "@etsoo/appscript";
 import { ICrmApp } from "../CrmApp";
-import { IdentityTypeData } from "../dto/person/ContactItem";
 import { PersonTitle } from "../dto/person/PersonTitle";
 import { MaritalStatus } from "../dto/person/MaritalStatus";
 import { PersonDegree } from "../dto/person/PersonDegree";
 import { PersonEducation } from "../dto/person/PersonEducation";
 import { PersonListDto } from "../dto/person/PersonListDto";
+import { IdentityTypeData } from "../dto/person/IdentityTypeData";
 
 /**
  * Person utils
@@ -22,17 +22,9 @@ export namespace PersonUtils {
     (crm: ICrmApp) => (data?: IdentityTypeData) => {
       if (data == null) return "";
 
-      if (data.isOrg) {
-        return crm.app.get("org") ?? "Organization";
-      }
-
-      if (data.identityType == null) {
-        return crm.app.get("contact") ?? "Contact";
-      }
-
       const type = data.identityType;
       return crm.app
-        .getEnumList(IdentityType, "id", (id, _key) => {
+        .getEnumList(IdentityTypeFlags, "id", (id, _key) => {
           if ((id & type) > 0) return id;
         })
         .map((d) => d.label)
@@ -47,7 +39,17 @@ export namespace PersonUtils {
    */
   export const getListLabel = (crm: ICrmApp) => (data: PersonListDto) => {
     const type = getIdentityType(crm)(data);
-    return `[${type}] ${data.name}`;
+    let label = `[${type}] ${data.name}`;
+
+    if (data.jobTitle) {
+      label += ` (${data.jobTitle})`;
+    }
+
+    if (data.identityType === IdentityTypeFlags.Contact && data.owner) {
+      label += ` / ${data.owner.name}`;
+    }
+
+    return label;
   };
 }
 

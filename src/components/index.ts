@@ -1,4 +1,5 @@
 // person
+export * from "./person/PersonChooser";
 export * from "./person/PersonList";
 export * from "./person/PersonsList";
 

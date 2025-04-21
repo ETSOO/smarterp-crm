@@ -1,11 +1,15 @@
 // Person
 export * from "./dto/person/AddressItem";
 export * from "./dto/person/CategoryItem";
+export * from "./dto/person/ChoosePersonsData";
 export * from "./dto/person/ContactItem";
+export * from "./dto/person/IdentityTypeData";
 export * from "./dto/person/PersonListDto";
+export * from "./dto/person/PersonListItem";
 export * from "./dto/person/PersonQueryData";
 export * from "./dto/person/PersonReadDto";
 
+export * from "./rq/person/ChoosePersonsRQ";
 export * from "./rq/person/PersonListRQ";
 export * from "./rq/person/PersonQueryRQ";
 
@@ -27,7 +31,6 @@ export * from "./rq/personProfile/PersonProfileLinkCreateRQ";
 export * from "./rq/personProfile/PersonProfileLinkUpdateRQ";
 export * from "./rq/personProfile/PersonProfileListRQ";
 export * from "./rq/personProfile/PersonProfileQueryRQ";
-export * from "./rq/personProfile/PersonProfileSendEmailRQ";
 export * from "./rq/personProfile/PersonProfileUpdateRQ";
 export * from "./rq/personProfile/PersonTaskCreateRQ";
 
