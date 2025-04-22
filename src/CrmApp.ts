@@ -5,6 +5,7 @@ import { IServiceApp, ReactAppContext } from "@etsoo/materialui";
 import { PersonProfileApi } from "./PersonProfileApi";
 import { Person } from "./utils/Person";
 import { PersonProfile } from "./utils/PersonProfile";
+import { SystemApi } from "./SystemApi";
 
 /**
  * Get CRM app context hook
@@ -103,6 +104,15 @@ export class CrmApp implements ICrmApp {
    */
   get profileApi() {
     return (this._profileApi ??= new PersonProfileApi(this.app, this.api));
+  }
+
+  private _systemApi?: SystemApi;
+  /**
+   * System API
+   * 系统接口
+   */
+  get systemApi() {
+    return (this._systemApi ??= new SystemApi(this.app, this.api));
   }
 
   /**

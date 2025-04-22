@@ -34,6 +34,12 @@ export * from "./rq/personProfile/PersonProfileQueryRQ";
 export * from "./rq/personProfile/PersonProfileUpdateRQ";
 export * from "./rq/personProfile/PersonTaskCreateRQ";
 
+// System
+export * from "./dto/system/CustomerType";
+export * from "./dto/system/SystemSettings";
+
+export * from "./rq/system/UpdateSettingsRQ";
+
 // i18n
 export * from "./i18n/CrmCulture";
 

@@ -14,16 +14,22 @@ const utils = new Person(crm);
 
 test("utils.getIdentityType tests", () => {
   // Contact label is defined in current app
-  const contactType = utils.getIdentityType({ isOrg: false });
-  expect(contactType).toBe("联系人");
+  const contactType = utils.getIdentityType({
+    name: "Garry",
+    identityType: IdentityTypeFlags.Contact
+  });
+  expect(contactType).toBe("Contact");
 
   // Organization label is defined in core app
-  const orgType = utils.getIdentityType({ isOrg: true });
-  expect(orgType).toBe("Organization");
+  const orgType = utils.getIdentityType({
+    name: "ETSOO",
+    identityType: IdentityTypeFlags.Org
+  });
+  expect(orgType).toBe("Org");
 
   const csType = utils.getIdentityType({
-    isOrg: false,
-    identityType: IdentityTypeFlags.CustomerOrSupplier
+    name: "CustomerAndSupplier",
+    identityType: IdentityTypeFlags.Customer | IdentityTypeFlags.Supplier
   });
   expect(csType).toBe("Customer, Supplier");
 });
