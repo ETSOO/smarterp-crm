@@ -4,10 +4,10 @@
  */
 export enum CustomerType {
   /**
-   * Corporate
+   * Business
    * 企业
    */
-  Corporate = 1,
+  Business = 1,
 
   /**
    * Government

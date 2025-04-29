@@ -6,3 +6,6 @@ export * from "./person/PersonsList";
 // person profile
 export * from "./pesonProfile/ImportanceText";
 export * from "./pesonProfile/ProfileList";
+
+// System
+export * from "./system/CustomerTypeList";

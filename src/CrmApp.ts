@@ -6,6 +6,7 @@ import { PersonProfileApi } from "./PersonProfileApi";
 import { Person } from "./utils/Person";
 import { PersonProfile } from "./utils/PersonProfile";
 import { SystemApi } from "./SystemApi";
+import { System } from "./utils/System";
 
 /**
  * Get CRM app context hook
@@ -63,6 +64,18 @@ export interface ICrmApp {
    * 人员档案接口
    */
   readonly profileApi: PersonProfileApi;
+
+  /**
+   * System
+   * 系统
+   */
+  readonly system: System;
+
+  /**
+   * System API
+   * 系统接口
+   */
+  readonly systemApi: SystemApi;
 }
 
 /**
@@ -104,6 +117,15 @@ export class CrmApp implements ICrmApp {
    */
   get profileApi() {
     return (this._profileApi ??= new PersonProfileApi(this.app, this.api));
+  }
+
+  private _system?: System;
+  /**
+   * System
+   * 系统
+   */
+  get system(): System {
+    return (this._system ??= new System(this));
   }
 
   private _systemApi?: SystemApi;
