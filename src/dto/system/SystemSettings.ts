@@ -6,8 +6,8 @@ import { CustomerType } from "./CustomerType";
  */
 export type SystemSettings = {
   /**
-   * Person ID
-   * 人员编号
+   * Organization person ID
+   * 机构人员编号
    */
   personId: number;
 

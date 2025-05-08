@@ -7,6 +7,7 @@ import {
 } from "@etsoo/appscript";
 import { SystemSettings } from "./dto/system/SystemSettings";
 import { UpdateSettingsRQ } from "./rq/system/UpdateSettingsRQ";
+import { PermissionItem } from "./dto/system/PermissionItem";
 
 /**
  * System API
@@ -20,6 +21,16 @@ export class SystemApi extends BaseApi {
    */
   constructor(app: IApp, api: IApi = app.api) {
     super(app, api);
+  }
+
+  /**
+   * Get permission items
+   * 获取权限项
+   * @param payload Payload
+   * @returns Result
+   */
+  permissionItems(payload?: IApiPayload<PermissionItem[]>) {
+    return this.api.get("System/PermissionItems", undefined, payload);
   }
 
   /**

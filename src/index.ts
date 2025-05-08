@@ -35,7 +35,10 @@ export * from "./rq/personProfile/PersonProfileUpdateRQ";
 export * from "./rq/personProfile/PersonTaskCreateRQ";
 
 // System
+export * from "./dto/system/AppModule";
 export * from "./dto/system/CustomerType";
+export * from "./dto/system/PermissionItem";
+export * from "./dto/system/Permissions";
 export * from "./dto/system/SystemSettings";
 
 export * from "./rq/system/UpdateSettingsRQ";
@@ -48,3 +51,4 @@ export * from "./PersonApi";
 export * from "./PersonProfileApi";
 
 export * from "./CrmApp";
+export * from "./CrmUser";

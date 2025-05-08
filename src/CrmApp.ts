@@ -1,12 +1,13 @@
-import { IApi, IApp } from "@etsoo/appscript";
+import { IApi } from "@etsoo/appscript";
 import { PersonApi } from "./PersonApi";
 import { useRequiredContext } from "@etsoo/react";
-import { IServiceApp, ReactAppContext } from "@etsoo/materialui";
+import { IServiceApp, ReactAppContext, ServiceApp } from "@etsoo/materialui";
 import { PersonProfileApi } from "./PersonProfileApi";
 import { Person } from "./utils/Person";
 import { PersonProfile } from "./utils/PersonProfile";
 import { SystemApi } from "./SystemApi";
 import { System } from "./utils/System";
+import { CrmUser } from "./CrmUser";
 
 /**
  * Get CRM app context hook
@@ -31,6 +32,12 @@ export function useRequiredCrmApp(): ICrmApp {
 export type ICrmServiceApp = IServiceApp & (ICrmApp | { crm: ICrmApp });
 
 /**
+ * CRM service app base abstract class
+ * CRM 服务应用程序基类抽象类
+ */
+export abstract class CrmAppBase extends ServiceApp<CrmUser> {}
+
+/**
  * CRM application interface
  * CRM应用程序接口
  */
@@ -39,7 +46,7 @@ export interface ICrmApp {
    * Application
    * 应用程序
    */
-  get app(): IApp;
+  get app(): CrmAppBase;
 
   /**
    * Person
@@ -143,5 +150,15 @@ export class CrmApp implements ICrmApp {
    * @param app Base application
    * @param api API
    */
-  constructor(public readonly app: IApp, public readonly api: IApi) {}
+  constructor(public readonly app: CrmAppBase, public readonly api: IApi) {}
+
+  /**
+   * Has permission item
+   * 是否有权限项
+   * @param item Permission item ID
+   * @returns Result
+   */
+  hasPermission(item: number) {
+    return this.app.userData?.permissionItems.includes(item) ?? false;
+  }
 }

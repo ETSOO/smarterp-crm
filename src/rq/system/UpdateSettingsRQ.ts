@@ -1,11 +1,16 @@
-import { UpdateModel } from "@etsoo/appscript";
 import { CustomerType } from "../../dto/system/CustomerType";
 
 /**
  * Update settings request data
  * 更新设置请求数据
  */
-export interface UpdateSettingsRQ extends UpdateModel {
+export interface UpdateSettingsRQ {
+  /**
+   * Changed fields
+   * 已更改的字段
+   */
+  changedFields?: Exclude<keyof this, "changedFields">[];
+
   /**
    * Main customer type
    * 主要的客户类型
