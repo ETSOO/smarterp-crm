@@ -10,7 +10,7 @@ export interface CrmUser extends IServiceUser {
    * System settings
    * 系统设置
    */
-  system: SystemSettings;
+  system?: SystemSettings;
 
   /**
    * Current user permission items
