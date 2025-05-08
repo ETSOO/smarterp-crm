@@ -35,7 +35,21 @@ export type ICrmServiceApp = IServiceApp & (ICrmApp | { crm: ICrmApp });
  * CRM service app base abstract class
  * CRM 服务应用程序基类抽象类
  */
-export abstract class CrmAppBase extends ServiceApp<CrmUser> {}
+export abstract class CrmAppBase extends ServiceApp<CrmUser> {
+  /**
+   * Core name
+   */
+  override get coreName(): string {
+    return "platform";
+  }
+
+  /**
+   * App, for mixin
+   */
+  get app() {
+    return this;
+  }
+}
 
 /**
  * CRM application interface

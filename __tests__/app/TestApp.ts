@@ -6,17 +6,9 @@ import {
   NotificationContainer,
   NotificationRenderProps
 } from "@etsoo/notificationbase";
-import {
-  AddressUtils,
-  CoreApp,
-  createClient,
-  Culture,
-  IAppSettings,
-  InitCallResultData,
-  IUser
-} from "@etsoo/appscript";
-import { DataTypes, DomUtils, Utils, WindowStorage } from "@etsoo/shared";
-import { CrmCulture } from "../../src";
+import { AddressUtils, Culture, InitCallResultData } from "@etsoo/appscript";
+import { DataTypes, DomUtils, Utils } from "@etsoo/shared";
+import { CrmAppBase, CrmCulture } from "../../src";
 
 // Detected country or region
 const { detectedCountry } = DomUtils;
@@ -59,12 +51,7 @@ var container = new NotificationContainerTest((update) => {});
 export const isLocalTest = process.env.NODE_ENV === "local";
 
 // Test application class
-export class TestApp extends CoreApp<
-  IUser,
-  IAppSettings,
-  {},
-  NotificationCallProps
-> {
+export class TestApp extends CrmAppBase {
   /**
    * Constructor
    * @param settings Settings
@@ -78,12 +65,12 @@ export class TestApp extends CoreApp<
         /**
          * Endpoint of the API service
          */
-        endpoint: "http://{hostname}:9000/api/",
+        endpoint: "http://{hostname}:9009/api/",
 
         endpoints: {
-          core: {
+          platform: {
             endpoint: "https://{hostname}:9001/api/",
-            webUrl: ""
+            webUrl: "https://{hostname}:9000"
           }
         },
 
@@ -122,10 +109,7 @@ export class TestApp extends CoreApp<
           detectedCulture
         )![0]
       },
-      createClient(),
-      container,
-      new WindowStorage(),
-      "SmartERP"
+      "TestApp"
     );
   }
 
