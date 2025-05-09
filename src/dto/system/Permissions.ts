@@ -8,9 +8,17 @@ export namespace Permissions {
    * 机构权限
    */
   export enum Org {
-    All = 100,
+    All = 1000,
 
-    updateSettings = 101
+    updateSettings = 1001
+  }
+
+  /**
+   * Department permissions (2)
+   * 部门权限
+   */
+  export enum Dept {
+    All = 2000
   }
 
   /**
@@ -18,27 +26,83 @@ export namespace Permissions {
    * 用户权限
    */
   export enum User {
-    All = 300,
+    All = 3000,
 
-    List = 301,
-    Query = 302,
-    View = 303,
-    Add = 311,
-    Edit = 312,
-    Delete = 313,
+    List = 3001,
+    Query = 3002,
+    View = 3003,
+    Add = 3011,
+    Edit = 3012,
+    Delete = 3013,
 
-    QueryContact = 381,
-    ViewContact = 382,
-    AddContact = 383,
-    EditContact = 384,
-    DeleteContact = 385,
+    QueryContact = 3081,
+    ViewContact = 3082,
+    AddContact = 3083,
+    EditContact = 3084,
+    DeleteContact = 3085,
 
-    QueryProfile = 391,
-    ViewProfile = 392,
-    AddProfile = 393,
-    EditProfile = 394,
-    DeleteProfile = 395,
-    AddAttachment = 396,
-    AddComment = 397
+    QueryProfile = 3091,
+    ViewProfile = 3092,
+    AddProfile = 3093,
+    EditProfile = 3094,
+    DeleteProfile = 3095,
+    AddAttachment = 3096,
+    AddComment = 3097
+  }
+
+  /**
+   * Customer permissions (6)
+   * 客户权限
+   */
+  export enum Customer {
+    All = 6000
+  }
+
+  /**
+   * Supplier permissions (7)
+   * 供应商权限
+   */
+  export enum Supplier {
+    All = 7000
+  }
+
+  /**
+   * Product permissions (8)
+   * 产品权限
+   */
+  export enum Product {
+    All = 8000
+  }
+
+  /**
+   * Order permissions (9)
+   * 订单权限
+   */
+  export enum Order {
+    All = 9000
+  }
+
+  /**
+   * Purchase order permissions (10)
+   * 采购权限
+   */
+  export enum PO {
+    All = 10000
+  }
+
+  /**
+   * Inventory permissions (11)
+   * 库存权限
+   */
+  export enum Inventory {
+    All = 11000
+  }
+
+  /**
+   * Finance permissions (18)
+   * 财务权限
+   */
+  export enum Finance {
+    All = 18000
   }
 }

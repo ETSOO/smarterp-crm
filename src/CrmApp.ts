@@ -42,13 +42,6 @@ export abstract class CrmAppBase extends ServiceApp<CrmUser> {
   override get coreName(): string {
     return "platform";
   }
-
-  /**
-   * App, for mixin
-   */
-  get app() {
-    return this;
-  }
 }
 
 /**
@@ -97,6 +90,14 @@ export interface ICrmApp {
    * 系统接口
    */
   readonly systemApi: SystemApi;
+
+  /**
+   * Owns the permission item
+   * 是否有权限项
+   * @param item Permission item ID
+   * @returns Result
+   */
+  owns(item: number): boolean;
 }
 
 /**
@@ -167,12 +168,18 @@ export class CrmApp implements ICrmApp {
   constructor(public readonly app: CrmAppBase, public readonly api: IApi) {}
 
   /**
-   * Has permission item
+   * Owns the permission item
    * 是否有权限项
    * @param item Permission item ID
    * @returns Result
    */
-  hasPermission(item: number) {
+  owns(item: number) {
+    // Check the 'all' permission first
+    const m = Math.floor(item / 1000) * 1000;
+    if (this.app.userData?.permissionItems.includes(m)) {
+      return true;
+    }
+
     return this.app.userData?.permissionItems.includes(item) ?? false;
   }
 }
