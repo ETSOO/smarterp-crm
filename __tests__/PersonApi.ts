@@ -1,7 +1,8 @@
 import { IdentityTypeFlags } from "@etsoo/appscript";
-import { CrmApp, PersonApi } from "../src";
+import { CrmApp } from "../src";
 import { Person } from "../src/utils/Person";
 import { isLocalTest, TestApp } from "./app/TestApp";
+import { PersonApi } from "../src/PersonApi";
 
 const app = new TestApp();
 

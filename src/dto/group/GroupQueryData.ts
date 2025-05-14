@@ -2,4 +2,7 @@
  * Permission group query data
  * 权限组查询数据
  */
-export type GroupQueryData = {};
+export type GroupQueryData = {
+  id: number;
+  name: string;
+};
