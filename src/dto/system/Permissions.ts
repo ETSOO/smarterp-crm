@@ -10,7 +10,18 @@ export namespace Permissions {
   export enum Org {
     All = 1000,
 
-    updateSettings = 1001
+    List = 1001,
+    Query = 1002,
+    View = 1003,
+
+    AddContact = 1083,
+
+    QueryProfile = 1091,
+    ViewProfile = 1092,
+    AddProfile = 1093,
+    AddComment = 1097,
+
+    UpdateSettings = 1201
   }
 
   /**
@@ -18,7 +29,21 @@ export namespace Permissions {
    * 部门权限
    */
   export enum Dept {
-    All = 2000
+    All = 2000,
+
+    List = 2001,
+    Query = 2002,
+    View = 2003,
+    Add = 2011,
+    Edit = 2012,
+    Delete = 2013,
+
+    AddContact = 2083,
+
+    QueryProfile = 2091,
+    ViewProfile = 2092,
+    AddProfile = 2093,
+    AddComment = 2097
   }
 
   /**
@@ -35,18 +60,11 @@ export namespace Permissions {
     Edit = 3012,
     Delete = 3013,
 
-    QueryContact = 3081,
-    ViewContact = 3082,
     AddContact = 3083,
-    EditContact = 3084,
-    DeleteContact = 3085,
 
     QueryProfile = 3091,
     ViewProfile = 3092,
     AddProfile = 3093,
-    EditProfile = 3094,
-    DeleteProfile = 3095,
-    AddAttachment = 3096,
     AddComment = 3097
   }
 
@@ -55,7 +73,21 @@ export namespace Permissions {
    * 客户权限
    */
   export enum Customer {
-    All = 6000
+    All = 6000,
+
+    List = 6001,
+    Query = 6002,
+    View = 6003,
+    Add = 6011,
+    Edit = 6012,
+    Delete = 6013,
+
+    AddContact = 6083,
+
+    QueryProfile = 6091,
+    ViewProfile = 6092,
+    AddProfile = 6093,
+    AddComment = 6097
   }
 
   /**
@@ -63,7 +95,21 @@ export namespace Permissions {
    * 供应商权限
    */
   export enum Supplier {
-    All = 7000
+    All = 7000,
+
+    List = 7001,
+    Query = 7002,
+    View = 7003,
+    Add = 7011,
+    Edit = 7012,
+    Delete = 7013,
+
+    AddContact = 7083,
+
+    QueryProfile = 7091,
+    ViewProfile = 7092,
+    AddProfile = 7093,
+    AddComment = 7097
   }
 
   /**
@@ -71,7 +117,14 @@ export namespace Permissions {
    * 产品权限
    */
   export enum Product {
-    All = 8000
+    All = 8000,
+
+    List = 8001,
+    Query = 8002,
+    View = 8003,
+    Add = 8011,
+    Edit = 8012,
+    Delete = 8013
   }
 
   /**
@@ -79,7 +132,14 @@ export namespace Permissions {
    * 订单权限
    */
   export enum Order {
-    All = 9000
+    All = 9000,
+
+    List = 9001,
+    Query = 9002,
+    View = 9003,
+    Add = 9011,
+    Edit = 9012,
+    Delete = 9013
   }
 
   /**
@@ -87,7 +147,14 @@ export namespace Permissions {
    * 采购权限
    */
   export enum PO {
-    All = 10000
+    All = 10000,
+
+    List = 10001,
+    Query = 10002,
+    View = 10003,
+    Add = 10011,
+    Edit = 10012,
+    Delete = 10013
   }
 
   /**
@@ -95,7 +162,9 @@ export namespace Permissions {
    * 库存权限
    */
   export enum Inventory {
-    All = 11000
+    All = 11000,
+
+    Query = 11002
   }
 
   /**
@@ -103,6 +172,8 @@ export namespace Permissions {
    * 财务权限
    */
   export enum Finance {
-    All = 18000
+    All = 18000,
+
+    Query = 18002
   }
 }

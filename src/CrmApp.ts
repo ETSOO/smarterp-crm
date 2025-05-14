@@ -1,4 +1,4 @@
-import { IApi } from "@etsoo/appscript";
+import { IApi, IdentityTypeFlags } from "@etsoo/appscript";
 import { PersonApi } from "./PersonApi";
 import { useRequiredContext } from "@etsoo/react";
 import { IServiceApp, ReactAppContext, ServiceApp } from "@etsoo/materialui";
@@ -8,6 +8,7 @@ import { PersonProfile } from "./utils/PersonProfile";
 import { SystemApi } from "./SystemApi";
 import { System } from "./utils/System";
 import { CrmUser } from "./CrmUser";
+import { Permissions } from "./dto/system/Permissions";
 
 /**
  * Get CRM app context hook
@@ -92,6 +93,13 @@ export interface ICrmApp {
   readonly systemApi: SystemApi;
 
   /**
+   * Get person identity type
+   * 获取人员身份类型
+   * @returns Identity type flags
+   */
+  getPersonIdentityType(): IdentityTypeFlags;
+
+  /**
    * Owns the permission item
    * 是否有权限项
    * @param item Permission item ID
@@ -167,6 +175,70 @@ export class CrmApp implements ICrmApp {
    */
   constructor(public readonly app: CrmAppBase, public readonly api: IApi) {}
 
+  private getIdentityType(permissions: boolean[]) {
+    let type: IdentityTypeFlags = IdentityTypeFlags.None;
+
+    if (permissions[0]) {
+      type |= IdentityTypeFlags.User;
+    }
+
+    if (permissions[1]) {
+      type |= IdentityTypeFlags.Customer;
+    }
+
+    if (permissions[2]) {
+      type |= IdentityTypeFlags.Supplier;
+    }
+
+    if (permissions[3]) {
+      type |= IdentityTypeFlags.Org;
+    }
+
+    if (permissions[4]) {
+      type |= IdentityTypeFlags.Dept;
+    }
+
+    if (type !== IdentityTypeFlags.None) {
+      type |= IdentityTypeFlags.Contact;
+    }
+
+    return type;
+  }
+
+  /**
+   * Get person identity type
+   * 获取人员身份类型
+   * @returns Identity type flags
+   */
+  getPersonIdentityType() {
+    const permissions = [
+      Permissions.User.Query,
+      Permissions.Customer.Query,
+      Permissions.Supplier.Query,
+      Permissions.Org.Query,
+      Permissions.Dept.Query
+    ].map((p) => this.owns(p));
+
+    return this.getIdentityType(permissions);
+  }
+
+  /**
+   * Get profile identity type
+   * 获取档案身份类型
+   * @returns Identity type flags
+   */
+  getProfileIdentityType() {
+    const permissions = [
+      Permissions.User.QueryProfile,
+      Permissions.Customer.QueryProfile,
+      Permissions.Supplier.QueryProfile,
+      Permissions.Org.QueryProfile,
+      Permissions.Dept.QueryProfile
+    ].map((p) => this.owns(p));
+
+    return this.getIdentityType(permissions);
+  }
+
   /**
    * Owns the permission item
    * 是否有权限项
@@ -175,9 +247,14 @@ export class CrmApp implements ICrmApp {
    */
   owns(item: number) {
     // Check the 'all' permission first
-    const m = Math.floor(item / 1000) * 1000;
+    const m = item.toStep(1000);
     if (this.app.userData?.permissionItems.includes(m)) {
       return true;
+    }
+
+    if (m === item) {
+      // Directly return to avoid additional checking
+      return false;
     }
 
     return this.app.userData?.permissionItems.includes(item) ?? false;
