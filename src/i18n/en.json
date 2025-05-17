@@ -119,6 +119,8 @@
   "reporter": "Reporter",
   "reports": "Reports",
   "sendEmail": "Send email",
+  "simpleInventory": "Simple inventory",
+  "staff": "Staff",
   "stockIn": "Stock in",
   "stockOut": "Stock out",
   "system": "System",

@@ -9,6 +9,15 @@ import { SystemApi } from "./SystemApi";
 import { System } from "./utils/System";
 import { CrmUser } from "./CrmUser";
 import { Permissions } from "./dto/system/Permissions";
+import { AssetApi } from "./AssetApi";
+import { CustomerApi } from "./CustomerApi";
+import { DeptApi } from "./DeptApi";
+import { GroupApi } from "./GroupApi";
+import { OrderApi } from "./OrderApi";
+import { POApi } from "./POApi";
+import { ProductApi } from "./ProductApi";
+import { SupplierApi } from "./SupplierApi";
+import { UserApi } from "./UserApi";
 
 /**
  * Get CRM app context hook
@@ -57,6 +66,36 @@ export interface ICrmApp {
   get app(): CrmAppBase;
 
   /**
+   * Asset API
+   * 资产接口
+   */
+  readonly assetApi: AssetApi;
+
+  /**
+   * Customer API
+   * 客户接口
+   */
+  readonly customerApi: CustomerApi;
+
+  /**
+   * Department API
+   * 部门接口
+   */
+  readonly deptApi: DeptApi;
+
+  /**
+   * Permission group API
+   * 权限组接口
+   */
+  readonly groupApi: GroupApi;
+
+  /**
+   * Order API
+   * 订单接口
+   */
+  readonly orderApi: OrderApi;
+
+  /**
    * Person
    * 人员
    */
@@ -81,6 +120,24 @@ export interface ICrmApp {
   readonly profileApi: PersonProfileApi;
 
   /**
+   * Purchase order API
+   * 采购接口
+   */
+  readonly POApi: POApi;
+
+  /**
+   * Product API
+   * 产品接口
+   */
+  readonly ProductApi: ProductApi;
+
+  /**
+   * Supplier API
+   * 供应商接口
+   */
+  readonly supplierApi: SupplierApi;
+
+  /**
    * System
    * 系统
    */
@@ -91,6 +148,12 @@ export interface ICrmApp {
    * 系统接口
    */
   readonly systemApi: SystemApi;
+
+  /**
+   * User API
+   * 用户接口
+   */
+  readonly userApi: UserApi;
 
   /**
    * Get person identity type
@@ -113,6 +176,51 @@ export interface ICrmApp {
  * CRM应用程序
  */
 export class CrmApp implements ICrmApp {
+  private _assetApi?: AssetApi;
+  /**
+   * Asset API
+   * 资产接口
+   */
+  get assetApi() {
+    return (this._assetApi ??= new AssetApi(this.app, this.api));
+  }
+
+  private _customerApi?: CustomerApi;
+  /**
+   * Customer API
+   * 客户接口
+   */
+  get customerApi() {
+    return (this._customerApi ??= new CustomerApi(this.app, this.api));
+  }
+
+  private _deptApi?: DeptApi;
+  /**
+   * Department API
+   * 部门接口
+   */
+  get deptApi() {
+    return (this._deptApi ??= new DeptApi(this.app, this.api));
+  }
+
+  private _groupApi?: GroupApi;
+  /**
+   * Permission group API
+   * 权限组接口
+   */
+  get groupApi() {
+    return (this._groupApi ??= new GroupApi(this.app, this.api));
+  }
+
+  private _orderApi?: OrderApi;
+  /**
+   * Order API
+   * 订单接口
+   */
+  get orderApi() {
+    return (this._orderApi ??= new OrderApi(this.app, this.api));
+  }
+
   private _person?: Person;
   /**
    * Person
@@ -149,6 +257,33 @@ export class CrmApp implements ICrmApp {
     return (this._profileApi ??= new PersonProfileApi(this.app, this.api));
   }
 
+  private _poApi?: POApi;
+  /**
+   * Purchase order API
+   * 采购接口
+   */
+  get POApi() {
+    return (this._poApi ??= new POApi(this.app, this.api));
+  }
+
+  private _productApi?: ProductApi;
+  /**
+   * Product API
+   * 产品接口
+   */
+  get ProductApi() {
+    return (this._productApi ??= new ProductApi(this.app, this.api));
+  }
+
+  private _supplierApi?: SupplierApi;
+  /**
+   * Supplier API
+   * 供应商接口
+   */
+  get supplierApi() {
+    return (this._supplierApi ??= new SupplierApi(this.app, this.api));
+  }
+
   private _system?: System;
   /**
    * System
@@ -165,6 +300,15 @@ export class CrmApp implements ICrmApp {
    */
   get systemApi() {
     return (this._systemApi ??= new SystemApi(this.app, this.api));
+  }
+
+  private _userApi?: UserApi;
+  /**
+   * User API
+   * 用户接口
+   */
+  get userApi() {
+    return (this._userApi ??= new UserApi(this.app, this.api));
   }
 
   /**

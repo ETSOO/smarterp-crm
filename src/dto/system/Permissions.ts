@@ -21,6 +21,7 @@ export namespace Permissions {
     AddProfile = 1093,
     AddComment = 1097,
 
+    Manage = 1200,
     UpdateSettings = 1201
   }
 

@@ -119,6 +119,8 @@
   "reporter": "报告人",
   "reports": "报表",
   "sendEmail": "发送邮件",
+  "simpleInventory": "简易库存",
+  "staff": "员工",
   "stockIn": "入库",
   "stockOut": "出库",
   "system": "系统",
