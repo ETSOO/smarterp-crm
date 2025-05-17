@@ -9,3 +9,6 @@ export * from "./pesonProfile/ProfileList";
 
 // System
 export * from "./system/CustomerTypeList";
+
+// User
+export * from "./user/UserTiplist";

@@ -15,9 +15,12 @@ export * from "./rq/customer/CustomerQueryRQ";
 // Dept
 export * from "./dto/dept/DeptListData";
 export * from "./dto/dept/DeptQueryData";
+export * from "./dto/dept/DeptUpdateReadData";
 
+export * from "./rq/dept/DeptCreateRQ";
 export * from "./rq/dept/DeptListRQ";
 export * from "./rq/dept/DeptQueryRQ";
+export * from "./rq/dept/DeptUpdateRQ";
 
 // Group
 export * from "./dto/group/GroupListData";
