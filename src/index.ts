@@ -25,6 +25,8 @@ export * from "./rq/dept/DeptUpdateRQ";
 // Group
 export * from "./dto/group/GroupListData";
 export * from "./dto/group/GroupQueryData";
+export * from "./dto/group/GroupQueryItemsData";
+export * from "./dto/group/GroupViewData";
 
 export * from "./rq/group/GroupListRQ";
 export * from "./rq/group/GroupQueryRQ";

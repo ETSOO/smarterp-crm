@@ -1,7 +1,7 @@
 /**
  * Application module
  * 应用模块
- * @see PlatformShared.Dto.AppModule
+ * Backend: PlatformShared.Dto.AppModule
  */
 export enum AppModule {
   /**

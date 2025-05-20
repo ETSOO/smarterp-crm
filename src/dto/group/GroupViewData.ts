@@ -1,10 +1,10 @@
 import { UserRole } from "@etsoo/appscript";
 
 /**
- * Permission group query data
- * 权限组查询数据
+ * Permission group view data
+ * 权限组浏览数据
  */
-export type GroupQueryData = {
+export type GroupViewData = {
   /**
    * Id
    * 编号
@@ -24,8 +24,14 @@ export type GroupQueryData = {
   roles: UserRole;
 
   /**
-   * Is system item
-   * 是否为系统项目
+   * Permission items
+   * 权限项目
    */
-  isSystem: boolean;
+  items: number[];
+
+  /**
+   * Organization id
+   * 所属机构编号
+   */
+  orgId?: number;
 };
