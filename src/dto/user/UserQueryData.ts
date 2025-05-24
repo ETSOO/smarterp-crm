@@ -36,6 +36,12 @@ export type UserQueryData = {
   status: EntityStatus;
 
   /**
+   * Editable
+   * 是否可编辑
+   */
+  editable: boolean;
+
+  /**
    * Creation
    * 创建时间
    */

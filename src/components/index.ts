@@ -1,3 +1,11 @@
+// dept
+export * from "./dept/ButtonDepts";
+export * from "./dept/DeptTiplist";
+
+// group
+export * from "./group/ButtonGroups";
+export * from "./group/GroupTiplist";
+
 // person
 export * from "./person/PersonChooser";
 export * from "./person/PersonList";

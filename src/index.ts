@@ -107,9 +107,11 @@ export * from "./rq/system/UpdateSettingsRQ";
 // User
 export * from "./dto/user/UserListData";
 export * from "./dto/user/UserQueryData";
+export * from "./dto/user/UserUpdateReadData";
 
 export * from "./rq/user/UserListRQ";
 export * from "./rq/user/UserQueryRQ";
+export * from "./rq/user/UserUpdateRQ";
 
 // i18n
 export * from "./i18n/CrmCulture";

@@ -13,6 +13,12 @@ export type UserUpdateReadData = {
   id: number;
 
   /**
+   * Name
+   * 姓名
+   */
+  name: string;
+
+  /**
    * User role, permission level
    * 用户角色，权限等级
    */
@@ -43,16 +49,16 @@ export type UserUpdateReadData = {
   status: EntityStatus;
 
   /**
-   * Department ids
-   * 所属部门编号
+   * Department
+   * 所属部门
    */
   depts?: DataTypes.IdTitleItem[];
 
   /**
-   * Permission group ids
-   * 所属权限组编号
+   * Permission group
+   * 所属权限组
    */
-  groups?: number[];
+  groups?: DataTypes.IdTitleItem[];
 
   /**
    * Permission items included
