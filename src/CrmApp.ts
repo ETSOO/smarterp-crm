@@ -18,6 +18,7 @@ import { POApi } from "./POApi";
 import { ProductApi } from "./ProductApi";
 import { SupplierApi } from "./SupplierApi";
 import { UserApi } from "./UserApi";
+import { PersonCategoryApi } from "./PersonCategoryApi";
 
 /**
  * Get CRM app context hook
@@ -106,6 +107,12 @@ export interface ICrmApp {
    * 人员接口
    */
   readonly personApi: PersonApi;
+
+  /**
+   * Person category API
+   * 人员分类接口
+   */
+  readonly personCategoryApi: PersonCategoryApi;
 
   /**
    * Person profile
@@ -237,6 +244,18 @@ export class CrmApp implements ICrmApp {
    */
   get personApi() {
     return (this._personApi ??= new PersonApi(this.app, this.api));
+  }
+
+  private _personCategoryApi?: PersonCategoryApi;
+  /**
+   * Person category API
+   * 人员分类接口
+   */
+  get personCategoryApi() {
+    return (this._personCategoryApi ??= new PersonCategoryApi(
+      this.app,
+      this.api
+    ));
   }
 
   private _profile?: PersonProfile;

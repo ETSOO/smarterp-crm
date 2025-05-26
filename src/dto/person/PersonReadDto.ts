@@ -6,6 +6,7 @@ import { MaritalStatus } from "./MaritalStatus";
 import { PersonEducation } from "./PersonEducation";
 import { PersonDegree } from "./PersonDegree";
 import { PersonTitle } from "./PersonTitle";
+import { DataTypes } from "@etsoo/shared";
 
 /**
  * Person private data
@@ -233,6 +234,12 @@ export type PersonViewData = ContactItem & {
    * 刷新时间
    */
   refreshTime: string;
+
+  /**
+   * Contact owners
+   * 联系人所有者
+   */
+  contactOwners?: DataTypes.IdTitleItem[];
 
   /**
    * Private data

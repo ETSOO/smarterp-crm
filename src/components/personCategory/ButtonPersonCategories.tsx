@@ -1,36 +1,39 @@
-import { DeptListData } from "../../dto/dept/DeptListData";
 import { useRequiredCrmApp } from "../../CrmApp";
 import {
   ButtonPopupCheckbox,
   ButtonPopupCheckboxProps
 } from "@etsoo/materialui";
+import { PersonCategoryListData } from "../../dto/personCategory/PersonCategoryListData";
 
-export function ButtonDepts(
-  props: Omit<ButtonPopupCheckboxProps<DeptListData>, "labelField" | "loadData">
+export function ButtonPersonCategories(
+  props: Omit<
+    ButtonPopupCheckboxProps<PersonCategoryListData>,
+    "labelField" | "loadData"
+  >
 ) {
   // CRM app
   const crm = useRequiredCrmApp();
 
   // Labels
-  const labels = crm.app.getLabels("clickToChoose", "depts");
+  const labels = crm.app.getLabels("clickToChoose", "categories");
 
   // Destruct
   const {
-    inputName = "depts",
-    label = labels.depts,
+    inputName = "categories",
+    label = labels.categories,
     labelEnd = labels.clickToChoose,
     ...rest
   } = props;
 
   return (
-    <ButtonPopupCheckbox<DeptListData>
+    <ButtonPopupCheckbox<PersonCategoryListData>
       inputName={inputName}
       label={label}
-      labelFormatter={(data) => `${data.name}`}
+      labelFormatter={(data) => data.name}
       labelEnd={labelEnd}
       labelField="name"
       loadData={async (ids) => {
-        const data = await crm.deptApi.list(
+        const data = await crm.personCategoryApi.list(
           { queryPaging: 64 },
           { showLoading: false }
         );

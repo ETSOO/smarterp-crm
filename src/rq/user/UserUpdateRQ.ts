@@ -1,10 +1,11 @@
 import { EntityStatus, UserRole } from "@etsoo/appscript";
+import { DataTypes } from "@etsoo/shared";
 
 /**
  * User update request data
  * 用户更新请求数据
  */
-export type UserUpdateRQ = {
+export type UserUpdateRQ = DataTypes.EditType<{
   /**
    * User role
    * 用户角色
@@ -64,4 +65,4 @@ export type UserUpdateRQ = {
    * 排除的权限项目
    */
   permissionExcluded?: number[];
-};
+}>;

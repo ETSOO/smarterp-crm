@@ -1,5 +1,4 @@
 import { EntityStatus, UserRole } from "@etsoo/appscript";
-import { DataTypes } from "@etsoo/shared";
 
 /**
  * User update read data
@@ -49,16 +48,16 @@ export type UserUpdateReadData = {
   status: EntityStatus;
 
   /**
-   * Department
-   * 所属部门
+   * Department ids
+   * 所属部门编号
    */
-  depts?: DataTypes.IdTitleItem[];
+  depts?: number[];
 
   /**
-   * Permission group
-   * 所属权限组
+   * Permission group ids
+   * 所属权限组编号
    */
-  groups?: DataTypes.IdTitleItem[];
+  groups?: number[];
 
   /**
    * Permission items included

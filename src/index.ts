@@ -53,6 +53,16 @@ export * from "./rq/person/ChoosePersonsRQ";
 export * from "./rq/person/PersonListRQ";
 export * from "./rq/person/PersonQueryRQ";
 
+// Peron category
+export * from "./dto/personCategory/PersonCategoryListData";
+export * from "./dto/personCategory/PersonCategoryQueryData";
+export * from "./dto/personCategory/PersonCategoryUpdateReadData";
+
+export * from "./rq/personCategory/PersonCategoryCreateRQ";
+export * from "./rq/personCategory/PersonCategoryListRQ";
+export * from "./rq/personCategory/PersonCategoryQueryRQ";
+export * from "./rq/personCategory/PersonCategoryUpdateRQ";
+
 // PersonProfile
 export * from "./dto/personProfile/PersonProfileAttachmentItem";
 export * from "./dto/personProfile/PersonProfileImportance";
