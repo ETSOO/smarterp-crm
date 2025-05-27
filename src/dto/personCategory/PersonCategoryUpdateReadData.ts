@@ -18,6 +18,12 @@ export type PersonCategoryUpdateReadData = {
   parentId?: number;
 
   /**
+   * Name
+   * 名称
+   */
+  name: string;
+
+  /**
    * Names
    * 名称列表
    */

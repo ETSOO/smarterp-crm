@@ -19,10 +19,11 @@ export namespace PersonUtils {
    * @returns getIdentityType function
    */
   export const getIdentityType =
-    (crm: ICrmApp) => (data?: IdentityTypeData) => {
+    (crm: ICrmApp) => (data?: IdentityTypeData | IdentityTypeFlags) => {
       if (data == null) return "";
 
-      const type = data.identityType;
+      const type = typeof data === "number" ? data : data.identityType;
+
       return crm.app
         .getEnumList(IdentityTypeFlags, "id", (id, _key) => {
           if ((id & type) > 0) return id;
@@ -116,7 +117,7 @@ export class Person {
    * 获取身份类型
    * @param data Identity type data
    */
-  getIdentityType = (data?: IdentityTypeData) =>
+  getIdentityType = (data?: IdentityTypeData | IdentityTypeFlags) =>
     PersonUtils.getIdentityType(this.crm)(data);
 
   /**

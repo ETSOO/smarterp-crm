@@ -21,13 +21,7 @@ export type PersonCategoryCreateRQ = {
    * Name
    * 名称
    */
-  name?: string;
-
-  /**
-   * Names
-   * 名称列表
-   */
-  names?: string[];
+  name: string;
 
   /**
    * Order index
