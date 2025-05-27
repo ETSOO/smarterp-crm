@@ -25,6 +25,12 @@ export type GroupTiplistProps = Omit<
    * Default request data
    */
   rq?: Partial<GroupListRQ>;
+
+  /**
+   * Load data handler
+   * @param rq Request data
+   */
+  onLoadData?: (rq: GroupListRQ) => GroupListRQ;
 };
 
 /**
@@ -43,6 +49,7 @@ export function GroupTiplist(props: GroupTiplistProps) {
     label = crm.app.get("permissionGroup")!,
     maxItems = 10,
     getOptionLabel = (data) => data.name,
+    onLoadData = (rq) => rq,
     name = "groupId",
     rq = { enabled: true },
     ...rest
@@ -58,14 +65,14 @@ export function GroupTiplist(props: GroupTiplistProps) {
       maxItems={maxItems}
       loadData={(keyword, id, maxItems) =>
         crm.groupApi.list(
-          {
+          onLoadData({
             ...rq,
             keyword,
             id,
             queryPaging: {
               batchSize: maxItems
             }
-          },
+          }),
           { showLoading: false, defaultValue: [] }
         )
       }

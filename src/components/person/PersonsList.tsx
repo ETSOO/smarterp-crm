@@ -2,12 +2,27 @@ import { TagListPro, TagListProProps } from "@etsoo/materialui";
 import { PersonListDto } from "../../dto/person/PersonListDto";
 import { useRequiredCrmApp } from "../../CrmApp";
 import { PersonUtils } from "../../utils/Person";
+import { PersonListRQ } from "../../rq/person/PersonListRQ";
 
 /**
  * Multiple persons list properties
  * 多人员列表属性
  */
-export type PersonsListProps = Omit<TagListProProps<PersonListDto>, "loadData">;
+export type PersonsListProps = Omit<
+  TagListProProps<PersonListDto>,
+  "loadData"
+> & {
+  /**
+   * Default request data
+   */
+  rq?: Partial<PersonListRQ>;
+
+  /**
+   * Load data handler
+   * @param rq Request data
+   */
+  onLoadData?: (rq: PersonListRQ) => PersonListRQ;
+};
 
 /**
  * Multiple persons list
@@ -20,7 +35,12 @@ export function PersonsList(props: PersonsListProps) {
   const crm = useRequiredCrmApp();
 
   // Destruct
-  const { getOptionLabel = PersonUtils.getListLabel(crm), ...rest } = props;
+  const {
+    getOptionLabel = PersonUtils.getListLabel(crm),
+    onLoadData = (rq) => rq,
+    rq = { enabled: true },
+    ...rest
+  } = props;
 
   // Layout
   return (
@@ -28,12 +48,13 @@ export function PersonsList(props: PersonsListProps) {
       getOptionLabel={getOptionLabel}
       loadData={(keyword, items) =>
         crm.personApi.list(
-          {
+          onLoadData({
+            ...rq,
             keyword,
             queryPaging: {
               batchSize: items
             }
-          },
+          }),
           { showLoading: false }
         )
       }

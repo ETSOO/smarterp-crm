@@ -25,6 +25,12 @@ export type UserTiplistProps = Omit<
    * Default request data
    */
   rq?: Partial<UserListRQ>;
+
+  /**
+   * Load data handler
+   * @param rq Request data
+   */
+  onLoadData?: (rq: UserListRQ) => UserListRQ;
 };
 
 /**
@@ -43,6 +49,7 @@ export function UserTiplist(props: UserTiplistProps) {
     label = crm.app.get("user")!,
     maxItems = 10,
     getOptionLabel = (data) => data.name,
+    onLoadData = (rq) => rq,
     name = "userId",
     rq = { enabled: true },
     ...rest
@@ -58,14 +65,14 @@ export function UserTiplist(props: UserTiplistProps) {
       maxItems={maxItems}
       loadData={(keyword, id, maxItems) =>
         crm.userApi.list(
-          {
+          onLoadData({
             ...rq,
             keyword,
             id,
             queryPaging: {
               batchSize: maxItems
             }
-          },
+          }),
           { showLoading: false, defaultValue: [] }
         )
       }

@@ -25,6 +25,12 @@ export type PersonCategoryTiplistProps = Omit<
    * Default request data
    */
   rq?: Partial<PersonCategoryListRQ>;
+
+  /**
+   * Load data handler
+   * @param rq Request data
+   */
+  onLoadData?: (rq: PersonCategoryListRQ) => PersonCategoryListRQ;
 };
 
 /**
@@ -43,6 +49,7 @@ export function PersonCategoryTiplist(props: PersonCategoryTiplistProps) {
     label = crm.app.get("category")!,
     maxItems = 10,
     getOptionLabel = (data) => data.name,
+    onLoadData = (rq) => rq,
     name = "categoryId",
     rq = {},
     ...rest
@@ -58,14 +65,14 @@ export function PersonCategoryTiplist(props: PersonCategoryTiplistProps) {
       maxItems={maxItems}
       loadData={(keyword, id, maxItems) =>
         crm.personCategoryApi.list(
-          {
+          onLoadData({
             ...rq,
             keyword,
             id,
             queryPaging: {
               batchSize: maxItems
             }
-          },
+          }),
           { showLoading: false, defaultValue: [] }
         )
       }

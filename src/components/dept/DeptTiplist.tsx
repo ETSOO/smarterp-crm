@@ -25,6 +25,12 @@ export type DeptTiplistProps = Omit<
    * Default request data
    */
   rq?: Partial<DeptListRQ>;
+
+  /**
+   * Load data handler
+   * @param rq Request data
+   */
+  onLoadData?: (rq: DeptListRQ) => DeptListRQ;
 };
 
 /**
@@ -43,6 +49,7 @@ export function DeptTiplist(props: DeptTiplistProps) {
     label = crm.app.get("dept")!,
     maxItems = 10,
     getOptionLabel = (data) => data.name,
+    onLoadData = (rq) => rq,
     name = "deptId",
     rq = { enabled: true },
     ...rest
@@ -58,14 +65,14 @@ export function DeptTiplist(props: DeptTiplistProps) {
       maxItems={maxItems}
       loadData={(keyword, id, maxItems) =>
         crm.deptApi.list(
-          {
+          onLoadData({
             ...rq,
             keyword,
             id,
             queryPaging: {
               batchSize: maxItems
             }
-          },
+          }),
           { showLoading: false, defaultValue: [] }
         )
       }

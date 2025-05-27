@@ -26,6 +26,12 @@ export type PersonListProps = Omit<
    * Default request data
    */
   rq?: Partial<PersonListRQ>;
+
+  /**
+   * Load data handler
+   * @param rq Request data
+   */
+  onLoadData?: (rq: PersonListRQ) => PersonListRQ;
 };
 
 /**
@@ -44,6 +50,7 @@ export function PersonList(props: PersonListProps) {
     label = crm.app.get("user")!,
     maxItems = 10,
     getOptionLabel = PersonUtils.getListLabel(crm),
+    onLoadData = (rq) => rq,
     name = "personId",
     rq = { enabled: true },
     ...rest
@@ -59,14 +66,14 @@ export function PersonList(props: PersonListProps) {
       maxItems={maxItems}
       loadData={(keyword, id, maxItems) =>
         crm.personApi.list(
-          {
+          onLoadData({
             ...rq,
             keyword,
             id,
             queryPaging: {
               batchSize: maxItems
             }
-          },
+          }),
           { showLoading: false, defaultValue: [] }
         )
       }

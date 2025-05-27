@@ -26,6 +26,12 @@ export type ProfileListProps = Omit<
    * Default request data
    */
   rq?: Partial<PersonProfileListRQ>;
+
+  /**
+   * Load data handler
+   * @param rq Request data
+   */
+  onLoadData?: (rq: PersonProfileListRQ) => PersonProfileListRQ;
 };
 
 /**
@@ -44,6 +50,7 @@ export function ProfileList(props: ProfileListProps) {
     label = crm.app.get("profile")!,
     maxItems = 10,
     getOptionLabel = PersonProfileUtils.getListLabel(crm),
+    onLoadData = (rq) => rq,
     name = "profileId",
     rq = { enabled: true },
     ...rest
@@ -59,14 +66,14 @@ export function ProfileList(props: ProfileListProps) {
       maxItems={maxItems}
       loadData={(keyword, id, maxItems) =>
         crm.profileApi.list(
-          {
+          onLoadData({
             ...rq,
             keyword,
             id,
             queryPaging: {
               batchSize: maxItems
             }
-          },
+          }),
           { showLoading: false, defaultValue: [] }
         )
       }
