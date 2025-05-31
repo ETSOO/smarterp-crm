@@ -48,10 +48,12 @@ export * from "./dto/person/PersonListDto";
 export * from "./dto/person/PersonListItem";
 export * from "./dto/person/PersonQueryData";
 export * from "./dto/person/PersonReadDto";
+export * from "./dto/person/PersonUpdateReadData";
 
 export * from "./rq/person/ChoosePersonsRQ";
 export * from "./rq/person/PersonListRQ";
 export * from "./rq/person/PersonQueryRQ";
+export * from "./rq/person/PersonUpdateRQ";
 
 // Peron category
 export * from "./dto/personCategory/PersonCategoryListData";

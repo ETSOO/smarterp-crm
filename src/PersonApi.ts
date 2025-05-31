@@ -1,4 +1,10 @@
-import { EntityApi, IApi, IApiPayload, IApp } from "@etsoo/appscript";
+import {
+  EntityApi,
+  IApi,
+  IApiPayload,
+  IApp,
+  IdResultPayload
+} from "@etsoo/appscript";
 import { PersonListRQ } from "./rq/person/PersonListRQ";
 import { PersonQueryRQ } from "./rq/person/PersonQueryRQ";
 import { PersonListDto } from "./dto/person/PersonListDto";
@@ -6,6 +12,8 @@ import { PersonQueryData } from "./dto/person/PersonQueryData";
 import { PersonViewData } from "./dto/person/PersonReadDto";
 import { ChoosePersonsRQ } from "./rq/person/ChoosePersonsRQ";
 import { ChoosePersonsData } from "./dto/person/ChoosePersonsData";
+import { PersonUpdateReadData } from "./dto/person/PersonUpdateReadData";
+import { PersonUpdateRQ } from "./rq/person/PersonUpdateRQ";
 
 /**
  * Person API
@@ -58,5 +66,25 @@ export class PersonApi extends EntityApi {
    */
   read(id: number, payload?: IApiPayload<PersonViewData>) {
     return this.readBase(id, payload);
+  }
+
+  /**
+   * Update
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  update(rq: PersonUpdateRQ, payload?: IdResultPayload) {
+    return this.updateBase(rq, payload);
+  }
+
+  /**
+   * Update read
+   * @param id Id
+   * @param payload Payload
+   * @returns Result
+   */
+  updateRead(id: number, payload?: IApiPayload<PersonUpdateReadData>) {
+    return this.updateReadBase(id, payload);
   }
 }

@@ -10,4 +10,10 @@ export type PersonCategoryListRQ = QueryRQ & {
    * 识别类型
    */
   identityType?: IdentityTypeFlags;
+
+  /**
+   * Parent category ID
+   * 父级分类编号
+   */
+  parentId?: number;
 };

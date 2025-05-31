@@ -2,71 +2,9 @@ import { EntityStatus, UserRole } from "@etsoo/appscript";
 import { ContactItem } from "./ContactItem";
 import { CategoryItem } from "./CategoryItem";
 import { AddressItem } from "./AddressItem";
-import { MaritalStatus } from "./MaritalStatus";
-import { PersonEducation } from "./PersonEducation";
-import { PersonDegree } from "./PersonDegree";
 import { PersonTitle } from "./PersonTitle";
 import { DataTypes } from "@etsoo/shared";
-
-/**
- * Person private data
- * 人员私有数据
- */
-type PersonPrivateData = {
-  /**
-   * Gender
-   * 性别
-   */
-  gender?: string;
-
-  /**
-   * Birthday
-   * 生日
-   */
-  birthday?: string;
-
-  /**
-   * Ethnicity
-   * 种族
-   */
-  ethnicity?: string;
-
-  /**
-   * Height in cm
-   * 高度（厘米）
-   */
-  height?: number;
-
-  /**
-   * Weight in kg
-   * 重量（千克）
-   */
-  weight?: number;
-
-  /**
-   * Marital status
-   * 婚姻状况
-   */
-  maritalStatus?: MaritalStatus;
-
-  /**
-   * Education
-   * 学历
-   */
-  education?: PersonEducation;
-
-  /**
-   * Education degree
-   * 学位
-   */
-  degree?: PersonDegree;
-
-  /**
-   * Political status
-   * 政治面貌
-   */
-  politicalStatus?: string;
-};
+import { PersonPrivateData } from "./PersonPrivateData";
 
 /**
  * Person view data
@@ -146,10 +84,10 @@ export type PersonViewData = ContactItem & {
   categories?: CategoryItem[];
 
   /**
-   * Keywords
-   * 关键词
+   * Tags
+   * 标签
    */
-  keywords?: string[];
+  tags?: string[];
 
   /**
    * Addresses
@@ -234,6 +172,12 @@ export type PersonViewData = ContactItem & {
    * 刷新时间
    */
   refreshTime: string;
+
+  /**
+   * Is editable
+   * 是否可编辑
+   */
+  editable: boolean;
 
   /**
    * Contact owners

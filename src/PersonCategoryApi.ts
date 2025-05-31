@@ -3,7 +3,8 @@ import {
   IApi,
   IApiPayload,
   IApp,
-  IdResultPayload
+  IdResultPayload,
+  MergeRQ
 } from "@etsoo/appscript";
 import { PersonCategoryCreateRQ } from "./rq/personCategory/PersonCategoryCreateRQ";
 import { PersonCategoryListRQ } from "./rq/personCategory/PersonCategoryListRQ";
@@ -50,6 +51,16 @@ export class PersonCategoryApi extends EntityApi {
   }
 
   /**
+   * Merge
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  merge(rq: MergeRQ, payload?: IdResultPayload) {
+    return this.mergeBase(rq, payload);
+  }
+
+  /**
    * Query
    * @param rq Request data
    * @param payload Payload
@@ -60,6 +71,16 @@ export class PersonCategoryApi extends EntityApi {
     payload?: IApiPayload<PersonCategoryQueryData[]>
   ) {
     return this.queryBase(rq, payload);
+  }
+
+  /**
+   * Sort
+   * @param items Items
+   * @param payload Payload
+   * @returns Result
+   */
+  sort(items: PersonCategoryListData[], payload?: IApiPayload<number>) {
+    return this.sortBase(items, payload);
   }
 
   /**
