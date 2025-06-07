@@ -1,5 +1,6 @@
 import { EntityStatus, IdentityTypeFlags } from "@etsoo/appscript";
 import { PersonPrivateData } from "./PersonPrivateData";
+import { PersonTitle } from "./PersonTitle";
 
 /**
  * Person update read data
@@ -70,7 +71,7 @@ export type PersonUpdateReadData = {
    * Titles
    * 称谓
    */
-  title?: number;
+  title?: PersonTitle;
 
   /**
    * Description

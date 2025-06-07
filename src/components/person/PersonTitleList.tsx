@@ -1,0 +1,28 @@
+import { SelectEx, SelectExProps } from "@etsoo/materialui";
+import { useRequiredCrmApp } from "../../CrmApp";
+import { ListType } from "@etsoo/shared";
+
+/**
+ * Person title list component
+ * @param props Props
+ * @returns Component
+ */
+export function PersonTitleList(
+  props: Omit<SelectExProps<ListType>, "options">
+) {
+  // CRM app
+  const crm = useRequiredCrmApp();
+
+  // Destruct
+  const { label = crm.app.get("personTitle"), name = "title", ...rest } = props;
+
+  // Layout
+  return (
+    <SelectEx
+      label={label}
+      name={name}
+      options={crm.person.getTitles()}
+      {...rest}
+    />
+  );
+}

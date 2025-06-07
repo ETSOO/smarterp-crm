@@ -8,6 +8,7 @@ import {
 import { SystemSettings } from "./dto/system/SystemSettings";
 import { UpdateSettingsRQ } from "./rq/system/UpdateSettingsRQ";
 import { PermissionItem } from "./dto/system/PermissionItem";
+import { QueryTagRQ } from "./rq/system/QueryTagRQ";
 
 /**
  * System API
@@ -31,6 +32,17 @@ export class SystemApi extends BaseApi {
    */
   permissionItems(payload?: IApiPayload<PermissionItem[]>) {
     return this.api.get("System/PermissionItems", undefined, payload);
+  }
+
+  /**
+   * Query tags
+   * 查询标签
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  queryTags(rq: QueryTagRQ, payload?: IApiPayload<string[]>) {
+    return this.api.post("System/QueryTags", rq, payload);
   }
 
   /**

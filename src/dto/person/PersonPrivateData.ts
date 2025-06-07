@@ -17,7 +17,7 @@ export type PersonPrivateData = {
    * Birthday
    * 生日
    */
-  birthday?: string;
+  birthday?: string | Date;
 
   /**
    * Ethnicity

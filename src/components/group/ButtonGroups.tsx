@@ -32,17 +32,12 @@ export function ButtonGroups(
       labelFormatter={(data) => `${data.name}`}
       labelEnd={labelEnd}
       labelField="name"
-      loadData={async (ids) => {
-        const data = await crm.groupApi.list(
+      loadData={async () =>
+        (await crm.groupApi.list(
           { queryPaging: 64 },
-          { showLoading: false }
-        );
-        if (ids != null && data != null) {
-          // Sort data based on the order of ids
-          return data.sort((a, b) => ids.indexOf(a.id) - ids.indexOf(b.id));
-        }
-        return data ?? [];
-      }}
+          { showLoading: false, defaultValue: [] }
+        )) ?? []
+      }
       {...rest}
     />
   );

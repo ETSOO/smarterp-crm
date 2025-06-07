@@ -32,17 +32,12 @@ export function ButtonPersonCategories(
       labelFormatter={(data) => data.name}
       labelEnd={labelEnd}
       labelField="name"
-      loadData={async (ids) => {
-        const data = await crm.personCategoryApi.list(
+      loadData={async () =>
+        (await crm.personCategoryApi.list(
           { queryPaging: 64 },
           { showLoading: false }
-        );
-        if (ids != null && data != null) {
-          // Sort data based on the order of ids
-          return data.sort((a, b) => ids.indexOf(a.id) - ids.indexOf(b.id));
-        }
-        return data ?? [];
-      }}
+        )) ?? []
+      }
       {...rest}
     />
   );
