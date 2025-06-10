@@ -48,7 +48,7 @@ export function ButtonEducations(props: ButtonEducationsProps) {
       labelFormatter={(data) => data.label}
       labelEnd={labelEnd}
       labelField="label"
-      loadData={async () => educations}
+      loadData={educations}
       onValueChange={(value) => onValueChange(value)}
       value={value}
       {...rest}

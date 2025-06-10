@@ -110,13 +110,18 @@ export * from "./rq/supplier/SupplierQueryRQ";
 // System
 export * from "./dto/system/AppModule";
 export * from "./dto/system/CustomerType";
-export * from "./dto/system/FeatureTagKind";
 export * from "./dto/system/PermissionItem";
 export * from "./dto/system/Permissions";
 export * from "./dto/system/SystemSettings";
 
-export * from "./rq/system/QueryTagRQ";
 export * from "./rq/system/UpdateSettingsRQ";
+
+// Tag
+export * from "./dto/tag/FeatureTagKind";
+export * from "./dto/tag/TagQueryData";
+
+export * from "./rq/tag/TagListRQ";
+export * from "./rq/tag/TagQueryRQ";
 
 // User
 export * from "./dto/user/UserListData";

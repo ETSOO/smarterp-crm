@@ -4,6 +4,7 @@ import {
   ButtonPopupCheckbox,
   ButtonPopupCheckboxProps
 } from "@etsoo/materialui";
+import React from "react";
 
 export function ButtonDepts(
   props: Omit<ButtonPopupCheckboxProps<DeptListData>, "labelField" | "loadData">
@@ -22,6 +23,15 @@ export function ButtonDepts(
     ...rest
   } = props;
 
+  const loadData = React.useCallback(
+    async () =>
+      (await crm.deptApi.list(
+        { queryPaging: 64 },
+        { showLoading: false, defaultValue: [] }
+      )) ?? [],
+    []
+  );
+
   return (
     <ButtonPopupCheckbox<DeptListData>
       inputName={inputName}
@@ -29,12 +39,7 @@ export function ButtonDepts(
       labelFormatter={(data) => `${data.name}`}
       labelEnd={labelEnd}
       labelField="name"
-      loadData={async () =>
-        (await crm.deptApi.list(
-          { queryPaging: 64 },
-          { showLoading: false, defaultValue: [] }
-        )) ?? []
-      }
+      loadData={loadData}
       {...rest}
     />
   );

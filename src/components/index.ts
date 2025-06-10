@@ -12,6 +12,7 @@ export * from "./person/MaritalStatusList";
 export * from "./person/PersonChooser";
 export * from "./person/PersonDegreeList";
 export * from "./person/PersonEducationList";
+export * from "./person/PersonGenderList";
 export * from "./person/PersonList";
 export * from "./person/PersonsList";
 export * from "./person/PersonTitleList";

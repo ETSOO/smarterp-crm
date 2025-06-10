@@ -3,6 +3,7 @@
  * 特征标签种类
  */
 export enum FeatureTagKind {
+  None = 0,
   User = 1,
   Customer = 2,
   Supplier = 4,

@@ -6,6 +6,8 @@ import { PersonDegree } from "../dto/person/PersonDegree";
 import { PersonEducation } from "../dto/person/PersonEducation";
 import { PersonListDto } from "../dto/person/PersonListDto";
 import { IdentityTypeData } from "../dto/person/IdentityTypeData";
+import { PersonGender } from "../dto/person/PersonGender";
+import { DataTypes } from "@etsoo/shared";
 
 /**
  * Person utils
@@ -106,10 +108,19 @@ export class Person {
    * @returns Label
    */
   getGender(gender?: string) {
-    if (gender === "M") return this.crm.app.get("personMale") ?? "Male";
-    else if (gender === "F")
-      return this.crm.app.get("personFemale") ?? "Female";
-    else return undefined;
+    return gender
+      ? this.crm.app.get(
+          `gender${DataTypes.getEnumKey(PersonGender, gender)}`
+        ) ?? gender
+      : undefined;
+  }
+
+  /**
+   * Get gender list
+   * 获取性别列表
+   */
+  getGenders() {
+    return this.crm.app.getEnumStrList(PersonGender, "gender");
   }
 
   /**

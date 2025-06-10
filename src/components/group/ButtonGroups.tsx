@@ -4,6 +4,7 @@ import {
 } from "@etsoo/materialui";
 import { useRequiredCrmApp } from "../../CrmApp";
 import { GroupListData } from "../../dto/group/GroupListData";
+import React from "react";
 
 export function ButtonGroups(
   props: Omit<
@@ -25,6 +26,15 @@ export function ButtonGroups(
     ...rest
   } = props;
 
+  const loadData = React.useCallback(
+    async () =>
+      (await crm.groupApi.list(
+        { queryPaging: 64 },
+        { showLoading: false, defaultValue: [] }
+      )) ?? [],
+    []
+  );
+
   return (
     <ButtonPopupCheckbox<GroupListData>
       inputName={inputName}
@@ -32,12 +42,7 @@ export function ButtonGroups(
       labelFormatter={(data) => `${data.name}`}
       labelEnd={labelEnd}
       labelField="name"
-      loadData={async () =>
-        (await crm.groupApi.list(
-          { queryPaging: 64 },
-          { showLoading: false, defaultValue: [] }
-        )) ?? []
-      }
+      loadData={loadData}
       {...rest}
     />
   );

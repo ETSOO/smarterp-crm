@@ -19,6 +19,7 @@ import { ProductApi } from "./ProductApi";
 import { SupplierApi } from "./SupplierApi";
 import { UserApi } from "./UserApi";
 import { PersonCategoryApi } from "./PersonCategoryApi";
+import { TagApi } from "./TagApi";
 
 /**
  * Get CRM app context hook
@@ -157,6 +158,12 @@ export interface ICrmApp {
   readonly systemApi: SystemApi;
 
   /**
+   * Tag API
+   * 标签接口
+   */
+  readonly tagApi: TagApi;
+
+  /**
    * User API
    * 用户接口
    */
@@ -189,7 +196,7 @@ export class CrmApp implements ICrmApp {
    * 资产接口
    */
   get assetApi() {
-    return (this._assetApi ??= new AssetApi(this.app, this.api));
+    return (this._assetApi ??= new AssetApi(this.app));
   }
 
   private _customerApi?: CustomerApi;
@@ -198,7 +205,7 @@ export class CrmApp implements ICrmApp {
    * 客户接口
    */
   get customerApi() {
-    return (this._customerApi ??= new CustomerApi(this.app, this.api));
+    return (this._customerApi ??= new CustomerApi(this.app));
   }
 
   private _deptApi?: DeptApi;
@@ -207,7 +214,7 @@ export class CrmApp implements ICrmApp {
    * 部门接口
    */
   get deptApi() {
-    return (this._deptApi ??= new DeptApi(this.app, this.api));
+    return (this._deptApi ??= new DeptApi(this.app));
   }
 
   private _groupApi?: GroupApi;
@@ -216,7 +223,7 @@ export class CrmApp implements ICrmApp {
    * 权限组接口
    */
   get groupApi() {
-    return (this._groupApi ??= new GroupApi(this.app, this.api));
+    return (this._groupApi ??= new GroupApi(this.app));
   }
 
   private _orderApi?: OrderApi;
@@ -225,7 +232,7 @@ export class CrmApp implements ICrmApp {
    * 订单接口
    */
   get orderApi() {
-    return (this._orderApi ??= new OrderApi(this.app, this.api));
+    return (this._orderApi ??= new OrderApi(this.app));
   }
 
   private _person?: Person;
@@ -243,7 +250,7 @@ export class CrmApp implements ICrmApp {
    * 人员接口
    */
   get personApi() {
-    return (this._personApi ??= new PersonApi(this.app, this.api));
+    return (this._personApi ??= new PersonApi(this.app));
   }
 
   private _personCategoryApi?: PersonCategoryApi;
@@ -273,7 +280,7 @@ export class CrmApp implements ICrmApp {
    * 人员档案接口
    */
   get profileApi() {
-    return (this._profileApi ??= new PersonProfileApi(this.app, this.api));
+    return (this._profileApi ??= new PersonProfileApi(this.app));
   }
 
   private _poApi?: POApi;
@@ -282,7 +289,7 @@ export class CrmApp implements ICrmApp {
    * 采购接口
    */
   get POApi() {
-    return (this._poApi ??= new POApi(this.app, this.api));
+    return (this._poApi ??= new POApi(this.app));
   }
 
   private _productApi?: ProductApi;
@@ -291,7 +298,7 @@ export class CrmApp implements ICrmApp {
    * 产品接口
    */
   get ProductApi() {
-    return (this._productApi ??= new ProductApi(this.app, this.api));
+    return (this._productApi ??= new ProductApi(this.app));
   }
 
   private _supplierApi?: SupplierApi;
@@ -300,7 +307,7 @@ export class CrmApp implements ICrmApp {
    * 供应商接口
    */
   get supplierApi() {
-    return (this._supplierApi ??= new SupplierApi(this.app, this.api));
+    return (this._supplierApi ??= new SupplierApi(this.app));
   }
 
   private _system?: System;
@@ -318,7 +325,16 @@ export class CrmApp implements ICrmApp {
    * 系统接口
    */
   get systemApi() {
-    return (this._systemApi ??= new SystemApi(this.app, this.api));
+    return (this._systemApi ??= new SystemApi(this.app));
+  }
+
+  private _tagApi?: TagApi;
+  /**
+   * Tag API
+   * 标签接口
+   */
+  get tagApi() {
+    return (this._tagApi ??= new TagApi(this.app));
   }
 
   private _userApi?: UserApi;
@@ -327,7 +343,7 @@ export class CrmApp implements ICrmApp {
    * 用户接口
    */
   get userApi() {
-    return (this._userApi ??= new UserApi(this.app, this.api));
+    return (this._userApi ??= new UserApi(this.app));
   }
 
   /**

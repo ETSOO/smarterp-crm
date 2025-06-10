@@ -1,8 +1,6 @@
 import { EntityStatus, IdentityTypeFlags } from "@etsoo/appscript";
 import { DataTypes } from "@etsoo/shared";
-import { MaritalStatus } from "../../dto/person/MaritalStatus";
-import { PersonEducation } from "../../dto/person/PersonEducation";
-import { PersonDegree } from "../../dto/person/PersonDegree";
+import { PersonPrivateData } from "../../dto/person/PersonPrivateData";
 
 /**
  * Person update request data
@@ -68,60 +66,6 @@ export type PersonUpdateRQ = DataTypes.EditType<{
    * 称谓
    */
   title?: number;
-
-  /**
-   * Gender
-   * 性别
-   */
-  gender?: string;
-
-  /**
-   * Birthday
-   * 生日
-   */
-  birthday?: string;
-
-  /**
-   * Ethnicity
-   * 种族
-   */
-  ethnicity?: string;
-
-  /**
-   * Height in cm
-   * 高度（厘米）
-   */
-  height?: number;
-
-  /**
-   * Weight in kg
-   * 重量（千克）
-   */
-  weight?: number;
-
-  /**
-   * Marital status
-   * 婚姻状况
-   */
-  maritalStatus?: MaritalStatus;
-
-  /**
-   * Education
-   * 学历
-   */
-  education?: PersonEducation;
-
-  /**
-   * Education degree
-   * 学位
-   */
-  degree?: PersonDegree;
-
-  /**
-   * Political status
-   * 政治面貌
-   */
-  politicalStatus?: string;
 
   /**
    * Description
@@ -200,4 +144,10 @@ export type PersonUpdateRQ = DataTypes.EditType<{
    * 状况
    */
   status?: EntityStatus;
+
+  /**
+   * Private data
+   * 私有数据
+   */
+  privateData?: PersonPrivateData;
 }>;

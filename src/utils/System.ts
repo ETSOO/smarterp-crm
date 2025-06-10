@@ -2,6 +2,8 @@ import { DataTypes, ListType } from "@etsoo/shared";
 import { ICrmApp } from "../CrmApp";
 import { AppModule } from "../dto/system/AppModule";
 import { CustomerType } from "../dto/system/CustomerType";
+import { IdentityTypeFlags } from "@etsoo/appscript";
+import { FeatureTagKind } from "../dto/tag/FeatureTagKind";
 
 /**
  * System
@@ -64,5 +66,41 @@ export class System {
       list.push({ id, label });
     }
     return list;
+  }
+
+  /**
+   * Get tag kind from identity type
+   * 从身份类型获取标签类型
+   * @param type Identity type
+   * @returns Result
+   */
+  identityTypeToTagKind(type: IdentityTypeFlags) {
+    let kind: FeatureTagKind = FeatureTagKind.None;
+
+    if (type & IdentityTypeFlags.User) {
+      kind |= FeatureTagKind.User;
+    }
+
+    if (type & IdentityTypeFlags.Customer) {
+      kind |= FeatureTagKind.Customer;
+    }
+
+    if (type & IdentityTypeFlags.Supplier) {
+      kind |= FeatureTagKind.Supplier;
+    }
+
+    if (type & IdentityTypeFlags.Org) {
+      kind |= FeatureTagKind.Org;
+    }
+
+    if (type & IdentityTypeFlags.Dept) {
+      kind |= FeatureTagKind.Dept;
+    }
+
+    if (type & IdentityTypeFlags.Contact) {
+      kind |= FeatureTagKind.Contact;
+    }
+
+    return kind;
   }
 }
