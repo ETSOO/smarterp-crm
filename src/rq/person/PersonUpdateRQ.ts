@@ -149,5 +149,5 @@ export type PersonUpdateRQ = DataTypes.EditType<{
    * Private data
    * 私有数据
    */
-  privateData?: PersonPrivateData;
+  privateData?: Omit<DataTypes.EditType<PersonPrivateData>, "id">;
 }>;

@@ -1,4 +1,5 @@
 import {
+  AppActionData,
   EntityApi,
   IApi,
   IApiPayload,
@@ -174,5 +175,19 @@ export class PersonProfileApi extends EntityApi {
    */
   updateRead(id: number, payload?: IApiPayload<PersonProfileUpdateReadData>) {
     return this.updateReadBase(id, payload);
+  }
+
+  /**
+   * Upload files action
+   * @param id Id
+   * @param payload Payload
+   * @returns Result
+   */
+  uploadFilesAction(id: number, payload?: IApiPayload<AppActionData>) {
+    return this.api.post(
+      `${this.flag}/UploadFilesAction/${id}`,
+      undefined,
+      payload
+    );
   }
 }
