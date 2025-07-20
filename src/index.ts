@@ -50,6 +50,8 @@ export * from "./dto/person/PersonQueryData";
 export * from "./dto/person/PersonReadDto";
 export * from "./dto/person/PersonUpdateReadData";
 
+export * from "./rq/person/AddressCreateRQ";
+export * from "./rq/person/AddressUpdateRQ";
 export * from "./rq/person/ChoosePersonsRQ";
 export * from "./rq/person/PersonListRQ";
 export * from "./rq/person/PersonQueryRQ";

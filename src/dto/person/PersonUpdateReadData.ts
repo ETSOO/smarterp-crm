@@ -104,12 +104,6 @@ export type PersonUpdateReadData = {
   tags?: string[];
 
   /**
-   * Addresses
-   * 地址
-   */
-  addresses?: number[];
-
-  /**
    * Report to (person.id)
    * 汇报对象
    */

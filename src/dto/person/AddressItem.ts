@@ -2,10 +2,19 @@
  * Address kind
  * 地址类型
  */
-enum AddressKind {
+export enum AddressKind {
   Office = 1,
   Home = 2,
   Other = 9
+}
+
+/**
+ * Map API provider
+ * 地图提供商
+ */
+export enum ApiProvider {
+  Google = 0,
+  Baidu = 1
 }
 
 /**

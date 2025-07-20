@@ -14,6 +14,9 @@ import { ChoosePersonsRQ } from "./rq/person/ChoosePersonsRQ";
 import { ChoosePersonsData } from "./dto/person/ChoosePersonsData";
 import { PersonUpdateReadData } from "./dto/person/PersonUpdateReadData";
 import { PersonUpdateRQ } from "./rq/person/PersonUpdateRQ";
+import { AddressCreateRQ } from "./rq/person/AddressCreateRQ";
+import { AddressUpdateRQ } from "./rq/person/AddressUpdateRQ";
+import { AddressUpdateReadData } from "./dto/person/AddressUpdateReadData";
 
 /**
  * Person API
@@ -36,6 +39,30 @@ export class PersonApi extends EntityApi {
    */
   choose(rq: ChoosePersonsRQ, payload?: IApiPayload<ChoosePersonsData>) {
     return this.api.post(`${this.flag}/Choose`, rq, payload);
+  }
+
+  /**
+   * Create address
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  createAddress(rq: AddressCreateRQ, payload?: IdResultPayload) {
+    return this.api.post(`${this.flag}/CreateAddress`, rq, payload);
+  }
+
+  /**
+   * Delete address
+   * @param id Address id
+   * @param payload Payload
+   * @returns Result
+   */
+  deleteAddress(id: number, payload?: IdResultPayload) {
+    return this.api.delete(
+      `${this.flag}/DeleteAddress/${id}`,
+      undefined,
+      payload
+    );
   }
 
   /**
@@ -76,6 +103,30 @@ export class PersonApi extends EntityApi {
    */
   update(rq: PersonUpdateRQ, payload?: IdResultPayload) {
     return this.updateBase(rq, payload);
+  }
+
+  /**
+   * Update address
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  updateAddress(rq: AddressUpdateRQ, payload?: IdResultPayload) {
+    return this.api.put(`${this.flag}/UpdateAddress`, rq, payload);
+  }
+
+  /**
+   * Update address read
+   * @param id Address id
+   * @param payload Payload
+   * @returns Result
+   */
+  updateAddressRead(id: number, payload?: IApiPayload<AddressUpdateReadData>) {
+    return this.api.get(
+      `${this.flag}/UpdateAddressRead/${id}`,
+      undefined,
+      payload
+    );
   }
 
   /**

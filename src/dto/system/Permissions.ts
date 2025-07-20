@@ -13,6 +13,7 @@ export namespace Permissions {
     List = 1001,
     Query = 1002,
     View = 1003,
+    Edit = 1012,
 
     AddContact = 1083,
 
