@@ -17,6 +17,9 @@ import { PersonUpdateRQ } from "./rq/person/PersonUpdateRQ";
 import { AddressCreateRQ } from "./rq/person/AddressCreateRQ";
 import { AddressUpdateRQ } from "./rq/person/AddressUpdateRQ";
 import { AddressUpdateReadData } from "./dto/person/AddressUpdateReadData";
+import { PersonInfoCreateRQ } from "./rq/person/PersonInfoCreateRQ";
+import { PersonInfoQueryData } from "./dto/person/PersonInfoQueryData";
+import { PersonInfoUpdateRQ } from "./rq/person/PersonInfoUpdateRQ";
 
 /**
  * Person API
@@ -52,6 +55,16 @@ export class PersonApi extends EntityApi {
   }
 
   /**
+   * Create info
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  createInfo(rq: PersonInfoCreateRQ, payload?: IdResultPayload) {
+    return this.api.post(`${this.flag}/CreateInfo`, rq, payload);
+  }
+
+  /**
    * Delete address
    * @param id Address id
    * @param payload Payload
@@ -63,6 +76,16 @@ export class PersonApi extends EntityApi {
       undefined,
       payload
     );
+  }
+
+  /**
+   * Delete info
+   * @param id Info id
+   * @param payload Payload
+   * @returns Result
+   */
+  deleteInfo(id: number, payload?: IdResultPayload) {
+    return this.api.delete(`${this.flag}/DeleteInfo/${id}`, undefined, payload);
   }
 
   /**
@@ -83,6 +106,16 @@ export class PersonApi extends EntityApi {
    */
   query(rq: PersonQueryRQ, payload?: IApiPayload<PersonQueryData[]>) {
     return this.queryBase(rq, payload);
+  }
+
+  /**
+   * Query info
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  queryInfo(rq: PersonQueryRQ, payload?: IApiPayload<PersonInfoQueryData[]>) {
+    return this.api.post(`${this.flag}/QueryInfo`, rq, payload);
   }
 
   /**
@@ -113,6 +146,16 @@ export class PersonApi extends EntityApi {
    */
   updateAddress(rq: AddressUpdateRQ, payload?: IdResultPayload) {
     return this.api.put(`${this.flag}/UpdateAddress`, rq, payload);
+  }
+
+  /**
+   * Update info
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  updateInfo(rq: PersonInfoUpdateRQ, payload?: IdResultPayload) {
+    return this.api.put(`${this.flag}/UpdateInfo`, rq, payload);
   }
 
   /**

@@ -9,6 +9,7 @@ import { IdentityTypeData } from "../dto/person/IdentityTypeData";
 import { PersonGender } from "../dto/person/PersonGender";
 import { DataTypes } from "@etsoo/shared";
 import { AddressKind } from "../dto/person/AddressItem";
+import { PersonInfoKind } from "../dto/person/PersonInfoKind";
 
 /**
  * Person utils
@@ -152,6 +153,14 @@ export class Person {
     PersonUtils.getIdentityType(this.crm)(data);
 
   /**
+   * Get info kinds
+   * 获取信息类型列表
+   */
+  getInfoKinds() {
+    return this.crm.app.getEnumList(PersonInfoKind, "info");
+  }
+
+  /**
    * Get marital status
    * 获取婚姻状况
    * @param status
@@ -165,7 +174,6 @@ export class Person {
   /**
    * Get marital statuses
    * 获取婚姻状况列表
-   * @param status
    */
   getMaritalStatuses() {
     return this.crm.app.getEnumList(MaritalStatus, "marital");
