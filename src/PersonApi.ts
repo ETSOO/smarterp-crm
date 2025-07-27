@@ -129,6 +129,16 @@ export class PersonApi extends EntityApi {
   }
 
   /**
+   * Read info
+   * @param id Info id
+   * @param payload Payload
+   * @returns Result
+   */
+  readInfo(id: number, payload?: IApiPayload<string>) {
+    return this.api.get(`${this.flag}/ReadInfo/${id}`, undefined, payload);
+  }
+
+  /**
    * Update
    * @param rq Request data
    * @param payload Payload
