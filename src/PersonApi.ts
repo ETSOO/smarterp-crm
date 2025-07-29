@@ -20,6 +20,7 @@ import { AddressUpdateReadData } from "./dto/person/AddressUpdateReadData";
 import { PersonInfoCreateRQ } from "./rq/person/PersonInfoCreateRQ";
 import { PersonInfoQueryData } from "./dto/person/PersonInfoQueryData";
 import { PersonInfoUpdateRQ } from "./rq/person/PersonInfoUpdateRQ";
+import { PersonInfoQueryRQ } from "./rq/person/PersonInfoQueryRQ";
 
 /**
  * Person API
@@ -114,7 +115,10 @@ export class PersonApi extends EntityApi {
    * @param payload Payload
    * @returns Result
    */
-  queryInfo(rq: PersonQueryRQ, payload?: IApiPayload<PersonInfoQueryData[]>) {
+  queryInfo(
+    rq: PersonInfoQueryRQ,
+    payload?: IApiPayload<PersonInfoQueryData[]>
+  ) {
     return this.api.post(`${this.flag}/QueryInfo`, rq, payload);
   }
 
