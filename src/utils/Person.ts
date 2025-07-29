@@ -153,6 +153,17 @@ export class Person {
     PersonUtils.getIdentityType(this.crm)(data);
 
   /**
+   * Get info kind
+   * 获取信息类型
+   * @param kind Info kind
+   */
+  getInfoKind(kind?: PersonInfoKind) {
+    if (kind == null) return undefined;
+    const key = PersonInfoKind[kind];
+    return this.crm.app.get("info" + key) ?? key;
+  }
+
+  /**
    * Get info kinds
    * 获取信息类型列表
    */
