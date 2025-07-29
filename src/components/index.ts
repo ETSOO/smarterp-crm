@@ -8,6 +8,7 @@ export * from "./group/GroupTiplist";
 
 // person
 export * from "./person/ButtonEducations";
+export * from "./person/InfoKindList";
 export * from "./person/MaritalStatusList";
 export * from "./person/PersonChooser";
 export * from "./person/PersonDegreeList";
