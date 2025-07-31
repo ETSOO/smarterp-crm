@@ -20,6 +20,7 @@ import { SupplierApi } from "./SupplierApi";
 import { UserApi } from "./UserApi";
 import { PersonCategoryApi } from "./PersonCategoryApi";
 import { TagApi } from "./TagApi";
+import { DataTypes } from "@etsoo/shared";
 
 /**
  * Get CRM app context hook
@@ -437,5 +438,31 @@ export class CrmApp implements ICrmApp {
     }
 
     return this.app.userData?.permissionItems.includes(item) ?? false;
+  }
+
+  /**
+   * Check if the identity owns the permission item
+   * 检查身份是否拥有权限项
+   * @param identity Identity type flags
+   * @param name Permission name
+   * @returns Result
+   */
+  ownsIdentity(identity: IdentityTypeFlags, name: string) {
+    const identityMap = [
+      { flag: IdentityTypeFlags.User, perm: Permissions.User },
+      { flag: IdentityTypeFlags.Customer, perm: Permissions.Customer },
+      { flag: IdentityTypeFlags.Supplier, perm: Permissions.Supplier },
+      { flag: IdentityTypeFlags.Org, perm: Permissions.Org },
+      { flag: IdentityTypeFlags.Dept, perm: Permissions.Dept }
+    ];
+
+    return identityMap.some(
+      ({ flag, perm }) =>
+        identity & flag &&
+        (() => {
+          const item = DataTypes.getEnumByKey(perm, name);
+          return item && this.owns(item);
+        })()
+    );
   }
 }
