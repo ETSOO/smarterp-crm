@@ -447,7 +447,7 @@ export class CrmApp implements ICrmApp {
    * @param name Permission name
    * @returns Result
    */
-  ownsIdentity(identity: IdentityTypeFlags, name: string) {
+  ownsIdentity(identity: IdentityTypeFlags, name: Permissions.IdentityName) {
     const identityMap = [
       { flag: IdentityTypeFlags.User, perm: Permissions.User },
       { flag: IdentityTypeFlags.Customer, perm: Permissions.Customer },

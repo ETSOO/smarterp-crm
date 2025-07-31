@@ -4,6 +4,24 @@
  */
 export namespace Permissions {
   /**
+   * Identity permission name
+   * 身份权限名称
+   */
+  export type IdentityName =
+    | "All"
+    | "List"
+    | "Query"
+    | "View"
+    | "Add"
+    | "Edit"
+    | "Delete"
+    | "AddContact"
+    | "QueryProfile"
+    | "ViewProfile"
+    | "AddProfile"
+    | "AddComment";
+
+  /**
    * Organization permissions (1)
    * 机构权限
    */
