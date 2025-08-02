@@ -184,6 +184,18 @@ export interface ICrmApp {
    * @returns Result
    */
   owns(item: number): boolean;
+
+  /**
+   * Check if the identity owns the permission item
+   * 检查身份是否拥有权限项
+   * @param identity Identity type flags
+   * @param name Permission name
+   * @returns Result
+   */
+  ownsIdentity(
+    identity: IdentityTypeFlags,
+    name: Permissions.IdentityName
+  ): boolean;
 }
 
 /**
