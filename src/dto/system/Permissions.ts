@@ -15,11 +15,14 @@ export namespace Permissions {
     | "Add"
     | "Edit"
     | "Delete"
+    | "QueryContact"
     | "AddContact"
     | "QueryProfile"
     | "ViewProfile"
     | "AddProfile"
-    | "AddComment";
+    | "AddComment"
+    | "QueryAsset"
+    | "AddAsset";
 
   /**
    * Organization permissions (1)
@@ -33,12 +36,16 @@ export namespace Permissions {
     View = 1003,
     Edit = 1012,
 
+    QueryContact = 1081,
     AddContact = 1083,
 
     QueryProfile = 1091,
     ViewProfile = 1092,
     AddProfile = 1093,
     AddComment = 1097,
+
+    QueryAsset = 1101,
+    AddAsset = 1103,
 
     Manage = 1200,
     UpdateSettings = 1201
@@ -58,12 +65,16 @@ export namespace Permissions {
     Edit = 2012,
     Delete = 2013,
 
+    QueryContact = 2081,
     AddContact = 2083,
 
     QueryProfile = 2091,
     ViewProfile = 2092,
     AddProfile = 2093,
-    AddComment = 2097
+    AddComment = 2097,
+
+    QueryAsset = 2101,
+    AddAsset = 2103
   }
 
   /**
@@ -80,12 +91,16 @@ export namespace Permissions {
     Edit = 3012,
     Delete = 3013,
 
+    QueryContact = 3081,
     AddContact = 3083,
 
     QueryProfile = 3091,
     ViewProfile = 3092,
     AddProfile = 3093,
-    AddComment = 3097
+    AddComment = 3097,
+
+    QueryAsset = 3101,
+    AddAsset = 3103
   }
 
   /**
@@ -102,12 +117,16 @@ export namespace Permissions {
     Edit = 6012,
     Delete = 6013,
 
+    QueryContact = 6081,
     AddContact = 6083,
 
     QueryProfile = 6091,
     ViewProfile = 6092,
     AddProfile = 6093,
-    AddComment = 6097
+    AddComment = 6097,
+
+    QueryAsset = 6101,
+    AddAsset = 6103
   }
 
   /**
@@ -124,12 +143,16 @@ export namespace Permissions {
     Edit = 7012,
     Delete = 7013,
 
+    QueryContact = 7081,
     AddContact = 7083,
 
     QueryProfile = 7091,
     ViewProfile = 7092,
     AddProfile = 7093,
-    AddComment = 7097
+    AddComment = 7097,
+
+    QueryAsset = 7101,
+    AddAsset = 7103
   }
 
   /**
