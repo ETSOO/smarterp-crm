@@ -1,16 +1,10 @@
-import { PersonListRQ } from "./PersonListRQ";
+import { ContactListRQ } from "./ContactListRQ";
 
 /**
- * Person query request data
- * 成员查询请求数据
+ * Contact query request data
+ * 联系人查询请求数据
  */
-export type PersonQueryRQ = PersonListRQ & {
-  /**
-   * Assigned ID
-   * 分配的编号
-   */
-  assignedId?: string;
-
+export type ContactQueryRQ = ContactListRQ & {
   /**
    * Job title
    * 职位

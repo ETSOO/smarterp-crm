@@ -10,6 +10,7 @@ import { PersonGender } from "../dto/person/PersonGender";
 import { DataTypes } from "@etsoo/shared";
 import { AddressKind } from "../dto/person/AddressItem";
 import { PersonInfoKind } from "../dto/person/PersonInfoKind";
+import { PersonRelationType } from "../dto/person/PersonRelationType";
 
 /**
  * Person utils
@@ -188,6 +189,32 @@ export class Person {
    */
   getMaritalStatuses() {
     return this.crm.app.getEnumList(MaritalStatus, "marital");
+  }
+
+  /**
+   * Get relation type
+   * 获取关系类型
+   * @param relation Relation type
+   */
+  getRelationType(relation?: PersonRelationType) {
+    if (relation == null) return undefined;
+    const key = PersonRelationType[relation];
+    return this.crm.app.get("relation" + key) ?? key;
+  }
+
+  /**
+   * Get relation types
+   * 获取关系类型列表
+   * @param isLegalPerson Whether it is a legal person
+   */
+  getRelationTypes(isLegalPerson: boolean | undefined | null) {
+    if (isLegalPerson == null) {
+      return this.crm.app.getEnumList(PersonRelationType, "relation");
+    }
+
+    return this.crm.app.getEnumList(PersonRelationType, "relation", (id) =>
+      (isLegalPerson ? id < 50 : id >= 50) ? id : undefined
+    );
   }
 
   /**

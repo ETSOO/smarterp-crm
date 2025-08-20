@@ -21,6 +21,13 @@ import { PersonInfoCreateRQ } from "./rq/person/PersonInfoCreateRQ";
 import { PersonInfoQueryData } from "./dto/person/PersonInfoQueryData";
 import { PersonInfoUpdateRQ } from "./rq/person/PersonInfoUpdateRQ";
 import { PersonInfoQueryRQ } from "./rq/person/PersonInfoQueryRQ";
+import { ContactCreateRQ } from "./rq/person/ContactCreateRQ";
+import { ContactRelationUpdateReadData } from "./dto/person/ContactRelationUpdateReadData";
+import { ContactRelationUpdateRQ } from "./rq/person/ContactRelationUpdateRQ";
+import { ContactListRQ } from "./rq/person/ContactListRQ";
+import { ContactQueryRQ } from "./rq/person/ContactQueryRQ";
+import { PersonContactItem } from "./dto/person/PersonContactItem";
+import { ContactQueryData } from "./dto/person/ContactQueryData";
 
 /**
  * Person API
@@ -53,6 +60,16 @@ export class PersonApi extends EntityApi {
    */
   createAddress(rq: AddressCreateRQ, payload?: IdResultPayload) {
     return this.api.post(`${this.flag}/CreateAddress`, rq, payload);
+  }
+
+  /**
+   * Create contact
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  createContact(rq: ContactCreateRQ, payload?: IdResultPayload) {
+    return this.api.post(`${this.flag}/CreateContact`, rq, payload);
   }
 
   /**
@@ -100,6 +117,16 @@ export class PersonApi extends EntityApi {
   }
 
   /**
+   * List contacts
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  listContacts(rq: ContactListRQ, payload?: IApiPayload<PersonContactItem[]>) {
+    return this.api.post(`${this.flag}/ListContacts`, rq, payload);
+  }
+
+  /**
    * Query
    * @param rq Request data
    * @param payload Payload
@@ -107,6 +134,16 @@ export class PersonApi extends EntityApi {
    */
   query(rq: PersonQueryRQ, payload?: IApiPayload<PersonQueryData[]>) {
     return this.queryBase(rq, payload);
+  }
+
+  /**
+   * Query contacts
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  queryContacts(rq: ContactQueryRQ, payload?: IApiPayload<ContactQueryData[]>) {
+    return this.api.post(`${this.flag}/QueryContacts`, rq, payload);
   }
 
   /**
@@ -163,6 +200,19 @@ export class PersonApi extends EntityApi {
   }
 
   /**
+   * Update contact relation
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  updateContactRelation(
+    rq: ContactRelationUpdateRQ,
+    payload?: IdResultPayload
+  ) {
+    return this.api.put(`${this.flag}/UpdateContactRelation`, rq, payload);
+  }
+
+  /**
    * Update info
    * @param rq Request data
    * @param payload Payload
@@ -181,6 +231,25 @@ export class PersonApi extends EntityApi {
   updateAddressRead(id: number, payload?: IApiPayload<AddressUpdateReadData>) {
     return this.api.get(
       `${this.flag}/UpdateAddressRead/${id}`,
+      undefined,
+      payload
+    );
+  }
+
+  /**
+   * Update contact relation read
+   * @param personId Person id
+   * @param contactId Contact id
+   * @param payload Payload
+   * @returns Result
+   */
+  updateContactRelationRead(
+    personId: number,
+    contactId: number,
+    payload?: IApiPayload<ContactRelationUpdateReadData>
+  ) {
+    return this.api.get(
+      `${this.flag}/UpdateContactRelationRead/${personId}/${contactId}`,
       undefined,
       payload
     );
