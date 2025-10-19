@@ -122,8 +122,8 @@ export class PersonApi extends EntityApi {
    * @param payload Payload
    * @returns Result
    */
-  listContacts(rq: ContactListRQ, payload?: IApiPayload<PersonContactItem[]>) {
-    return this.api.post(`${this.flag}/ListContacts`, rq, payload);
+  listContact(rq: ContactListRQ, payload?: IApiPayload<PersonContactItem[]>) {
+    return this.api.post(`${this.flag}/ListContact`, rq, payload);
   }
 
   /**
@@ -142,8 +142,8 @@ export class PersonApi extends EntityApi {
    * @param payload Payload
    * @returns Result
    */
-  queryContacts(rq: ContactQueryRQ, payload?: IApiPayload<ContactQueryData[]>) {
-    return this.api.post(`${this.flag}/QueryContacts`, rq, payload);
+  queryContact(rq: ContactQueryRQ, payload?: IApiPayload<ContactQueryData[]>) {
+    return this.api.post(`${this.flag}/QueryContact`, rq, payload);
   }
 
   /**

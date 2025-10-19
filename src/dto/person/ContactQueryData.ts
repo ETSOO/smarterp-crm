@@ -1,3 +1,4 @@
+import { EntityStatus } from "@etsoo/appscript";
 import { PersonRelationType } from "./PersonRelationType";
 
 /**
@@ -34,4 +35,10 @@ export type ContactQueryData = {
    * 登记时间
    */
   creation: string | Date;
+
+  /**
+   * Status
+   * 状态
+   */
+  status: EntityStatus;
 };
