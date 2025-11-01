@@ -24,6 +24,12 @@ export type PersonCategoryCreateRQ = {
   name: string;
 
   /**
+   * Assigned Id
+   * 分配编号
+   */
+  assignedId?: string;
+
+  /**
    * Order index
    * 排序索引
    */

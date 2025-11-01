@@ -16,4 +16,10 @@ export type PersonCategoryListRQ = QueryRQ & {
    * 父级分类编号
    */
   parentId?: number;
+
+  /**
+   * Assigned ID
+   * 分配编号
+   */
+  assignedId?: string;
 };

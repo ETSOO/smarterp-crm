@@ -24,6 +24,12 @@ export type PersonCategoryQueryData = {
   identityType: IdentityTypeFlags;
 
   /**
+   * Assigned Id
+   * 分配编号
+   */
+  assignedId?: string;
+
+  /**
    * Creation
    * 登记时间
    */

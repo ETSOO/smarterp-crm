@@ -36,6 +36,12 @@ export type PersonCategoryUpdateReadData = {
   identityType: IdentityTypeFlags;
 
   /**
+   * Assigned Id
+   * 分配编号
+   */
+  assignedId?: string;
+
+  /**
    * JSON data
    * JSON 数据
    */

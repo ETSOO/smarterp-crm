@@ -14,4 +14,10 @@ export type PersonCategoryListData = {
    * 名称
    */
   name: string;
+
+  /**
+   * Assigned Id
+   * 分配编号
+   */
+  assignedId?: string;
 };
