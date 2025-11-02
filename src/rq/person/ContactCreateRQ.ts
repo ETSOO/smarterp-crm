@@ -25,6 +25,12 @@ export type ContactCreateRQ = {
   name: string;
 
   /**
+   * Preferred name
+   * 首先名
+   */
+  preferredName?: string;
+
+  /**
    * Given name
    * 名
    */
