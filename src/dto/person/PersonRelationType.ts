@@ -46,6 +46,30 @@ export enum PersonRelationType {
   Consultant = 11,
 
   /**
+   * Manager
+   * 经理
+   */
+  Manager = 20,
+
+  /**
+   * Finance
+   * 财务
+   */
+  Finance = 30,
+
+  /**
+   * Executive
+   * 高管
+   */
+  Executive = 40,
+
+  /**
+   * Owner
+   * 老板
+   */
+  Owner = 45,
+
+  /**
    * Child
    * 子女
    */
@@ -79,5 +103,17 @@ export enum PersonRelationType {
    * Grandparent
    * 祖父母
    */
-  Grandparent = 90
+  Grandparent = 90,
+
+  /**
+   * Relative
+   * 亲戚
+   */
+  Relative = 100,
+
+  /**
+   * Friend
+   * 朋友
+   */
+  Friend = 110
 }
