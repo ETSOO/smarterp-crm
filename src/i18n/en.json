@@ -179,6 +179,7 @@
   "relationSpouse": "Spouse",
   "relationSupplier": "Supplier",
   "relationUnknown": "Unknown",
+  "relationDescription": "Relation description",
   "reporter": "Reporter",
   "reports": "Reports",
   "sendEmail": "Send email",

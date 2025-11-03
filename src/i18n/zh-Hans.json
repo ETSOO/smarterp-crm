@@ -177,6 +177,7 @@
   "relationSpouse": "配偶",
   "relationSupplier": "供应商",
   "relationUnknown": "未知",
+  "relationDescription": "关系描述",
   "reporter": "报告人",
   "reports": "报表",
   "sendEmail": "发送邮件",
