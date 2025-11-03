@@ -213,7 +213,7 @@ export class Person {
     }
 
     return this.crm.app.getEnumList(PersonRelationType, "relation", (id) =>
-      (isLegalPerson ? id < 50 : id >= 50) ? id : undefined
+      id === 0 || (isLegalPerson ? id < 50 : id >= 50) ? id : undefined
     );
   }
 
