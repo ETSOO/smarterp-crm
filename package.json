@@ -50,14 +50,14 @@
     "@vitejs/plugin-react": "^5.1.0",
     "jsdom": "^27.1.0",
     "typescript": "^5.9.3",
-    "vitest": "^4.0.6"
+    "vitest": "^4.0.8"
   },
   "dependencies": {
-    "@etsoo/appscript": "^1.6.45",
-    "@etsoo/materialui": "^1.5.80",
-    "@etsoo/react": "^1.8.60",
-    "@etsoo/shared": "^1.2.76",
-    "@mui/material": "^7.3.4",
+    "@etsoo/appscript": "^1.6.47",
+    "@etsoo/materialui": "^1.5.84",
+    "@etsoo/react": "^1.8.62",
+    "@etsoo/shared": "^1.2.79",
+    "@mui/material": "^7.3.5",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   }
