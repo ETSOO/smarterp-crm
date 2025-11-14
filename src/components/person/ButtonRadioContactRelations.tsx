@@ -25,7 +25,7 @@ export function ButtonRadioContactRelations(
 
   // Destruct
   const {
-    inputName = "relation_type",
+    inputName = "relationType",
     label = labels.relation,
     labelEnd = labels.clickToChoose,
     isLegalPerson,

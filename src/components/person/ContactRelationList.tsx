@@ -28,7 +28,7 @@ export function ContactRelationList(props: ContactRelationListProps) {
   // Destruct
   const {
     label = crm.app.get("relation"),
-    name = "relation_type",
+    name = "relationType",
     isLegalPerson,
     ...rest
   } = props;

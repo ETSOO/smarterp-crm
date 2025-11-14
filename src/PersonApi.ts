@@ -28,6 +28,8 @@ import { ContactListRQ } from "./rq/person/ContactListRQ";
 import { ContactQueryRQ } from "./rq/person/ContactQueryRQ";
 import { PersonContactItem } from "./dto/person/PersonContactItem";
 import { ContactQueryData } from "./dto/person/ContactQueryData";
+import { PersonDuplicateTestRQ } from "./rq/person/PersonDuplicateTestRQ";
+import { PersonDuplicateTestData } from "./dto/person/PersonDuplicateTestData";
 
 /**
  * Person API
@@ -123,6 +125,19 @@ export class PersonApi extends EntityApi {
    */
   deleteInfo(id: number, payload?: IdResultPayload) {
     return this.api.delete(`${this.flag}/DeleteInfo/${id}`, undefined, payload);
+  }
+
+  /**
+   * Duplicate test
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  duplicateTest(
+    rq: PersonDuplicateTestRQ,
+    payload?: IApiPayload<PersonDuplicateTestData[] | undefined>
+  ) {
+    return this.api.post(`${this.flag}/DuplicateTest`, rq, payload);
   }
 
   /**
