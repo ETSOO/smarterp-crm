@@ -135,7 +135,7 @@ export class PersonApi extends EntityApi {
    */
   duplicateTest(
     rq: PersonDuplicateTestRQ,
-    payload?: IApiPayload<PersonDuplicateTestData[] | undefined>
+    payload?: IApiPayload<PersonDuplicateTestData[]>
   ) {
     return this.api.post(`${this.flag}/DuplicateTest`, rq, payload);
   }
@@ -272,18 +272,16 @@ export class PersonApi extends EntityApi {
 
   /**
    * Update contact relation read
-   * @param personId Person id
-   * @param contactId Contact id
+   * @param id Relation id
    * @param payload Payload
    * @returns Result
    */
   updateContactRelationRead(
-    personId: number,
-    contactId: number,
+    id: number,
     payload?: IApiPayload<ContactRelationUpdateReadData>
   ) {
     return this.api.get(
-      `${this.flag}/UpdateContactRelationRead/${personId}/${contactId}`,
+      `${this.flag}/UpdateContactRelationRead/${id}`,
       undefined,
       payload
     );

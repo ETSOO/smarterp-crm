@@ -6,6 +6,12 @@ import { PersonRelationType } from "./PersonRelationType";
  */
 export type ContactRelationUpdateReadData = {
   /**
+   * Id
+   * 编号
+   */
+  id: number;
+
+  /**
    * Relation type
    * 关系类型
    */

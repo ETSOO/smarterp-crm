@@ -1,22 +1,11 @@
 import { PersonRelationType } from "../../dto/person/PersonRelationType";
+import { DataTypes } from "@etsoo/shared";
 
 /**
  * Update contact relation request data
  * 更新联系人关系请求数据
  */
-export type ContactRelationUpdateRQ = {
-  /**
-   * Person id
-   * 人员编号
-   */
-  personId: number;
-
-  /**
-   * Contact id
-   * 联系人编号
-   */
-  contactId: number;
-
+export type ContactRelationUpdateRQ = DataTypes.EditType<{
   /**
    * Relation type
    * 关系类型
@@ -34,10 +23,4 @@ export type ContactRelationUpdateRQ = {
    * JSON 数据
    */
   data?: string;
-
-  /**
-   * Changed fields
-   * 更改的字段
-   */
-  changedFields?: string[];
-};
+}>;
