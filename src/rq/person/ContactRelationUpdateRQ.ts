@@ -7,6 +7,12 @@ import { DataTypes } from "@etsoo/shared";
  */
 export type ContactRelationUpdateRQ = DataTypes.EditType<{
   /**
+   * Contact id
+   * 联系人编号
+   */
+  contactId: number;
+
+  /**
    * Relation type
    * 关系类型
    */

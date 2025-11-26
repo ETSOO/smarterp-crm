@@ -12,6 +12,12 @@ export type ContactRelationUpdateReadData = {
   id: number;
 
   /**
+   * Contact id
+   * 联系人编号
+   */
+  contactId: number;
+
+  /**
    * Relation type
    * 关系类型
    */
