@@ -85,6 +85,16 @@ export class PersonApi extends EntityApi {
   }
 
   /**
+   * Delete
+   * @param id Id
+   * @param payload Payload
+   * @returns Result
+   */
+  delete(id: number, payload?: IdResultPayload) {
+    return this.deleteBase(id, payload);
+  }
+
+  /**
    * Delete address
    * @param id Address id
    * @param payload Payload
