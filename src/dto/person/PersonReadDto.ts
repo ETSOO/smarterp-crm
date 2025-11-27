@@ -180,12 +180,6 @@ export type PersonViewData = ContactItem & {
   editable: boolean;
 
   /**
-   * Is deletable
-   * 是否可删除
-   */
-  deletable: boolean;
-
-  /**
    * Contact owners
    * 联系人所有者
    */
