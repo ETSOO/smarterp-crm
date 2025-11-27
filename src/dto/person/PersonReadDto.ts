@@ -174,12 +174,6 @@ export type PersonViewData = ContactItem & {
   refreshTime: string;
 
   /**
-   * Is editable
-   * 是否可编辑
-   */
-  editable: boolean;
-
-  /**
    * Contact owners
    * 联系人所有者
    */
