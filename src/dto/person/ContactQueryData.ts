@@ -13,6 +13,12 @@ export type ContactQueryData = {
   id: number;
 
   /**
+   * Contact person id
+   * 联系人编号
+   */
+  contactId: number;
+
+  /**
    * Relation type
    * 关系类型
    */
