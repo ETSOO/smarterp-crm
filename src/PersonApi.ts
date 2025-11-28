@@ -151,6 +151,16 @@ export class PersonApi extends EntityApi {
   }
 
   /**
+   * Is deletable
+   * @param id Person id
+   * @param payload Payload
+   * @returns Result
+   */
+  isDeletable(id: number, payload?: IApiPayload<boolean>) {
+    return this.api.get(`${this.flag}/IsDeletable/${id}`, undefined, payload);
+  }
+
+  /**
    * List
    * @param rq Request data
    * @param payload Payload
