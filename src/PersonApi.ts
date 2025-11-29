@@ -30,6 +30,7 @@ import { PersonContactItem } from "./dto/person/PersonContactItem";
 import { ContactQueryData } from "./dto/person/ContactQueryData";
 import { PersonDuplicateTestRQ } from "./rq/person/PersonDuplicateTestRQ";
 import { PersonDuplicateTestData } from "./dto/person/PersonDuplicateTestData";
+import { ContactRelationAddRQ } from "./rq/person/ContactRelationAddRQ";
 
 /**
  * Person API
@@ -42,6 +43,16 @@ export class PersonApi extends EntityApi {
    */
   constructor(app: IApp, api: IApi = app.api) {
     super("Person", app, api);
+  }
+
+  /**
+   * Add contact relation
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  addContact(rq: ContactRelationAddRQ, payload?: IdResultPayload) {
+    return this.api.post(`${this.flag}/AddContact`, rq, payload);
   }
 
   /**
