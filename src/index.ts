@@ -64,6 +64,7 @@ export * from "./rq/person/ChoosePersonsRQ";
 export * from "./rq/person/ContactCreateRQ";
 export * from "./rq/person/ContactListRQ";
 export * from "./rq/person/ContactQueryRQ";
+export * from "./rq/person/ContactRelationAddRQ";
 export * from "./rq/person/ContactRelationUpdateRQ";
 export * from "./rq/person/PersonDuplicateTestRQ";
 export * from "./rq/person/PersonInfoCreateRQ";

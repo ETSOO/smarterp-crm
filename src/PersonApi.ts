@@ -121,18 +121,13 @@ export class PersonApi extends EntityApi {
 
   /**
    * Delete contact
-   * @param personId Person id
-   * @param contactId Contact id
+   * @param id Contact id
    * @param payload Payload
    * @returns Result
    */
-  deleteContact(
-    personId: number,
-    contactId: number,
-    payload?: IdResultPayload
-  ) {
+  deleteContact(id: number, payload?: IdResultPayload) {
     return this.api.delete(
-      `${this.flag}/DeleteContact/${personId}/${contactId}`,
+      `${this.flag}/DeleteContact/${id}`,
       undefined,
       payload
     );
