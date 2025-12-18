@@ -8,9 +8,11 @@ export * from "./rq/asset/AssetQueryRQ";
 // Customer
 export * from "./dto/customer/CustomerListData";
 export * from "./dto/customer/CustomerQueryData";
+export * from "./dto/customer/CustomerUpdateReadData";
 
 export * from "./rq/customer/CustomerListRQ";
 export * from "./rq/customer/CustomerQueryRQ";
+export * from "./rq/customer/CustomerUpdateRQ";
 
 // Dept
 export * from "./dto/dept/DeptListData";
@@ -122,9 +124,11 @@ export * from "./rq/product/ProductQueryRQ";
 // Supplier
 export * from "./dto/supplier/SupplierListData";
 export * from "./dto/supplier/SupplierQueryData";
+export * from "./dto/supplier/SupplierUpdateReadData";
 
 export * from "./rq/supplier/SupplierListRQ";
 export * from "./rq/supplier/SupplierQueryRQ";
+export * from "./rq/supplier/SupplierUpdateRQ";
 
 // System
 export * from "./dto/system/AppModule";

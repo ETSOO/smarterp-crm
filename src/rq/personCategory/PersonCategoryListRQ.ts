@@ -18,6 +18,12 @@ export type PersonCategoryListRQ = QueryRQ & {
   parentId?: number;
 
   /**
+   * Parent and all descendant category ids
+   * 父级及所有下级子类编号
+   */
+  parentIdAll?: number;
+
+  /**
    * Assigned ID
    * 分配编号
    */

@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ETSOO/etsoo-smarterp-crm.git"
+    "url": "git+https://github.com/ETSOO/smarterp-crm.git"
   },
   "keywords": [
     "TypeScript",
@@ -47,18 +47,19 @@
     "@babel/runtime-corejs3": "^7.28.4",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.1",
-    "jsdom": "^27.2.0",
+    "@vitejs/plugin-react": "^5.1.2",
+    "baseline-browser-mapping": "^2.9.10",
+    "jsdom": "^27.3.0",
     "typescript": "^5.9.3",
-    "vitest": "^4.0.14"
+    "vitest": "^4.0.16"
   },
   "dependencies": {
-    "@etsoo/appscript": "^1.6.48",
-    "@etsoo/materialui": "^1.5.89",
-    "@etsoo/react": "^1.8.63",
+    "@etsoo/appscript": "^1.6.49",
+    "@etsoo/materialui": "^1.5.90",
+    "@etsoo/react": "^1.8.64",
     "@etsoo/shared": "^1.2.80",
-    "@mui/material": "^7.3.5",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "@mui/material": "^7.3.6",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
   }
 }
