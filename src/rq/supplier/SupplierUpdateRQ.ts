@@ -1,10 +1,11 @@
 import { EntityStatus } from "@etsoo/appscript";
+import { DataTypes } from "@etsoo/shared";
 
 /**
  * Update supplier request data
  * 更新供应商请求数据
  */
-export type SupplierUpdateRQ = {
+export type SupplierUpdateRQ = DataTypes.EditType<{
   /**
    * Id
    * 主键编号
@@ -70,4 +71,4 @@ export type SupplierUpdateRQ = {
    * 状况
    */
   status?: EntityStatus;
-};
+}>;

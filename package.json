@@ -55,8 +55,8 @@
   },
   "dependencies": {
     "@etsoo/appscript": "^1.6.49",
-    "@etsoo/materialui": "^1.5.90",
-    "@etsoo/react": "^1.8.64",
+    "@etsoo/materialui": "^1.5.91",
+    "@etsoo/react": "^1.8.65",
     "@etsoo/shared": "^1.2.80",
     "@mui/material": "^7.3.6",
     "react": "^19.2.3",

@@ -1,3 +1,4 @@
+import { EntityStatus } from "@etsoo/appscript";
 import { CategoryItem } from "../person/CategoryItem";
 
 /**
@@ -18,6 +19,11 @@ export type SupplierQueryData = {
   name: string;
 
   /**
+   * Assigned id
+   */
+  assignedId?: string;
+
+  /**
    * Categories
    * 类目
    */
@@ -34,6 +40,11 @@ export type SupplierQueryData = {
    * 描述
    */
   description?: string;
+
+  /**
+   * Status
+   */
+  status: EntityStatus;
 
   /**
    * Creation

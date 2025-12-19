@@ -49,18 +49,6 @@ export type CustomerCreateRQ = {
   phone?: string;
 
   /**
-   * Mobile
-   * 手机
-   */
-  mobile?: string;
-
-  /**
-   * Email
-   * 电子邮箱
-   */
-  email?: string;
-
-  /**
    * PIN
    * 身份证号码
    */
@@ -83,6 +71,24 @@ export type CustomerCreateRQ = {
    * 关键词
    */
   tags?: string[];
+
+  /**
+   * Contact
+   * 联系人
+   */
+  contact?: string;
+
+  /**
+   * Contact mobile
+   * 联系人手机
+   */
+  mobile?: string;
+
+  /**
+   * Contact email
+   * 联系人电子邮箱
+   */
+  email?: string;
 
   /**
    * Status

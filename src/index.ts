@@ -10,6 +10,7 @@ export * from "./dto/customer/CustomerListData";
 export * from "./dto/customer/CustomerQueryData";
 export * from "./dto/customer/CustomerUpdateReadData";
 
+export * from "./rq/customer/CustomerCreateRQ";
 export * from "./rq/customer/CustomerListRQ";
 export * from "./rq/customer/CustomerQueryRQ";
 export * from "./rq/customer/CustomerUpdateRQ";
@@ -126,6 +127,7 @@ export * from "./dto/supplier/SupplierListData";
 export * from "./dto/supplier/SupplierQueryData";
 export * from "./dto/supplier/SupplierUpdateReadData";
 
+export * from "./rq/supplier/SupplierCreateRQ";
 export * from "./rq/supplier/SupplierListRQ";
 export * from "./rq/supplier/SupplierQueryRQ";
 export * from "./rq/supplier/SupplierUpdateRQ";

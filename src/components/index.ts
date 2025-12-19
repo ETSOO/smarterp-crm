@@ -30,6 +30,7 @@ export * from "./pesonProfile/ProfileList";
 
 // System
 export * from "./system/CustomerTypeList";
+export * from "./system/EntityDuplicateTest";
 
 // User
 export * from "./user/UserTiplist";

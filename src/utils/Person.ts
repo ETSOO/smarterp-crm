@@ -11,6 +11,7 @@ import { DataTypes } from "@etsoo/shared";
 import { AddressKind } from "../dto/person/AddressItem";
 import { PersonInfoKind } from "../dto/person/PersonInfoKind";
 import { PersonRelationType } from "../dto/person/PersonRelationType";
+import { PersonDuplicateTestData } from "../dto/person/PersonDuplicateTestData";
 
 /**
  * Person utils
@@ -21,7 +22,6 @@ export namespace PersonUtils {
    * Get identity type function
    * 获取身份类型函数
    * @param crm CRM app
-   * @returns getIdentityType function
    */
   export const getIdentityType =
     (crm: ICrmApp) => (data?: IdentityTypeData | IdentityTypeFlags) => {
@@ -41,7 +41,6 @@ export namespace PersonUtils {
    * Get list label function
    * 获取列表标签函数
    * @param crm CRM app
-   * @returns Get list label function
    */
   export const getListLabel = (crm: ICrmApp) => (data: PersonListDto) => {
     const type = getIdentityType(crm)(data);
@@ -57,6 +56,15 @@ export namespace PersonUtils {
 
     return label;
   };
+
+  /**
+   * Get duplicate check list item label
+   * @param crm CRM app
+   */
+  export const getDuplicateLabel =
+    (crm: ICrmApp) => (item: PersonDuplicateTestData) => {
+      return `[${crm.person.getIdentityType(item.identityType)}] ${item.name}`;
+    };
 }
 
 /**
