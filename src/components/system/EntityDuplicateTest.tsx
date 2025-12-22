@@ -23,6 +23,9 @@ export type EntityDuplicateTestProps = Omit<
 };
 
 export function EntityDuplicateTest(props: EntityDuplicateTestProps) {
+  // CRM app
+  const crm = useRequiredCrmApp();
+
   // Destruct
   const {
     excludedId,
@@ -30,11 +33,11 @@ export function EntityDuplicateTest(props: EntityDuplicateTestProps) {
     name = infoKind == null
       ? "name"
       : DataTypes.getEnumKey(PersonInfoKind, infoKind)?.toLowerCase(),
+    label = infoKind == null
+      ? crm.app.get("name")
+      : crm.person.getInfoKind(infoKind),
     ...rest
   } = props;
-
-  // CRM app
-  const crm = useRequiredCrmApp();
 
   return (
     <InputTipField<PersonDuplicateTestData>
@@ -56,6 +59,7 @@ export function EntityDuplicateTest(props: EntityDuplicateTestProps) {
         },
         itemLabel: PersonUtils.getDuplicateLabel(crm)
       }}
+      label={label}
       name={name}
       {...rest}
     />
