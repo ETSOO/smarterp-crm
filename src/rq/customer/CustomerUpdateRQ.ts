@@ -44,9 +44,15 @@ export type CustomerUpdateRQ = DataTypes.EditType<{
 
   /**
    * PIN
-   * 身份证号码
+   * 身份编号
    */
   pin?: string;
+
+  /**
+   * Tax ID
+   * 税号
+   */
+  taxId?: string;
 
   /**
    * Birthday

@@ -24,6 +24,12 @@ export type ContactRelationAddRQ = {
   relationType: PersonRelationType;
 
   /**
+   * Is default relation
+   * 是否为默认关系
+   */
+  isDefault?: boolean;
+
+  /**
    * Description
    * 描述
    */
