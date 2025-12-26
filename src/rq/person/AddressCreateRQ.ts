@@ -1,5 +1,5 @@
-import { EntityStatus, PlaceLocation } from "@etsoo/appscript";
-import { AddressKind, ApiProvider } from "../../dto/person/AddressItem";
+import { MapApiProvider, PlaceLocation } from "@etsoo/appscript";
+import { AddressKind } from "../../dto/person/AddressItem";
 
 /**
  * Person address create request data
@@ -22,7 +22,7 @@ export type AddressCreateRQ = {
    * Map provider
    * 地图提供商
    */
-  provider: ApiProvider;
+  provider: MapApiProvider;
 
   /**
    * Place id

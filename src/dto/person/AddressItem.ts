@@ -9,15 +9,6 @@ export enum AddressKind {
 }
 
 /**
- * Map API provider
- * 地图提供商
- */
-export enum ApiProvider {
-  Google = 0,
-  Baidu = 1
-}
-
-/**
  * Address item
  * 地址项
  */

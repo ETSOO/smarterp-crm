@@ -1,5 +1,5 @@
-import { EntityStatus, PlaceLocation } from "@etsoo/appscript";
-import { AddressKind, ApiProvider } from "./AddressItem";
+import { MapApiProvider, PlaceLocation } from "@etsoo/appscript";
+import { AddressKind } from "./AddressItem";
 
 /**
  * Address update read data
@@ -22,7 +22,7 @@ export type AddressUpdateReadData = {
    * Map provider
    * 地图提供商
    */
-  provider: ApiProvider;
+  provider: MapApiProvider;
 
   /**
    * Place id
