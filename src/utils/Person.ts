@@ -50,7 +50,7 @@ export namespace PersonUtils {
       label += ` (${data.jobTitle})`;
     }
 
-    if (data.identityType === IdentityTypeFlags.Contact && data.owner) {
+    if (data.owner) {
       label += ` / ${data.owner.name}`;
     }
 

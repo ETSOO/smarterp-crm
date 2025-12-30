@@ -390,10 +390,6 @@ export class CrmApp implements ICrmApp {
       type |= IdentityTypeFlags.Dept;
     }
 
-    if (type !== IdentityTypeFlags.None) {
-      type |= IdentityTypeFlags.Contact;
-    }
-
     return type;
   }
 

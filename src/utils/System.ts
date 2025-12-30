@@ -97,10 +97,6 @@ export class System {
       kind |= FeatureTagKind.Dept;
     }
 
-    if (type & IdentityTypeFlags.Contact) {
-      kind |= FeatureTagKind.Contact;
-    }
-
     return kind;
   }
 }
