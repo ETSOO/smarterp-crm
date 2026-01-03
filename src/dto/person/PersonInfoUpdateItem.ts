@@ -1,10 +1,10 @@
 import { PersonInfoKind } from "./PersonInfoKind";
 
 /**
- * Person info item
- * 个人信息项
+ * Person info update item
+ * 人员信息更新项
  */
-export type PersonInfoItem = {
+export type PersonInfoUpdateItem = {
   /**
    * Kind
    * 类型
@@ -16,12 +16,6 @@ export type PersonInfoItem = {
    * 标识
    */
   identifier: string;
-
-  /**
-   * Description
-   * 描述
-   */
-  description?: string;
 
   /**
    * Is default or not

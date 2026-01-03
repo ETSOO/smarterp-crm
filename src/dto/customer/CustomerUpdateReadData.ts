@@ -1,4 +1,5 @@
 import { EntityStatus } from "@etsoo/appscript";
+import { PersonInfoUpdateItem } from "../person/PersonInfoUpdateItem";
 
 /**
  * Customer update read data
@@ -42,12 +43,6 @@ export type CustomerUpdateReadData = {
   description?: string;
 
   /**
-   * PIN
-   * 身份证号码
-   */
-  pin?: string;
-
-  /**
    * Birthday
    * 生日
    */
@@ -64,6 +59,12 @@ export type CustomerUpdateReadData = {
    * 关键词
    */
   tags?: string[];
+
+  /**
+   * Infos
+   * 信息项
+   */
+  infos: PersonInfoUpdateItem[];
 
   /**
    * Status

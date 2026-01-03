@@ -12,6 +12,7 @@ import { AddressKind } from "../dto/person/AddressItem";
 import { PersonInfoKind } from "../dto/person/PersonInfoKind";
 import { PersonRelationType } from "../dto/person/PersonRelationType";
 import { PersonDuplicateTestData } from "../dto/person/PersonDuplicateTestData";
+import { PersonInfoUpdateItem } from "../dto/person/PersonInfoUpdateItem";
 
 /**
  * Person utils
@@ -28,6 +29,10 @@ export namespace PersonUtils {
       if (data == null) return "";
 
       const type = typeof data === "number" ? data : data.identityType;
+
+      if (type === IdentityTypeFlags.None) {
+        return crm.app.get("idNone") ?? "Contact";
+      }
 
       return crm.app
         .getEnumList(IdentityTypeFlags, "id", (id, _key) => {
@@ -160,6 +165,19 @@ export class Person {
    */
   getIdentityType = (data?: IdentityTypeData | IdentityTypeFlags) =>
     PersonUtils.getIdentityType(this.crm)(data);
+
+  /**
+   * Get info
+   * 获取信息
+   * @param infos Infos
+   * @param kind Info kind
+   */
+  getInfo(infos: PersonInfoUpdateItem[], kind: PersonInfoKind) {
+    const items = infos.filter((d) => d.kind === kind);
+    if (items.length === 0) return undefined;
+
+    return items.sortByProperty("isDefault", [true, false])[0].identifier;
+  }
 
   /**
    * Get info kind

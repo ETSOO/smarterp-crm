@@ -52,6 +52,7 @@ export * from "./dto/person/IdentityTypeData";
 export * from "./dto/person/PersonInfoItem";
 export * from "./dto/person/PersonInfoKind";
 export * from "./dto/person/PersonInfoQueryData";
+export * from "./dto/person/PersonInfoUpdateItem";
 export * from "./dto/person/PersonDuplicateTestData";
 export * from "./dto/person/PersonContactItem";
 export * from "./dto/person/PersonListDto";

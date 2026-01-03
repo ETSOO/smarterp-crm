@@ -20,9 +20,15 @@ test("utils.getIdentityType tests", () => {
   // Contact label is defined in current app
   const contactType = utils.getIdentityType({
     name: "Garry",
+    identityType: IdentityTypeFlags.None
+  });
+  expect(contactType).toBe("Contact");
+
+  const userType = utils.getIdentityType({
+    name: "Garry",
     identityType: IdentityTypeFlags.User
   });
-  expect(contactType).toBe("用户");
+  expect(userType).toBe("User");
 
   // Organization label is defined in core app
   const orgType = utils.getIdentityType({
