@@ -19,7 +19,7 @@ export type InfoDuplicateTestProps = Omit<
    * Info kind
    * 信息类型
    */
-  infoKind: PersonInfoKind;
+  infoKind: PersonInfoKind | (() => PersonInfoKind);
 };
 
 export function InfoDuplicateTest(props: InfoDuplicateTestProps) {
@@ -31,8 +31,12 @@ export function InfoDuplicateTest(props: InfoDuplicateTestProps) {
     excludedId,
     infoKind,
     minChars = 3,
-    name = DataTypes.getEnumKey(PersonInfoKind, infoKind)?.toLowerCase(),
-    label = crm.person.getInfoKind(infoKind),
+    name = typeof infoKind === "function"
+      ? undefined
+      : DataTypes.getEnumKey(PersonInfoKind, infoKind)?.toLowerCase(),
+    label = typeof infoKind === "function"
+      ? undefined
+      : crm.person.getInfoKind(infoKind),
     slotProps = {},
     ...rest
   } = props;
@@ -46,7 +50,7 @@ export function InfoDuplicateTest(props: InfoDuplicateTestProps) {
           const result = await crm.personApi.duplicateTest(
             {
               excludedId,
-              infoKind,
+              infoKind: typeof infoKind === "function" ? infoKind() : infoKind,
               identifier: value
             },
             {
