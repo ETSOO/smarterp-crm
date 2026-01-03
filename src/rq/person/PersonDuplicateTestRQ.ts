@@ -34,4 +34,10 @@ export type PersonDuplicateTestRQ = {
    * 地址
    */
   address?: string;
+
+  /**
+   * Assigned id
+   * 分配编号
+   */
+  assignedId?: string;
 };

@@ -29,6 +29,8 @@ export * from "./pesonProfile/ImportanceText";
 export * from "./pesonProfile/ProfileList";
 
 // System
+export * from "./system/AddressDuplicateTest";
+export * from "./system/AssignedIdDuplicateTest";
 export * from "./system/CustomerTypeList";
 export * from "./system/EntityDuplicateTest";
 

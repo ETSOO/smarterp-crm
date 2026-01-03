@@ -2,10 +2,8 @@ import { InputTipField, InputTipFieldProps } from "@etsoo/materialui";
 import { PersonDuplicateTestData } from "../../dto/person/PersonDuplicateTestData";
 import { useRequiredCrmApp } from "../../CrmApp";
 import { PersonUtils } from "../../utils/Person";
-import { PersonInfoKind } from "../../dto/person/PersonInfoKind";
-import { DataTypes } from "@etsoo/shared";
 
-export type EntityDuplicateTestProps = Omit<
+export type AddressDuplicateTestProps = Omit<
   InputTipFieldProps,
   "componentProps"
 > & {
@@ -14,29 +12,18 @@ export type EntityDuplicateTestProps = Omit<
    * 排除的编号
    */
   excludedId?: number;
-
-  /**
-   * Info kind
-   * 信息类型
-   */
-  infoKind?: PersonInfoKind;
 };
 
-export function EntityDuplicateTest(props: EntityDuplicateTestProps) {
+export function AddressDuplicateTest(props: AddressDuplicateTestProps) {
   // CRM app
   const crm = useRequiredCrmApp();
 
   // Destruct
   const {
     excludedId,
-    infoKind,
-    minChars = infoKind == null ? 2 : 3,
-    name = infoKind == null
-      ? "name"
-      : DataTypes.getEnumKey(PersonInfoKind, infoKind)?.toLowerCase(),
-    label = infoKind == null
-      ? crm.app.get("name")
-      : crm.person.getInfoKind(infoKind),
+    minChars = 3,
+    name = "formattedAddress",
+    label = crm.app.get("addressFormatted"),
     ...rest
   } = props;
 
@@ -47,9 +34,7 @@ export function EntityDuplicateTest(props: EntityDuplicateTestProps) {
           const result = await crm.personApi.duplicateTest(
             {
               excludedId,
-              ...(infoKind == null
-                ? { name: value }
-                : { infoKind, identifier: value })
+              address: value
             },
             {
               showLoading: false
