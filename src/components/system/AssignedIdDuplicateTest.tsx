@@ -24,8 +24,11 @@ export function AssignedIdDuplicateTest(props: AssignedIdDuplicateTestProps) {
     minChars = 3,
     name = "assignedId",
     label = crm.app.get("assignedId"),
+    slotProps = {},
     ...rest
   } = props;
+
+  const { htmlInput, ...otherSlotProps } = slotProps;
 
   return (
     <InputTipField<PersonDuplicateTestData>
@@ -48,6 +51,14 @@ export function AssignedIdDuplicateTest(props: AssignedIdDuplicateTestProps) {
       minChars={minChars}
       label={label}
       name={name}
+      slotProps={{
+        htmlInput: {
+          maxLength: 20,
+          style: { textTransform: "uppercase" },
+          ...htmlInput
+        },
+        ...otherSlotProps
+      }}
       {...rest}
     />
   );

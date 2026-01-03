@@ -3,7 +3,7 @@ import { PersonDuplicateTestData } from "../../dto/person/PersonDuplicateTestDat
 import { useRequiredCrmApp } from "../../CrmApp";
 import { PersonUtils } from "../../utils/Person";
 
-export type AddressDuplicateTestProps = Omit<
+export type NameDuplicateTestProps = Omit<
   InputTipFieldProps,
   "componentProps"
 > & {
@@ -14,16 +14,15 @@ export type AddressDuplicateTestProps = Omit<
   excludedId?: number;
 };
 
-export function AddressDuplicateTest(props: AddressDuplicateTestProps) {
+export function NameDuplicateTest(props: NameDuplicateTestProps) {
   // CRM app
   const crm = useRequiredCrmApp();
 
   // Destruct
   const {
     excludedId,
-    minChars = 3,
-    name = "formattedAddress",
-    label = crm.app.get("addressFormatted"),
+    minChars = 2,
+    name = "name",
     slotProps = {},
     ...rest
   } = props;
@@ -37,7 +36,7 @@ export function AddressDuplicateTest(props: AddressDuplicateTestProps) {
           const result = await crm.personApi.duplicateTest(
             {
               excludedId,
-              address: value
+              name: value
             },
             {
               showLoading: false
@@ -49,10 +48,9 @@ export function AddressDuplicateTest(props: AddressDuplicateTestProps) {
         itemLabel: PersonUtils.getDuplicateLabel(crm)
       }}
       minChars={minChars}
-      label={label}
       name={name}
       slotProps={{
-        htmlInput: { maxLength: 256, ...htmlInput },
+        htmlInput: { maxLength: 128, ...htmlInput },
         ...otherSlotProps
       }}
       {...rest}

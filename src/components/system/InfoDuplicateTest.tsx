@@ -5,7 +5,7 @@ import { PersonUtils } from "../../utils/Person";
 import { PersonInfoKind } from "../../dto/person/PersonInfoKind";
 import { DataTypes } from "@etsoo/shared";
 
-export type EntityDuplicateTestProps = Omit<
+export type InfoDuplicateTestProps = Omit<
   InputTipFieldProps,
   "componentProps"
 > & {
@@ -19,10 +19,10 @@ export type EntityDuplicateTestProps = Omit<
    * Info kind
    * 信息类型
    */
-  infoKind?: PersonInfoKind;
+  infoKind: PersonInfoKind;
 };
 
-export function EntityDuplicateTest(props: EntityDuplicateTestProps) {
+export function InfoDuplicateTest(props: InfoDuplicateTestProps) {
   // CRM app
   const crm = useRequiredCrmApp();
 
@@ -30,15 +30,14 @@ export function EntityDuplicateTest(props: EntityDuplicateTestProps) {
   const {
     excludedId,
     infoKind,
-    minChars = infoKind == null ? 2 : 3,
-    name = infoKind == null
-      ? "name"
-      : DataTypes.getEnumKey(PersonInfoKind, infoKind)?.toLowerCase(),
-    label = infoKind == null
-      ? crm.app.get("name")
-      : crm.person.getInfoKind(infoKind),
+    minChars = 3,
+    name = DataTypes.getEnumKey(PersonInfoKind, infoKind)?.toLowerCase(),
+    label = crm.person.getInfoKind(infoKind),
+    slotProps = {},
     ...rest
   } = props;
+
+  const { htmlInput, ...otherSlotProps } = slotProps;
 
   return (
     <InputTipField<PersonDuplicateTestData>
@@ -47,9 +46,8 @@ export function EntityDuplicateTest(props: EntityDuplicateTestProps) {
           const result = await crm.personApi.duplicateTest(
             {
               excludedId,
-              ...(infoKind == null
-                ? { name: value }
-                : { infoKind, identifier: value })
+              infoKind,
+              identifier: value
             },
             {
               showLoading: false
@@ -63,6 +61,10 @@ export function EntityDuplicateTest(props: EntityDuplicateTestProps) {
       minChars={minChars}
       label={label}
       name={name}
+      slotProps={{
+        htmlInput: { maxLength: 256, ...htmlInput },
+        ...otherSlotProps
+      }}
       {...rest}
     />
   );
