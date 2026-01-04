@@ -30,7 +30,7 @@ export function InfoDuplicateTest(props: InfoDuplicateTestProps) {
   const {
     excludedId,
     infoKind,
-    minChars = 3,
+    changeDelay = [480, 3],
     name = typeof infoKind === "function"
       ? undefined
       : DataTypes.getEnumKey(PersonInfoKind, infoKind)?.toLowerCase(),
@@ -62,7 +62,7 @@ export function InfoDuplicateTest(props: InfoDuplicateTestProps) {
         },
         itemLabel: PersonUtils.getDuplicateLabel(crm)
       }}
-      minChars={minChars}
+      changeDelay={changeDelay}
       label={label}
       name={name}
       slotProps={{

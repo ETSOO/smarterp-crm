@@ -21,7 +21,7 @@ export function AddressDuplicateTest(props: AddressDuplicateTestProps) {
   // Destruct
   const {
     excludedId,
-    minChars = 3,
+    changeDelay = [480, 3],
     name = "formattedAddress",
     label = crm.app.get("addressFormatted"),
     slotProps = {},
@@ -48,7 +48,7 @@ export function AddressDuplicateTest(props: AddressDuplicateTestProps) {
         },
         itemLabel: PersonUtils.getDuplicateLabel(crm)
       }}
-      minChars={minChars}
+      changeDelay={changeDelay}
       label={label}
       name={name}
       slotProps={{

@@ -21,7 +21,7 @@ export function NameDuplicateTest(props: NameDuplicateTestProps) {
   // Destruct
   const {
     excludedId,
-    minChars = 2,
+    changeDelay = [480, 2],
     name = "name",
     slotProps = {},
     ...rest
@@ -47,7 +47,7 @@ export function NameDuplicateTest(props: NameDuplicateTestProps) {
         },
         itemLabel: PersonUtils.getDuplicateLabel(crm)
       }}
-      minChars={minChars}
+      changeDelay={changeDelay}
       name={name}
       slotProps={{
         htmlInput: { maxLength: 128, ...htmlInput },

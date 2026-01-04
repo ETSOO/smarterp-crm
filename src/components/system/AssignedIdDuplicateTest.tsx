@@ -21,7 +21,7 @@ export function AssignedIdDuplicateTest(props: AssignedIdDuplicateTestProps) {
   // Destruct
   const {
     excludedId,
-    minChars = 3,
+    changeDelay = [480, 3],
     name = "assignedId",
     label = crm.app.get("assignedId"),
     slotProps = {},
@@ -48,7 +48,7 @@ export function AssignedIdDuplicateTest(props: AssignedIdDuplicateTestProps) {
         },
         itemLabel: PersonUtils.getDuplicateLabel(crm)
       }}
-      minChars={minChars}
+      changeDelay={changeDelay}
       label={label}
       name={name}
       slotProps={{
