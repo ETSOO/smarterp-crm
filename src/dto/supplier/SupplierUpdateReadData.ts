@@ -1,4 +1,5 @@
 import { EntityStatus } from "@etsoo/appscript";
+import { PersonInfoUpdateItem } from "../person/PersonInfoUpdateItem";
 
 /**
  * Supplier update read data
@@ -64,6 +65,12 @@ export type SupplierUpdateReadData = {
    * 关键词
    */
   tags?: string[];
+
+  /**
+   * Infos
+   * 信息项
+   */
+  infos: PersonInfoUpdateItem[];
 
   /**
    * Status

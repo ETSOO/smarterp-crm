@@ -23,7 +23,6 @@ export function PersonCategoryAssignedIdDuplicateTest(
   // Destruct
   const {
     excludedId,
-    minChars = 3,
     name = "assignedId",
     label = crm.app.get("assignedId"),
     slotProps = {},
@@ -50,7 +49,6 @@ export function PersonCategoryAssignedIdDuplicateTest(
         },
         itemLabel: PersonUtils.getCategoryDuplicateLabel(crm)
       }}
-      minChars={minChars}
       label={label}
       name={name}
       slotProps={{

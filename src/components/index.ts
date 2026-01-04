@@ -22,6 +22,7 @@ export * from "./person/PersonTitleList";
 
 // person category
 export * from "./personCategory/ButtonPersonCategories";
+export * from "./personCategory/PersonCategoryAssignedIdDuplicateTest";
 export * from "./personCategory/PersonCategoryTiplist";
 
 // person profile
