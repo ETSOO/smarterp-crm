@@ -13,6 +13,8 @@ import { PersonCategoryQueryRQ } from "./rq/personCategory/PersonCategoryQueryRQ
 import { PersonCategoryQueryData } from "./dto/personCategory/PersonCategoryQueryData";
 import { PersonCategoryUpdateRQ } from "./rq/personCategory/PersonCategoryUpdateRQ";
 import { PersonCategoryUpdateReadData } from "./dto/personCategory/PersonCategoryUpdateReadData";
+import { PersonCategoryDuplicateTestRQ } from "./rq/personCategory/PersonCategoryDuplicateTestRQ";
+import { PersonCategoryDuplicateTestData } from "./dto/personCategory/PersonCategoryDuplicateTestData";
 
 /**
  * Person category API
@@ -35,6 +37,19 @@ export class PersonCategoryApi extends EntityApi {
    */
   create(rq: PersonCategoryCreateRQ, payload?: IdResultPayload) {
     return this.createBase(rq, payload);
+  }
+
+  /**
+   * Duplicate test
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  duplicateTest(
+    rq: PersonCategoryDuplicateTestRQ,
+    payload?: IApiPayload<PersonCategoryDuplicateTestData[]>
+  ) {
+    return this.api.post(`${this.flag}/DuplicateTest`, rq, payload);
   }
 
   /**

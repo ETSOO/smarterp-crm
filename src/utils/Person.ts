@@ -13,6 +13,7 @@ import { PersonInfoKind } from "../dto/person/PersonInfoKind";
 import { PersonRelationType } from "../dto/person/PersonRelationType";
 import { PersonDuplicateTestData } from "../dto/person/PersonDuplicateTestData";
 import { PersonInfoUpdateItem } from "../dto/person/PersonInfoUpdateItem";
+import { PersonCategoryDuplicateTestData } from "../dto/personCategory/PersonCategoryDuplicateTestData";
 
 /**
  * Person utils
@@ -69,6 +70,17 @@ export namespace PersonUtils {
   export const getDuplicateLabel =
     (crm: ICrmApp) => (item: PersonDuplicateTestData) => {
       return `[${crm.person.getIdentityType(item.identityType)}] ${item.name}`;
+    };
+
+  /**
+   * Get duplicate check list item label
+   * @param crm CRM app
+   */
+  export const getCategoryDuplicateLabel =
+    (crm: ICrmApp) => (item: PersonCategoryDuplicateTestData) => {
+      return `[${crm.person.getIdentityType(
+        item.identityType
+      )}] ${item.names.join(" -> ")}`;
     };
 }
 

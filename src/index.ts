@@ -79,11 +79,13 @@ export * from "./rq/person/PersonQueryRQ";
 export * from "./rq/person/PersonUpdateRQ";
 
 // Peron category
+export * from "./dto/personCategory/PersonCategoryDuplicateTestData";
 export * from "./dto/personCategory/PersonCategoryListData";
 export * from "./dto/personCategory/PersonCategoryQueryData";
 export * from "./dto/personCategory/PersonCategoryUpdateReadData";
 
 export * from "./rq/personCategory/PersonCategoryCreateRQ";
+export * from "./rq/personCategory/PersonCategoryDuplicateTestRQ";
 export * from "./rq/personCategory/PersonCategoryListRQ";
 export * from "./rq/personCategory/PersonCategoryQueryRQ";
 export * from "./rq/personCategory/PersonCategoryUpdateRQ";
