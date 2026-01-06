@@ -1,3 +1,6 @@
+// Common ones
+export * from "./dto/CategoryItem";
+
 // Asset
 export * from "./dto/asset/AssetListData";
 export * from "./dto/asset/AssetQueryData";
@@ -43,7 +46,6 @@ export * from "./rq/order/OrderQueryRQ";
 
 // Person
 export * from "./dto/person/AddressItem";
-export * from "./dto/person/CategoryItem";
 export * from "./dto/person/ChoosePersonsData";
 export * from "./dto/person/ContactItem";
 export * from "./dto/person/ContactQueryData";
@@ -119,8 +121,11 @@ export * from "./rq/po/POListRQ";
 export * from "./rq/po/POQueryRQ";
 
 // Product
+export * from "./dto/product/ProductInventoryWay";
 export * from "./dto/product/ProductListData";
 export * from "./dto/product/ProductQueryData";
+export * from "./dto/product/ProductScope";
+export * from "./dto/product/ProductUsage";
 
 export * from "./rq/product/ProductListRQ";
 export * from "./rq/product/ProductQueryRQ";

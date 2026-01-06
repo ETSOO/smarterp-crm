@@ -1,5 +1,5 @@
 import { EntityStatus } from "@etsoo/appscript";
-import { CategoryItem } from "../person/CategoryItem";
+import { CategoryItem } from "../CategoryItem";
 
 /**
  * Customer query data

@@ -1,6 +1,6 @@
 import { EntityStatus, UserRole } from "@etsoo/appscript";
 import { ContactItem } from "./ContactItem";
-import { CategoryItem } from "./CategoryItem";
+import { CategoryItem } from "../CategoryItem";
 import { AddressItem } from "./AddressItem";
 import { PersonTitle } from "./PersonTitle";
 import { DataTypes } from "@etsoo/shared";
