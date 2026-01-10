@@ -29,6 +29,14 @@ export * from "./personCategory/PersonCategoryTiplist";
 export * from "./pesonProfile/ImportanceText";
 export * from "./pesonProfile/ProfileList";
 
+// product
+export * from "./product/ProductAssignedIdDuplicateTest";
+export * from "./product/ProductInventoryWayList";
+export * from "./product/ProductNameDuplicateTest";
+export * from "./product/ProductScopeList";
+export * from "./product/ProductUnitList";
+export * from "./product/ProductUsageList";
+
 // System
 export * from "./system/AddressDuplicateTest";
 export * from "./system/AssignedIdDuplicateTest";

@@ -121,14 +121,22 @@ export * from "./rq/po/POListRQ";
 export * from "./rq/po/POQueryRQ";
 
 // Product
+export * from "./dto/product/ProductDuplicateTestData";
 export * from "./dto/product/ProductInventoryWay";
 export * from "./dto/product/ProductListData";
+export * from "./dto/product/ProductPriceItem";
 export * from "./dto/product/ProductQueryData";
 export * from "./dto/product/ProductScope";
+export * from "./dto/product/ProductUnitItem";
+export * from "./dto/product/ProductUpdateReadData";
 export * from "./dto/product/ProductUsage";
 
+export * from "./rq/product/ProductCreateRQ";
+export * from "./rq/product/ProductDuplicateTestRQ";
 export * from "./rq/product/ProductListRQ";
 export * from "./rq/product/ProductQueryRQ";
+export * from "./rq/product/ProductUnitUpdateRQ";
+export * from "./rq/product/ProductUpdateRQ";
 
 // Supplier
 export * from "./dto/supplier/SupplierListData";

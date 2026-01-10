@@ -74,7 +74,9 @@ export namespace Permissions {
     AddComment = 2097,
 
     QueryAsset = 2101,
-    AddAsset = 2103
+    AddAsset = 2103,
+
+    Manage = 2200
   }
 
   /**
@@ -100,7 +102,9 @@ export namespace Permissions {
     AddComment = 3097,
 
     QueryAsset = 3101,
-    AddAsset = 3103
+    AddAsset = 3103,
+
+    Manage = 3200
   }
 
   /**
@@ -126,7 +130,9 @@ export namespace Permissions {
     AddComment = 6097,
 
     QueryAsset = 6101,
-    AddAsset = 6103
+    AddAsset = 6103,
+
+    Manage = 6200
   }
 
   /**
@@ -152,7 +158,9 @@ export namespace Permissions {
     AddComment = 7097,
 
     QueryAsset = 7101,
-    AddAsset = 7103
+    AddAsset = 7103,
+
+    Manage = 7200
   }
 
   /**
@@ -167,7 +175,9 @@ export namespace Permissions {
     View = 8003,
     Add = 8011,
     Edit = 8012,
-    Delete = 8013
+    Delete = 8013,
+
+    Manage = 8200
   }
 
   /**
@@ -182,7 +192,9 @@ export namespace Permissions {
     View = 9003,
     Add = 9011,
     Edit = 9012,
-    Delete = 9013
+    Delete = 9013,
+
+    Manage = 9200
   }
 
   /**
@@ -197,7 +209,9 @@ export namespace Permissions {
     View = 10003,
     Add = 10011,
     Edit = 10012,
-    Delete = 10013
+    Delete = 10013,
+
+    Manage = 10200
   }
 
   /**
@@ -207,7 +221,9 @@ export namespace Permissions {
   export enum Inventory {
     All = 11000,
 
-    Query = 11002
+    Query = 11002,
+
+    Manage = 11200
   }
 
   /**
@@ -217,6 +233,8 @@ export namespace Permissions {
   export enum Finance {
     All = 18000,
 
-    Query = 18002
+    Query = 18002,
+
+    Manage = 18200
   }
 }

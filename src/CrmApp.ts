@@ -21,6 +21,7 @@ import { UserApi } from "./UserApi";
 import { PersonCategoryApi } from "./PersonCategoryApi";
 import { TagApi } from "./TagApi";
 import { DataTypes } from "@etsoo/shared";
+import { Product } from "./utils/Product";
 
 /**
  * Get CRM app context hook
@@ -132,13 +133,19 @@ export interface ICrmApp {
    * Purchase order API
    * 采购接口
    */
-  readonly POApi: POApi;
+  readonly poApi: POApi;
+
+  /**
+   * Product
+   * 产品
+   */
+  readonly product: Product;
 
   /**
    * Product API
    * 产品接口
    */
-  readonly ProductApi: ProductApi;
+  readonly productApi: ProductApi;
 
   /**
    * Supplier API
@@ -301,8 +308,18 @@ export class CrmApp implements ICrmApp {
    * Purchase order API
    * 采购接口
    */
-  get POApi() {
+  get poApi() {
     return (this._poApi ??= new POApi(this.app));
+  }
+
+  private _product?: Product;
+
+  /**
+   * Product
+   * 产品
+   */
+  get product(): Product {
+    return (this._product ??= new Product(this));
   }
 
   private _productApi?: ProductApi;
@@ -310,7 +327,7 @@ export class CrmApp implements ICrmApp {
    * Product API
    * 产品接口
    */
-  get ProductApi() {
+  get productApi() {
     return (this._productApi ??= new ProductApi(this.app));
   }
 

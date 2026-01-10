@@ -1,8 +1,21 @@
-import { EntityApi, IApi, IApiPayload, IApp } from "@etsoo/appscript";
+import {
+  EntityApi,
+  IApi,
+  IApiPayload,
+  IApp,
+  IdResultPayload
+} from "@etsoo/appscript";
 import { ProductListRQ } from "./rq/product/ProductListRQ";
 import { ProductListData } from "./dto/product/ProductListData";
 import { ProductQueryRQ } from "./rq/product/ProductQueryRQ";
 import { ProductQueryData } from "./dto/product/ProductQueryData";
+import { ProductCreateRQ } from "./rq/product/ProductCreateRQ";
+import { ProductUpdateRQ } from "./rq/product/ProductUpdateRQ";
+import { ProductUpdateReadData } from "./dto/product/ProductUpdateReadData";
+import { ProductDuplicateTestRQ } from "./rq/product/ProductDuplicateTestRQ";
+import { ProductDuplicateTestData } from "./dto/product/ProductDuplicateTestData";
+import { ProductUnitUpdateRQ } from "./rq/product/ProductUnitUpdateRQ";
+import { ProductUnitItem } from "./dto/product/ProductUnitItem";
 
 /**
  * Product API
@@ -15,6 +28,29 @@ export class ProductApi extends EntityApi {
    */
   constructor(app: IApp, api: IApi = app.api) {
     super("Product", app, api);
+  }
+
+  /**
+   * Create
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  create(rq: ProductCreateRQ, payload?: IdResultPayload) {
+    return this.createBase(rq, payload);
+  }
+
+  /**
+   * Duplicate test
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  duplicateTest(
+    rq: ProductDuplicateTestRQ,
+    payload?: IApiPayload<ProductDuplicateTestData[]>
+  ) {
+    return this.api.post(`${this.flag}/DuplicateTest`, rq, payload);
   }
 
   /**
@@ -35,5 +71,44 @@ export class ProductApi extends EntityApi {
    */
   query(rq: ProductQueryRQ, payload?: IApiPayload<ProductQueryData[]>) {
     return this.queryBase(rq, payload);
+  }
+
+  /**
+   * Query product unit
+   * @param payload Payload
+   * @returns Result
+   */
+  queryUnit(payload?: IApiPayload<ProductUnitItem[]>) {
+    return this.api.get(`${this.flag}/QueryUnit`, undefined, payload);
+  }
+
+  /**
+   * Update
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  update(rq: ProductUpdateRQ, payload?: IdResultPayload) {
+    return this.updateBase(rq, payload);
+  }
+
+  /**
+   * Update read
+   * @param id Id
+   * @param payload Payload
+   * @returns Result
+   */
+  updateRead(id: number, payload?: IApiPayload<ProductUpdateReadData>) {
+    return this.updateReadBase(id, payload);
+  }
+
+  /**
+   * Update product unit
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  updateUnit(rq: ProductUnitUpdateRQ, payload?: IApiPayload<number>) {
+    return this.api.put(`${this.flag}/UpdateUnit`, rq, payload);
   }
 }
