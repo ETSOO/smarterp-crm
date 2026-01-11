@@ -3,6 +3,22 @@ import { ProductDuplicateTestData } from "../dto/product/ProductDuplicateTestDat
 import { ProductInventoryWay } from "../dto/product/ProductInventoryWay";
 import { ProductScope } from "../dto/product/ProductScope";
 import { ProductUsage } from "../dto/product/ProductUsage";
+import { ProductCategoryDuplicateTestData } from "../dto/productCategory/ProductCategoryDuplicateTestData";
+
+/**
+ * Product utils
+ * 产品工具类
+ */
+export namespace ProductUtils {
+  /**
+   * Get duplicate check list item label
+   * @param crm CRM app
+   */
+  export const getCategoryDuplicateLabel =
+    (crm: ICrmApp) => (item: ProductCategoryDuplicateTestData) => {
+      return `${item.names.join(" -> ")} (${item.id})`;
+    };
+}
 
 /**
  * Product

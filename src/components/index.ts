@@ -37,6 +37,11 @@ export * from "./product/ProductScopeList";
 export * from "./product/ProductUnitList";
 export * from "./product/ProductUsageList";
 
+// Product category
+export * from "./productCategory/ButtonProductCategories";
+export * from "./productCategory/ProductCategoryAssignedIdDuplicateTest";
+export * from "./productCategory/ProductCategoryTiplist";
+
 // System
 export * from "./system/AddressDuplicateTest";
 export * from "./system/AssignedIdDuplicateTest";
