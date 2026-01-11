@@ -22,6 +22,7 @@ import { PersonCategoryApi } from "./PersonCategoryApi";
 import { TagApi } from "./TagApi";
 import { DataTypes } from "@etsoo/shared";
 import { Product } from "./utils/Product";
+import { ProductCategoryApi } from "./ProductCategoryApi";
 
 /**
  * Get CRM app context hook
@@ -140,6 +141,12 @@ export interface ICrmApp {
    * 产品
    */
   readonly product: Product;
+
+  /**
+   * Product category API
+   * 产品分类接口
+   */
+  readonly productCategoryApi: ProductCategoryApi;
 
   /**
    * Product API
@@ -329,6 +336,18 @@ export class CrmApp implements ICrmApp {
    */
   get productApi() {
     return (this._productApi ??= new ProductApi(this.app));
+  }
+
+  private _productCategoryApi?: ProductCategoryApi;
+  /**
+   * Product category API
+   * 产品分类接口
+   */
+  get productCategoryApi() {
+    return (this._productCategoryApi ??= new ProductCategoryApi(
+      this.app,
+      this.api
+    ));
   }
 
   private _supplierApi?: SupplierApi;

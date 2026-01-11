@@ -138,6 +138,17 @@ export * from "./rq/product/ProductQueryRQ";
 export * from "./rq/product/ProductUnitUpdateRQ";
 export * from "./rq/product/ProductUpdateRQ";
 
+// Product category
+export * from "./dto/productCategory/ProductCategoryDuplicateTestData";
+export * from "./dto/productCategory/ProductCategoryListData";
+export * from "./dto/productCategory/ProductCategoryQueryData";
+export * from "./dto/productCategory/ProductCategoryUpdateReadData";
+export * from "./rq/productCategory/ProductCategoryCreateRQ";
+export * from "./rq/productCategory/ProductCategoryDuplicateTestRQ";
+export * from "./rq/productCategory/ProductCategoryListRQ";
+export * from "./rq/productCategory/ProductCategoryQueryRQ";
+export * from "./rq/productCategory/ProductCategoryUpdateRQ";
+
 // Supplier
 export * from "./dto/supplier/SupplierListData";
 export * from "./dto/supplier/SupplierQueryData";
