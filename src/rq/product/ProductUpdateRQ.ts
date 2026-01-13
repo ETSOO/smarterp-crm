@@ -29,18 +29,6 @@ export type ProductUpdateRQ = DataTypes.EditType<{
   description?: string;
 
   /**
-   * Foreign name
-   * 外文名称
-   */
-  foreignName?: string;
-
-  /**
-   * Foreign description
-   * 外文描述
-   */
-  foreignDescription?: string;
-
-  /**
    * Unit id
    * 产品单位编号
    */

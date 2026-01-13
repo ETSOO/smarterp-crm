@@ -1,5 +1,3 @@
-// Product update read data
-
 import { EntityStatus } from "@etsoo/appscript";
 import { ProductInventoryWay } from "./ProductInventoryWay";
 import { ProductPriceItem } from "./ProductPriceItem";
@@ -31,18 +29,6 @@ export type ProductUpdateReadData = {
    * 描述
    */
   description?: string;
-
-  /**
-   * Foreign name
-   * 外文名称
-   */
-  foreignName?: string;
-
-  /**
-   * Foreign description
-   * 外文描述
-   */
-  foreignDescription?: string;
 
   /**
    * Unit id

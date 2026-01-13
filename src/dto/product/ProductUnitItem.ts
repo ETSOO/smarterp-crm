@@ -24,12 +24,6 @@ export type ProductUnitItem = {
   name: string;
 
   /**
-   * Foreign name
-   * 外文名称
-   */
-  foreignName?: string;
-
-  /**
    * Is system item
    * 是否为系统项
    */
