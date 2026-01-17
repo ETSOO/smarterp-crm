@@ -149,6 +149,15 @@ export * from "./rq/productCategory/ProductCategoryListRQ";
 export * from "./rq/productCategory/ProductCategoryQueryRQ";
 export * from "./rq/productCategory/ProductCategoryUpdateRQ";
 
+// Promotion
+export * from "./dto/promotion/PromotionListData";
+export * from "./dto/promotion/PromotionQueryData";
+export * from "./dto/promotion/PromotionUpdateReadData";
+export * from "./rq/promotion/PromotionCreateRQ";
+export * from "./rq/promotion/PromotionListRQ";
+export * from "./rq/promotion/PromotionQueryRQ";
+export * from "./rq/promotion/PromotionUpdateRQ";
+
 // Supplier
 export * from "./dto/supplier/SupplierListData";
 export * from "./dto/supplier/SupplierQueryData";
