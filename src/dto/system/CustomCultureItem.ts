@@ -13,7 +13,7 @@ export type CustomCultureItem = {
    * Title
    * 标题
    */
-  title?: string;
+  title: string;
 
   /**
    * Description

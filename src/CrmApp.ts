@@ -23,6 +23,7 @@ import { TagApi } from "./TagApi";
 import { DataTypes } from "@etsoo/shared";
 import { Product } from "./utils/Product";
 import { ProductCategoryApi } from "./ProductCategoryApi";
+import { PromotionApi } from "./PromotionApi";
 
 /**
  * Get CRM app context hook
@@ -153,6 +154,12 @@ export interface ICrmApp {
    * 产品接口
    */
   readonly productApi: ProductApi;
+
+  /**
+   * Promotion API
+   * 促销接口
+   */
+  readonly promotionApi: PromotionApi;
 
   /**
    * Supplier API
@@ -348,6 +355,15 @@ export class CrmApp implements ICrmApp {
       this.app,
       this.api
     ));
+  }
+
+  private _promotionApi?: PromotionApi;
+  /**
+   * Promotion API
+   * 促销接口
+   */
+  get promotionApi() {
+    return (this._promotionApi ??= new PromotionApi(this.app));
   }
 
   private _supplierApi?: SupplierApi;
