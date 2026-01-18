@@ -25,5 +25,11 @@ export enum CustomCultureKind {
    * Person category
    * 人员分类
    */
-  PersonCategory = 9
+  PersonCategory = 9,
+
+  /**
+   * Promotion
+   * 促销
+   */
+  Promotion = 10
 }

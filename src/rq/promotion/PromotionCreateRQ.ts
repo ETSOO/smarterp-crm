@@ -28,19 +28,19 @@ export type PromotionCreateRQ = PromotionCodeData & {
    * Valid start date
    * 有效开始时间
    */
-  validStart: string; // ISO 8601 string (DateTimeOffset in C#)
+  validStart: string | Date;
 
   /**
    * Valid start end
    * 有效结束时间
    */
-  validEnd: string; // ISO 8601 string (DateTimeOffset in C#)
+  validEnd: string | Date;
 
   /**
    * Max coupons
    * 最大优惠券
    */
-  coupons: number;
+  coupons?: number;
 
   /**
    * Stackable

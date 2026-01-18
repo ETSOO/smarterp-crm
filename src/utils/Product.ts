@@ -1,6 +1,7 @@
 import { ICrmApp } from "../CrmApp";
 import { ProductDuplicateTestData } from "../dto/product/ProductDuplicateTestData";
 import { ProductInventoryWay } from "../dto/product/ProductInventoryWay";
+import { ProductListData } from "../dto/product/ProductListData";
 import { ProductScope } from "../dto/product/ProductScope";
 import { ProductUsage } from "../dto/product/ProductUsage";
 import { ProductCategoryDuplicateTestData } from "../dto/productCategory/ProductCategoryDuplicateTestData";
@@ -18,6 +19,16 @@ export namespace ProductUtils {
     (crm: ICrmApp) => (item: ProductCategoryDuplicateTestData) => {
       return `${item.names.join(" -> ")} (${item.id})`;
     };
+
+  /**
+   * Get list label function
+   * 获取列表标签函数
+   * @param crm CRM app
+   */
+  export const getListLabel = (crm: ICrmApp) => (data: ProductListData) => {
+    if (data.assignedId) return `${data.assignedId} - ${data.name}`;
+    return data.name;
+  };
 }
 
 /**

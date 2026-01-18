@@ -150,6 +150,9 @@ export * from "./rq/productCategory/ProductCategoryQueryRQ";
 export * from "./rq/productCategory/ProductCategoryUpdateRQ";
 
 // Promotion
+export * from "./dto/promotion/PromotionCode";
+export * from "./dto/promotion/PromotionCodeData";
+export * from "./dto/promotion/PromotionItem";
 export * from "./dto/promotion/PromotionListData";
 export * from "./dto/promotion/PromotionQueryData";
 export * from "./dto/promotion/PromotionUpdateReadData";

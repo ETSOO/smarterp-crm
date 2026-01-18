@@ -1,7 +1,6 @@
 import { EntityStatus, UserRole } from "@etsoo/appscript";
 import { PersonProfileKind } from "./PersonProfileKind";
 import { PersonProfileImportance } from "./PersonProfileImportance";
-import { DataTypes } from "@etsoo/shared";
 
 /**
  * Person profile update read data
@@ -24,7 +23,7 @@ export type PersonProfileUpdateReadData = {
    * Other persons
    * 其他参与者
    */
-  persons?: DataTypes.IdNameItem[];
+  persons?: number[];
 
   /**
    * Order id

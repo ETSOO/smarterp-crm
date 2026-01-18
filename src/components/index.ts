@@ -34,6 +34,7 @@ export * from "./product/ProductAssignedIdDuplicateTest";
 export * from "./product/ProductInventoryWayList";
 export * from "./product/ProductNameDuplicateTest";
 export * from "./product/ProductScopeList";
+export * from "./product/ProductsList";
 export * from "./product/ProductUnitList";
 export * from "./product/ProductUsageList";
 

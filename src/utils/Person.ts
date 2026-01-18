@@ -64,6 +64,21 @@ export namespace PersonUtils {
   };
 
   /**
+   * Get simple list label function
+   * 获取简单列表标签函数
+   * @param crm CRM app
+   */
+  export const getSimpleListLabel = () => (data: PersonListDto) => {
+    let label = `${data.name}`;
+
+    if (data.owner) {
+      label += ` / ${data.owner.name}`;
+    }
+
+    return label;
+  };
+
+  /**
    * Get duplicate check list item label
    * @param crm CRM app
    */

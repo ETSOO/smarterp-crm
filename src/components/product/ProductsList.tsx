@@ -1,55 +1,53 @@
 import { TagListPro, TagListProProps } from "@etsoo/materialui";
-import { PersonListDto } from "../../dto/person/PersonListDto";
 import { useRequiredCrmApp } from "../../CrmApp";
-import { PersonUtils } from "../../utils/Person";
-import { PersonListRQ } from "../../rq/person/PersonListRQ";
+import { ProductListData } from "../../dto/product/ProductListData";
+import { ProductListRQ } from "../../rq/product/ProductListRQ";
+import { ProductUtils } from "../../utils/Product";
 
 /**
- * Multiple persons list properties
- * 多人员列表属性
+ * Multiple products list properties
+ * 多产品列表属性
  */
-export type PersonsListProps = Omit<
-  TagListProProps<PersonListDto>,
+export type ProductsListProps = Omit<
+  TagListProProps<ProductListData>,
   "loadData"
 > & {
   /**
    * Default request data
    */
-  rq?: Partial<PersonListRQ>;
+  rq?: Partial<ProductListRQ>;
 
   /**
    * Load data handler
    * @param rq Request data
    */
-  onLoadData?: (rq: PersonListRQ) => PersonListRQ;
+  onLoadData?: (rq: ProductListRQ) => ProductListRQ;
 };
 
 /**
- * Multiple persons list
- * 多人员列表
+ * Multiple product list
+ * 多产品列表
  * @param props Properties
  * @returns Component
  */
-export function PersonsList(props: PersonsListProps) {
+export function ProductsList(props: ProductsListProps) {
   // CRM app
   const crm = useRequiredCrmApp();
 
   // Destruct
   const {
-    rq = { enabled: true },
-    getOptionLabel = rq.identityType
-      ? PersonUtils.getSimpleListLabel()
-      : PersonUtils.getListLabel(crm),
+    getOptionLabel = ProductUtils.getListLabel(crm),
     onLoadData = (rq) => rq,
+    rq = { enabled: true },
     ...rest
   } = props;
 
   // Layout
   return (
-    <TagListPro<PersonListDto>
+    <TagListPro<ProductListData>
       getOptionLabel={getOptionLabel}
       loadData={(keyword, items) =>
-        crm.personApi.list(
+        crm.productApi.list(
           onLoadData({
             ...rq,
             keyword,

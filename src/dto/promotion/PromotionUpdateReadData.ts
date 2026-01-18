@@ -1,4 +1,5 @@
 import { EntityStatus } from "@etsoo/appscript";
+import { PromotionCodeData } from "./PromotionCodeData";
 
 /**
  * Promotion update read data
@@ -58,4 +59,4 @@ export type PromotionUpdateReadData = {
    * 状态
    */
   status: EntityStatus;
-};
+} & PromotionCodeData;
