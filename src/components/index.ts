@@ -32,6 +32,7 @@ export * from "./pesonProfile/ProfileList";
 // product
 export * from "./product/ProductAssignedIdDuplicateTest";
 export * from "./product/ProductInventoryWayList";
+export * from "./product/ProductList";
 export * from "./product/ProductNameDuplicateTest";
 export * from "./product/ProductScopeList";
 export * from "./product/ProductsList";
