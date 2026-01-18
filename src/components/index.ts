@@ -1,3 +1,6 @@
+// customer
+export * from "./customer/CustomerList";
+
 // dept
 export * from "./dept/ButtonDepts";
 export * from "./dept/DeptTiplist";

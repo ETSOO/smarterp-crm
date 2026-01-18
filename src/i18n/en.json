@@ -101,6 +101,7 @@
   "inventoryWayFull": "Full inventory",
   "inventoryWayNone": "No inventory",
   "inventoryWaySimple": "Simple inventory",
+  "isAvailable": "Available",
   "isLegalPerson": "Is business",
   "isOrg": "Is my org",
   "isTask": "Is task",

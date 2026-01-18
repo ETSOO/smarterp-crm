@@ -101,6 +101,7 @@
   "inventoryWayFull": "完整库存",
   "inventoryWayNone": "无库存",
   "inventoryWaySimple": "简易库存",
+  "isAvailable": "是否可用",
   "isLegalPerson": "是否企业",
   "isOrg": "是否本机构",
   "isTask": "是否为任务",

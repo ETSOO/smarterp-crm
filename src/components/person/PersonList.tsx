@@ -49,10 +49,12 @@ export function PersonList(props: PersonListProps) {
     fullWidth = true,
     label = crm.app.get("user")!,
     maxItems = 10,
-    getOptionLabel = PersonUtils.getListLabel(crm),
+    rq = { enabled: true },
+    getOptionLabel = rq.identityType
+      ? PersonUtils.getSimpleListLabel()
+      : PersonUtils.getListLabel(crm),
     onLoadData = (rq) => rq,
     name = "personId",
-    rq = { enabled: true },
     ...rest
   } = props;
 
