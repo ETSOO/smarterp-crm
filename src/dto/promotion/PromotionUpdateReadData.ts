@@ -59,4 +59,10 @@ export type PromotionUpdateReadData = {
    * 状态
    */
   status: EntityStatus;
+
+  /**
+   * Order index
+   * 排序数
+   */
+  orderIndex: number;
 } & PromotionCodeData;

@@ -53,4 +53,10 @@ export type PromotionCreateRQ = PromotionCodeData & {
    * 状态
    */
   status?: EntityStatus;
+
+  /**
+   * Order index
+   * 排序数
+   */
+  orderIndex?: number;
 };
