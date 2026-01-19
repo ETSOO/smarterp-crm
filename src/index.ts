@@ -4,9 +4,12 @@ export * from "./dto/CategoryItem";
 // Asset
 export * from "./dto/asset/AssetListData";
 export * from "./dto/asset/AssetQueryData";
+export * from "./dto/asset/AssetUpdateReadData";
 
+export * from "./rq/asset/AssetCreateRQ";
 export * from "./rq/asset/AssetListRQ";
 export * from "./rq/asset/AssetQueryRQ";
+export * from "./rq/asset/AssetUpdateRQ";
 
 // Customer
 export * from "./dto/customer/CustomerListData";
