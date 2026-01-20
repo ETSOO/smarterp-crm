@@ -47,6 +47,9 @@ export * from "./productCategory/ButtonProductCategories";
 export * from "./productCategory/ProductCategoryAssignedIdDuplicateTest";
 export * from "./productCategory/ProductCategoryTiplist";
 
+// Supplier
+export * from "./supplier/SupplierList";
+
 // System
 export * from "./system/AddressDuplicateTest";
 export * from "./system/AssignedIdDuplicateTest";
