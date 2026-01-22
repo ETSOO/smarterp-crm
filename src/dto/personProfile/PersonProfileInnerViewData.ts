@@ -1,7 +1,7 @@
 import { IdentityTypeFlags, UserRole } from "@etsoo/appscript";
 import { PersonProfileAttachmentItem } from "./PersonProfileAttachmentItem";
 import { PersonProfileLinkItem } from "./PersonProfileLinkItem";
-import { DataTypes } from "@etsoo/shared";
+import { PersonListItem } from "../person/PersonListItem";
 
 /**
  * Person profile inner view data
@@ -30,7 +30,7 @@ export type PersonProfileInnerViewData = {
    * Other persons
    * 其他参与者
    */
-  persons?: DataTypes.IdNameItem[];
+  persons?: PersonListItem[];
 
   /**
    * Order / Purchase id

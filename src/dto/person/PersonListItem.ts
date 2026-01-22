@@ -20,4 +20,10 @@ export type PersonListItem = {
    * 职务
    */
   jobTitle?: string;
+
+  /**
+   * Owner
+   * 所有人
+   */
+  owner?: string;
 };
