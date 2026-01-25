@@ -1,5 +1,5 @@
 import { EntityStatus } from "@etsoo/appscript";
-import { AddressCreateRQ } from "../person/AddressCreateRQ";
+import { AddressCreateRQ } from "../personAddress/AddressCreateRQ";
 
 /**
  * Create customer request data

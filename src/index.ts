@@ -48,18 +48,9 @@ export * from "./rq/order/OrderListRQ";
 export * from "./rq/order/OrderQueryRQ";
 
 // Person
-export * from "./dto/person/AddressItem";
 export * from "./dto/person/ChoosePersonsData";
-export * from "./dto/person/ContactItem";
-export * from "./dto/person/ContactQueryData";
-export * from "./dto/person/ContactRelationUpdateReadData";
 export * from "./dto/person/IdentityTypeData";
-export * from "./dto/person/PersonInfoItem";
-export * from "./dto/person/PersonInfoKind";
-export * from "./dto/person/PersonInfoQueryData";
-export * from "./dto/person/PersonInfoUpdateItem";
 export * from "./dto/person/PersonDuplicateTestData";
-export * from "./dto/person/PersonContactItem";
 export * from "./dto/person/PersonListDto";
 export * from "./dto/person/PersonListItem";
 export * from "./dto/person/PersonQueryData";
@@ -67,21 +58,29 @@ export * from "./dto/person/PersonReadDto";
 export * from "./dto/person/PersonRelationType";
 export * from "./dto/person/PersonUpdateReadData";
 
-export * from "./rq/person/AddressCreateRQ";
-export * from "./rq/person/AddressUpdateRQ";
 export * from "./rq/person/ChoosePersonsRQ";
-export * from "./rq/person/ContactCreateRQ";
-export * from "./rq/person/ContactListRQ";
-export * from "./rq/person/ContactQueryRQ";
-export * from "./rq/person/ContactRelationAddRQ";
-export * from "./rq/person/ContactRelationUpdateRQ";
 export * from "./rq/person/PersonDuplicateTestRQ";
-export * from "./rq/person/PersonInfoCreateRQ";
-export * from "./rq/person/PersonInfoQueryRQ";
-export * from "./rq/person/PersonInfoUpdateRQ";
 export * from "./rq/person/PersonListRQ";
 export * from "./rq/person/PersonQueryRQ";
 export * from "./rq/person/PersonUpdateRQ";
+
+// Person address
+export * from "./dto/personAddress/AddressItem";
+
+export * from "./rq/personAddress/AddressCreateRQ";
+export * from "./rq/personAddress/AddressUpdateRQ";
+
+// Person contact
+export * from "./dto/personContact/ContactItem";
+export * from "./dto/personContact/ContactQueryData";
+export * from "./dto/personContact/ContactRelationUpdateReadData";
+export * from "./dto/personContact/PersonContactItem";
+
+export * from "./rq/personContact/ContactCreateRQ";
+export * from "./rq/personContact/ContactListRQ";
+export * from "./rq/personContact/ContactQueryRQ";
+export * from "./rq/personContact/ContactRelationAddRQ";
+export * from "./rq/personContact/ContactRelationUpdateRQ";
 
 // Peron category
 export * from "./dto/personCategory/PersonCategoryDuplicateTestData";
@@ -94,6 +93,16 @@ export * from "./rq/personCategory/PersonCategoryDuplicateTestRQ";
 export * from "./rq/personCategory/PersonCategoryListRQ";
 export * from "./rq/personCategory/PersonCategoryQueryRQ";
 export * from "./rq/personCategory/PersonCategoryUpdateRQ";
+
+// Person info
+export * from "./dto/personInfo/PersonInfoItem";
+export * from "./dto/personInfo/PersonInfoKind";
+export * from "./dto/personInfo/PersonInfoQueryData";
+export * from "./dto/personInfo/PersonInfoUpdateItem";
+
+export * from "./rq/personInfo/PersonInfoCreateRQ";
+export * from "./rq/personInfo/PersonInfoQueryRQ";
+export * from "./rq/personInfo/PersonInfoUpdateRQ";
 
 // PersonProfile
 export * from "./dto/personProfile/PersonProfileAttachmentItem";

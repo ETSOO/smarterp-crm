@@ -5,7 +5,8 @@
 export enum AddressKind {
   Office = 1,
   Home = 2,
-  Other = 9
+  Other = 9,
+  Location = 99
 }
 
 /**

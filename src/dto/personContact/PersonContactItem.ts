@@ -1,4 +1,4 @@
-import { PersonRelationType } from "./PersonRelationType";
+import { PersonRelationType } from "../person/PersonRelationType";
 
 /**
  * Person contact list item

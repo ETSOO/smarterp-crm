@@ -24,6 +24,9 @@ import { DataTypes } from "@etsoo/shared";
 import { Product } from "./utils/Product";
 import { ProductCategoryApi } from "./ProductCategoryApi";
 import { PromotionApi } from "./PromotionApi";
+import { PersonAddressApi } from "./PersonAddressApi";
+import { PersonContactApi } from "./PersonContactApi";
+import { PersonInfoApi } from "./PersonInfoApi";
 
 /**
  * Get CRM app context hook
@@ -114,10 +117,28 @@ export interface ICrmApp {
   readonly personApi: PersonApi;
 
   /**
+   * Person address API
+   * 人员地址接口
+   */
+  readonly personAddressApi: PersonAddressApi;
+
+  /**
+   * Person contact API
+   * 人员联系人接口
+   */
+  readonly personContactApi: PersonContactApi;
+
+  /**
    * Person category API
    * 人员分类接口
    */
   readonly personCategoryApi: PersonCategoryApi;
+
+  /**
+   * Person info API
+   * 人员信息接口
+   */
+  readonly personInfoApi: PersonInfoApi;
 
   /**
    * Person profile
@@ -287,6 +308,24 @@ export class CrmApp implements ICrmApp {
     return (this._personApi ??= new PersonApi(this.app));
   }
 
+  private _personAddressApi?: PersonAddressApi;
+  /**
+   * Person address API
+   * 人员地址接口
+   */
+  get personAddressApi() {
+    return (this._personAddressApi ??= new PersonAddressApi(this.app));
+  }
+
+  private _personContactApi?: PersonContactApi;
+  /**
+   * Person contact API
+   * 人员联系人接口
+   */
+  get personContactApi() {
+    return (this._personContactApi ??= new PersonContactApi(this.app));
+  }
+
   private _personCategoryApi?: PersonCategoryApi;
   /**
    * Person category API
@@ -297,6 +336,15 @@ export class CrmApp implements ICrmApp {
       this.app,
       this.api
     ));
+  }
+
+  private _personInfoApi?: PersonInfoApi;
+  /**
+   * Person info API
+   * 人员信息接口
+   */
+  get personInfoApi() {
+    return (this._personInfoApi ??= new PersonInfoApi(this.app));
   }
 
   private _profile?: PersonProfile;
@@ -417,7 +465,10 @@ export class CrmApp implements ICrmApp {
    * @param app Base application
    * @param api API
    */
-  constructor(public readonly app: CrmAppBase, public readonly api: IApi) {}
+  constructor(
+    public readonly app: CrmAppBase,
+    public readonly api: IApi
+  ) {}
 
   private getIdentityType(permissions: boolean[]) {
     let type: IdentityTypeFlags = IdentityTypeFlags.None;

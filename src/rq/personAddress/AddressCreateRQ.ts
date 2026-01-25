@@ -1,5 +1,5 @@
 import { MapApiProvider, PlaceLocation } from "@etsoo/appscript";
-import { AddressKind } from "../../dto/person/AddressItem";
+import { AddressKind } from "../../dto/personAddress/AddressItem";
 
 /**
  * Person address create request data

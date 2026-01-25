@@ -1,4 +1,4 @@
-import { PersonRelationType } from "./PersonRelationType";
+import { PersonRelationType } from "../person/PersonRelationType";
 
 /**
  * Contact relation update read data

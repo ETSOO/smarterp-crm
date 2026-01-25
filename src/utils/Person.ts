@@ -8,12 +8,12 @@ import { PersonListDto } from "../dto/person/PersonListDto";
 import { IdentityTypeData } from "../dto/person/IdentityTypeData";
 import { PersonGender } from "../dto/person/PersonGender";
 import { DataTypes } from "@etsoo/shared";
-import { AddressKind } from "../dto/person/AddressItem";
-import { PersonInfoKind } from "../dto/person/PersonInfoKind";
+import { PersonInfoKind } from "../dto/personInfo/PersonInfoKind";
 import { PersonRelationType } from "../dto/person/PersonRelationType";
 import { PersonDuplicateTestData } from "../dto/person/PersonDuplicateTestData";
-import { PersonInfoUpdateItem } from "../dto/person/PersonInfoUpdateItem";
+import { PersonInfoUpdateItem } from "../dto/personInfo/PersonInfoUpdateItem";
 import { PersonCategoryDuplicateTestData } from "../dto/personCategory/PersonCategoryDuplicateTestData";
+import { AddressKind } from "../dto/personAddress/AddressItem";
 
 /**
  * Person utils
@@ -171,9 +171,9 @@ export class Person {
    */
   getGender(gender?: string) {
     return gender
-      ? this.crm.app.get(
+      ? (this.crm.app.get(
           `gender${DataTypes.getEnumKey(PersonGender, gender)}`
-        ) ?? gender
+        ) ?? gender)
       : undefined;
   }
 

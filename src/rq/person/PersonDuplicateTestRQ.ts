@@ -1,4 +1,4 @@
-import { PersonInfoKind } from "../../dto/person/PersonInfoKind";
+import { PersonInfoKind } from "../../dto/personInfo/PersonInfoKind";
 
 /**
  * Person duplicate test request data

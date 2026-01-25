@@ -1,5 +1,5 @@
 import { EntityStatus } from "@etsoo/appscript";
-import { PersonRelationType } from "./PersonRelationType";
+import { PersonRelationType } from "../person/PersonRelationType";
 
 /**
  * Contact query data

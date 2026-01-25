@@ -1,4 +1,4 @@
-import { ContactItem } from "./ContactItem";
+import { ContactItem } from "../personContact/ContactItem";
 
 /**
  * Person list data

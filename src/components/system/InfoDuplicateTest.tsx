@@ -2,7 +2,7 @@ import { InputTipField, InputTipFieldProps } from "@etsoo/materialui";
 import { PersonDuplicateTestData } from "../../dto/person/PersonDuplicateTestData";
 import { useRequiredCrmApp } from "../../CrmApp";
 import { PersonUtils } from "../../utils/Person";
-import { PersonInfoKind } from "../../dto/person/PersonInfoKind";
+import { PersonInfoKind } from "../../dto/personInfo/PersonInfoKind";
 import { DataTypes } from "@etsoo/shared";
 
 export type InfoDuplicateTestProps = Omit<

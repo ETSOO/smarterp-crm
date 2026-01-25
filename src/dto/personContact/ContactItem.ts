@@ -1,5 +1,5 @@
-import { IdentityTypeData } from "./IdentityTypeData";
-import { PersonListItem } from "./PersonListItem";
+import { IdentityTypeData } from "../person/IdentityTypeData";
+import { PersonListItem } from "../person/PersonListItem";
 
 /**
  * Contact item

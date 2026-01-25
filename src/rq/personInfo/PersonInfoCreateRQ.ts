@@ -1,4 +1,4 @@
-import { PersonInfoItem } from "../../dto/person/PersonInfoItem";
+import { PersonInfoItem } from "../../dto/personInfo/PersonInfoItem";
 
 /**
  * Person info create request data

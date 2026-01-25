@@ -1,5 +1,5 @@
 import { EntityStatus } from "@etsoo/appscript";
-import { PersonInfoUpdateItem } from "../person/PersonInfoUpdateItem";
+import { PersonInfoUpdateItem } from "../personInfo/PersonInfoUpdateItem";
 
 /**
  * Supplier update read data

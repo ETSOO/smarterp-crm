@@ -1,5 +1,5 @@
 import { UpdateModel } from "@etsoo/appscript";
-import { PersonInfoKind } from "../../dto/person/PersonInfoKind";
+import { PersonInfoKind } from "../../dto/personInfo/PersonInfoKind";
 
 /**
  * Person info update request data
