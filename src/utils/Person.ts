@@ -13,7 +13,6 @@ import { PersonRelationType } from "../dto/person/PersonRelationType";
 import { PersonDuplicateTestData } from "../dto/person/PersonDuplicateTestData";
 import { PersonInfoUpdateItem } from "../dto/personInfo/PersonInfoUpdateItem";
 import { PersonCategoryDuplicateTestData } from "../dto/personCategory/PersonCategoryDuplicateTestData";
-import { AddressKind } from "../dto/personAddress/AddressItem";
 
 /**
  * Person utils
@@ -105,25 +104,6 @@ export namespace PersonUtils {
  */
 export class Person {
   constructor(private crm: ICrmApp) {}
-
-  /**
-   * Get address kind
-   * 获取地址类型
-   * @param kind Address kind
-   */
-  getAddressKind(kind?: AddressKind) {
-    if (kind == null) return undefined;
-    const key = AddressKind[kind];
-    return this.crm.app.get("addressKind" + key) ?? key;
-  }
-
-  /**
-   * Get address kinds
-   * 获取地址类型列表
-   */
-  getAddressKinds() {
-    return this.crm.app.getEnumList(AddressKind, "addressKind");
-  }
 
   /**
    * Get degree

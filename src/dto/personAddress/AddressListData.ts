@@ -2,10 +2,10 @@ import { AddressKind } from "./AddressItem";
 import { AddressListItem } from "./AddressListItem";
 
 /**
- * Address query data
- * 地址查询数据
+ * Address list data
+ * 地址列表信息
  */
-export type AddressQueryData = AddressListItem & {
+export type AddressListData = AddressListItem & {
   /**
    * ID
    * 编号
@@ -19,14 +19,8 @@ export type AddressQueryData = AddressListItem & {
   kind: AddressKind;
 
   /**
-   * Formatted address
-   * 格式化地址
+   * City
+   * 城市
    */
-  formattedAddress: string;
-
-  /**
-   * Creation
-   * 登记时间
-   */
-  creation: Date | string;
+  city: string;
 };

@@ -19,6 +19,18 @@ export type AddressListRQ = QueryRQ & {
   kind?: AddressKind;
 
   /**
+   * Is location or not
+   * 是否为位置
+   */
+  isLocation?: boolean;
+
+  /**
+   * Parent id
+   * 父级编号
+   */
+  parentId?: number;
+
+  /**
    * Place id
    * 地址编号
    */

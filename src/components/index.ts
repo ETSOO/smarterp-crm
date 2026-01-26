@@ -23,6 +23,10 @@ export * from "./person/PersonList";
 export * from "./person/PersonsList";
 export * from "./person/PersonTitleList";
 
+// person address
+export * from "./personAddress/AddressKindList";
+export * from "./personAddress/AddressList";
+
 // person category
 export * from "./personCategory/ButtonPersonCategories";
 export * from "./personCategory/PersonCategoryAssignedIdDuplicateTest";

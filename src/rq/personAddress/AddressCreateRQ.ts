@@ -89,4 +89,10 @@ export type AddressCreateRQ = {
    * 位置
    */
   location?: PlaceLocation;
+
+  /**
+   * Parent id
+   * 父编号
+   */
+  parentId?: number;
 };

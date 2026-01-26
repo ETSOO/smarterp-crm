@@ -11,6 +11,7 @@ import { AddressUpdateReadData } from "./dto/personAddress/AddressUpdateReadData
 import { AddressLocationCreateRQ } from "./rq/personAddress/AddressLocationCreateRQ";
 import { AddressListRQ } from "./rq/personAddress/AddressListRQ";
 import { AddressQueryData } from "./dto/personAddress/AddressQueryData";
+import { AddressListData } from "./dto/personAddress/AddressListData";
 
 /**
  * Person address API
@@ -61,7 +62,7 @@ export class PersonAddressApi extends EntityApi {
    * @param payload Payload
    * @returns Result
    */
-  list(rq: AddressListRQ, payload?: IApiPayload<AddressListRQ[]>) {
+  list(rq: AddressListRQ, payload?: IApiPayload<AddressListData[]>) {
     return this.listBase(rq, payload);
   }
 
