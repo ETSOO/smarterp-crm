@@ -66,8 +66,12 @@ export * from "./rq/person/PersonUpdateRQ";
 
 // Person address
 export * from "./dto/personAddress/AddressItem";
+export * from "./dto/personAddress/AddressQueryData";
+export * from "./dto/personAddress/AddressUpdateReadData";
 
 export * from "./rq/personAddress/AddressCreateRQ";
+export * from "./rq/personAddress/AddressListRQ";
+export * from "./rq/personAddress/AddressLocationCreateRQ";
 export * from "./rq/personAddress/AddressUpdateRQ";
 
 // Person contact

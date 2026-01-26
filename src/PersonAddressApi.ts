@@ -8,6 +8,9 @@ import {
 import { AddressCreateRQ } from "./rq/personAddress/AddressCreateRQ";
 import { AddressUpdateRQ } from "./rq/personAddress/AddressUpdateRQ";
 import { AddressUpdateReadData } from "./dto/personAddress/AddressUpdateReadData";
+import { AddressLocationCreateRQ } from "./rq/personAddress/AddressLocationCreateRQ";
+import { AddressListRQ } from "./rq/personAddress/AddressListRQ";
+import { AddressQueryData } from "./dto/personAddress/AddressQueryData";
 
 /**
  * Person address API
@@ -33,6 +36,16 @@ export class PersonAddressApi extends EntityApi {
   }
 
   /**
+   * Create location
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  createLocation(rq: AddressLocationCreateRQ, payload?: IdResultPayload) {
+    return this.api.post(`${this.flag}/CreateLocation`, rq, payload);
+  }
+
+  /**
    * Delete
    * @param id Contact id
    * @param payload Payload
@@ -40,6 +53,26 @@ export class PersonAddressApi extends EntityApi {
    */
   delete(id: number, payload?: IdResultPayload) {
     return this.deleteBase(id, payload);
+  }
+
+  /**
+   * List
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  list(rq: AddressListRQ, payload?: IApiPayload<AddressListRQ[]>) {
+    return this.listBase(rq, payload);
+  }
+
+  /**
+   * Query
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  query(rq: AddressListRQ, payload?: IApiPayload<AddressQueryData[]>) {
+    return this.queryBase(rq, payload);
   }
 
   /**
