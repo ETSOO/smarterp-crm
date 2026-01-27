@@ -91,6 +91,12 @@ export type ProductUpdateReadData = {
   price?: ProductPriceItem;
 
   /**
+   * Tax rate
+   * 税率
+   */
+  taxRate?: number;
+
+  /**
    * Categories
    * 类目
    */

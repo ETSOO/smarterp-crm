@@ -35,4 +35,10 @@ export type AddressListRQ = QueryRQ & {
    * 地址编号
    */
   placeId?: string;
+
+  /**
+   * Include owner's addresses or not
+   * 是否包含所有者的地址
+   */
+  includeOwner?: boolean;
 };

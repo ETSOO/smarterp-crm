@@ -89,6 +89,12 @@ export type ProductUpdateRQ = DataTypes.EditType<{
   price?: ProductPriceItem;
 
   /**
+   * Tax rate
+   * 税率
+   */
+  taxRate?: number;
+
+  /**
    * Categories
    * 类目
    */

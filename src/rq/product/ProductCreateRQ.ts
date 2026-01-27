@@ -88,6 +88,12 @@ export type ProductCreateRQ = {
   price?: ProductPriceItem;
 
   /**
+   * Tax rate
+   * 税率
+   */
+  taxRate?: number;
+
+  /**
    * Categories
    * 类目
    */

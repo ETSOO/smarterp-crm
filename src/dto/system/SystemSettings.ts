@@ -40,4 +40,10 @@ export type SystemSettings = {
    * 是否有库存管理
    */
   hasInventory: boolean;
+
+  /**
+   * Default tax rate
+   * 默认税率
+   */
+  taxRate?: number;
 };
