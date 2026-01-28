@@ -47,7 +47,7 @@ export function ProductCategoryAssignedIdDuplicateTest(
           if (result == null || result.length === 0) return [];
           return [result, result.length.toString()];
         },
-        itemLabel: ProductUtils.getCategoryDuplicateLabel(crm)
+        itemLabel: ProductUtils.getCategoryDuplicateLabel()
       }}
       label={label}
       name={name}

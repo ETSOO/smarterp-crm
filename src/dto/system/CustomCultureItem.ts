@@ -10,6 +10,12 @@ export type CustomCultureItem = {
   id: number;
 
   /**
+   * Culture
+   * 文化
+   */
+  culture: string;
+
+  /**
    * Title
    * 标题
    */

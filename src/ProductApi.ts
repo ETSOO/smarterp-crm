@@ -16,6 +16,7 @@ import { ProductDuplicateTestRQ } from "./rq/product/ProductDuplicateTestRQ";
 import { ProductDuplicateTestData } from "./dto/product/ProductDuplicateTestData";
 import { ProductUnitUpdateRQ } from "./rq/product/ProductUnitUpdateRQ";
 import { ProductUnitItem } from "./dto/product/ProductUnitItem";
+import { ProductViewData } from "./dto/product/ProductViewData";
 
 /**
  * Product API
@@ -80,6 +81,16 @@ export class ProductApi extends EntityApi {
    */
   queryUnit(payload?: IApiPayload<ProductUnitItem[]>) {
     return this.api.get(`${this.flag}/QueryUnit`, undefined, payload);
+  }
+
+  /**
+   * Read
+   * @param id Id
+   * @param payload Payload
+   * @returns Result
+   */
+  read(id: number, payload?: IApiPayload<ProductViewData>) {
+    return this.readBase(id, payload);
   }
 
   /**

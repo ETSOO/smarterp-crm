@@ -36,7 +36,7 @@ export function ProductsList(props: ProductsListProps) {
 
   // Destruct
   const {
-    getOptionLabel = ProductUtils.getListLabel(crm),
+    getOptionLabel = ProductUtils.getListLabel(),
     onLoadData = (rq) => rq,
     rq = { enabled: true },
     ...rest

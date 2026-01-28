@@ -16,7 +16,7 @@ export namespace ProductUtils {
    * @param crm CRM app
    */
   export const getCategoryDuplicateLabel =
-    (crm: ICrmApp) => (item: ProductCategoryDuplicateTestData) => {
+    () => (item: ProductCategoryDuplicateTestData) => {
       return `${item.names.join(" -> ")} (${item.id})`;
     };
 
@@ -25,7 +25,7 @@ export namespace ProductUtils {
    * 获取列表标签函数
    * @param crm CRM app
    */
-  export const getListLabel = (crm: ICrmApp) => (data: ProductListData) => {
+  export const getListLabel = () => (data: ProductListData) => {
     if (data.assignedId) return `${data.assignedId} - ${data.name}`;
     return data.name;
   };
@@ -54,6 +54,17 @@ export class Product {
   }
 
   /**
+   * Get inventory way label
+   * 获取库存方式标签
+   * @param inventoryWay Inventory way
+   */
+  getInventoryWay(inventoryWay?: ProductInventoryWay) {
+    if (inventoryWay == null) return undefined;
+    const key = ProductInventoryWay[inventoryWay];
+    return this.crm.app.get("inventoryWay" + key) ?? key;
+  }
+
+  /**
    * Get inventory way list
    * 获取库存方式列表
    */
@@ -62,11 +73,33 @@ export class Product {
   }
 
   /**
+   * Get sale scope label
+   * 获取销售范围标签
+   * @param scope Scope
+   */
+  getScope(scope?: ProductScope) {
+    if (scope == null) return undefined;
+    const key = ProductScope[scope];
+    return this.crm.app.get("scope" + key) ?? key;
+  }
+
+  /**
    * Get sale scope list
    * 获取销售范围列表
    */
   getScopes() {
     return this.crm.app.getEnumList(ProductScope, "scope");
+  }
+
+  /**
+   * Get usage label
+   * 获取用途标签
+   * @param usage Usage
+   */
+  getUsage(usage?: ProductUsage) {
+    if (usage == null) return undefined;
+    const key = ProductUsage[usage];
+    return this.crm.app.get("productUsage" + key) ?? key;
   }
 
   /**

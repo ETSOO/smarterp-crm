@@ -49,7 +49,7 @@ export function ProductList(props: ProductListProps) {
     fullWidth = true,
     label = crm.app.get("product")!,
     maxItems = 10,
-    getOptionLabel = ProductUtils.getListLabel(crm),
+    getOptionLabel = ProductUtils.getListLabel(),
     onLoadData = (rq) => rq,
     name = "productId",
     rq = { enabled: true },

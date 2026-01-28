@@ -146,6 +146,7 @@ export * from "./dto/product/ProductScope";
 export * from "./dto/product/ProductUnitItem";
 export * from "./dto/product/ProductUpdateReadData";
 export * from "./dto/product/ProductUsage";
+export * from "./dto/product/ProductViewData";
 
 export * from "./rq/product/ProductCreateRQ";
 export * from "./rq/product/ProductDuplicateTestRQ";
