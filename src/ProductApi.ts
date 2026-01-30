@@ -1,4 +1,5 @@
 import {
+  AppActionData,
   EntityApi,
   IApi,
   IApiPayload,
@@ -17,6 +18,8 @@ import { ProductDuplicateTestData } from "./dto/product/ProductDuplicateTestData
 import { ProductUnitUpdateRQ } from "./rq/product/ProductUnitUpdateRQ";
 import { ProductUnitItem } from "./dto/product/ProductUnitItem";
 import { ProductViewData } from "./dto/product/ProductViewData";
+import { ProductPriceItem } from "./dto/product/ProductPriceItem";
+import { ProductUpdateLogoRQ } from "./rq/product/ProductUpdateLogoRQ";
 
 /**
  * Product API
@@ -94,6 +97,25 @@ export class ProductApi extends EntityApi {
   }
 
   /**
+   * Read price
+   * @param id Id
+   * @param currency Currency
+   * @param payload Payload
+   * @returns Result
+   */
+  readPrice(
+    id: number,
+    currency: string,
+    payload?: IApiPayload<ProductPriceItem>
+  ) {
+    return this.api.get(
+      `${this.flag}/ReadPrice/${id}/${currency}`,
+      undefined,
+      payload
+    );
+  }
+
+  /**
    * Update
    * @param rq Request data
    * @param payload Payload
@@ -104,6 +126,30 @@ export class ProductApi extends EntityApi {
   }
 
   /**
+   * Update logo
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  updateLogo(rq: ProductUpdateLogoRQ, payload?: IdResultPayload) {
+    return this.api.put(`${this.flag}/UpdateLogo`, rq, payload);
+  }
+
+  /**
+   * Get update logo action data
+   * @param id Id
+   * @param payload Payload
+   * @returns Result
+   */
+  updateLogoAction(id: number, payload?: IApiPayload<AppActionData>) {
+    return this.api.get(
+      `${this.flag}/UpdateLogoAction/${id}`,
+      undefined,
+      payload
+    );
+  }
+
+  /**
    * Update read
    * @param id Id
    * @param payload Payload
@@ -111,6 +157,17 @@ export class ProductApi extends EntityApi {
    */
   updateRead(id: number, payload?: IApiPayload<ProductUpdateReadData>) {
     return this.updateReadBase(id, payload);
+  }
+
+  /**
+   * Update price
+   * @param id Product id
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  updatePrice(id: number, rq: ProductPriceItem, payload?: IdResultPayload) {
+    return this.api.put(`${this.flag}/UpdatePrice/${id}`, rq, payload);
   }
 
   /**
