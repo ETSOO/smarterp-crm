@@ -136,14 +136,14 @@ export class ProductApi extends EntityApi {
   }
 
   /**
-   * Get update logo action data
+   * Get upload logo action data
    * @param id Id
    * @param payload Payload
    * @returns Result
    */
-  updateLogoAction(id: number, payload?: IApiPayload<AppActionData>) {
+  uploadLogoAction(id: number, payload?: IApiPayload<AppActionData>) {
     return this.api.get(
-      `${this.flag}/UpdateLogoAction/${id}`,
+      `${this.flag}/UploadLogoAction/${id}`,
       undefined,
       payload
     );
