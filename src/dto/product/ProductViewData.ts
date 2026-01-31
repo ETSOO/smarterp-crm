@@ -102,6 +102,12 @@ export type ProductViewData = {
   logo?: string;
 
   /**
+   * Introduction URL
+   * 介绍网址
+   */
+  introductionUrl?: string;
+
+  /**
    * Status
    * 状况
    */

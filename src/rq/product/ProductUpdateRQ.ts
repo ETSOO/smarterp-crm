@@ -95,6 +95,12 @@ export type ProductUpdateRQ = DataTypes.EditType<{
   taxRate?: number;
 
   /**
+   * Introduction URL
+   * 介绍网址
+   */
+  introductionUrl?: string;
+
+  /**
    * Categories
    * 类目
    */
