@@ -28,6 +28,7 @@ import { PersonAddressApi } from "./PersonAddressApi";
 import { PersonContactApi } from "./PersonContactApi";
 import { PersonInfoApi } from "./PersonInfoApi";
 import { PersonAddress } from "./utils/PersonAddress";
+import { PersonProductApi } from "./PersonProductApi";
 
 /**
  * Get CRM app context hook
@@ -146,6 +147,12 @@ export interface ICrmApp {
    * 人员信息接口
    */
   readonly personInfoApi: PersonInfoApi;
+
+  /**
+   * Person product API
+   * 人员自定义产品接口
+   */
+  readonly personProductApi: PersonProductApi;
 
   /**
    * Person profile
@@ -361,6 +368,15 @@ export class CrmApp implements ICrmApp {
    */
   get personInfoApi() {
     return (this._personInfoApi ??= new PersonInfoApi(this.app));
+  }
+
+  private _personProductApi?: PersonProductApi;
+  /**
+   * Person product API
+   * 人员自定义产品接口
+   */
+  get personProductApi() {
+    return (this._personProductApi ??= new PersonProductApi(this.app));
   }
 
   private _profile?: PersonProfile;

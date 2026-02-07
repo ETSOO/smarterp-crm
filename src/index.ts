@@ -108,6 +108,12 @@ export * from "./rq/personInfo/PersonInfoCreateRQ";
 export * from "./rq/personInfo/PersonInfoQueryRQ";
 export * from "./rq/personInfo/PersonInfoUpdateRQ";
 
+// Person product
+export * from "./dto/personProduct/PersonProductUpdateReadData";
+
+export * from "./rq/personProduct/PersonProductCreateRQ";
+export * from "./rq/personProduct/PersonProductUpdateRQ";
+
 // PersonProfile
 export * from "./dto/personProfile/PersonProfileAttachmentItem";
 export * from "./dto/personProfile/PersonProfileImportance";
@@ -147,6 +153,7 @@ export * from "./dto/product/ProductUnitItem";
 export * from "./dto/product/ProductUpdateReadData";
 export * from "./dto/product/ProductUsage";
 export * from "./dto/product/ProductViewData";
+export * from "./dto/product/QueryForSaleData";
 
 export * from "./rq/product/ProductCreateRQ";
 export * from "./rq/product/ProductDuplicateTestRQ";
@@ -154,6 +161,7 @@ export * from "./rq/product/ProductListRQ";
 export * from "./rq/product/ProductQueryRQ";
 export * from "./rq/product/ProductUnitUpdateRQ";
 export * from "./rq/product/ProductUpdateRQ";
+export * from "./rq/product/QueryForSaleRQ";
 
 // Product category
 export * from "./dto/productCategory/ProductCategoryDuplicateTestData";

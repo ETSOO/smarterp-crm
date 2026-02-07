@@ -20,6 +20,8 @@ import { ProductUnitItem } from "./dto/product/ProductUnitItem";
 import { ProductViewData } from "./dto/product/ProductViewData";
 import { ProductPriceItem } from "./dto/product/ProductPriceItem";
 import { ProductUpdateLogoRQ } from "./rq/product/ProductUpdateLogoRQ";
+import { QueryForSaleRQ } from "./rq/product/QueryForSaleRQ";
+import { QueryForSaleData } from "./dto/product/QueryForSaleData";
 
 /**
  * Product API
@@ -75,6 +77,16 @@ export class ProductApi extends EntityApi {
    */
   query(rq: ProductQueryRQ, payload?: IApiPayload<ProductQueryData[]>) {
     return this.queryBase(rq, payload);
+  }
+
+  /**
+   * Query for sale
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  queryForSale(rq: QueryForSaleRQ, payload?: IApiPayload<QueryForSaleData[]>) {
+    return this.api.post(`${this.flag}/QueryForSale`, rq, payload);
   }
 
   /**

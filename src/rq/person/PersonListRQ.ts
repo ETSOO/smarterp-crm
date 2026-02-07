@@ -25,6 +25,12 @@ export type PersonListRQ = StatusQueryRQ & {
   categoryId?: number;
 
   /**
+   * Category and all descendant category ids
+   * 所属分类及所有下级子类编号
+   */
+  categoryIdAll?: number;
+
+  /**
    * Categories
    * 所属多个分类
    */
