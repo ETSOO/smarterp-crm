@@ -109,9 +109,12 @@ export * from "./rq/personInfo/PersonInfoQueryRQ";
 export * from "./rq/personInfo/PersonInfoUpdateRQ";
 
 // Person product
+export * from "./dto/personProduct/PersonProductJsonData";
+export * from "./dto/personProduct/PersonProductQueryData";
 export * from "./dto/personProduct/PersonProductUpdateReadData";
 
 export * from "./rq/personProduct/PersonProductCreateRQ";
+export * from "./rq/personProduct/PersonProductQueryRQ";
 export * from "./rq/personProduct/PersonProductUpdateRQ";
 
 // PersonProfile
@@ -143,6 +146,7 @@ export * from "./rq/po/POListRQ";
 export * from "./rq/po/POQueryRQ";
 
 // Product
+export * from "./dto/product/ProductCustomData";
 export * from "./dto/product/ProductDuplicateTestData";
 export * from "./dto/product/ProductInventoryWay";
 export * from "./dto/product/ProductListData";

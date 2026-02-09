@@ -1,3 +1,5 @@
+import { PersonProductJsonData } from "../../dto/personProduct/PersonProductJsonData";
+
 /**
  * Person product update request data
  * 人员个性化产品更新请求数据
@@ -16,34 +18,16 @@ export type PersonProductUpdateRQ = {
   productId: number;
 
   /**
-   * Name
-   * 名称
-   */
-  name?: string;
-
-  /**
-   * Description
-   * 描述
-   */
-  description?: string;
-
-  /**
    * Assigned ID
    * 分配编号
    */
   assignedId?: string;
 
   /**
-   * Currency
-   * 币种
+   * JSON data
+   * JSON数据
    */
-  currency?: string;
-
-  /**
-   * Retail price
-   * 零售价
-   */
-  retailPrice?: number;
+  jsonData?: PersonProductJsonData;
 
   /**
    * Changed fields

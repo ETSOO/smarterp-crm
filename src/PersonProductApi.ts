@@ -8,6 +8,8 @@ import {
 import { PersonProductCreateRQ } from "./rq/personProduct/PersonProductCreateRQ";
 import { PersonProductUpdateRQ } from "./rq/personProduct/PersonProductUpdateRQ";
 import { PersonProductUpdateReadData } from "./dto/personProduct/PersonProductUpdateReadData";
+import { PersonProductQueryRQ } from "./rq/personProduct/PersonProductQueryRQ";
+import { PersonProductQueryData } from "./dto/personProduct/PersonProductQueryData";
 
 /**
  * Person product API
@@ -48,6 +50,19 @@ export class PersonProductApi extends EntityApi {
   }
 
   /**
+   * Query
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  query(
+    rq: PersonProductQueryRQ,
+    payload?: IApiPayload<PersonProductQueryData[]>
+  ) {
+    return this.queryBase(rq, payload);
+  }
+
+  /**
    * Update
    * @param rq Request data
    * @param payload Payload
@@ -59,11 +74,20 @@ export class PersonProductApi extends EntityApi {
 
   /**
    * Update read
-   * @param id Id
+   * @param productId Product id
+   * @param personId Person id
    * @param payload Payload
    * @returns Result
    */
-  updateRead(id: number, payload?: IApiPayload<PersonProductUpdateReadData>) {
-    return this.updateReadBase(id, payload);
+  updateRead(
+    productId: number,
+    personId: number,
+    payload?: IApiPayload<PersonProductUpdateReadData>
+  ) {
+    return this.api.get(
+      `${this.flag}/UpdateRead/${productId}/${personId}`,
+      undefined,
+      payload
+    );
   }
 }

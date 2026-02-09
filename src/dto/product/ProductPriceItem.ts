@@ -1,18 +1,7 @@
-// Product price item
+import { ProductSimplePriceItem } from "./ProductSimplePriceItem";
+
 // 产品价格项
-export type ProductPriceItem = {
-  /**
-   * Currency
-   * 币种
-   */
-  currency: string;
-
-  /**
-   * Retail price
-   * 零售价
-   */
-  retailPrice: number;
-
+export type ProductPriceItem = ProductSimplePriceItem & {
   /**
    * Promotion price
    * 促销价

@@ -22,6 +22,7 @@ import { ProductPriceItem } from "./dto/product/ProductPriceItem";
 import { ProductUpdateLogoRQ } from "./rq/product/ProductUpdateLogoRQ";
 import { QueryForSaleRQ } from "./rq/product/QueryForSaleRQ";
 import { QueryForSaleData } from "./dto/product/QueryForSaleData";
+import { ProductReadCustomData } from "./dto/product/ProductReadCustomData";
 
 /**
  * Product API
@@ -106,6 +107,16 @@ export class ProductApi extends EntityApi {
    */
   read(id: number, payload?: IApiPayload<ProductViewData>) {
     return this.readBase(id, payload);
+  }
+
+  /**
+   * Read custom data
+   * @param id Id
+   * @param payload Payload
+   * @returns Result
+   */
+  readCustom(id: number, payload?: IApiPayload<ProductReadCustomData>) {
+    return this.api.get(`${this.flag}/ReadCustom/${id}`, undefined, payload);
   }
 
   /**
