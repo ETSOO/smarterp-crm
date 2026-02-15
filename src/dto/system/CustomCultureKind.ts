@@ -31,5 +31,5 @@ export enum CustomCultureKind {
    * Promotion
    * 促销
    */
-  Promotion = 10
+  Promotion = 19
 }

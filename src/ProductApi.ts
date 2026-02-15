@@ -1,5 +1,6 @@
 import {
   AppActionData,
+  BusinessUtils,
   EntityApi,
   IApi,
   IApiPayload,
@@ -87,7 +88,11 @@ export class ProductApi extends EntityApi {
    * @returns Result
    */
   queryForSale(rq: QueryForSaleRQ, payload?: IApiPayload<QueryForSaleData[]>) {
-    return this.api.post(`${this.flag}/QueryForSale`, rq, payload);
+    return this.api.post(
+      `${this.flag}/QueryForSale`,
+      BusinessUtils.formatQuery(rq),
+      payload
+    );
   }
 
   /**
