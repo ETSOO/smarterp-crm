@@ -38,4 +38,10 @@ export type ProductCategoryUpdateReadData = {
    * JSON 数据
    */
   data?: string;
+
+  /**
+   * Attributes definition
+   * 属性定义
+   */
+  attributes?: string;
 };

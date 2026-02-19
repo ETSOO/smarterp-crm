@@ -119,4 +119,16 @@ export type ProductUpdateReadData = {
    * 状况
    */
   status: EntityStatus;
+
+  /**
+   * JSON data
+   * JSON 数据
+   */
+  data?: string;
+
+  /**
+   * Modifiers
+   * 定制选项
+   */
+  modifiers?: string;
 };
