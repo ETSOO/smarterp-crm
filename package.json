@@ -57,9 +57,9 @@
     "react-dom": "$react-dom"
   },
   "dependencies": {
-    "@etsoo/appscript": "^1.6.53",
-    "@etsoo/materialui": "^1.6.11",
-    "@etsoo/react": "^1.8.74",
+    "@etsoo/appscript": "^1.6.56",
+    "@etsoo/materialui": "^1.6.15",
+    "@etsoo/react": "^1.8.77",
     "@etsoo/shared": "^1.2.80",
     "@mui/material": "^7.3.8",
     "react": "^19.2.4",

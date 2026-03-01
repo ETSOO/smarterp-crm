@@ -53,6 +53,19 @@ export class PersonCategoryApi extends EntityApi {
   }
 
   /**
+   * Get attributes
+   * @param ids Category IDs
+   * @param payload Payload
+   * @returns Result
+   */
+  getAttributes(ids: number[], payload?: IApiPayload<string[]>) {
+    return this.api.post(`${this.flag}/GetAttributes`, ids, {
+      contentType: "application/json",
+      ...payload
+    });
+  }
+
+  /**
    * List
    * @param rq Request data
    * @param payload Payload
