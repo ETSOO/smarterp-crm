@@ -1,4 +1,5 @@
 import {
+  CustomFieldData,
   EntityApi,
   IApi,
   IApiPayload,
@@ -15,6 +16,7 @@ import { PersonCategoryUpdateRQ } from "./rq/personCategory/PersonCategoryUpdate
 import { PersonCategoryUpdateReadData } from "./dto/personCategory/PersonCategoryUpdateReadData";
 import { PersonCategoryDuplicateTestRQ } from "./rq/personCategory/PersonCategoryDuplicateTestRQ";
 import { PersonCategoryDuplicateTestData } from "./dto/personCategory/PersonCategoryDuplicateTestData";
+import { ApiHelpers } from "./utils/ApiHelpers";
 
 /**
  * Person category API
@@ -58,11 +60,8 @@ export class PersonCategoryApi extends EntityApi {
    * @param payload Payload
    * @returns Result
    */
-  getAttributes(ids: number[], payload?: IApiPayload<string[]>) {
-    return this.api.post(`${this.flag}/GetAttributes`, ids, {
-      contentType: "application/json",
-      ...payload
-    });
+  getAttributes(ids: number[], payload?: IApiPayload<CustomFieldData[]>) {
+    return ApiHelpers.postGetAttributes(this.api, this.flag, ids, payload);
   }
 
   /**

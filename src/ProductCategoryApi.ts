@@ -1,4 +1,5 @@
 import {
+  CustomFieldData,
   EntityApi,
   IApi,
   IApiPayload,
@@ -15,6 +16,7 @@ import { ProductCategoryUpdateRQ } from "./rq/productCategory/ProductCategoryUpd
 import { ProductCategoryUpdateReadData } from "./dto/productCategory/ProductCategoryUpdateReadData";
 import { ProductCategoryDuplicateTestRQ } from "./rq/productCategory/ProductCategoryDuplicateTestRQ";
 import { ProductCategoryDuplicateTestData } from "./dto/productCategory/ProductCategoryDuplicateTestData";
+import { ApiHelpers } from "./utils/ApiHelpers";
 
 /**
  * Product category API
@@ -58,11 +60,8 @@ export class ProductCategoryApi extends EntityApi {
    * @param payload Payload
    * @returns Result
    */
-  getAttributes(ids: number[], payload?: IApiPayload<string[]>) {
-    return this.api.post(`${this.flag}/GetAttributes`, ids, {
-      contentType: "application/json",
-      ...payload
-    });
+  getAttributes(ids: number[], payload?: IApiPayload<CustomFieldData[]>) {
+    return ApiHelpers.postGetAttributes(this.api, this.flag, ids, payload);
   }
 
   /**
