@@ -65,4 +65,10 @@ export type UserUpdateRQ = DataTypes.EditType<{
    * 排除的权限项目
    */
   permissionExcluded?: number[];
+
+  /**
+   * JSON data
+   * JSON 数据
+   */
+  data?: object;
 }>;

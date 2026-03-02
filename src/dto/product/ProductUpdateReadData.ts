@@ -124,11 +124,11 @@ export type ProductUpdateReadData = {
    * JSON data
    * JSON 数据
    */
-  data?: string;
+  data?: object;
 
   /**
    * Modifiers
    * 定制选项
    */
-  modifiers?: string;
+  modifiers?: object;
 };

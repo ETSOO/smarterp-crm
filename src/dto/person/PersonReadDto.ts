@@ -147,7 +147,7 @@ export type PersonViewData = ContactItem & {
    * JSON data
    * JSON 数据
    */
-  data?: string;
+  data?: object;
 
   /**
    * User role, permission level

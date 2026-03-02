@@ -29,7 +29,12 @@ export namespace ApiHelpers {
         if (!raw) return [undefined, []];
 
         if (Array.isArray(raw) && raw.length > 0) {
-          if (isCustomFieldData(raw[0])) {
+          if (Array.isArray(raw[0])) {
+            return [
+              undefined,
+              raw.flatMap((item) => item as CustomFieldData[])
+            ];
+          } else if (isCustomFieldData(raw[0])) {
             return [undefined, raw as CustomFieldData[]];
           } else if (typeof raw[0] === "string") {
             return [

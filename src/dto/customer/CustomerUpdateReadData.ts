@@ -71,4 +71,10 @@ export type CustomerUpdateReadData = {
    * 状况
    */
   status: EntityStatus;
+
+  /**
+   * JSON data
+   * JSON 数据
+   */
+  data?: object;
 };

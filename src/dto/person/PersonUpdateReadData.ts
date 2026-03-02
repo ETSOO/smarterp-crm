@@ -131,7 +131,7 @@ export type PersonUpdateReadData = {
    * JSON data
    * JSON 数据
    */
-  data?: string;
+  data?: object;
 
   /**
    * Expiry time

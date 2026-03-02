@@ -77,4 +77,10 @@ export type SupplierUpdateRQ = DataTypes.EditType<{
    * 状况
    */
   status?: EntityStatus;
+
+  /**
+   * JSON data
+   * JSON 数据
+   */
+  data?: object;
 }>;

@@ -131,7 +131,7 @@ export type PersonUpdateRQ = DataTypes.EditType<{
    * JSON data
    * JSON 数据
    */
-  data?: string;
+  data?: object;
 
   /**
    * Expiry time

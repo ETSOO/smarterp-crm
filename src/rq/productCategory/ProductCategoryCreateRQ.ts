@@ -31,11 +31,11 @@ export type ProductCategoryCreateRQ = {
    * JSON data
    * JSON 数据
    */
-  data?: string;
+  data?: object;
 
   /**
    * Attributes definition
    * 属性定义
    */
-  attributes?: string;
+  attributes?: object;
 };
