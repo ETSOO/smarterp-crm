@@ -67,8 +67,14 @@ export type UserUpdateRQ = DataTypes.EditType<{
   permissionExcluded?: number[];
 
   /**
+   * Categories
+   * 类目
+   */
+  categories?: number[];
+
+  /**
    * JSON data
    * JSON 数据
    */
-  data?: object;
+  data?: Record<string, unknown>;
 }>;

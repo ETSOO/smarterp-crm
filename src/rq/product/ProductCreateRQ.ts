@@ -121,11 +121,11 @@ export type ProductCreateRQ = {
    * JSON data
    * JSON 数据
    */
-  data?: object;
+  data?: Record<string, unknown>;
 
   /**
    * Modifiers
    * 定制选项
    */
-  modifiers?: object;
+  modifiers?: Record<string, unknown>;
 };

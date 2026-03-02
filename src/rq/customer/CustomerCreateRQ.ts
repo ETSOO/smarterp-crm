@@ -106,5 +106,5 @@ export type CustomerCreateRQ = {
    * JSON data
    * JSON 数据
    */
-  data?: object;
+  data?: Record<string, unknown>;
 };

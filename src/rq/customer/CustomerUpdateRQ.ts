@@ -82,5 +82,5 @@ export type CustomerUpdateRQ = DataTypes.EditType<{
    * JSON data
    * JSON 数据
    */
-  data?: object;
+  data?: Record<string, unknown>;
 }>;
