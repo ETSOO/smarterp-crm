@@ -114,6 +114,12 @@ export type ProductViewData = {
   status: EntityStatus;
 
   /**
+   * JSON data
+   * JSON 数据
+   */
+  data?: Record<string, unknown>;
+
+  /**
    * Creation
    * 登记时间
    */
