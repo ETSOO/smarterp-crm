@@ -4,6 +4,7 @@ import { AppModule } from "../dto/system/AppModule";
 import { CustomerType } from "../dto/system/CustomerType";
 import { IdentityTypeFlags } from "@etsoo/appscript";
 import { FeatureTagKind } from "../dto/tag/FeatureTagKind";
+import { Permissions } from "../dto/system/Permissions";
 
 /**
  * System
@@ -11,6 +12,18 @@ import { FeatureTagKind } from "../dto/tag/FeatureTagKind";
  */
 export class System {
   constructor(private crm: ICrmApp) {}
+
+  /**
+   * Can manage cultures
+   * 是否可以管理文化
+   */
+  canManageCultures() {
+    const app = this.crm.app;
+    return (
+      this.crm.owns(Permissions.Org.Manage) &&
+      (app.userData?.system?.cultures.length ?? -1) > 1
+    );
+  }
 
   /**
    * Get customer type label
@@ -30,6 +43,24 @@ export class System {
    */
   getCustomerTypes() {
     return this.crm.app.getEnumList(CustomerType, "customerType");
+  }
+
+  /**
+   * Get default culture
+   * 获取默认文化
+   */
+  getDefaultCulture() {
+    const app = this.crm.app;
+    return app.userData?.system?.cultures[0] ?? app.culture;
+  }
+
+  /**
+   * Get default currency
+   * 获取默认币种
+   */
+  getDefaultCurrency() {
+    const app = this.crm.app;
+    return app.userData?.system?.currencies[0] ?? app.currency;
   }
 
   /**
