@@ -12,6 +12,7 @@ import { CustomerQueryData } from "./dto/customer/CustomerQueryData";
 import { CustomerUpdateRQ } from "./rq/customer/CustomerUpdateRQ";
 import { CustomerUpdateReadData } from "./dto/customer/CustomerUpdateReadData";
 import { CustomerCreateRQ } from "./rq/customer/CustomerCreateRQ";
+import { CustomerReadForSaleData } from "./dto/customer/CustomerReadForSaleData";
 
 /**
  * Customer API
@@ -54,6 +55,20 @@ export class CustomerApi extends EntityApi {
    */
   query(rq: CustomerQueryRQ, payload?: IApiPayload<CustomerQueryData[]>) {
     return this.queryBase(rq, payload);
+  }
+
+  /**
+   * Get customer info for sale
+   * @param id Customer ID (optional)
+   * @param payload Payload
+   * @returns Result
+   */
+  readForSale(id?: number, payload?: IApiPayload<CustomerReadForSaleData>) {
+    return this.api.post(
+      `${this.flag}/ReadForSale/${id ?? ""}`,
+      undefined,
+      payload
+    );
   }
 
   /**

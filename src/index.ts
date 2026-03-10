@@ -14,6 +14,8 @@ export * from "./rq/asset/AssetUpdateRQ";
 // Customer
 export * from "./dto/customer/CustomerListData";
 export * from "./dto/customer/CustomerQueryData";
+export * from "./dto/customer/CustomerReadForSaleData";
+export * from "./dto/customer/CustomerSaleData";
 export * from "./dto/customer/CustomerUpdateReadData";
 
 export * from "./rq/customer/CustomerCreateRQ";
