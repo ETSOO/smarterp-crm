@@ -109,6 +109,12 @@ export type QueryForSaleData = {
   unitName: string;
 
   /**
+   * Modifiers
+   * 定制选项
+   */
+  modifiers?: Record<string, unknown>;
+
+  /**
    * Categories
    * 类目
    */
