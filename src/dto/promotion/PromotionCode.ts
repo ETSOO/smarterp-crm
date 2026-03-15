@@ -1,4 +1,3 @@
-import { ShoppingPromotion } from "@etsoo/appscript";
 import { PromotionCodeData } from "./PromotionCodeData";
 import { PromotionItem } from "./PromotionItem";
 
@@ -8,6 +7,34 @@ export type PromotionOrderLine = {
   currentPrice?: number | undefined;
 };
 
+/**
+ * Promotion code calculation result
+ * 促销代码计算结果
+ */
+export type PromotionCodeCalculation = {
+  /**
+   * Promotion id
+   * 促销编号
+   */
+  id: number;
+
+  /**
+   * Promotion title
+   * 促销标题
+   */
+  title: string;
+
+  /**
+   * Discount amount
+   * 折扣金额
+   */
+  amount: number;
+};
+
+/**
+ * Promotion code definition
+ * 促销代码定义
+ */
 export type PromotionCode = {
   id: number;
   label: string;
@@ -15,7 +42,7 @@ export type PromotionCode = {
     p: PromotionItem,
     sale: PromotionOrderLine | null | undefined,
     amount: number
-  ) => ShoppingPromotion | undefined;
+  ) => PromotionCodeCalculation | undefined;
   validate: (data: PromotionCodeData) => string | void;
 };
 
