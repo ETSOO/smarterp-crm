@@ -6,8 +6,22 @@ import { PromotionItem } from "./PromotionItem";
  * 促销计算的订单行
  */
 export type PromotionOrderLine = {
+  /**
+   * Real sale price
+   * 实际销售价格
+   */
   price: number;
+
+  /**
+   * Quantity
+   * 数量
+   */
   qty: number;
+
+  /**
+   * Current price for promotion calculation, it will be modified by promotion code calculate function
+   * 当前促销计算价格，促销代码的计算函数会修改这个价格以供后续促销计算使用
+   */
   currentPrice?: number | undefined;
 };
 
@@ -37,7 +51,8 @@ export type PromotionCodeCalculation = {
 
 /**
  * Promotion code definition
- * 促销代码定义
+ * 促销代码定义，如果是面向产品和产品类目的促销，满足的金额是本行的金额；如果是面向订单的促销，满足的金额是订单的总金额
+ * calculate函数会修改订单行的currentPrice以供后续促销计算使用
  */
 export type PromotionCode = {
   id: number;
