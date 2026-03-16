@@ -29,6 +29,7 @@ import { PersonContactApi } from "./PersonContactApi";
 import { PersonInfoApi } from "./PersonInfoApi";
 import { PersonAddress } from "./utils/PersonAddress";
 import { PersonProductApi } from "./PersonProductApi";
+import { Order } from "./utils/Order";
 
 /**
  * Get CRM app context hook
@@ -99,6 +100,12 @@ export interface ICrmApp {
    * 权限组接口
    */
   readonly groupApi: GroupApi;
+
+  /**
+   * Order
+   * 订单
+   */
+  readonly order: Order;
 
   /**
    * Order API
@@ -293,6 +300,15 @@ export class CrmApp implements ICrmApp {
    */
   get groupApi() {
     return (this._groupApi ??= new GroupApi(this.app));
+  }
+
+  private _order?: Order;
+  /**
+   * Order
+   * 订单
+   */
+  get order(): Order {
+    return (this._order ??= new Order(this));
   }
 
   private _orderApi?: OrderApi;

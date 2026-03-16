@@ -1,6 +1,10 @@
 import { PromotionCodeData } from "./PromotionCodeData";
 import { PromotionItem } from "./PromotionItem";
 
+/**
+ * Order line for promotion calculation
+ * 促销计算的订单行
+ */
 export type PromotionOrderLine = {
   price: number;
   qty: number;
