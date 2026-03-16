@@ -16,5 +16,5 @@ export type CustomerReadForSaleData = {
    * Promotions
    * 促销
    */
-  promotions?: PromotionItem[];
+  promotions: PromotionItem[];
 };

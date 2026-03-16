@@ -58,12 +58,12 @@ export class PromotionApi extends EntityApi {
 
   /**
    * Sort promotions
-   * @param rq Request data
+   * @param items Items to sort
    * @param payload Payload
    * @returns Result
    */
-  sort(rq: Record<number, number>, payload?: IApiPayload<number>) {
-    return this.api.put(`${this.flag}/Sort`, rq, payload);
+  sort(items: PromotionListData[], payload?: IApiPayload<number>) {
+    return this.sortBase(items, payload);
   }
 
   /**

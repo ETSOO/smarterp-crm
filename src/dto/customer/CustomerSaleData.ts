@@ -33,5 +33,5 @@ export type CustomerSaleData = {
    * Promotions
    * 促销
    */
-  promotions?: PromotionItem[];
+  promotions: PromotionItem[];
 };
