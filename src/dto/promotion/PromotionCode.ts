@@ -65,13 +65,28 @@ export type PromotionCode = {
   validate: (data: PromotionCodeData) => string | void;
 };
 
+/**
+ * Promotion code name
+ * 促销代码名称
+ */
+export enum PromotionCodeName {
+  OMJ = 1, // 订单满{m}减{n}
+  PMJ = 6, // 产品满{m}减{n}
+  PMS = 2, // 产品买{n}送一
+  PEZ = 3, // 产品第二件{n}折
+  PKZ = 7, // 产品{n}折
+  PJH = 8, // 产品{n}件以上{m}优惠价
+  CKZ = 4, // 客户{n}折
+  CDZ = 5 // {t}会员{n}折
+}
+
 export const promotionCodes: PromotionCode[] = [
   {
-    id: 1,
+    id: PromotionCodeName.OMJ,
     label: "OMJ", // 订单满{m}减{n}
     calculate: (
       p: PromotionItem,
-      sale: PromotionOrderLine | null | undefined,
+      _sale: PromotionOrderLine | null | undefined,
       amount: number
     ) => {
       const { id, title, minAmount, discount } = p;
@@ -98,7 +113,7 @@ export const promotionCodes: PromotionCode[] = [
     }
   },
   {
-    id: 6,
+    id: PromotionCodeName.PMJ,
     label: "PMJ", // 产品满{m}减{n}
     calculate: (
       p: PromotionItem,
@@ -136,7 +151,7 @@ export const promotionCodes: PromotionCode[] = [
     }
   },
   {
-    id: 2,
+    id: PromotionCodeName.PMS,
     label: "PMS", // 产品买{n}送一
     calculate: (
       p: PromotionItem,
@@ -170,7 +185,7 @@ export const promotionCodes: PromotionCode[] = [
     }
   },
   {
-    id: 3,
+    id: PromotionCodeName.PEZ,
     label: "PEZ", // 产品第二件{n}折
     calculate: (
       p: PromotionItem,
@@ -208,7 +223,7 @@ export const promotionCodes: PromotionCode[] = [
     }
   },
   {
-    id: 7,
+    id: PromotionCodeName.PKZ,
     label: "PKZ", // 产品{n}折
     calculate: (
       p: PromotionItem,
@@ -237,12 +252,12 @@ export const promotionCodes: PromotionCode[] = [
     }
   },
   {
-    id: 8,
+    id: PromotionCodeName.PJH,
     label: "PJH", // 产品{n}件以上{m}优惠价
     calculate: (
       p: PromotionItem,
       sale: PromotionOrderLine | null | undefined,
-      amount: number
+      _amount: number
     ) => {
       if (sale == null) return undefined;
       const { id, title, minAmount, discount } = p;
@@ -268,7 +283,7 @@ export const promotionCodes: PromotionCode[] = [
     }
   },
   {
-    id: 4,
+    id: PromotionCodeName.CKZ,
     label: "CKZ", // 客户{n}折
     calculate: (
       p: PromotionItem,
@@ -301,7 +316,7 @@ export const promotionCodes: PromotionCode[] = [
     }
   },
   {
-    id: 5,
+    id: PromotionCodeName.CDZ,
     label: "CDZ", // {t}会员{n}折
     calculate: (
       p: PromotionItem,

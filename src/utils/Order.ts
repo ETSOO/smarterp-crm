@@ -12,18 +12,27 @@ import { PromotionItem } from "../dto/promotion/PromotionItem";
  * 订单工具类
  */
 export namespace OrderUtils {
+  function calculateAmount(
+    totalAmount?: () => number,
+    sale?: PromotionOrderLine
+  ): number {
+    if (totalAmount) return totalAmount();
+    if (sale) return sale.qty * (sale.currentPrice ?? sale.price);
+    return 0;
+  }
+
   /**
    * Calculate promotions
    * 计算促销
    * @param promotions Promotions
-   * @param totalAmount Total amount
+   * @param totalAmount Total amount, default is the line amount, for product level promotion, it should be the line amount; for order level promotion, it should be the order total amount
    * @param sale Sale item
    * @param onUpdate When promotion pushed
    * @returns Result
    */
   export function calculatePromotions(
     promotions: PromotionItem[],
-    totalAmount: () => number,
+    totalAmount?: () => number,
     sale?: PromotionOrderLine,
     onUpdate?: (promotion: PromotionCodeCalculation) => void
   ) {
@@ -33,7 +42,7 @@ export namespace OrderUtils {
       .map((p) => {
         const code = promotionCodes.find((pc) => pc.id === p.code);
         if (code == null) return undefined;
-        return code.calculate(p, sale, totalAmount());
+        return code.calculate(p, sale, calculateAmount(totalAmount, sale));
       })
       .filter((p): p is PromotionCodeCalculation => p != null);
 
@@ -52,7 +61,11 @@ export namespace OrderUtils {
       .forEach((p) => {
         const code = promotionCodes.find((pc) => pc.id === p.code);
         if (code == null) return;
-        const result = code.calculate(p, sale, totalAmount());
+        const result = code.calculate(
+          p,
+          sale,
+          calculateAmount(totalAmount, sale)
+        );
         if (result == null) return;
 
         items.push(result);
