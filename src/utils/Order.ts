@@ -13,10 +13,10 @@ import { PromotionItem } from "../dto/promotion/PromotionItem";
  */
 export namespace OrderUtils {
   function calculateAmount(
-    totalAmount?: () => number,
+    totalAmount?: number,
     sale?: PromotionOrderLine
   ): number {
-    if (totalAmount) return totalAmount();
+    if (totalAmount != null && totalAmount >= 0) return totalAmount;
     if (sale) return sale.qty * (sale.currentPrice ?? sale.price);
     return 0;
   }
@@ -32,17 +32,23 @@ export namespace OrderUtils {
    */
   export function calculatePromotions(
     promotions: PromotionItem[],
-    totalAmount?: () => number,
+    totalAmount?: number,
     sale?: PromotionOrderLine,
-    onUpdate?: (promotion: PromotionCodeCalculation) => void
+    onUpdate?: (
+      promotion: PromotionItem,
+      result: PromotionCodeCalculation
+    ) => void
   ) {
-    // Non-stackable items
-    const nsPromotions = promotions
-      .filter((p) => !p.stackable)
+    // Total amount
+    let total = calculateAmount(totalAmount, sale);
+
+    // Non-stackable items, keep the total amount value
+    const nonStackablePromotions = promotions.filter((p) => !p.stackable);
+    const nsPromotions = nonStackablePromotions
       .map((p) => {
         const code = promotionCodes.find((pc) => pc.id === p.code);
         if (code == null) return undefined;
-        return code.calculate(p, sale, calculateAmount(totalAmount, sale));
+        return code.calculate(p, sale, total);
       })
       .filter((p): p is PromotionCodeCalculation => p != null);
 
@@ -52,7 +58,16 @@ export namespace OrderUtils {
     const maxPromotion = nsPromotions.maxItem("amount");
     if (maxPromotion) {
       items.push(maxPromotion);
-      if (onUpdate) onUpdate(maxPromotion);
+
+      // Subtract the amount of the promotion
+      total -= maxPromotion.amount;
+
+      if (onUpdate) {
+        onUpdate(
+          nonStackablePromotions.find((p) => p.id === maxPromotion.id)!,
+          maxPromotion
+        );
+      }
     }
 
     // Stackable items
@@ -61,15 +76,16 @@ export namespace OrderUtils {
       .forEach((p) => {
         const code = promotionCodes.find((pc) => pc.id === p.code);
         if (code == null) return;
-        const result = code.calculate(
-          p,
-          sale,
-          calculateAmount(totalAmount, sale)
-        );
+
+        const result = code.calculate(p, sale, total);
         if (result == null) return;
 
         items.push(result);
-        if (onUpdate) onUpdate(result);
+
+        // Subtract the amount of the promotion
+        total -= result.amount;
+
+        if (onUpdate) onUpdate(p, result);
       });
 
     return items;
