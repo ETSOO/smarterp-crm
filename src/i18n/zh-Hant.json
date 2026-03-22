@@ -39,6 +39,7 @@
   "contacts": "聯絡人",
   "costPrice": "成本價",
   "comments": "評論",
+  "confirmOrder": "確認訂單",
   "coupons": "最大優惠券",
   "couponsApplied": "已使用優惠券",
   "cultures": "語言/文化",
@@ -270,6 +271,7 @@
   "taxRate": "稅率",
   "times": "次數",
   "today": "今天",
+  "total": "總計",
   "unitCM": "厘米",
   "viewProfile": "查看檔案",
   "weekDays": [

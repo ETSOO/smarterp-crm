@@ -39,6 +39,7 @@
   "contacts": "Contacts",
   "costPrice": "Cost price",
   "comments": "Comments",
+  "confirmOrder": "Confirm order",
   "coupons": "Max. coupons",
   "couponsApplied": "Coupons applied",
   "cultures": "Cultures",
@@ -272,6 +273,7 @@
   "taxRate": "Tax rate",
   "times": "Times",
   "today": "Today",
+  "total": "Total",
   "unitCM": "CM",
   "viewProfile": "View profile",
   "weekDays": [
