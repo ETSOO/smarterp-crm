@@ -15,7 +15,7 @@ export function OrderPaymentList(
 
   // Destruct
   const {
-    label = crm.app.get("orderPaymentKinds"),
+    label = crm.app.get("orderPayments"),
     name = "payment_id",
     ...rest
   } = props;

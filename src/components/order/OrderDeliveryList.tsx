@@ -15,7 +15,7 @@ export function OrderDeliveryList(
 
   // Destruct
   const {
-    label = crm.app.get("orderDeliveryKinds"),
+    label = crm.app.get("orderDeliveries"),
     name = "delivery_id",
     ...rest
   } = props;
