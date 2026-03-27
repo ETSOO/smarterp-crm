@@ -3,11 +3,11 @@ import { useRequiredCrmApp } from "../../CrmApp";
 import { ListType } from "@etsoo/shared";
 
 /**
- * Order payment list component
+ * Order delivery kind list component
  * @param props Props
  * @returns Component
  */
-export function OrderPaymentList(
+export function OrderDeliveryKindList(
   props: Omit<SelectExProps<ListType>, "options">
 ) {
   // CRM app
@@ -15,8 +15,9 @@ export function OrderPaymentList(
 
   // Destruct
   const {
-    label = crm.app.get("orderPayments"),
-    name = "payment_id",
+    fullWidth = true,
+    label = crm.app.get("type"),
+    name = "kind",
     ...rest
   } = props;
 
@@ -25,7 +26,8 @@ export function OrderPaymentList(
     <SelectEx
       label={label}
       name={name}
-      options={crm.order.getPayments()}
+      options={crm.order.getDeliveryKinds()}
+      fullWidth={fullWidth}
       {...rest}
     />
   );

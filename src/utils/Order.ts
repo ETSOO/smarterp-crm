@@ -102,42 +102,42 @@ export class Order {
   constructor(private crm: ICrmApp) {}
 
   /**
-   * Get order delivery label
+   * Get order delivery kind label
    * 获取订单配送方式标签
    * @param delivery Delivery kind
    * @returns Result
    */
-  getDelivery(delivery?: OrderDeliveryKind) {
+  getDeliveryKind(delivery?: OrderDeliveryKind) {
     if (delivery == null) return undefined;
     const key = OrderDeliveryKind[delivery];
     return this.crm.app.get("orderDeliveryKind" + key) ?? key;
   }
 
   /**
-   * Get order deliveries
+   * Get order delivery kinds
    * 获取订单配送方式
    */
-  getDeliveries() {
+  getDeliveryKinds() {
     return this.crm.app.getEnumList(OrderDeliveryKind, "orderDeliveryKind");
   }
 
   /**
-   * Get order payment label
+   * Get order payment kind label
    * 获取订单付款方式标签
    * @param payment Payment kind
    * @returns Result
    */
-  getPayment(payment?: OrderPaymentKind) {
+  getPaymentKind(payment?: OrderPaymentKind) {
     if (payment == null) return undefined;
     const key = OrderPaymentKind[payment];
     return this.crm.app.get("orderPaymentKind" + key) ?? key;
   }
 
   /**
-   * Get order payments
+   * Get order payment kinds
    * 获取订单付款方式
    */
-  getPayments() {
+  getPaymentKinds() {
     return this.crm.app.getEnumList(OrderPaymentKind, "orderPaymentKind");
   }
 
