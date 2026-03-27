@@ -273,6 +273,8 @@
   "simpleInventory": "简易库存",
   "sn": "序列号",
   "sortCategory": "分类排序",
+  "sortOrderDelivery": "配送方式排序",
+  "sortOrderPayment": "付款方式排序",
   "sortPromotion": "促销排序",
   "stackable": "可叠加",
   "stakeholders": "相关方",

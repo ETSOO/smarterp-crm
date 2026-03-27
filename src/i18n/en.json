@@ -275,6 +275,8 @@
   "simpleInventory": "Simple inventory",
   "sn": "SN",
   "sortCategory": "Sort category",
+  "sortOrderDelivery": "Sort delivery method",
+  "sortOrderPayment": "Sort payment method",
   "sortPromotion": "Sort promotion",
   "stackable": "Stackable",
   "stakeholders": "Stakeholders",
