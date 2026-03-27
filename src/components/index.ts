@@ -9,6 +9,10 @@ export * from "./dept/DeptTiplist";
 export * from "./group/ButtonGroups";
 export * from "./group/GroupTiplist";
 
+// order
+export * from "./order/OrderDeliveryList";
+export * from "./order/OrderPaymentList";
+
 // person
 export * from "./person/ButtonEducations";
 export * from "./person/ButtonRadioContactRelations";
