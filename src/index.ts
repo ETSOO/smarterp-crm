@@ -49,6 +49,28 @@ export * from "./dto/order/OrderQueryData";
 export * from "./rq/order/OrderListRQ";
 export * from "./rq/order/OrderQueryRQ";
 
+// Order delivery
+export * from "./dto/orderDelivery/OrderDeliveryKind";
+export * from "./dto/orderDelivery/OrderDeliveryListData";
+export * from "./dto/orderDelivery/OrderDeliveryQueryData";
+export * from "./dto/orderDelivery/OrderDeliveryUpdateReadData";
+
+export * from "./rq/orderDelivery/OrderDeliveryCreateRQ";
+export * from "./rq/orderDelivery/OrderDeliveryListRQ";
+export * from "./rq/orderDelivery/OrderDeliveryQueryRQ";
+export * from "./rq/orderDelivery/OrderDeliveryUpdateRQ";
+
+// Order payment
+export * from "./dto/orderPayment/OrderPaymentKind";
+export * from "./dto/orderPayment/OrderPaymentListData";
+export * from "./dto/orderPayment/OrderPaymentQueryData";
+export * from "./dto/orderPayment/OrderPaymentUpdateReadData";
+
+export * from "./rq/orderPayment/OrderPaymentCreateRQ";
+export * from "./rq/orderPayment/OrderPaymentListRQ";
+export * from "./rq/orderPayment/OrderPaymentQueryRQ";
+export * from "./rq/orderPayment/OrderPaymentUpdateRQ";
+
 // Person
 export * from "./dto/person/ChoosePersonsData";
 export * from "./dto/person/IdentityTypeData";

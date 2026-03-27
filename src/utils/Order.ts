@@ -1,4 +1,6 @@
 import { ICrmApp } from "../CrmApp";
+import { OrderDeliveryKind } from "../dto/orderDelivery/OrderDeliveryKind";
+import { OrderPaymentKind } from "../dto/orderPayment/OrderPaymentKind";
 import { QueryForSaleData } from "../dto/product/QueryForSaleData";
 import {
   PromotionCodeCalculation,
@@ -98,6 +100,46 @@ export namespace OrderUtils {
  */
 export class Order {
   constructor(private crm: ICrmApp) {}
+
+  /**
+   * Get order delivery label
+   * 获取订单配送方式标签
+   * @param delivery Delivery kind
+   * @returns Result
+   */
+  getDelivery(delivery?: OrderDeliveryKind) {
+    if (delivery == null) return undefined;
+    const key = OrderDeliveryKind[delivery];
+    return this.crm.app.get("orderDeliveryKind" + key) ?? key;
+  }
+
+  /**
+   * Get order deliveries
+   * 获取订单配送方式
+   */
+  getDeliveries() {
+    return this.crm.app.getEnumList(OrderDeliveryKind, "orderDeliveryKind");
+  }
+
+  /**
+   * Get order payment label
+   * 获取订单付款方式标签
+   * @param payment Payment kind
+   * @returns Result
+   */
+  getPayment(payment?: OrderPaymentKind) {
+    if (payment == null) return undefined;
+    const key = OrderPaymentKind[payment];
+    return this.crm.app.get("orderPaymentKind" + key) ?? key;
+  }
+
+  /**
+   * Get order payments
+   * 获取订单付款方式
+   */
+  getPayments() {
+    return this.crm.app.getEnumList(OrderPaymentKind, "orderPaymentKind");
+  }
 
   /**
    * Get price for sale

@@ -30,6 +30,8 @@ import { PersonInfoApi } from "./PersonInfoApi";
 import { PersonAddress } from "./utils/PersonAddress";
 import { PersonProductApi } from "./PersonProductApi";
 import { Order } from "./utils/Order";
+import { OrderDeliveryApi } from "./OrderDeliveryApi";
+import { OrderPaymentApi } from "./OrderPaymentApi";
 
 /**
  * Get CRM app context hook
@@ -112,6 +114,18 @@ export interface ICrmApp {
    * 订单接口
    */
   readonly orderApi: OrderApi;
+
+  /**
+   * Order delivery API
+   * 订单交付接口
+   */
+  readonly orderDeliveryApi: OrderDeliveryApi;
+
+  /**
+   * Order payment API
+   * 订单支付接口
+   */
+  readonly orderPaymentApi: OrderPaymentApi;
 
   /**
    * Person
@@ -318,6 +332,24 @@ export class CrmApp implements ICrmApp {
    */
   get orderApi() {
     return (this._orderApi ??= new OrderApi(this.app));
+  }
+
+  private _orderDeliveryApi?: OrderDeliveryApi;
+  /**
+   * Order delivery API
+   * 订单交付接口
+   */
+  get orderDeliveryApi() {
+    return (this._orderDeliveryApi ??= new OrderDeliveryApi(this.app));
+  }
+
+  private _orderPaymentApi?: OrderPaymentApi;
+  /**
+   * Order payment API
+   * 订单支付接口
+   */
+  get orderPaymentApi() {
+    return (this._orderPaymentApi ??= new OrderPaymentApi(this.app));
   }
 
   private _person?: Person;
