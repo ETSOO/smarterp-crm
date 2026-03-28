@@ -51,7 +51,7 @@ export function OrderPaymentTiplist(props: OrderPaymentTiplistProps) {
     getOptionLabel = (data) => data.title,
     onLoadData = (rq) => rq,
     name = "paymentId",
-    rq = {},
+    rq = { isValid: true },
     ...rest
   } = props;
 

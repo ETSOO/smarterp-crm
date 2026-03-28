@@ -26,27 +26,33 @@ export type PromotionOrderLine = {
 };
 
 /**
- * Promotion code calculation result
- * 促销代码计算结果
+ * Promotion sale base item
+ * 销售促销基础项目
  */
-export type PromotionCodeCalculation = {
+export type PromotionSaleItemBase = {
   /**
-   * Promotion id
-   * 促销编号
+   * Id
+   * 编号
    */
   id: number;
 
+  /**
+   * Amount
+   * 金额
+   */
+  amount: number;
+};
+
+/**
+ * Promotion code calculation result
+ * 促销代码计算结果
+ */
+export type PromotionCodeCalculation = PromotionSaleItemBase & {
   /**
    * Promotion title
    * 促销标题
    */
   title: string;
-
-  /**
-   * Discount amount
-   * 折扣金额
-   */
-  amount: number;
 };
 
 /**

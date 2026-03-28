@@ -51,7 +51,7 @@ export function OrderDeliveryTiplist(props: OrderDeliveryTiplistProps) {
     getOptionLabel = (data) => data.title,
     onLoadData = (rq) => rq,
     name = "deliveryId",
-    rq = {},
+    rq = { isValid: true },
     ...rest
   } = props;
 
