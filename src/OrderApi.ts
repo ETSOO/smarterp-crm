@@ -12,6 +12,8 @@ import { OrderQueryData } from "./dto/order/OrderQueryData";
 import { OrderCreateRQ } from "./rq/order/OrderCreateRQ";
 import { OrderUpdateRQ } from "./rq/order/OrderUpdateRQ";
 import { OrderUpdateReadData } from "./dto/order/OrderUpdateReadData";
+import { OrderDuplicateTestRQ } from "./rq/order/OrderDuplicateTestRQ";
+import { OrderDuplicateTestData } from "./dto/order/OrderDuplicateTestData";
 
 /**
  * Order API
@@ -35,6 +37,19 @@ export class OrderApi extends EntityApi {
    */
   create(rq: OrderCreateRQ, payload?: IdResultPayload) {
     return this.api.put(`${this.flag}/Create`, rq, payload);
+  }
+
+  /**
+   * Test for duplicate order or POs
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  duplicateTest(
+    rq: OrderDuplicateTestRQ,
+    payload?: IApiPayload<OrderDuplicateTestData[]>
+  ) {
+    return this.api.post(`${this.flag}/DuplicateTest`, rq, payload);
   }
 
   /**

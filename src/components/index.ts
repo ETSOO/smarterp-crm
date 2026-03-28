@@ -10,10 +10,13 @@ export * from "./group/ButtonGroups";
 export * from "./group/GroupTiplist";
 
 // order
+export * from "./order/OrderAssignedIdDuplicateTest";
 export * from "./order/OrderDeliveryKindList";
 export * from "./order/OrderDeliveryTiplist";
 export * from "./order/OrderPaymentKindList";
 export * from "./order/OrderPaymentTiplist";
+export * from "./order/OrderSourceIdDuplicateTest";
+export * from "./order/OrderTitleDuplicateTest";
 
 // person
 export * from "./person/ButtonEducations";
