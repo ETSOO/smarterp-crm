@@ -22,6 +22,7 @@ export * from "./order/OrderTitleDuplicateTest";
 export * from "./person/ButtonEducations";
 export * from "./person/ButtonRadioContactRelations";
 export * from "./person/ContactRelationList";
+export * from "./person/ContactTiplist";
 export * from "./person/InfoKindList";
 export * from "./person/MaritalStatusList";
 export * from "./person/PersonChooser";
