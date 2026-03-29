@@ -24,6 +24,24 @@ export type OrderUpdateReadData = {
   sourceId?: string;
 
   /**
+   * Customer id
+   * 客户编号
+   */
+  customerId: number;
+
+  /**
+   * Currency
+   * 币种
+   */
+  currency: string;
+
+  /**
+   * Culture
+   * 文化
+   */
+  culture: string;
+
+  /**
    * Title
    * 标题
    */
@@ -96,10 +114,40 @@ export type OrderUpdateReadData = {
   taxAmount?: number;
 
   /**
+   * Amount
+   * 总金额
+   */
+  amount: number;
+
+  /**
+   * Discount amount
+   * 折扣金额
+   */
+  discount: number;
+
+  /**
+   * Line discount amount
+   * 行折扣金额
+   */
+  lineDiscount: number;
+
+  /**
+   * Lines
+   * 行数
+   */
+  lines: number;
+
+  /**
+   * Items
+   * 项目数
+   */
+  items: number;
+
+  /**
    * JSON data
    * JSON 数据
    */
-  data?: Record<string, unknown>;
+  data?: unknown;
 
   /**
    * Keywords

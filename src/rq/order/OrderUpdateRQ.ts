@@ -19,6 +19,18 @@ export type OrderUpdateRQ = DataTypes.EditType<{
   sourceId?: string;
 
   /**
+   * Customer id
+   * 客户编号
+   */
+  customerId?: number;
+
+  /**
+   * Culture
+   * 文化
+   */
+  culture?: string;
+
+  /**
    * Title
    * 标题
    */
