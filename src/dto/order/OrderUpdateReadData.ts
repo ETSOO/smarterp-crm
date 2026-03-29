@@ -147,7 +147,7 @@ export type OrderUpdateReadData = {
    * JSON data
    * JSON 数据
    */
-  data?: unknown;
+  data?: Record<string, unknown>;
 
   /**
    * Keywords
