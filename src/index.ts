@@ -21,6 +21,7 @@ export * from "./dto/customer/CustomerUpdateReadData";
 export * from "./rq/customer/CustomerCreateRQ";
 export * from "./rq/customer/CustomerListRQ";
 export * from "./rq/customer/CustomerQueryRQ";
+export * from "./rq/customer/CustomerReadForSaleRQ";
 export * from "./rq/customer/CustomerUpdateRQ";
 
 // Dept
