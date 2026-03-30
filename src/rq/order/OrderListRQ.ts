@@ -54,6 +54,12 @@ export type OrderListRQ = StatusQueryRQ & {
   paymentId?: number;
 
   /**
+   * Product id
+   * 产品编号
+   */
+  productId?: number;
+
+  /**
    * User id
    * 用户编号
    */
