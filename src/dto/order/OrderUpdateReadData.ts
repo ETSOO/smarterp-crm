@@ -156,6 +156,12 @@ export type OrderUpdateReadData = {
   tags?: string[];
 
   /**
+   * User id
+   * 用户编号
+   */
+  userId: number;
+
+  /**
    * Status
    * 状况
    */

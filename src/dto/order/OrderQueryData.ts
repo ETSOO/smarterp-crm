@@ -78,6 +78,12 @@ export type OrderQueryData = {
   status: EntityStatus;
 
   /**
+   * Start date
+   * 开始日期
+   */
+  startDate?: Date | string;
+
+  /**
    * Creation
    * 登记时间
    */
