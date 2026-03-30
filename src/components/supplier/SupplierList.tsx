@@ -14,9 +14,10 @@ export function SupplierList(props: PersonListProps) {
   // Destruct
   const {
     label = crm.app.get("supplier"),
+    name = "supplierId",
     rq = { identityType: IdentityTypeFlags.Supplier, enabled: true },
     ...rest
   } = props;
 
-  return <PersonList label={label} rq={rq} {...rest} />;
+  return <PersonList label={label} name={name} rq={rq} {...rest} />;
 }

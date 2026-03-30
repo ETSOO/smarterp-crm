@@ -14,9 +14,10 @@ export function CustomerList(props: PersonListProps) {
   // Destruct
   const {
     label = crm.app.get("customer"),
+    name = "customerId",
     rq = { identityType: IdentityTypeFlags.Customer, enabled: true },
     ...rest
   } = props;
 
-  return <PersonList label={label} rq={rq} {...rest} />;
+  return <PersonList label={label} name={name} rq={rq} {...rest} />;
 }
