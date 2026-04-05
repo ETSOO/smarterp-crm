@@ -1,0 +1,73 @@
+import { EntityStatus } from "@etsoo/appscript";
+
+/**
+ * Order line update read data
+ * 更新订单行读取数据
+ */
+export type OrderLineUpdateReadData = {
+  /**
+   * Id
+   * 编号
+   */
+  id: number;
+
+  /**
+   * Order id
+   * 订单编号
+   */
+  orderId: number;
+
+  /**
+   * Product id
+   * 产品编号
+   */
+  productId: number;
+
+  /**
+   * Title
+   * 标题
+   */
+  title: string;
+
+  /**
+   * Description
+   * 描述
+   */
+  description?: string;
+
+  /**
+   * Price
+   * 价格
+   */
+  price: number;
+
+  /**
+   * Qty
+   * 数量
+   */
+  qty: number;
+
+  /**
+   * Start time
+   * 开始时间
+   */
+  startTime?: string | Date;
+
+  /**
+   * End time
+   * 结束时间
+   */
+  endTime?: string | Date;
+
+  /**
+   * JSON data
+   * JSON 数据
+   */
+  data?: unknown;
+
+  /**
+   * Status
+   * 状态
+   */
+  status: EntityStatus;
+};

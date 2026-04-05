@@ -12,6 +12,12 @@ export type OrderQueryData = {
   id: number;
 
   /**
+   * Source
+   * 订单源
+   */
+  source?: string;
+
+  /**
    * Title
    * 标题
    */

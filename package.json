@@ -47,20 +47,20 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
-    "baseline-browser-mapping": "^2.10.10",
+    "baseline-browser-mapping": "^2.10.12",
     "jsdom": "^29.0.1",
     "typescript": "^5.9.3",
-    "vitest": "^4.1.0"
+    "vitest": "^4.1.2"
   },
   "overrides": {
     "react": "$react",
     "react-dom": "$react-dom"
   },
   "dependencies": {
-    "@etsoo/appscript": "^1.6.58",
-    "@etsoo/materialui": "^1.6.37",
-    "@etsoo/react": "^1.8.82",
-    "@etsoo/shared": "^1.2.80",
+    "@etsoo/appscript": "^1.6.59",
+    "@etsoo/materialui": "^1.6.39",
+    "@etsoo/react": "^1.8.83",
+    "@etsoo/shared": "^1.2.81",
     "@mui/material": "^7.3.9",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"

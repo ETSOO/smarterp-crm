@@ -14,6 +14,7 @@ import { OrderUpdateRQ } from "./rq/order/OrderUpdateRQ";
 import { OrderUpdateReadData } from "./dto/order/OrderUpdateReadData";
 import { OrderDuplicateTestRQ } from "./rq/order/OrderDuplicateTestRQ";
 import { OrderDuplicateTestData } from "./dto/order/OrderDuplicateTestData";
+import { OrderViewData } from "./dto/order/OrderViewData";
 
 /**
  * Order API
@@ -70,6 +71,27 @@ export class OrderApi extends EntityApi {
    */
   query(rq: OrderQueryRQ, payload?: IApiPayload<OrderQueryData[]>) {
     return this.queryBase(rq, payload);
+  }
+
+  /**
+   * Read
+   * @param id Id
+   * @param payload Payload
+   * @returns Result
+   */
+  read(id: number, payload?: IApiPayload<OrderViewData>) {
+    return this.readBase(id, payload);
+  }
+
+  /**
+   * Recalculate order
+   * 重新计算订单
+   * @param id Order ID
+   * @param payload Payload
+   * @returns Result
+   */
+  recalculate(id: number, payload?: IdResultPayload) {
+    return this.api.post(`${this.flag}/Recalculate/${id}`, undefined, payload);
   }
 
   /**

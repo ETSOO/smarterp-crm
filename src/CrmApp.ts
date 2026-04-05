@@ -32,6 +32,7 @@ import { PersonProductApi } from "./PersonProductApi";
 import { Order } from "./utils/Order";
 import { OrderDeliveryApi } from "./OrderDeliveryApi";
 import { OrderPaymentApi } from "./OrderPaymentApi";
+import { OrderLineApi } from "./orderLineApi";
 
 /**
  * Get CRM app context hook
@@ -114,6 +115,12 @@ export interface ICrmApp {
    * 订单接口
    */
   readonly orderApi: OrderApi;
+
+  /**
+   * Order line API
+   * 订单行接口
+   */
+  readonly orderLineApi: OrderLineApi;
 
   /**
    * Order delivery API
@@ -332,6 +339,15 @@ export class CrmApp implements ICrmApp {
    */
   get orderApi() {
     return (this._orderApi ??= new OrderApi(this.app));
+  }
+
+  private _orderLineApi?: OrderLineApi;
+  /**
+   * Order line API
+   * 订单行接口
+   */
+  get orderLineApi() {
+    return (this._orderLineApi ??= new OrderLineApi(this.app));
   }
 
   private _orderDeliveryApi?: OrderDeliveryApi;
