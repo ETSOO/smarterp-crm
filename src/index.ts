@@ -48,6 +48,7 @@ export * from "./dto/order/OrderDuplicateTestData";
 export * from "./dto/order/OrderListData";
 export * from "./dto/order/OrderQueryData";
 export * from "./dto/order/OrderUpdateReadData";
+export * from "./dto/order/OrderViewData";
 
 export * from "./rq/order/OrderCreateRQ";
 export * from "./rq/order/OrderDuplicateTestRQ";

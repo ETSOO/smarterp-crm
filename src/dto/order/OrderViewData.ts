@@ -145,10 +145,10 @@ export type OrderViewData = {
   deliveryInstruction?: string;
 
   /**
-   * Delivery address
-   * 发货地址
+   * Formatted delivery address
+   * 格式化发货地址
    */
-  address?: string;
+  addressFormatted?: string;
 
   /**
    * Contact

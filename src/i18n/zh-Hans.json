@@ -156,7 +156,7 @@
   "orderDeliveryKindPickup": "自提",
   "orderDeliveryKindRailFreight": "铁路货运",
   "orderDeliveryKindSeaFreight": "海运",
-  "orderLines": "订单行数",
+  "orderLines": "订单行",
   "orderOrPurchase": "订单或采购",
   "orderPayment": "支付方式",
   "orderPayments": "支付方式",
