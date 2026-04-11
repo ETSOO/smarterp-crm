@@ -116,7 +116,9 @@ export function PersonChooser(props: PersonChooserProps) {
             disablePadding
             listItemProps={{ disablePadding: true, disableGutters: true }}
             listItemTextProps={{
-              secondaryTypographyProps: { variant: "caption" }
+              slotProps: {
+                secondary: { variant: "caption" }
+              }
             }}
             onCheckItems={(items) => {
               personsRef.current.users = [...items];
@@ -138,7 +140,9 @@ export function PersonChooser(props: PersonChooserProps) {
             disablePadding
             listItemProps={{ disablePadding: true, disableGutters: true }}
             listItemTextProps={{
-              secondaryTypographyProps: { variant: "caption" }
+              slotProps: {
+                secondary: { variant: "caption" }
+              }
             }}
             onCheckItems={(items) => {
               personsRef.current.contacts = [...items];
