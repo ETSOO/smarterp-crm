@@ -97,6 +97,12 @@ export type OrderViewData = {
   lineDiscount: number;
 
   /**
+   * Approved discount amount
+   * 批准的折扣金额
+   */
+  approvedDiscount: number;
+
+  /**
    * Lines
    * 行数
    */
