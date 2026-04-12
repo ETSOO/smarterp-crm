@@ -47,7 +47,7 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
-    "baseline-browser-mapping": "^2.10.17",
+    "baseline-browser-mapping": "^2.10.18",
     "jsdom": "^29.0.2",
     "typescript": "^6.0.2",
     "vitest": "^4.1.4"
@@ -58,7 +58,7 @@
   },
   "dependencies": {
     "@etsoo/appscript": "^1.6.60",
-    "@etsoo/materialui": "^1.6.42",
+    "@etsoo/materialui": "^1.6.43",
     "@etsoo/react": "^1.8.84",
     "@etsoo/shared": "^1.2.82",
     "@mui/material": "^9.0.0",

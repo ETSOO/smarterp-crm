@@ -49,6 +49,12 @@ export type OrderLineUpdateRQ = DataTypes.EditType<{
   data?: Record<string, unknown>;
 
   /**
+   * User id
+   * 用户编号
+   */
+  userId?: number;
+
+  /**
    * Status
    * 状态
    */

@@ -6,14 +6,8 @@ import { OrderLineListRQ } from "./OrderLineListRQ";
  */
 export type OrderLineQueryRQ = OrderLineListRQ & {
   /**
-   * Start time start
-   * 开始时间开始
+   * Qty start
+   * 开始数量
    */
-  startTimeStart?: Date | string;
-
-  /**
-   * Start time end
-   * 开始时间结束
-   */
-  startTimeEnd?: Date | string;
+  qtyStart?: number;
 };

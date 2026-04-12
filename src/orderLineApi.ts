@@ -3,7 +3,8 @@ import {
   IApi,
   IApiPayload,
   IApp,
-  IdResultPayload
+  IdResultPayload,
+  ResultPayload
 } from "@etsoo/appscript";
 import { OrderLineCreateRQ } from "./rq/orderline/OrderLineCreateRQ";
 import { OrderLineListData } from "./dto/orderline/OrderLineListData";
@@ -13,6 +14,8 @@ import { OrderLineListRQ } from "./rq/orderline/OrderLineListRQ";
 import { OrderLineQueryRQ } from "./rq/orderline/OrderLineQueryRQ";
 import { OrderLineUpdateReadData } from "./dto/orderline/OrderLineUpdateReadData";
 import { OrderLineStartRQ } from "./rq/orderline/OrderLineStartRQ";
+import { OrderLineQueryAllRQ } from "./rq/orderline/OrderLineQueryAllRQ";
+import { OrderLineCompleteRQ } from "./rq/orderline/OrderLineCompleteRQ";
 
 /**
  * OrderLine API
@@ -25,6 +28,17 @@ export class OrderLineApi extends EntityApi {
    */
   constructor(app: IApp, api: IApi = app.api) {
     super("OrderLine", app, api);
+  }
+
+  /**
+   * Complete order line
+   * 完成订单行
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  complete(rq: OrderLineCompleteRQ, payload?: ResultPayload) {
+    return this.api.put(`${this.flag}/Complete`, rq, payload);
   }
 
   /**
@@ -65,6 +79,19 @@ export class OrderLineApi extends EntityApi {
    */
   query(rq: OrderLineQueryRQ, payload?: IApiPayload<OrderLineQueryData[]>) {
     return this.queryBase(rq, payload);
+  }
+
+  /**
+   * Query all order line info
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  queryAll(
+    rq: OrderLineQueryAllRQ,
+    payload?: IApiPayload<OrderLineQueryAllRQ[]>
+  ) {
+    return this.api.post(`${this.flag}/QueryAll`, rq, payload);
   }
 
   /**
