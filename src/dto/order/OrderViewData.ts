@@ -79,6 +79,12 @@ export type OrderViewData = {
   amount: number;
 
   /**
+   * Tax amount
+   * 税金
+   */
+  taxAmount: number;
+
+  /**
    * Paid amount
    * 已付款金额
    */
