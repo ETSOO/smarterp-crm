@@ -24,6 +24,12 @@ export type OrderQueryData = {
   title: string;
 
   /**
+   * Customer id
+   * 客户编号
+   */
+  customerId: number;
+
+  /**
    * Customer name
    * 客户名称
    */
