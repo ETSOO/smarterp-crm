@@ -20,6 +20,7 @@
   "addressState": "Province/State",
   "addressStreet": "Street",
   "all": "All",
+  "allOrderLines": "All order lines",
   "allTasks": "All tasks",
   "amount": "Amount",
   "amountPaid": "Amount paid",

@@ -12,6 +12,12 @@ export type OrderLineQueryAllData = {
   id: number;
 
   /**
+   * Source
+   * 源
+   */
+  source?: string;
+
+  /**
    * Customer
    * 客户
    */
@@ -40,6 +46,18 @@ export type OrderLineQueryAllData = {
    * 标题
    */
   title: string;
+
+  /**
+   * Description
+   * 描述
+   */
+  description?: string;
+
+  /**
+   * Currency
+   * 币种
+   */
+  currency: string;
 
   /**
    * Price

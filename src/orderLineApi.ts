@@ -16,6 +16,7 @@ import { OrderLineUpdateReadData } from "./dto/orderline/OrderLineUpdateReadData
 import { OrderLineStartRQ } from "./rq/orderline/OrderLineStartRQ";
 import { OrderLineQueryAllRQ } from "./rq/orderline/OrderLineQueryAllRQ";
 import { OrderLineCompleteRQ } from "./rq/orderline/OrderLineCompleteRQ";
+import { OrderLineQueryAllData } from "./dto/orderline/OrderLineQueryAllData";
 
 /**
  * OrderLine API
@@ -89,7 +90,7 @@ export class OrderLineApi extends EntityApi {
    */
   queryAll(
     rq: OrderLineQueryAllRQ,
-    payload?: IApiPayload<OrderLineQueryAllRQ[]>
+    payload?: IApiPayload<OrderLineQueryAllData[]>
   ) {
     return this.api.post(`${this.flag}/QueryAll`, rq, payload);
   }
