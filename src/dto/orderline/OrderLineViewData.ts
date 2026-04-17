@@ -127,6 +127,12 @@ export type OrderLineViewData = {
   orderUserId: number;
 
   /**
+   * Customer id
+   * 客户编号
+   */
+  customerId: number;
+
+  /**
    * Asset id
    * 资产编号
    */
@@ -167,4 +173,10 @@ export type OrderLineViewData = {
    * 是否可完成执行
    */
   isCompletable: boolean;
+
+  /**
+   * Whether the order line is restorable
+   * 是否可回滚
+   */
+  isRestorable: boolean;
 };

@@ -1,3 +1,6 @@
+// Asset
+export * from "./asset/AssetTipList";
+
 // customer
 export * from "./customer/CustomerList";
 
