@@ -1,5 +1,5 @@
 // Asset
-export * from "./asset/AssetTipList";
+export * from "./asset/AssetList";
 
 // customer
 export * from "./customer/CustomerList";
