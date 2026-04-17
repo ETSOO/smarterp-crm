@@ -49,7 +49,7 @@ export function AssetList(props: AssetListProps) {
     label = crm.app.get("asset")!,
     maxItems = 10,
     getOptionLabel = (option) =>
-      `${option.sn} / ${crm.app.formatDate(option.expiry)}`,
+      `${option.sn} (${crm.app.formatDate(option.expiry)})`,
     onLoadData = (rq) => rq,
     name = "assetId",
     rq = { enabled: true },
