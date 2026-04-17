@@ -7,6 +7,18 @@ import { EntityStatus } from "@etsoo/appscript";
  */
 export type OrderLineUpdateRQ = DataTypes.EditType<{
   /**
+   * Original price
+   * 原价
+   */
+  originalPrice?: number;
+
+  /**
+   * Cost price
+   * 成本价
+   */
+  costPrice?: number;
+
+  /**
    * Qty
    * 数量
    */

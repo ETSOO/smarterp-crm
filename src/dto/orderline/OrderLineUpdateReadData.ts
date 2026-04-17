@@ -36,6 +36,18 @@ export type OrderLineUpdateReadData = {
   description?: string;
 
   /**
+   * Original price
+   * 原价
+   */
+  originalPrice: number;
+
+  /**
+   * Cost price
+   * 成本价
+   */
+  costPrice: number;
+
+  /**
    * Price
    * 价格
    */

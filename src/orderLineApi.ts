@@ -17,6 +17,7 @@ import { OrderLineStartRQ } from "./rq/orderline/OrderLineStartRQ";
 import { OrderLineQueryAllRQ } from "./rq/orderline/OrderLineQueryAllRQ";
 import { OrderLineCompleteRQ } from "./rq/orderline/OrderLineCompleteRQ";
 import { OrderLineQueryAllData } from "./dto/orderline/OrderLineQueryAllData";
+import { OrderLineViewData } from "./dto/orderline/OrderLineViewData";
 
 /**
  * OrderLine API
@@ -93,6 +94,27 @@ export class OrderLineApi extends EntityApi {
     payload?: IApiPayload<OrderLineQueryAllData[]>
   ) {
     return this.api.post(`${this.flag}/QueryAll`, rq, payload);
+  }
+
+  /**
+   * Read
+   * @param id Id
+   * @param payload Payload
+   * @returns Result
+   */
+  read(id: number, payload?: IApiPayload<OrderLineViewData>) {
+    return this.readBase(id, payload);
+  }
+
+  /**
+   * Rollback the order line
+   * 回滚订单行
+   * @param id Order line id
+   * @param payload Payload
+   * @returns Result
+   */
+  rollback(id: number, payload?: ResultPayload) {
+    return this.api.put(`${this.flag}/Rollback/${id}`, undefined, payload);
   }
 
   /**

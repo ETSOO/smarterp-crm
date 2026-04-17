@@ -194,7 +194,8 @@ export namespace Permissions {
     Edit = 9012,
     Delete = 9013,
 
-    Manage = 9200
+    Manage = 9200,
+    Execute = 9202
   }
 
   /**

@@ -8,4 +8,10 @@ export type OrderLineCompleteRQ = {
    * 编号
    */
   id: number;
+
+  /**
+   * Asset Id
+   * 资产编号
+   */
+  assetId?: number;
 };

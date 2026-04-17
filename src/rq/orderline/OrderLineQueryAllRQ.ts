@@ -6,6 +6,12 @@ import { OrderLineListRQ } from "./OrderLineListRQ";
  */
 export type OrderLineQueryAllRQ = OrderLineListRQ & {
   /**
+   * User id
+   * 用户编号
+   */
+  userId?: number;
+
+  /**
    * Source
    * 源
    */

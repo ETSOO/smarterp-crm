@@ -36,6 +36,12 @@ export type OrderLineQueryData = {
   amount: number;
 
   /**
+   * Discount
+   * 折扣
+   */
+  discount: number;
+
+  /**
    * Start time
    * 开始时间
    */

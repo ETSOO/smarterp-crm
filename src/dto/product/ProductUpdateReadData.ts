@@ -55,6 +55,12 @@ export type ProductUpdateReadData = {
   capQty?: number;
 
   /**
+   * Validity
+   * 有效期
+   */
+  validity?: number;
+
+  /**
    * Asset qty
    * 资产数量
    */

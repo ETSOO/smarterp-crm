@@ -59,6 +59,12 @@ export type ProductUpdateRQ = DataTypes.EditType<{
   assetQty?: number;
 
   /**
+   * Validity
+   * 有效期
+   */
+  validity?: number;
+
+  /**
    * Usage
    * 使用范围
    */
