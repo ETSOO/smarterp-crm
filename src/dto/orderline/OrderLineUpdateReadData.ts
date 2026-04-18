@@ -106,4 +106,10 @@ export type OrderLineUpdateReadData = {
    * 状态
    */
   status: EntityStatus;
+
+  /**
+   * Is deletable
+   * 是否可删除
+   */
+  isDeletable: boolean;
 };
