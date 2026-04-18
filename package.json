@@ -47,9 +47,9 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
-    "baseline-browser-mapping": "^2.10.18",
+    "baseline-browser-mapping": "^2.10.19",
     "jsdom": "^29.0.2",
-    "typescript": "^6.0.2",
+    "typescript": "^6.0.3",
     "vitest": "^4.1.4"
   },
   "overrides": {
@@ -57,9 +57,9 @@
     "react-dom": "$react-dom"
   },
   "dependencies": {
-    "@etsoo/appscript": "^1.6.61",
-    "@etsoo/materialui": "^1.6.46",
-    "@etsoo/react": "^1.8.85",
+    "@etsoo/appscript": "^1.6.62",
+    "@etsoo/materialui": "^1.6.49",
+    "@etsoo/react": "^1.8.86",
     "@etsoo/shared": "^1.2.83",
     "@mui/material": "^9.0.0",
     "react": "^19.2.5",

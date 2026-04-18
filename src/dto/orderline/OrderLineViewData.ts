@@ -151,10 +151,16 @@ export type OrderLineViewData = {
   orderStatus: EntityStatus;
 
   /**
+   * Modifiers
+   * 定制选项
+   */
+  modifiers?: Record<string, unknown>;
+
+  /**
    * JSON data
    * JSON 数据
    */
-  data?: unknown;
+  data?: Record<string, unknown>;
 
   /**
    * Creation
