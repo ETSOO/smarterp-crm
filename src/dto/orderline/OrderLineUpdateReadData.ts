@@ -1,4 +1,4 @@
-import { EntityStatus } from "@etsoo/appscript";
+import { CustomFieldData, EntityStatus } from "@etsoo/appscript";
 
 /**
  * Order line update read data
@@ -76,6 +76,12 @@ export type OrderLineUpdateReadData = {
    * 供应商编号
    */
   supplierId?: number;
+
+  /**
+   * Modifiers
+   * 定制选项
+   */
+  modifiers?: CustomFieldData[];
 
   /**
    * JSON data
