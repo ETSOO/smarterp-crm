@@ -84,6 +84,12 @@ export type OrderLineUpdateReadData = {
   supplierId?: number;
 
   /**
+   * User id
+   * 用户编号
+   */
+  userId?: number;
+
+  /**
    * Modifiers
    * 定制选项
    */
