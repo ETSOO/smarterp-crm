@@ -14,4 +14,16 @@ export type OrderLineCompleteRQ = {
    * 资产编号
    */
   assetId?: number;
+
+  /**
+   * Supplier id
+   * 供应商编号
+   */
+  supplierId?: number;
+
+  /**
+   * Cost price
+   * 成本价
+   */
+  costPrice?: number;
 };

@@ -1,4 +1,4 @@
-import { EntityStatus } from "@etsoo/appscript";
+import { CustomFieldData, EntityStatus } from "@etsoo/appscript";
 import { PromotionCodeCalculation } from "../..";
 
 /**
@@ -154,7 +154,7 @@ export type OrderLineViewData = {
    * Modifiers
    * 定制选项
    */
-  modifiers?: Record<string, unknown>;
+  modifiers?: CustomFieldData[];
 
   /**
    * JSON data

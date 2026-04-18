@@ -12,10 +12,22 @@ export type OrderLineListRQ = QueryRQ & {
   orderId?: number;
 
   /**
+   * Supplier id
+   * 供应商编号
+   */
+  supplierId?: number;
+
+  /**
    * Product id
    * 产品编号
    */
   productId?: number;
+
+  /**
+   * Asset id
+   * 资产编号
+   */
+  assetId?: number;
 
   /**
    * Status

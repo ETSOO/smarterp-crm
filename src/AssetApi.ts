@@ -12,6 +12,7 @@ import { AssetQueryData } from "./dto/asset/AssetQueryData";
 import { AssetUpdateReadData } from "./dto/asset/AssetUpdateReadData";
 import { AssetUpdateRQ } from "./rq/asset/AssetUpdateRQ";
 import { AssetCreateRQ } from "./rq/asset/AssetCreateRQ";
+import { AssetViewData } from "./dto/asset/AssetViewData";
 
 /**
  * Asset API
@@ -54,6 +55,30 @@ export class AssetApi extends EntityApi {
    */
   query(rq: AssetQueryRQ, payload?: IApiPayload<AssetQueryData[]>) {
     return this.queryBase(rq, payload);
+  }
+
+  /**
+   * Read
+   * @param id Id
+   * @param payload Payload
+   * @returns Result
+   */
+  read(id: number, payload?: IApiPayload<AssetViewData>) {
+    return this.readBase(id, payload);
+  }
+
+  /**
+   * Read asset sensitive data
+   * @param id Id
+   * @param payload Payload
+   * @returns Result
+   */
+  readSensitiveData(id: number, payload?: IApiPayload<string>) {
+    return this.api.post(
+      `${this.flag}/ReadSensitiveData/${id}`,
+      undefined,
+      payload
+    );
   }
 
   /**

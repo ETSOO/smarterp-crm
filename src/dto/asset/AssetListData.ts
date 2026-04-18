@@ -10,6 +10,12 @@ export type AssetListData = {
   id: number;
 
   /**
+   * Supplier id
+   * 供应商编号
+   */
+  supplierId?: number;
+
+  /**
    * Product name
    * 产品名称
    */

@@ -72,10 +72,16 @@ export type OrderLineUpdateReadData = {
   endTime?: string | Date;
 
   /**
+   * Supplier id
+   * 供应商编号
+   */
+  supplierId?: number;
+
+  /**
    * JSON data
    * JSON 数据
    */
-  data?: unknown;
+  data?: Record<string, unknown>;
 
   /**
    * Status

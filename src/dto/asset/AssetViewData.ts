@@ -1,15 +1,27 @@
 import { EntityStatus } from "@etsoo/appscript";
 
 /**
- * Create asset request data
- * 创建资产请求数据
+ * Asset view data
+ * 资产浏览数据
  */
-export type AssetCreateRQ = {
+export type AssetViewData = {
   /**
-   * Person (owner) id
-   * 所有者编号
+   * Id
+   * 编号
+   */
+  id: number;
+
+  /**
+   * Person id
+   * 人员编号
    */
   personId: number;
+
+  /**
+   * Person name
+   * 人员名称
+   */
+  personName: string;
 
   /**
    * Product id
@@ -18,10 +30,22 @@ export type AssetCreateRQ = {
   productId: number;
 
   /**
+   * Product name
+   * 产品名称
+   */
+  productName: string;
+
+  /**
    * Supplier id
    * 供应商编号
    */
   supplierId?: number;
+
+  /**
+   * Supplier name
+   * 供应商名称
+   */
+  supplierName?: string;
 
   /**
    * Serial number
@@ -39,7 +63,7 @@ export type AssetCreateRQ = {
    * Expiry
    * 到期时间
    */
-  expiry: string | Date;
+  expiry: Date | string;
 
   /**
    * Remaining times
@@ -66,14 +90,20 @@ export type AssetCreateRQ = {
   healthCheckUrl?: string;
 
   /**
-   * JSON data
-   * JSON 数据
+   * Health check schedule
+   * 健康检查计划
    */
-  data?: Record<string, unknown>;
+  healthCheckSchedule?: Date | string;
 
   /**
    * Status
    * 状态
    */
-  status?: EntityStatus;
+  status: EntityStatus;
+
+  /**
+   * Creation time
+   * 登记时间
+   */
+  creation: Date | string;
 };

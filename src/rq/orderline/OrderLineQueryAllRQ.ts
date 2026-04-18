@@ -30,6 +30,18 @@ export type OrderLineQueryAllRQ = OrderLineListRQ & {
   qtyStart?: number;
 
   /**
+   * Creation start
+   * 创建时间开始
+   */
+  creationStart?: Date | string;
+
+  /**
+   * Creation end
+   * 创建时间结束
+   */
+  creationEnd?: Date | string;
+
+  /**
    * Start time start
    * 开始时间开始
    */
