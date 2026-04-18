@@ -18,6 +18,12 @@ export type OrderLineUpdateReadData = {
   orderId: number;
 
   /**
+   * Currency
+   * 币种
+   */
+  currency: string;
+
+  /**
    * Product id
    * 产品编号
    */

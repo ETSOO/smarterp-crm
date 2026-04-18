@@ -25,6 +25,12 @@ export type OrderLineViewData = {
   orderId: number;
 
   /**
+   * Currency
+   * 币种
+   */
+  currency: string;
+
+  /**
    * Product name
    * 产品名称
    */
