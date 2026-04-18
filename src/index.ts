@@ -5,6 +5,7 @@ export * from "./dto/CategoryItem";
 export * from "./dto/asset/AssetListData";
 export * from "./dto/asset/AssetQueryData";
 export * from "./dto/asset/AssetUpdateReadData";
+export * from "./dto/asset/AssetViewData";
 
 export * from "./rq/asset/AssetCreateRQ";
 export * from "./rq/asset/AssetListRQ";

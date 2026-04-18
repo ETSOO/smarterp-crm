@@ -161,6 +161,7 @@
   "orderDeliveryKindRailFreight": "铁路货运",
   "orderDeliveryKindSeaFreight": "海运",
   "orderLineDiscount": "行折扣",
+  "orderLine": "订单行",
   "orderLines": "订单行",
   "orderLineStartTime": "执行开始时间",
   "orderOrPurchase": "订单或采购",

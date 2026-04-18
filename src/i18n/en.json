@@ -161,6 +161,7 @@
   "orderDeliveryKindRailFreight": "Rail freight",
   "orderDeliveryKindSeaFreight": "Sea freight",
   "orderLineDiscount": "Line discount",
+  "orderLine": "Order line",
   "orderLines": "Order lines",
   "orderLineStartTime": "Execution start time",
   "orderOrPurchase": "Order or purchase",
