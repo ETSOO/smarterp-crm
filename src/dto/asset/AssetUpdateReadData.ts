@@ -75,7 +75,7 @@ export type AssetUpdateReadData = {
    * JSON data
    * JSON 数据
    */
-  data?: string;
+  data?: Record<string, unknown>;
 
   /**
    * Status

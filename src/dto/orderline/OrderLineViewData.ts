@@ -139,6 +139,24 @@ export type OrderLineViewData = {
   assetId?: number;
 
   /**
+   * Serial number
+   * 序列号
+   */
+  assetSn?: string;
+
+  /**
+   * Supplier id
+   * 供应商编号
+   */
+  supplierId?: number;
+
+  /**
+   * Supplier name
+   * 供应商名称
+   */
+  supplierName?: string;
+
+  /**
    * Status
    * 状态
    */
