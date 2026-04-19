@@ -91,7 +91,7 @@ export class OrderApi extends EntityApi {
    * @returns Result
    */
   recalculate(id: number, payload?: IdResultPayload) {
-    return this.api.post(`${this.flag}/Recalculate/${id}`, undefined, payload);
+    return this.api.put(`${this.flag}/Recalculate/${id}`, undefined, payload);
   }
 
   /**

@@ -13,5 +13,11 @@ export type ProductSimplePriceItem = {
    * Retail price
    * 零售价
    */
-  retailPrice: number;
+  retailPrice?: number;
+
+  /**
+   * Cost price
+   * 成本价
+   */
+  costPrice?: number;
 };

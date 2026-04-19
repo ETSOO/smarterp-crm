@@ -36,6 +36,12 @@ export type SupplierListRQ = StatusQueryRQ & {
   categoryIds?: number[];
 
   /**
+   * Product Id
+   * 产品编号
+   */
+  productId?: number;
+
+  /**
    * City
    * 所在城市
    */

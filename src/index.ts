@@ -200,6 +200,7 @@ export * from "./dto/product/ProductInventoryWay";
 export * from "./dto/product/ProductListData";
 export * from "./dto/product/ProductPriceItem";
 export * from "./dto/product/ProductQueryData";
+export * from "./dto/product/ProductReadCustomData";
 export * from "./dto/product/ProductScope";
 export * from "./dto/product/ProductUnitItem";
 export * from "./dto/product/ProductUpdateReadData";
