@@ -12,6 +12,12 @@ export type AssetQueryData = {
   id: number;
 
   /**
+   * Owner
+   * 所有人
+   */
+  owner: string;
+
+  /**
    * Product name
    * 产品名称
    */
