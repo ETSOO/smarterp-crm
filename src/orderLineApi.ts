@@ -18,6 +18,8 @@ import { OrderLineQueryAllRQ } from "./rq/orderline/OrderLineQueryAllRQ";
 import { OrderLineCompleteRQ } from "./rq/orderline/OrderLineCompleteRQ";
 import { OrderLineQueryAllData } from "./dto/orderline/OrderLineQueryAllData";
 import { OrderLineViewData } from "./dto/orderline/OrderLineViewData";
+import { OrderLineQueryAssetRQ } from "./rq/orderline/OrderLineQueryAssetRQ";
+import { OrderLineQueryAssetData } from "./dto/orderline/OrderLineQueryAssetData";
 
 /**
  * OrderLine API
@@ -94,6 +96,20 @@ export class OrderLineApi extends EntityApi {
     payload?: IApiPayload<OrderLineQueryAllData[]>
   ) {
     return this.api.post(`${this.flag}/QueryAll`, rq, payload);
+  }
+
+  /**
+   * Query order line asset info
+   * 查询订单行资产信息
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  queryAsset(
+    rq: OrderLineQueryAssetRQ,
+    payload?: IApiPayload<OrderLineQueryAssetData[]>
+  ) {
+    return this.api.post(`${this.flag}/QueryAsset`, rq, payload);
   }
 
   /**

@@ -73,6 +73,7 @@ export * from "./rq/orderDelivery/OrderDeliveryUpdateRQ";
 export * from "./dto/orderline/OrderLineListData";
 export * from "./dto/orderline/OrderLineQueryData";
 export * from "./dto/orderline/OrderLineQueryAllData";
+export * from "./dto/orderline/OrderLineQueryAssetData";
 export * from "./dto/orderline/OrderLineUpdateReadData";
 export * from "./dto/orderline/OrderLineViewData";
 
@@ -81,6 +82,7 @@ export * from "./rq/orderline/OrderLineCreateRQ";
 export * from "./rq/orderline/OrderLineListRQ";
 export * from "./rq/orderline/OrderLineQueryRQ";
 export * from "./rq/orderline/OrderLineQueryAllRQ";
+export * from "./rq/orderline/OrderLineQueryAssetRQ";
 export * from "./rq/orderline/OrderLineStartRQ";
 export * from "./rq/orderline/OrderLineUpdateRQ";
 
