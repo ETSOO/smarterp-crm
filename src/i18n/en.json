@@ -103,6 +103,7 @@
   "happenDate": "Happen date",
   "hasInventory": "Has inventory",
   "healthCheckUrl": "Health check URL",
+  "healthCheckSchedule": "Health check schedule",
   "infoMobile": "Mobile",
   "infoPhone": "Phone",
   "infoPin": "PIN",

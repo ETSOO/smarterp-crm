@@ -103,6 +103,7 @@
   "happenDate": "发生日期",
   "hasInventory": "是否有库存",
   "healthCheckUrl": "健康检查网址",
+  "healthCheckSchedule": "健康检查计划",
   "infoMobile": "手机",
   "infoPhone": "电话",
   "infoPin": "身份编号",
