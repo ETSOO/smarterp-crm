@@ -48,6 +48,12 @@ export type OrderLineQueryAssetData = {
   qty: number;
 
   /**
+   * Asset qty
+   * 资产数量
+   */
+  assetQty: number;
+
+  /**
    * Status
    * 状态
    */
