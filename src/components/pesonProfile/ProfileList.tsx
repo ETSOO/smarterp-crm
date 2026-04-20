@@ -52,7 +52,7 @@ export function ProfileList(props: ProfileListProps) {
     getOptionLabel = PersonProfileUtils.getListLabel(crm),
     onLoadData = (rq) => rq,
     name = "profileId",
-    rq = { enabled: true },
+    rq,
     ...rest
   } = props;
 
@@ -67,6 +67,7 @@ export function ProfileList(props: ProfileListProps) {
       loadData={(keyword, id, maxItems) =>
         crm.profileApi.list(
           onLoadData({
+            enabled: true,
             ...rq,
             keyword,
             id,

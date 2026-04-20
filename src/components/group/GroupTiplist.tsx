@@ -51,7 +51,7 @@ export function GroupTiplist(props: GroupTiplistProps) {
     getOptionLabel = (data) => data.name,
     onLoadData = (rq) => rq,
     name = "groupId",
-    rq = { enabled: true },
+    rq,
     ...rest
   } = props;
 
@@ -66,6 +66,7 @@ export function GroupTiplist(props: GroupTiplistProps) {
       loadData={(keyword, id, maxItems) =>
         crm.groupApi.list(
           onLoadData({
+            enabled: true,
             ...rq,
             keyword,
             id,

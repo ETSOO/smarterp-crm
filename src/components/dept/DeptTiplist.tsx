@@ -51,7 +51,7 @@ export function DeptTiplist(props: DeptTiplistProps) {
     getOptionLabel = (data) => data.name,
     onLoadData = (rq) => rq,
     name = "deptId",
-    rq = { enabled: true },
+    rq,
     ...rest
   } = props;
 
@@ -66,6 +66,7 @@ export function DeptTiplist(props: DeptTiplistProps) {
       loadData={(keyword, id, maxItems) =>
         crm.deptApi.list(
           onLoadData({
+            enabled: true,
             ...rq,
             keyword,
             id,

@@ -51,7 +51,7 @@ export function UserTiplist(props: UserTiplistProps) {
     getOptionLabel = (data) => data.name,
     onLoadData = (rq) => rq,
     name = "userId",
-    rq = { enabled: true },
+    rq,
     ...rest
   } = props;
 
@@ -66,6 +66,7 @@ export function UserTiplist(props: UserTiplistProps) {
       loadData={(keyword, id, maxItems) =>
         crm.userApi.list(
           onLoadData({
+            enabled: true,
             ...rq,
             keyword,
             id,

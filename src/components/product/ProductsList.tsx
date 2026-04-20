@@ -38,7 +38,7 @@ export function ProductsList(props: ProductsListProps) {
   const {
     getOptionLabel = ProductUtils.getListLabel(),
     onLoadData = (rq) => rq,
-    rq = { enabled: true },
+    rq,
     ...rest
   } = props;
 
@@ -49,6 +49,7 @@ export function ProductsList(props: ProductsListProps) {
       loadData={(keyword, items) =>
         crm.productApi.list(
           onLoadData({
+            enabled: true,
             ...rq,
             keyword,
             queryPaging: {

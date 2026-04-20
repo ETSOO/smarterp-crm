@@ -52,7 +52,7 @@ export function AssetList(props: AssetListProps) {
       `${option.sn} (${crm.app.formatDate(option.expiry)})`,
     onLoadData = (rq) => rq,
     name = "assetId",
-    rq = { enabled: true },
+    rq,
     ...rest
   } = props;
 
@@ -67,6 +67,7 @@ export function AssetList(props: AssetListProps) {
       loadData={(keyword, id, maxItems) =>
         crm.assetApi.list(
           onLoadData({
+            enabled: true,
             ...rq,
             keyword,
             id,

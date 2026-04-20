@@ -52,7 +52,7 @@ export function ProductList(props: ProductListProps) {
     getOptionLabel = ProductUtils.getListLabel(),
     onLoadData = (rq) => rq,
     name = "productId",
-    rq = { enabled: true },
+    rq,
     ...rest
   } = props;
 
@@ -67,6 +67,7 @@ export function ProductList(props: ProductListProps) {
       loadData={(keyword, id, maxItems) =>
         crm.productApi.list(
           onLoadData({
+            enabled: true,
             ...rq,
             keyword,
             id,

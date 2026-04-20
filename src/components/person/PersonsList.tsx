@@ -36,7 +36,7 @@ export function PersonsList(props: PersonsListProps) {
 
   // Destruct
   const {
-    rq = { enabled: true },
+    rq = {},
     getOptionLabel = rq.identityType
       ? PersonUtils.getSimpleListLabel()
       : PersonUtils.getListLabel(crm),
@@ -51,6 +51,7 @@ export function PersonsList(props: PersonsListProps) {
       loadData={(keyword, items) =>
         crm.personApi.list(
           onLoadData({
+            enabled: true,
             ...rq,
             keyword,
             queryPaging: {
