@@ -49,7 +49,7 @@ export function PersonList(props: PersonListProps) {
     fullWidth = true,
     label = crm.app.get("user")!,
     maxItems = 10,
-    rq = { enabled: true },
+    rq = {},
     getOptionLabel = rq.identityType
       ? PersonUtils.getSimpleListLabel()
       : PersonUtils.getListLabel(crm),
@@ -69,6 +69,7 @@ export function PersonList(props: PersonListProps) {
       loadData={(keyword, id, maxItems) =>
         crm.personApi.list(
           onLoadData({
+            enabled: true,
             ...rq,
             keyword,
             id,
