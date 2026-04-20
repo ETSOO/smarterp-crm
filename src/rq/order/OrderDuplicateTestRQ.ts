@@ -26,4 +26,10 @@ export type OrderDuplicateTestRQ = {
    * 源编号
    */
   sourceId?: string;
+
+  /**
+   * Is order or not
+   * 是否为订单
+   */
+  isOrder?: boolean;
 };

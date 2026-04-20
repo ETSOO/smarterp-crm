@@ -64,4 +64,10 @@ export type OrderListRQ = StatusQueryRQ & {
    * 用户编号
    */
   userId?: number;
+
+  /**
+   * Is order or not
+   * 是否为订单
+   */
+  isOrder?: boolean;
 };

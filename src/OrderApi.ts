@@ -59,7 +59,20 @@ export class OrderApi extends EntityApi {
    * @param payload Payload
    * @returns Result
    */
-  list(rq: OrderListRQ, payload?: IApiPayload<OrderListData[]>) {
+  list(
+    rq: Omit<OrderListRQ, "isOrder">,
+    payload?: IApiPayload<OrderListData[]>
+  ) {
+    return this.listAll({ ...rq, isOrder: true }, payload);
+  }
+
+  /**
+   * List all (Orders & POs)
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  listAll(rq: OrderListRQ, payload?: IApiPayload<OrderListData[]>) {
     return this.listBase(rq, payload);
   }
 
@@ -69,7 +82,20 @@ export class OrderApi extends EntityApi {
    * @param payload Payload
    * @returns Result
    */
-  query(rq: OrderQueryRQ, payload?: IApiPayload<OrderQueryData[]>) {
+  query(
+    rq: Omit<OrderQueryRQ, "isOrder">,
+    payload?: IApiPayload<OrderQueryData[]>
+  ) {
+    return this.queryBase({ ...rq, isOrder: true }, payload);
+  }
+
+  /**
+   * Query all (Orders & POs)
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  queryAll(rq: OrderQueryRQ, payload?: IApiPayload<OrderQueryData[]>) {
     return this.queryBase(rq, payload);
   }
 

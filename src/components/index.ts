@@ -14,8 +14,10 @@ export * from "./group/GroupTiplist";
 
 // order
 export * from "./order/OrderAssignedIdDuplicateTest";
+export * from "./order/OrderAllList";
 export * from "./order/OrderDeliveryKindList";
 export * from "./order/OrderDeliveryTiplist";
+export * from "./order/OrderList";
 export * from "./order/OrderPaymentKindList";
 export * from "./order/OrderPaymentTiplist";
 export * from "./order/OrderSourceIdDuplicateTest";
