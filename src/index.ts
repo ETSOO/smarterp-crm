@@ -58,6 +58,8 @@ export * from "./rq/order/OrderListRQ";
 export * from "./rq/order/OrderQueryRQ";
 export * from "./rq/order/OrderUpdateRQ";
 
+export { OrderUtils } from "./utils/Order";
+
 // Order delivery
 export * from "./dto/orderDelivery/OrderDeliveryKind";
 export * from "./dto/orderDelivery/OrderDeliveryListData";
