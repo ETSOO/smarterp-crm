@@ -193,9 +193,14 @@ export * from "./rq/personProfile/PersonTaskCreateRQ";
 // po
 export * from "./dto/po/POListData";
 export * from "./dto/po/POQueryData";
+export * from "./dto/po/POUpdateReadData";
+export * from "./dto/po/POViewData";
 
+export * from "./rq/po/POCreateRQ";
+export * from "./rq/po/POLineRQ";
 export * from "./rq/po/POListRQ";
 export * from "./rq/po/POQueryRQ";
+export * from "./rq/po/POUpdateRQ";
 
 // Product
 export * from "./dto/product/ProductCustomData";

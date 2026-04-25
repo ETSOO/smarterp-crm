@@ -1,12 +1,12 @@
 import { EntityStatus } from "@etsoo/appscript";
 import { PromotionSaleItemBase } from "../../dto/promotion/PromotionCode";
-import { OrderLineRQ } from "./OrderLineRQ";
+import { POLineRQ } from "./POLineRQ";
 
 /**
- * Create order request data
- * 创建订单请求数据
+ * Create purchase order request data
+ * 创建采购单请求数据
  */
-export type OrderCreateRQ = {
+export type POCreateRQ = {
   /**
    * Source
    * 来源
@@ -20,10 +20,10 @@ export type OrderCreateRQ = {
   sourceId?: string;
 
   /**
-   * Customer id
-   * 客户编号
+   * Supplier id
+   * 供应商编号
    */
-  customerId: number;
+  supplierId: number;
 
   /**
    * Currency
@@ -131,7 +131,7 @@ export type OrderCreateRQ = {
    * Lines
    * 行
    */
-  lines: OrderLineRQ[];
+  lines: POLineRQ[];
 
   /**
    * Amount, to be validated by the backend when value presented

@@ -1,12 +1,16 @@
 import { EntityStatus } from "@etsoo/appscript";
-import { PromotionSaleItemBase } from "../../dto/promotion/PromotionCode";
-import { OrderLineRQ } from "./OrderLineRQ";
 
 /**
- * Create order request data
- * 创建订单请求数据
+ * Purchase order update read data
+ * 更新采购单读取数据
  */
-export type OrderCreateRQ = {
+export type POUpdateReadData = {
+  /**
+   * Id
+   * 编号
+   */
+  id: number;
+
   /**
    * Source
    * 来源
@@ -20,10 +24,10 @@ export type OrderCreateRQ = {
   sourceId?: string;
 
   /**
-   * Customer id
-   * 客户编号
+   * Supplier id
+   * 供应商编号
    */
-  customerId: number;
+  supplierId: number;
 
   /**
    * Currency
@@ -41,7 +45,7 @@ export type OrderCreateRQ = {
    * Title
    * 标题
    */
-  title?: string;
+  title: string;
 
   /**
    * Description
@@ -86,8 +90,8 @@ export type OrderCreateRQ = {
   endDate?: Date | string;
 
   /**
-   * Delivery address id
-   * 发货地址编号
+   * Delivery address id, targeting delivery address may be changed
+   * 发货地址编号，目标发货地址可能会改变
    */
   addressId?: number;
 
@@ -110,6 +114,36 @@ export type OrderCreateRQ = {
   taxAmount?: number;
 
   /**
+   * Amount
+   * 总金额
+   */
+  amount: number;
+
+  /**
+   * Discount amount
+   * 折扣金额
+   */
+  discount: number;
+
+  /**
+   * Line discount amount
+   * 行折扣金额
+   */
+  lineDiscount: number;
+
+  /**
+   * Lines
+   * 行数
+   */
+  lines: number;
+
+  /**
+   * Items
+   * 项目数
+   */
+  items: number;
+
+  /**
    * JSON data
    * JSON 数据
    */
@@ -122,32 +156,14 @@ export type OrderCreateRQ = {
   tags?: string[];
 
   /**
-   * Promotions
-   * 促销
-   */
-  promotions?: PromotionSaleItemBase[];
-
-  /**
-   * Lines
-   * 行
-   */
-  lines: OrderLineRQ[];
-
-  /**
-   * Amount, to be validated by the backend when value presented
-   * 金额，如果提供后台会验证这个值是否正确
-   */
-  amount?: number;
-
-  /**
    * User id
    * 用户编号
    */
-  userId?: number;
+  userId: number;
 
   /**
    * Status
    * 状况
    */
-  status?: EntityStatus;
+  status: EntityStatus;
 };

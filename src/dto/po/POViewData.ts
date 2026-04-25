@@ -1,0 +1,206 @@
+import { EntityStatus } from "@etsoo/appscript";
+import { PromotionCodeCalculation } from "../promotion/PromotionCode";
+
+/**
+ * Purchase order view data
+ * 采购单浏览数据
+ */
+export type POViewData = {
+  /**
+   * Id
+   * 编号
+   */
+  id: number;
+
+  /**
+   * Source
+   * 来源
+   */
+  source?: string;
+
+  /**
+   * Source id
+   * 源编号
+   */
+  sourceId?: string;
+
+  /**
+   * Assigned id
+   * 分配的编号
+   */
+  assignedId?: string;
+
+  /**
+   * Supplier id
+   * 供应商编号
+   */
+  supplierId: number;
+
+  /**
+   * Supplier name
+   * 供应商名称
+   */
+  supplierName: string;
+
+  /**
+   * Title
+   * 标题
+   */
+  title: string;
+
+  /**
+   * Description
+   * 描述
+   */
+  description?: string;
+
+  /**
+   * Start date
+   * 开始时间
+   */
+  startDate?: Date | string;
+
+  /**
+   * End date
+   * 结束时间
+   */
+  endDate?: Date | string;
+
+  /**
+   * Currency
+   * 币种
+   */
+  currency: string;
+
+  /**
+   * Amount
+   * 总金额
+   */
+  amount: number;
+
+  /**
+   * Tax amount
+   * 税金
+   */
+  taxAmount: number;
+
+  /**
+   * Paid amount
+   * 已付款金额
+   */
+  paidAmount: number;
+
+  /**
+   * Discount amount
+   * 折扣金额
+   */
+  discount: number;
+
+  /**
+   * Line discount amount
+   * 行折扣金额
+   */
+  lineDiscount: number;
+
+  /**
+   * Approved discount amount
+   * 批准的折扣金额
+   */
+  approvedDiscount: number;
+
+  /**
+   * Lines
+   * 行数
+   */
+  lines: number;
+
+  /**
+   * Items
+   * 项目数
+   */
+  items: number;
+
+  /**
+   * Promotions
+   * 促销细节
+   */
+  promotions?: PromotionCodeCalculation[];
+
+  /**
+   * Culture
+   * 文化
+   */
+  culture: string;
+
+  /**
+   * Payment way
+   * 付款方式
+   */
+  payment?: string;
+
+  /**
+   * Payment instruction
+   * 付款说明
+   */
+  paymentInstruction?: string;
+
+  /**
+   * Delivery way
+   * 交付方式
+   */
+  delivery?: string;
+
+  /**
+   * Delivery instruction
+   * 发货说明
+   */
+  deliveryInstruction?: string;
+
+  /**
+   * Formatted delivery address
+   * 格式化发货地址
+   */
+  addressFormatted?: string;
+
+  /**
+   * Contact
+   * 联系人
+   */
+  contact?: string;
+
+  /**
+   * Contact id
+   * 联系人编号
+   */
+  contactId?: number;
+
+  /**
+   * User id
+   * 用户编号
+   */
+  userId: number;
+
+  /**
+   * User
+   * 用户
+   */
+  user: string;
+
+  /**
+   * Creation
+   * 登记时间
+   */
+  creation: Date | string;
+
+  /**
+   * Status
+   * 状态
+   */
+  status: EntityStatus;
+
+  /**
+   * Keywords
+   * 关键词
+   */
+  tags?: string[];
+};
