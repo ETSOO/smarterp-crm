@@ -1,4 +1,3 @@
-import { ProductScope } from "../../dto/product/ProductScope";
 import { ProductListRQ } from "./ProductListRQ";
 
 /**
@@ -11,12 +10,6 @@ export type ProductQueryRQ = ProductListRQ & {
    * 币种
    */
   currency?: string;
-
-  /**
-   * Sale scope
-   * 销售范围
-   */
-  scope?: ProductScope;
 
   /**
    * Unit id

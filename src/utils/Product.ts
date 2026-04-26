@@ -69,7 +69,7 @@ export class Product {
    */
   getScopes() {
     const hasInventory = this.crm.app.userData?.system?.hasInventory ?? false;
-    return this.crm.app.getEnumList(ProductScope, "scope", (id) =>
+    return this.crm.app.getEnumList(ProductScope, "productScope", (id) =>
       id > ProductScope.None && (hasInventory || id < ProductScope.Production)
         ? id
         : undefined

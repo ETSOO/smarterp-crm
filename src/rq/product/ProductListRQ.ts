@@ -1,10 +1,24 @@
 import { StatusQueryRQ } from "@etsoo/appscript";
+import { ProductScope } from "../../dto/product/ProductScope";
+import { ProductUsage } from "../../dto/product/ProductUsage";
 
 /**
  * Product list request data
  * 产品列表请求数据
  */
 export type ProductListRQ = StatusQueryRQ & {
+  /**
+   * Sale scope
+   * 销售范围
+   */
+  scope?: ProductScope;
+
+  /**
+   * Usage
+   * 用途
+   */
+  usage?: ProductUsage;
+
   /**
    * Tag
    * 标签
