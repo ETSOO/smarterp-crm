@@ -1,3 +1,4 @@
+import { ListType } from "@etsoo/shared";
 import { ICrmApp } from "../CrmApp";
 import { ProductDuplicateTestData } from "../dto/product/ProductDuplicateTestData";
 import { ProductListData } from "../dto/product/ProductListData";
@@ -57,10 +58,15 @@ export class Product {
    * 获取销售范围标签
    * @param scope Scope
    */
-  getScope(scope?: ProductScope) {
+  getScope(scope?: ProductScope): ListType[] | undefined {
     if (scope == null) return undefined;
-    const key = ProductScope[scope];
-    return this.crm.app.get("scope" + key) ?? key;
+
+    return this.crm.app.getEnumList(ProductScope, "productScope", (id) =>
+      (id === ProductScope.None && scope === id) ||
+      (id > ProductScope.None && (scope & id) === id)
+        ? id
+        : undefined
+    );
   }
 
   /**
