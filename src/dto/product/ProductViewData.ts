@@ -35,10 +35,10 @@ export type ProductViewData = {
   description?: string;
 
   /**
-   * Unit id
-   * 产品单位编号
+   * Unit
+   * 产品单位
    */
-  unitId: number;
+  unit: string;
 
   /**
    * Minimum purchase qty
