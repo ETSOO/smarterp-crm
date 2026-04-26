@@ -1,5 +1,4 @@
 import { EntityStatus } from "@etsoo/appscript";
-import { ProductInventoryWay } from "./ProductInventoryWay";
 import { ProductScope } from "./ProductScope";
 import { ProductUsage } from "./ProductUsage";
 import { CategoryItem } from "../CategoryItem";
@@ -82,12 +81,6 @@ export type ProductViewData = {
    * 销售范围
    */
   scope: ProductScope;
-
-  /**
-   * Inventory management way
-   * 库存管理方式
-   */
-  inventoryWay: ProductInventoryWay;
 
   /**
    * Query keyword

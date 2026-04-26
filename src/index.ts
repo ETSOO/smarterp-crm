@@ -205,7 +205,6 @@ export * from "./rq/po/POUpdateRQ";
 // Product
 export * from "./dto/product/ProductCustomData";
 export * from "./dto/product/ProductDuplicateTestData";
-export * from "./dto/product/ProductInventoryWay";
 export * from "./dto/product/ProductListData";
 export * from "./dto/product/ProductPriceItem";
 export * from "./dto/product/ProductQueryData";

@@ -1,5 +1,4 @@
 import { EntityStatus } from "@etsoo/appscript";
-import { ProductInventoryWay } from "../../dto/product/ProductInventoryWay";
 import { ProductPriceItem } from "../../dto/product/ProductPriceItem";
 import { ProductScope } from "../../dto/product/ProductScope";
 import { ProductUsage } from "../../dto/product/ProductUsage";
@@ -75,12 +74,6 @@ export type ProductUpdateRQ = DataTypes.EditType<{
    * 销售范围
    */
   scope?: ProductScope;
-
-  /**
-   * Inventory management way
-   * 库存管理方式
-   */
-  inventoryWay?: ProductInventoryWay;
 
   /**
    * Query keyword

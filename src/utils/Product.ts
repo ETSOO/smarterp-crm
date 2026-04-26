@@ -1,6 +1,5 @@
 import { ICrmApp } from "../CrmApp";
 import { ProductDuplicateTestData } from "../dto/product/ProductDuplicateTestData";
-import { ProductInventoryWay } from "../dto/product/ProductInventoryWay";
 import { ProductListData } from "../dto/product/ProductListData";
 import { ProductScope } from "../dto/product/ProductScope";
 import { ProductUsage } from "../dto/product/ProductUsage";
@@ -54,25 +53,6 @@ export class Product {
   }
 
   /**
-   * Get inventory way label
-   * 获取库存方式标签
-   * @param inventoryWay Inventory way
-   */
-  getInventoryWay(inventoryWay?: ProductInventoryWay) {
-    if (inventoryWay == null) return undefined;
-    const key = ProductInventoryWay[inventoryWay];
-    return this.crm.app.get("inventoryWay" + key) ?? key;
-  }
-
-  /**
-   * Get inventory way list
-   * 获取库存方式列表
-   */
-  getInventoryWays() {
-    return this.crm.app.getEnumList(ProductInventoryWay, "inventoryWay");
-  }
-
-  /**
    * Get sale scope label
    * 获取销售范围标签
    * @param scope Scope
@@ -88,7 +68,12 @@ export class Product {
    * 获取销售范围列表
    */
   getScopes() {
-    return this.crm.app.getEnumList(ProductScope, "scope");
+    const hasInventory = this.crm.app.userData?.system?.hasInventory ?? false;
+    return this.crm.app.getEnumList(ProductScope, "scope", (id) =>
+      id > ProductScope.None && (hasInventory || id < ProductScope.Production)
+        ? id
+        : undefined
+    );
   }
 
   /**
