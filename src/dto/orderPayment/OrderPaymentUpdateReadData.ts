@@ -24,6 +24,12 @@ export type OrderPaymentUpdateReadData = {
   title: string;
 
   /**
+   * Is order or not
+   * 是否为订单
+   */
+  isOrder: boolean;
+
+  /**
    * Is valid
    * 是否有效
    */
