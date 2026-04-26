@@ -7,6 +7,12 @@ import { OrderPaymentKind } from "../../dto/orderPayment/OrderPaymentKind";
  */
 export type OrderPaymentListRQ = QueryRQ & {
   /**
+   * Is order or not
+   * 是否为订单
+   */
+  isOrder: boolean;
+
+  /**
    * Kind
    * 类型
    */

@@ -7,6 +7,12 @@ import { OrderDeliveryKind } from "../../dto/orderDelivery/OrderDeliveryKind";
  */
 export type OrderDeliveryListRQ = QueryRQ & {
   /**
+   * Is order or not
+   * 是否为订单
+   */
+  isOrder: boolean;
+
+  /**
    * Kind
    * 类型
    */

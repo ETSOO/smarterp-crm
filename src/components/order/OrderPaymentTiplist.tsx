@@ -51,7 +51,7 @@ export function OrderPaymentTiplist(props: OrderPaymentTiplistProps) {
     getOptionLabel = (data) => data.title,
     onLoadData = (rq) => rq,
     name = "paymentId",
-    rq = { isValid: true },
+    rq,
     ...rest
   } = props;
 
@@ -66,6 +66,8 @@ export function OrderPaymentTiplist(props: OrderPaymentTiplistProps) {
       loadData={(keyword, id, maxItems) =>
         crm.orderPaymentApi.list(
           onLoadData({
+            isOrder: true,
+            isValid: true,
             ...rq,
             keyword,
             id,

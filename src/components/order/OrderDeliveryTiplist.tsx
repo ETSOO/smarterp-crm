@@ -51,7 +51,7 @@ export function OrderDeliveryTiplist(props: OrderDeliveryTiplistProps) {
     getOptionLabel = (data) => data.title,
     onLoadData = (rq) => rq,
     name = "deliveryId",
-    rq = { isValid: true },
+    rq,
     ...rest
   } = props;
 
@@ -66,6 +66,8 @@ export function OrderDeliveryTiplist(props: OrderDeliveryTiplistProps) {
       loadData={(keyword, id, maxItems) =>
         crm.orderDeliveryApi.list(
           onLoadData({
+            isOrder: true,
+            isValid: true,
             ...rq,
             keyword,
             id,
