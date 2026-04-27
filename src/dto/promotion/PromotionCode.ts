@@ -37,12 +37,6 @@ export type PromotionSaleItemBase = {
   id: number;
 
   /**
-   * Times
-   * 次数
-   */
-  times: number;
-
-  /**
    * Amount
    * 金额
    */
@@ -54,6 +48,12 @@ export type PromotionSaleItemBase = {
  * 促销代码计算结果
  */
 export type PromotionCodeCalculation = PromotionSaleItemBase & {
+  /**
+   * Times
+   * 次数
+   */
+  times: number;
+
   /**
    * Promotion title
    * 促销标题
