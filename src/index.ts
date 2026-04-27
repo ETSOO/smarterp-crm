@@ -214,6 +214,7 @@ export * from "./dto/product/ProductUnitItem";
 export * from "./dto/product/ProductUpdateReadData";
 export * from "./dto/product/ProductUsage";
 export * from "./dto/product/ProductViewData";
+export * from "./dto/product/QueryForPurchaseData";
 export * from "./dto/product/QueryForSaleData";
 
 export * from "./rq/product/ProductCreateRQ";
@@ -222,6 +223,7 @@ export * from "./rq/product/ProductListRQ";
 export * from "./rq/product/ProductQueryRQ";
 export * from "./rq/product/ProductUnitUpdateRQ";
 export * from "./rq/product/ProductUpdateRQ";
+export * from "./rq/product/QueryForPurchaseRQ";
 export * from "./rq/product/QueryForSaleRQ";
 
 // Product category
@@ -250,11 +252,13 @@ export * from "./rq/promotion/PromotionUpdateRQ";
 // Supplier
 export * from "./dto/supplier/SupplierListData";
 export * from "./dto/supplier/SupplierQueryData";
+export * from "./dto/supplier/SupplierReadForPurchaseData";
 export * from "./dto/supplier/SupplierUpdateReadData";
 
 export * from "./rq/supplier/SupplierCreateRQ";
 export * from "./rq/supplier/SupplierListRQ";
 export * from "./rq/supplier/SupplierQueryRQ";
+export * from "./rq/supplier/SupplierReadForPurchaseRQ";
 export * from "./rq/supplier/SupplierUpdateRQ";
 
 // System

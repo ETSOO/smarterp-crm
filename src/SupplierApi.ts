@@ -12,6 +12,8 @@ import { SupplierQueryData } from "./dto/supplier/SupplierQueryData";
 import { SupplierUpdateRQ } from "./rq/supplier/SupplierUpdateRQ";
 import { SupplierUpdateReadData } from "./dto/supplier/SupplierUpdateReadData";
 import { SupplierCreateRQ } from "./rq/supplier/SupplierCreateRQ";
+import { SupplierReadForPurchaseRQ } from "./rq/supplier/SupplierReadForPurchaseRQ";
+import { SupplierReadForPurchaseData } from "./dto/supplier/SupplierReadForPurchaseData";
 
 /**
  * Supplier API
@@ -54,6 +56,19 @@ export class SupplierApi extends EntityApi {
    */
   query(rq: SupplierQueryRQ, payload?: IApiPayload<SupplierQueryData[]>) {
     return this.queryBase(rq, payload);
+  }
+
+  /**
+   * Read supplier data for purchase
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  readForPurchase(
+    rq: SupplierReadForPurchaseRQ,
+    payload?: IApiPayload<SupplierReadForPurchaseData>
+  ) {
+    return this.api.post(`${this.flag}/ReadForPurchase`, rq, payload);
   }
 
   /**
