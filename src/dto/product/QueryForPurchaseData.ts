@@ -1,3 +1,4 @@
+import { CustomFieldData } from "@etsoo/appscript";
 import { CategoryItem } from "../CategoryItem";
 import { PromotionItem } from "../promotion/PromotionItem";
 
@@ -106,7 +107,7 @@ export type QueryForPurchaseData = {
    * Modifiers
    * 定制选项
    */
-  modifiers?: unknown;
+  modifiers?: CustomFieldData[];
 
   /**
    * Categories

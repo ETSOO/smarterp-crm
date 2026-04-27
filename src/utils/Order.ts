@@ -1,6 +1,7 @@
 import { ICrmApp } from "../CrmApp";
 import { OrderDeliveryKind } from "../dto/orderDelivery/OrderDeliveryKind";
 import { OrderPaymentKind } from "../dto/orderPayment/OrderPaymentKind";
+import { QueryForPurchaseData } from "../dto/product/QueryForPurchaseData";
 import { QueryForSaleData } from "../dto/product/QueryForSaleData";
 import {
   PromotionCodeCalculation,
@@ -160,5 +161,24 @@ export class Order {
     }
 
     return Math.min(...prices);
+  }
+
+  /**
+   * Get price for purchase
+   * 获取采购价格
+   * @param data Purchase data
+   * @returns Result
+   */
+  getPOPrice(data: QueryForPurchaseData) {
+    let price = data.costPrice;
+
+    if (
+      data.supplierRetailPrice != null &&
+      (price == null || data.supplierRetailPrice < price)
+    ) {
+      price = data.supplierRetailPrice;
+    }
+
+    return price;
   }
 }

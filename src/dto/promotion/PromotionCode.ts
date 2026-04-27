@@ -37,6 +37,12 @@ export type PromotionSaleItemBase = {
   id: number;
 
   /**
+   * Times
+   * 次数
+   */
+  times: number;
+
+  /**
    * Amount
    * 金额
    */
@@ -103,6 +109,7 @@ export const promotionCodes: PromotionCode[] = [
         return {
           id,
           title,
+          times,
           amount: times * discount
         };
       }
@@ -139,6 +146,7 @@ export const promotionCodes: PromotionCode[] = [
         return {
           id,
           title,
+          times,
           amount: newDiscount
         };
       }
@@ -178,6 +186,7 @@ export const promotionCodes: PromotionCode[] = [
         return {
           id,
           title,
+          times,
           amount: newDiscount
         };
       }
@@ -215,6 +224,7 @@ export const promotionCodes: PromotionCode[] = [
         return {
           id,
           title,
+          times,
           amount
         };
       }
@@ -247,6 +257,7 @@ export const promotionCodes: PromotionCode[] = [
       return {
         id,
         title,
+        times: Math.floor(qty),
         amount: Math.round((currentPrice - newPrice) * qty)
       };
     },
@@ -278,6 +289,7 @@ export const promotionCodes: PromotionCode[] = [
       return {
         id,
         title,
+        times: 1,
         amount: Math.round((currentPrice - minAmount) * qty)
       };
     },
@@ -312,6 +324,7 @@ export const promotionCodes: PromotionCode[] = [
       return {
         id,
         title,
+        times: 1,
         amount: newAmount
       };
     },
@@ -345,6 +358,7 @@ export const promotionCodes: PromotionCode[] = [
       return {
         id,
         title,
+        times: 1,
         amount: newAmount
       };
     },
