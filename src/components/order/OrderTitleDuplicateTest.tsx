@@ -11,6 +11,12 @@ export type OrderTitleDuplicateTestProps = Omit<
    * 排除的编号
    */
   excludedId?: number;
+
+  /**
+   * Is order or not
+   * 是否为订单
+   */
+  isOrder?: boolean;
 };
 
 export function OrderTitleDuplicateTest(props: OrderTitleDuplicateTestProps) {
@@ -20,6 +26,7 @@ export function OrderTitleDuplicateTest(props: OrderTitleDuplicateTestProps) {
   // Destruct
   const {
     excludedId,
+    isOrder,
     changeDelay = [480, 2],
     name = "title",
     label = crm.app.get("title"),
@@ -36,6 +43,7 @@ export function OrderTitleDuplicateTest(props: OrderTitleDuplicateTestProps) {
           const result = await crm.orderApi.duplicateTest(
             {
               excludedId,
+              isOrder,
               title: value
             },
             {

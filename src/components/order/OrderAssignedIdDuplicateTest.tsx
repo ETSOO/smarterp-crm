@@ -11,6 +11,12 @@ export type OrderAssignedIdDuplicateTestProps = Omit<
    * 排除的编号
    */
   excludedId?: number;
+
+  /**
+   * Is order or not
+   * 是否为订单
+   */
+  isOrder?: boolean;
 };
 
 export function OrderAssignedIdDuplicateTest(
@@ -22,6 +28,7 @@ export function OrderAssignedIdDuplicateTest(
   // Destruct
   const {
     excludedId,
+    isOrder,
     changeDelay = [480, 3],
     name = "assignedId",
     label = crm.app.get("assignedId"),
@@ -38,6 +45,7 @@ export function OrderAssignedIdDuplicateTest(
           const result = await crm.orderApi.duplicateTest(
             {
               excludedId,
+              isOrder,
               assignedId: value
             },
             {
