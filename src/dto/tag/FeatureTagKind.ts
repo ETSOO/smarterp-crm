@@ -11,5 +11,6 @@ export enum FeatureTagKind {
   Org = 16,
   Dept = 32,
   Product = 256,
-  Order = 512
+  Order = 512,
+  PO = 1024
 }
