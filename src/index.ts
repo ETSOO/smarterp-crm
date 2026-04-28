@@ -190,7 +190,7 @@ export * from "./rq/personProfile/PersonProfileQueryRQ";
 export * from "./rq/personProfile/PersonProfileUpdateRQ";
 export * from "./rq/personProfile/PersonTaskCreateRQ";
 
-// po
+// PO
 export * from "./dto/po/POListData";
 export * from "./dto/po/POQueryData";
 export * from "./dto/po/POUpdateReadData";
