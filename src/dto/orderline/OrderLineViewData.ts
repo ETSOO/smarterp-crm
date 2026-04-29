@@ -79,6 +79,12 @@ export type OrderLineViewData = {
   qty: number;
 
   /**
+   * Qty delivered
+   * 已交付数量
+   */
+  qtyDelivered?: number;
+
+  /**
    * Asset qty
    * 资产数量
    */
