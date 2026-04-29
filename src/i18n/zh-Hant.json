@@ -265,6 +265,7 @@
   "promotionPrice": "促銷價",
   "purchases": "採購",
   "qty": "數量",
+  "qtyDelivered": "已交付數量",
   "qtyStart": "起始數量",
   "query": "查詢",
   "queryProfile": "查詢檔案",

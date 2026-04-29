@@ -265,6 +265,7 @@
   "promotionPrice": "促销价",
   "purchases": "采购",
   "qty": "数量",
+  "qtyDelivered": "已交付数量",
   "qtyStart": "起始数量",
   "query": "查询",
   "queryProfile": "查询档案",

@@ -267,6 +267,7 @@
   "productUsageWIP": "WIP",
   "promotionPrice": "Promotion price",
   "qty": "Qty.",
+  "qtyDelivered": "Delivered qty.",
   "qtyStart": "Start qty.",
   "query": "Query",
   "queryProfile": "Query profile",
