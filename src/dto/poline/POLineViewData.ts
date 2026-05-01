@@ -82,7 +82,7 @@ export type POLineViewData = {
    * Qty delivered
    * 已交付数量
    */
-  qtyDelivered: number;
+  qtyDelivered?: number;
 
   /**
    * Asset qty
