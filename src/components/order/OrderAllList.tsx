@@ -1,14 +1,14 @@
 import { Tiplist, TiplistProps } from "@etsoo/materialui";
 import { useRequiredCrmApp } from "../../CrmApp";
-import { OrderListData } from "../../dto/order/OrderListData";
-import { OrderListRQ } from "../../rq/order/OrderListRQ";
+import { OrderListAllRQ } from "../../rq/order/OrderListAllRQ";
+import { OrderListAllData } from "../../dto/order/OrderListAllData";
 
 /**
  * Order all list properties
  * 订单与采购单提示列表属性
  */
 export type OrderAllListProps = Omit<
-  TiplistProps<OrderListData, "id">,
+  TiplistProps<OrderListAllData, "id">,
   "loadData" | "label" | "name"
 > & {
   /**
@@ -24,13 +24,13 @@ export type OrderAllListProps = Omit<
   /**
    * Default request data
    */
-  rq?: Partial<OrderListRQ>;
+  rq?: Partial<OrderListAllRQ>;
 
   /**
    * Load data handler
    * @param rq Request data
    */
-  onLoadData?: (rq: OrderListRQ) => OrderListRQ;
+  onLoadData?: (rq: OrderListAllRQ) => OrderListAllRQ;
 };
 
 /**
@@ -57,7 +57,7 @@ export function OrderAllList(props: OrderAllListProps) {
 
   // Layout
   return (
-    <Tiplist<OrderListData>
+    <Tiplist<OrderListAllData>
       label={label}
       getOptionLabel={getOptionLabel}
       name={name}
