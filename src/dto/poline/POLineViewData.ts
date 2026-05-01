@@ -2,10 +2,10 @@ import { CustomFieldData, EntityStatus } from "@etsoo/appscript";
 import { PromotionCodeCalculation } from "../promotion/PromotionCode";
 
 /**
- * Order line view data
- * 订单项目浏览数据
+ * Purchase order line view data
+ * 采购项目浏览数据
  */
-export type OrderLineViewData = {
+export type POLineViewData = {
   /**
    * Id
    * 编号
@@ -13,16 +13,16 @@ export type OrderLineViewData = {
   id: number;
 
   /**
-   * Order title
-   * 订单标题
+   * PO title
+   * 采购标题
    */
-  orderTitle: string;
+  poTitle: string;
 
   /**
-   * Order id
-   * 订单编号
+   * PO id
+   * 采购编号
    */
-  orderId: number;
+  poId: number;
 
   /**
    * Currency
@@ -82,7 +82,7 @@ export type OrderLineViewData = {
    * Qty delivered
    * 已交付数量
    */
-  qtyDelivered?: number;
+  qtyDelivered: number;
 
   /**
    * Asset qty
@@ -133,16 +133,16 @@ export type OrderLineViewData = {
   userId?: number;
 
   /**
-   * Order user id
-   * 订单用户编号
+   * PO user id
+   * 采购用户编号
    */
-  orderUserId: number;
+  poUserId: number;
 
   /**
-   * Customer id
-   * 客户编号
+   * Supplier id
+   * 供应商编号
    */
-  customerId: number;
+  supplierId: number;
 
   /**
    * Asset id
@@ -157,28 +157,16 @@ export type OrderLineViewData = {
   assetSn?: string;
 
   /**
-   * Supplier id
-   * 供应商编号
-   */
-  supplierId?: number;
-
-  /**
-   * Supplier name
-   * 供应商名称
-   */
-  supplierName?: string;
-
-  /**
    * Status
    * 状态
    */
   status: EntityStatus;
 
   /**
-   * Order status
-   * 订单状态
+   * PO status
+   * 采购状态
    */
-  orderStatus: EntityStatus;
+  poStatus: EntityStatus;
 
   /**
    * Modifiers
@@ -212,7 +200,7 @@ export type OrderLineViewData = {
 
   /**
    * Whether the order line is restorable
-   * 是否可回滚
+   * 是否可恢复原状
    */
   isRestorable: boolean;
 };

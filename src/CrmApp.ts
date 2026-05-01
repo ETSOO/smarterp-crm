@@ -33,6 +33,7 @@ import { Order } from "./utils/Order";
 import { OrderDeliveryApi } from "./OrderDeliveryApi";
 import { OrderPaymentApi } from "./OrderPaymentApi";
 import { OrderLineApi } from "./OrderLineApi";
+import { POLineApi } from "./POLineApi";
 
 /**
  * Get CRM app context hook
@@ -199,6 +200,12 @@ export interface ICrmApp {
    * 采购接口
    */
   readonly poApi: POApi;
+
+  /**
+   * Purchase order line API
+   * 采购行接口
+   */
+  readonly poLineApi: POLineApi;
 
   /**
    * Product
@@ -468,6 +475,15 @@ export class CrmApp implements ICrmApp {
    */
   get poApi() {
     return (this._poApi ??= new POApi(this.app));
+  }
+
+  private _poLineApi?: POLineApi;
+  /**
+   * Purchase order line API
+   * 采购行接口
+   */
+  get poLineApi() {
+    return (this._poLineApi ??= new POLineApi(this.app));
   }
 
   private _product?: Product;
