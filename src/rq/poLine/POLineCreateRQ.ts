@@ -58,7 +58,7 @@ export type POLineCreateRQ = {
    * JSON data
    * JSON 数据
    */
-  data?: unknown;
+  data?: Record<string, unknown>;
 
   /**
    * Status
