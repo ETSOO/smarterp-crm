@@ -30,10 +30,10 @@ export type OrderListRQ = StatusQueryRQ & {
   customerId?: number;
 
   /**
-   * Person id, customer for order or supplier for purchase order
-   * 人员编号，订单的客户或采购订单的供应商
+   * Supplier id
+   * 供应商编号
    */
-  personId?: number;
+  supplierId?: number;
 
   /**
    * Currency

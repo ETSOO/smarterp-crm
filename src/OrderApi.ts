@@ -15,6 +15,8 @@ import { OrderUpdateReadData } from "./dto/order/OrderUpdateReadData";
 import { OrderDuplicateTestRQ } from "./rq/order/OrderDuplicateTestRQ";
 import { OrderDuplicateTestData } from "./dto/order/OrderDuplicateTestData";
 import { OrderViewData } from "./dto/order/OrderViewData";
+import { OrderListAllRQ } from "./rq/order/OrderListAllRQ";
+import { OrderListAllData } from "./dto/order/OrderListAllData";
 
 /**
  * Order API
@@ -63,7 +65,7 @@ export class OrderApi extends EntityApi {
     rq: Omit<OrderListRQ, "isOrder">,
     payload?: IApiPayload<OrderListData[]>
   ) {
-    return this.listAll({ ...rq, isOrder: true }, payload);
+    return this.listBase(rq, payload);
   }
 
   /**
@@ -72,8 +74,8 @@ export class OrderApi extends EntityApi {
    * @param payload Payload
    * @returns Result
    */
-  listAll(rq: OrderListRQ, payload?: IApiPayload<OrderListData[]>) {
-    return this.listBase(rq, payload);
+  listAll(rq: OrderListAllRQ, payload?: IApiPayload<OrderListAllData[]>) {
+    return this.api.post(`${this.flag}/ListAll`, rq, payload);
   }
 
   /**
