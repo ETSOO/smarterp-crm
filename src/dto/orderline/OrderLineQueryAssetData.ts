@@ -12,6 +12,12 @@ export type OrderLineQueryAssetData = {
   id: number;
 
   /**
+   * Is order or not
+   * 是否为订单
+   */
+  isOrder: boolean;
+
+  /**
    * Title
    * 标题
    */
