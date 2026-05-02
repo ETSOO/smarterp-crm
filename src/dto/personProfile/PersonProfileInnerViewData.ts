@@ -45,6 +45,12 @@ export type PersonProfileInnerViewData = {
   orderTitle?: string;
 
   /**
+   * Is order
+   * 是否订单
+   */
+  isOrder?: boolean;
+
+  /**
    * Comment
    * 评价
    */
