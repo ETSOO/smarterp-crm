@@ -13,6 +13,12 @@ export type POLineViewData = {
   id: number;
 
   /**
+   * Buyer id
+   * 购买者编号
+   */
+  buyerId: number;
+
+  /**
    * PO title
    * 采购标题
    */
