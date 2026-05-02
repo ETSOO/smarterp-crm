@@ -142,7 +142,13 @@ export type POLineViewData = {
    * Supplier id
    * 供应商编号
    */
-  supplierId: number;
+  supplierId?: number;
+
+  /**
+   * Supplier name
+   * 供应商名称
+   */
+  supplierName?: string;
 
   /**
    * Asset id
