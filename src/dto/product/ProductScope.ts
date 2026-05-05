@@ -28,6 +28,12 @@ export enum ProductScope {
   Purchase = 4,
 
   /**
+   * Assemble
+   * 组装
+   */
+  Assemble = 16,
+
+  /**
    * Production
    * 生产
    */
