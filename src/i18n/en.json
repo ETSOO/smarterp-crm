@@ -257,6 +257,7 @@
   "products": "Products",
   "productScope": "Scope control",
   "productScopeAssemble": "Assemble",
+  "productScopeDisassemble": "Disassemble",
   "productScopeInternalSale": "Internal sale",
   "productScopeInventory": "Inventory management",
   "productScopeNone": "None",

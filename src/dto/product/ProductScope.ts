@@ -34,14 +34,20 @@ export enum ProductScope {
   Assemble = 16,
 
   /**
+   * Disassemble
+   * 拆解
+   */
+  Disassemble = 32,
+
+  /**
    * Production
    * 生产
    */
-  Production = 32,
+  Production = 64,
 
   /**
    * Inventory
    * 库存管理
    */
-  Inventory = 64
+  Inventory = 128
 }
