@@ -26,6 +26,7 @@ import { QueryForSaleData } from "./dto/product/QueryForSaleData";
 import { ProductReadCustomData } from "./dto/product/ProductReadCustomData";
 import { QueryForPurchaseRQ } from "./rq/product/QueryForPurchaseRQ";
 import { QueryForPurchaseData } from "./dto/product/QueryForPurchaseData";
+import { ProductEditBomsRQ } from "./rq/product/ProductEditBomsRQ";
 
 /**
  * Product API
@@ -61,6 +62,16 @@ export class ProductApi extends EntityApi {
     payload?: IApiPayload<ProductDuplicateTestData[]>
   ) {
     return this.api.post(`${this.flag}/DuplicateTest`, rq, payload);
+  }
+
+  /**
+   * Edit product BOMs
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  editBoms(rq: ProductEditBomsRQ, payload?: IdResultPayload) {
+    return this.api.put(`${this.flag}/EditBoms`, rq, payload);
   }
 
   /**

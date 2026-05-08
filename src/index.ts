@@ -222,6 +222,7 @@ export * from "./rq/poLine/POLineStartRQ";
 export * from "./rq/poLine/POLineUpdateRQ";
 
 // Product
+export * from "./dto/product/ProductBomItem";
 export * from "./dto/product/ProductCustomData";
 export * from "./dto/product/ProductDuplicateTestData";
 export * from "./dto/product/ProductListData";
@@ -238,6 +239,7 @@ export * from "./dto/product/QueryForSaleData";
 
 export * from "./rq/product/ProductCreateRQ";
 export * from "./rq/product/ProductDuplicateTestRQ";
+export * from "./rq/product/ProductEditBomsRQ";
 export * from "./rq/product/ProductListRQ";
 export * from "./rq/product/ProductQueryRQ";
 export * from "./rq/product/ProductUnitUpdateRQ";
