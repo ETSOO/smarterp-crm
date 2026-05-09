@@ -28,10 +28,10 @@ export enum ProductScope {
   Purchase = 4,
 
   /**
-   * Assemble
-   * 组装
+   * Bundle
+   * 组合
    */
-  Assemble = 16,
+  Bundle = 16,
 
   /**
    * Disassemble
