@@ -4,6 +4,7 @@ import { ProductUsage } from "./ProductUsage";
 import { CategoryItem } from "../CategoryItem";
 import { ProductPriceItem } from "./ProductPriceItem";
 import { CustomCultureItem } from "../system/CustomCultureItem";
+import { ProductBomNameItem } from "./ProductBomItem";
 
 /**
  * Product view data
@@ -123,6 +124,12 @@ export type ProductViewData = {
    * 登记时间
    */
   creation: Date | string;
+
+  /**
+   * BOMs
+   * 物料清单
+   */
+  boms: ProductBomNameItem[];
 
   /**
    * Categories

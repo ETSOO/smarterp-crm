@@ -15,3 +15,15 @@ export type ProductBomItem = {
    */
   qty: number;
 };
+
+/**
+ * Product BOM name item
+ * 产品物料清单名称项
+ */
+export type ProductBomNameItem = ProductBomItem & {
+  /**
+   * Name
+   * 名称
+   */
+  name: string;
+};
