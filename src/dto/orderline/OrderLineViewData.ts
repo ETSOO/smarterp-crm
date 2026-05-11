@@ -199,6 +199,18 @@ export type OrderLineViewData = {
   creation: Date | string;
 
   /**
+   * BOM line id
+   * BOM行编号
+   */
+  bomId?: number;
+
+  /**
+   * BOM line title
+   * BOM行标题
+   */
+  bomTitle?: string;
+
+  /**
    * Whether the order line is startable
    * 是否可开始执行
    */

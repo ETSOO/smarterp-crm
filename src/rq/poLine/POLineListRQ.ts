@@ -28,4 +28,16 @@ export type POLineListRQ = QueryRQ & {
    * 资产编号
    */
   assetId?: number;
+
+  /**
+   * Has BOM line id or not
+   * 是否有BOM行编号
+   */
+  hasBomId?: boolean;
+
+  /**
+   * BOM line id
+   * BOM行编号
+   */
+  bomId?: number;
 };

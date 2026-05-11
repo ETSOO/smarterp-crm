@@ -64,4 +64,10 @@ export type OrderLineQueryData = {
    * 登记时间
    */
   creation: string | Date;
+
+  /**
+   * BOM line id
+   * BOM行编号
+   */
+  bomId?: number;
 };

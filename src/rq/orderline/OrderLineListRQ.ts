@@ -34,4 +34,16 @@ export type OrderLineListRQ = QueryRQ & {
    * 状态
    */
   status?: EntityStatus;
+
+  /**
+   * Has BOM line id or not
+   * 是否有BOM行编号
+   */
+  hasBomId?: boolean;
+
+  /**
+   * BOM line id
+   * BOM行编号
+   */
+  bomId?: number;
 };
