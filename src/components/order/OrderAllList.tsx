@@ -2,6 +2,7 @@ import { Tiplist, TiplistProps } from "@etsoo/materialui";
 import { useRequiredCrmApp } from "../../CrmApp";
 import { OrderListAllRQ } from "../../rq/order/OrderListAllRQ";
 import { OrderListAllData } from "../../dto/order/OrderListAllData";
+import { OrderKind } from "../../dto/order/OrderKind";
 
 /**
  * Order all list properties
@@ -48,7 +49,8 @@ export function OrderAllList(props: OrderAllListProps) {
     fullWidth = true,
     label = crm.app.get("order")!,
     maxItems = 10,
-    getOptionLabel = (item) => `${item.title} (${item.id})`,
+    getOptionLabel = (item) =>
+      `${item.kind === OrderKind.Order ? "" : `[${crm.order.getKind(item.kind)}] `}${item.title}`,
     onLoadData = (rq) => rq,
     name = "orderId",
     rq,

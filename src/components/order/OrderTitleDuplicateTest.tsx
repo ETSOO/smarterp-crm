@@ -1,6 +1,7 @@
 import { InputTipField, InputTipFieldProps } from "@etsoo/materialui";
 import { useRequiredCrmApp } from "../../CrmApp";
 import { OrderDuplicateTestData } from "../../dto/order/OrderDuplicateTestData";
+import { OrderKind } from "../../dto/order/OrderKind";
 
 export type OrderTitleDuplicateTestProps = Omit<
   InputTipFieldProps,
@@ -13,10 +14,10 @@ export type OrderTitleDuplicateTestProps = Omit<
   excludedId?: number;
 
   /**
-   * Is order or not
-   * 是否为订单
+   * Kind
+   * 类型
    */
-  isOrder?: boolean;
+  kind?: OrderKind;
 };
 
 export function OrderTitleDuplicateTest(props: OrderTitleDuplicateTestProps) {
@@ -26,7 +27,7 @@ export function OrderTitleDuplicateTest(props: OrderTitleDuplicateTestProps) {
   // Destruct
   const {
     excludedId,
-    isOrder,
+    kind,
     changeDelay = [480, 2],
     name = "title",
     label = crm.app.get("title"),
@@ -43,7 +44,7 @@ export function OrderTitleDuplicateTest(props: OrderTitleDuplicateTestProps) {
           const result = await crm.orderApi.duplicateTest(
             {
               excludedId,
-              isOrder,
+              kind,
               title: value
             },
             {

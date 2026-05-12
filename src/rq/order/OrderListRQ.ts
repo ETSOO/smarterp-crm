@@ -1,4 +1,5 @@
 import { StatusQueryRQ } from "@etsoo/appscript";
+import { OrderKind } from "../../dto/order/OrderKind";
 
 /**
  * Order list request data
@@ -72,8 +73,8 @@ export type OrderListRQ = StatusQueryRQ & {
   userId?: number;
 
   /**
-   * Is order or not
-   * 是否为订单
+   * Kind
+   * 类型
    */
-  isOrder?: boolean;
+  kind?: OrderKind;
 };

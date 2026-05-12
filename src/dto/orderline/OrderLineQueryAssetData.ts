@@ -1,4 +1,5 @@
 import { EntityStatus } from "@etsoo/appscript";
+import { OrderKind } from "../order/OrderKind";
 
 /**
  * Order line asset query data
@@ -12,10 +13,10 @@ export type OrderLineQueryAssetData = {
   id: number;
 
   /**
-   * Is order or not
-   * 是否为订单
+   * Kind
+   * 类型
    */
-  isOrder: boolean;
+  kind: OrderKind;
 
   /**
    * Title

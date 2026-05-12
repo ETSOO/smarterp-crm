@@ -1,3 +1,5 @@
+import { OrderKind } from "./OrderKind";
+
 /**
  * Order / PO list data
  * 订单采购列表数据
@@ -16,8 +18,8 @@ export type OrderListAllData = {
   title: string;
 
   /**
-   * Is order or not
-   * 是否为订单
+   * Kind
+   * 类型
    */
-  isOrder: boolean;
+  kind: OrderKind;
 };

@@ -223,7 +223,12 @@ export namespace Permissions {
   export enum Inventory {
     All = 11000,
 
+    List = 11001,
     Query = 11002,
+    View = 11003,
+    Add = 11011,
+    Edit = 11012,
+    Delete = 11013,
 
     Manage = 11200
   }
@@ -235,6 +240,7 @@ export namespace Permissions {
   export enum Finance {
     All = 18000,
 
+    List = 18001,
     Query = 18002,
 
     Manage = 18200

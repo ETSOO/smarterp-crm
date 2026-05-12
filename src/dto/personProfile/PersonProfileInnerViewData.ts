@@ -2,6 +2,7 @@ import { IdentityTypeFlags, UserRole } from "@etsoo/appscript";
 import { PersonProfileAttachmentItem } from "./PersonProfileAttachmentItem";
 import { PersonProfileLinkItem } from "./PersonProfileLinkItem";
 import { PersonListItem } from "../person/PersonListItem";
+import { OrderKind } from "../order/OrderKind";
 
 /**
  * Person profile inner view data
@@ -45,10 +46,10 @@ export type PersonProfileInnerViewData = {
   orderTitle?: string;
 
   /**
-   * Is order
-   * 是否订单
+   * Order kind
+   * 订单类型
    */
-  isOrder?: boolean;
+  orderKind: OrderKind;
 
   /**
    * Comment

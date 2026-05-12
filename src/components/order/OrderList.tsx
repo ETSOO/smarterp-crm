@@ -1,3 +1,4 @@
+import { OrderKind } from "../../dto/order/OrderKind";
 import { OrderListRQ } from "../../rq/order/OrderListRQ";
 import { OrderAllList, OrderAllListProps } from "./OrderAllList";
 
@@ -26,5 +27,5 @@ export function OrderList(props: OrderListProps) {
   const { rq, ...rest } = props;
 
   // Layout
-  return <OrderAllList {...rest} rq={{ ...rq, isOrder: true }} />;
+  return <OrderAllList {...rest} rq={{ ...rq, kind: OrderKind.Order }} />;
 }

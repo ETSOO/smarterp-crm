@@ -1,3 +1,5 @@
+import { OrderKind } from "../../dto/order/OrderKind";
+
 /**
  * Order duplicate test request data
  * 订单重复测试请求数据
@@ -28,8 +30,8 @@ export type OrderDuplicateTestRQ = {
   sourceId?: string;
 
   /**
-   * Is order or not
-   * 是否为订单
+   * Kind
+   * 类型
    */
-  isOrder?: boolean;
+  kind?: OrderKind;
 };

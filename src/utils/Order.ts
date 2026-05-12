@@ -1,4 +1,5 @@
 import { ICrmApp } from "../CrmApp";
+import { OrderKind } from "../dto/order/OrderKind";
 import { OrderDeliveryKind } from "../dto/orderDelivery/OrderDeliveryKind";
 import { OrderPaymentKind } from "../dto/orderPayment/OrderPaymentKind";
 import { QueryForPurchaseData } from "../dto/product/QueryForPurchaseData";
@@ -120,6 +121,26 @@ export class Order {
    */
   getDeliveryKinds() {
     return this.crm.app.getEnumList(OrderDeliveryKind, "orderDeliveryKind");
+  }
+
+  /**
+   * Get kind label
+   * 获取类型标签
+   * @param kind Kind
+   * @returns Result
+   */
+  getKind(kind?: OrderKind) {
+    if (kind == null) return undefined;
+    const key = OrderKind[kind];
+    return this.crm.app.get("orderKind" + key) ?? key;
+  }
+
+  /**
+   * Get order kinds
+   * 获取订单类型
+   */
+  getKinds() {
+    return this.crm.app.getEnumList(OrderKind, "orderKind");
   }
 
   /**
