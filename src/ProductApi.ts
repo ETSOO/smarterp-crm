@@ -52,6 +52,16 @@ export class ProductApi extends EntityApi {
   }
 
   /**
+   * Delete
+   * @param id Id
+   * @param payload Payload
+   * @returns Result
+   */
+  delete(id: number, payload?: IdResultPayload) {
+    return this.deleteBase(id, payload);
+  }
+
+  /**
    * Duplicate test
    * @param rq Request data
    * @param payload Payload
