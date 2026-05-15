@@ -272,6 +272,22 @@ export * from "./rq/promotion/PromotionQueryRQ";
 export * from "./rq/promotion/PromotionUpdateRQ";
 
 // Stock
+export * from "./dto/stock/StockActionPayload";
+export * from "./dto/stock/StockItem";
+export * from "./dto/stock/StockKind";
+export * from "./dto/stock/StockListData";
+export * from "./dto/stock/StockQueryData";
+
+export * from "./rq/stock/CheckStockRQ";
+export * from "./rq/stock/StockAssembleRQ";
+export * from "./rq/stock/StockInitRQ";
+export * from "./rq/stock/StockListRQ";
+export * from "./rq/stock/StockLoseRQ";
+export * from "./rq/stock/StockOrderOutRQ";
+export * from "./rq/stock/StockPOInRQ";
+export * from "./rq/stock/StockQueryRQ";
+export * from "./rq/stock/StockReceiveRQ";
+export * from "./rq/stock/StockTransferRQ";
 
 // Stock site
 export * from "./dto/stockSite/StockSiteQueryData";
