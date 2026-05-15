@@ -36,6 +36,7 @@ import { OrderLineApi } from "./OrderLineApi";
 import { POLineApi } from "./POLineApi";
 import { StockSiteApi } from "./StockSiteApi";
 import { StockApi } from "./StockApi";
+import { Stock } from "./utils/Stock";
 
 /**
  * Get CRM app context hook
@@ -232,6 +233,12 @@ export interface ICrmApp {
    * 促销接口
    */
   readonly promotionApi: PromotionApi;
+
+  /**
+   * Stock
+   * 库存
+   */
+  readonly stock: Stock;
 
   /**
    * Stock API
@@ -538,6 +545,15 @@ export class CrmApp implements ICrmApp {
    */
   get promotionApi() {
     return (this._promotionApi ??= new PromotionApi(this.app));
+  }
+
+  private _stock?: Stock;
+  /**
+   * Stock
+   * 库存
+   */
+  get stock(): Stock {
+    return (this._stock ??= new Stock(this));
   }
 
   private _stockApi?: StockApi;
