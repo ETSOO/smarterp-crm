@@ -46,7 +46,7 @@
     "@babel/runtime-corejs3": "^7.29.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.1",
+    "@vitejs/plugin-react": "^6.0.2",
     "baseline-browser-mapping": "^2.10.29",
     "jsdom": "^29.1.1",
     "typescript": "^6.0.3",
@@ -58,7 +58,7 @@
   },
   "dependencies": {
     "@etsoo/appscript": "^1.6.63",
-    "@etsoo/materialui": "^1.6.55",
+    "@etsoo/materialui": "^1.6.56",
     "@etsoo/react": "^1.8.88",
     "@etsoo/shared": "^1.2.84",
     "@mui/material": "^9.0.1",

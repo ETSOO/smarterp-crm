@@ -17,6 +17,8 @@ import { StockOrderOutRQ } from "./rq/stock/StockOrderOutRQ";
 import { StockPOInRQ } from "./rq/stock/StockPOInRQ";
 import { StockReceiveRQ } from "./rq/stock/StockReceiveRQ";
 import { StockTransferRQ } from "./rq/stock/StockTransferRQ";
+import { StockQueryProductRQ } from "./rq/stock/StockQueryProductRQ";
+import { StockQueryProductData } from "./dto/stock/StockQueryProductData";
 
 /**
  * Stock API
@@ -109,6 +111,19 @@ export class StockApi extends EntityApi {
    */
   query(rq: StockQueryRQ, payload?: IApiPayload<StockQueryData[]>) {
     return this.queryBase(rq, payload);
+  }
+
+  /**
+   * Query stock product / 查询库存产品
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  queryProduct(
+    rq: StockQueryProductRQ,
+    payload?: IApiPayload<StockQueryProductData[]>
+  ) {
+    return this.api.post(`${this.flag}/QueryProduct`, rq, payload);
   }
 
   /**
