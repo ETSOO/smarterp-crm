@@ -124,6 +124,7 @@
   "includeComments": "Include comments",
   "importance": "Importance",
   "indexKey": "Index key",
+  "inTransit": "In transit",
   "inventory": "Inventory",
   "inventoryWayFull": "Full inventory",
   "inventoryWayNone": "No inventory",

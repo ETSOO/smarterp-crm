@@ -52,5 +52,5 @@ export type StockListRQ = {
    * Is in transit
    * 是否在途
    */
-  intransit?: boolean;
+  inTransit?: boolean;
 } & QueryRQ;
