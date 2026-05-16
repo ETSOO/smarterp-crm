@@ -113,4 +113,10 @@ export type StockViewData = {
    * 登记时间
    */
   creation: Date | string;
+
+  /**
+   * Is deletable
+   * 是否可删除
+   */
+  isDeletable: boolean;
 };
