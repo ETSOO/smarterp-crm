@@ -19,6 +19,10 @@ import { StockReceiveRQ } from "./rq/stock/StockReceiveRQ";
 import { StockTransferRQ } from "./rq/stock/StockTransferRQ";
 import { StockQueryProductRQ } from "./rq/stock/StockQueryProductRQ";
 import { StockQueryProductData } from "./dto/stock/StockQueryProductData";
+import { StockQueryLinesRQ } from "./rq/stock/StockQueryLinesRQ";
+import { StockQueryLinesData } from "./dto/stock/StockQueryLinesData";
+import { StockUpdateRQ } from "./rq/stock/StockUpdateRQ";
+import { StockViewData } from "./dto/stock/StockViewData";
 
 /**
  * Stock API
@@ -114,6 +118,19 @@ export class StockApi extends EntityApi {
   }
 
   /**
+   * Query stock lines / 查询库存明细
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  queryLines(
+    rq: StockQueryLinesRQ,
+    payload?: IApiPayload<StockQueryLinesData[]>
+  ) {
+    return this.api.post(`${this.flag}/QueryLines`, rq, payload);
+  }
+
+  /**
    * Query stock product / 查询库存产品
    * @param rq Request data
    * @param payload Payload
@@ -124,6 +141,16 @@ export class StockApi extends EntityApi {
     payload?: IApiPayload<StockQueryProductData[]>
   ) {
     return this.api.post(`${this.flag}/QueryProduct`, rq, payload);
+  }
+
+  /**
+   * Read stock data for view / 读取用于浏览的库存数据
+   * @param id Stock ID
+   * @param payload Payload
+   * @returns Result
+   */
+  read(id: number, payload?: IApiPayload<StockViewData>) {
+    return this.readBase(id, payload);
   }
 
   /**
@@ -144,5 +171,15 @@ export class StockApi extends EntityApi {
    */
   transfer(rq: StockTransferRQ, payload?: StockActionPayload) {
     return this.api.post(`${this.flag}/Transfer`, rq, payload);
+  }
+
+  /**
+   * Update stock / 更新库存
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  update(rq: StockUpdateRQ, payload?: IdResultPayload) {
+    return this.api.put(`${this.flag}/Update`, rq, payload);
   }
 }

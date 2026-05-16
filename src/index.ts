@@ -277,7 +277,9 @@ export * from "./dto/stock/StockItem";
 export * from "./dto/stock/StockKind";
 export * from "./dto/stock/StockListData";
 export * from "./dto/stock/StockQueryData";
+export * from "./dto/stock/StockQueryLinesData";
 export * from "./dto/stock/StockQueryProductData";
+export * from "./dto/stock/StockViewData";
 
 export * from "./rq/stock/CheckStockRQ";
 export * from "./rq/stock/StockAssembleRQ";
@@ -286,10 +288,12 @@ export * from "./rq/stock/StockListRQ";
 export * from "./rq/stock/StockLoseRQ";
 export * from "./rq/stock/StockOrderOutRQ";
 export * from "./rq/stock/StockPOInRQ";
+export * from "./rq/stock/StockQueryLinesRQ";
 export * from "./rq/stock/StockQueryProductRQ";
 export * from "./rq/stock/StockQueryRQ";
 export * from "./rq/stock/StockReceiveRQ";
 export * from "./rq/stock/StockTransferRQ";
+export * from "./rq/stock/StockUpdateRQ";
 
 // Stock site
 export * from "./dto/stockSite/StockSiteQueryData";
