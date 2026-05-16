@@ -283,6 +283,7 @@
   "qtyStart": "Start qty.",
   "query": "Query",
   "queryProfile": "Query profile",
+  "realtimeInventory": "Realtime inventory",
   "recalculate": "Recalculate",
   "receiptTime": "Receipt time",
   "receivingWarehouse": "Receiving warehouse",
