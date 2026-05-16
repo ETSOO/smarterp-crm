@@ -332,6 +332,7 @@
   "stockKindProduction": "Production",
   "stockKindStockTaking": "Stock taking",
   "stockKindStockTransfer": "Stock transfer",
+  "stockLines": "Stock lines",
   "stockQty": "Stock qty.",
   "system": "System",
   "systemSettings": "System settings",

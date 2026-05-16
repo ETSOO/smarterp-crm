@@ -330,6 +330,7 @@
   "stockKindProduction": "生產",
   "stockKindStockTaking": "盤庫",
   "stockKindStockTransfer": "調貨",
+  "stockLines": "庫存行記錄",
   "stockQty": "庫存數量",
   "system": "系統",
   "systemSettings": "系統設置",

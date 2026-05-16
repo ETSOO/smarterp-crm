@@ -330,6 +330,7 @@
   "stockKindProduction": "生产",
   "stockKindStockTaking": "盘库",
   "stockKindStockTransfer": "调货",
+  "stockLines": "库存行记录",
   "stockQty": "库存数量",
   "system": "系统",
   "systemSettings": "系统设置",
