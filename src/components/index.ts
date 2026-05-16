@@ -66,6 +66,9 @@ export * from "./productCategory/ButtonProductCategories";
 export * from "./productCategory/ProductCategoryAssignedIdDuplicateTest";
 export * from "./productCategory/ProductCategoryTiplist";
 
+// Stock
+export * from "./stock/StockKindList";
+
 // Supplier
 export * from "./supplier/SupplierList";
 
