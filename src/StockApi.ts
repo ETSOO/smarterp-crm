@@ -23,6 +23,8 @@ import { StockQueryLinesRQ } from "./rq/stock/StockQueryLinesRQ";
 import { StockQueryLinesData } from "./dto/stock/StockQueryLinesData";
 import { StockUpdateRQ } from "./rq/stock/StockUpdateRQ";
 import { StockViewData } from "./dto/stock/StockViewData";
+import { StockCreateLineRQ } from "./rq/stock/StockCreateLineRQ";
+import { StockUpdateLineRQ } from "./rq/stock/StockUpdateLineRQ";
 
 /**
  * Stock API
@@ -45,6 +47,17 @@ export class StockApi extends EntityApi {
    */
   assemble(rq: StockAssembleRQ, payload?: StockActionPayload) {
     return this.api.post(`${this.flag}/Assemble`, rq, payload);
+  }
+
+  /**
+   * Create stock line, only for order & PO
+   * 创建库存行，仅限订单和采购
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  createLine(rq: StockCreateLineRQ, payload?: IdResultPayload) {
+    return this.api.post(`${this.flag}/CreateLine`, rq, payload);
   }
 
   /**
@@ -181,5 +194,15 @@ export class StockApi extends EntityApi {
    */
   update(rq: StockUpdateRQ, payload?: IdResultPayload) {
     return this.api.put(`${this.flag}/Update`, rq, payload);
+  }
+
+  /**
+   * Update stock line / 更新库存行
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  updateLine(rq: StockUpdateLineRQ, payload?: IdResultPayload) {
+    return this.api.put(`${this.flag}/UpdateLine`, rq, payload);
   }
 }

@@ -283,6 +283,7 @@ export * from "./dto/stock/StockViewData";
 
 export * from "./rq/stock/CheckStockRQ";
 export * from "./rq/stock/StockAssembleRQ";
+export * from "./rq/stock/StockCreateLineRQ";
 export * from "./rq/stock/StockInitRQ";
 export * from "./rq/stock/StockListRQ";
 export * from "./rq/stock/StockLoseRQ";
@@ -293,6 +294,7 @@ export * from "./rq/stock/StockQueryProductRQ";
 export * from "./rq/stock/StockQueryRQ";
 export * from "./rq/stock/StockReceiveRQ";
 export * from "./rq/stock/StockTransferRQ";
+export * from "./rq/stock/StockUpdateLineRQ";
 export * from "./rq/stock/StockUpdateRQ";
 
 // Stock site
