@@ -22,6 +22,18 @@ export type StockQueryProductLineData = {
   title: string;
 
   /**
+   * Location id
+   * 位置编号
+   */
+  locationId: number;
+
+  /**
+   * Location name
+   * 位置名称
+   */
+  locationName: string;
+
+  /**
    * Qty.
    * 数量
    */
@@ -32,4 +44,10 @@ export type StockQueryProductLineData = {
    * 订单 / 采购行编号
    */
   orderLineId?: number;
+
+  /**
+   * Creation
+   * 登记时间
+   */
+  creation: Date | string;
 };
