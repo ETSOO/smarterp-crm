@@ -22,6 +22,12 @@ export type StockQueryProductData = {
   assignedId?: string;
 
   /**
+   * Purchase minimum unit
+   * 购买最小单位
+   */
+  stepQty?: number;
+
+  /**
    * Stock qty
    * 库存数量
    */
