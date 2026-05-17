@@ -19,6 +19,12 @@ export type StockListRQ = {
   personId?: number;
 
   /**
+   * Product id
+   * 产品编号
+   */
+  productId?: number;
+
+  /**
    * Shipping address id
    * 发货地址编号
    */

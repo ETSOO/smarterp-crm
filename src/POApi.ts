@@ -87,7 +87,7 @@ export class POApi extends EntityApi {
    * @returns Result
    */
   update(rq: POUpdateRQ, payload?: IdResultPayload) {
-    return this.api.put(`${this.flag}/Update`, rq, payload);
+    return this.updateBase(rq, payload);
   }
 
   /**

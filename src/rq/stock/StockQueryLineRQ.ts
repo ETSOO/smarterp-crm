@@ -1,10 +1,10 @@
 import { QueryRQ } from "@etsoo/appscript";
 
 /**
- * Stock query lines request data
+ * Stock query line request data
  * 库存行查询请求数据
  */
-export type StockQueryLinesRQ = QueryRQ & {
+export type StockQueryLineRQ = QueryRQ & {
   /**
    * Stock id
    * 库存编号

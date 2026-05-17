@@ -19,12 +19,14 @@ import { StockReceiveRQ } from "./rq/stock/StockReceiveRQ";
 import { StockTransferRQ } from "./rq/stock/StockTransferRQ";
 import { StockQueryProductRQ } from "./rq/stock/StockQueryProductRQ";
 import { StockQueryProductData } from "./dto/stock/StockQueryProductData";
-import { StockQueryLinesRQ } from "./rq/stock/StockQueryLinesRQ";
-import { StockQueryLinesData } from "./dto/stock/StockQueryLinesData";
+import { StockQueryLineRQ } from "./rq/stock/StockQueryLineRQ";
+import { StockQueryLineData } from "./dto/stock/StockQueryLineData";
 import { StockUpdateRQ } from "./rq/stock/StockUpdateRQ";
 import { StockViewData } from "./dto/stock/StockViewData";
 import { StockCreateLineRQ } from "./rq/stock/StockCreateLineRQ";
 import { StockUpdateLineRQ } from "./rq/stock/StockUpdateLineRQ";
+import { StockQueryProductLineData } from "./dto/stock/StockQueryProductLineData";
+import { StockQueryProductLineRQ } from "./rq/stock/StockQueryProductLineRQ";
 
 /**
  * Stock API
@@ -137,10 +139,23 @@ export class StockApi extends EntityApi {
    * @returns Result
    */
   queryLines(
-    rq: StockQueryLinesRQ,
-    payload?: IApiPayload<StockQueryLinesData[]>
+    rq: StockQueryLineRQ,
+    payload?: IApiPayload<StockQueryLineData[]>
   ) {
     return this.api.post(`${this.flag}/QueryLines`, rq, payload);
+  }
+
+  /**
+   * Query stock product lines
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  queryProductLines(
+    rq: StockQueryProductLineRQ,
+    payload?: IApiPayload<StockQueryProductLineData[]>
+  ) {
+    return this.api.post(`${this.flag}/QueryProductLines`, rq, payload);
   }
 
   /**
@@ -193,7 +208,7 @@ export class StockApi extends EntityApi {
    * @returns Result
    */
   update(rq: StockUpdateRQ, payload?: IdResultPayload) {
-    return this.api.put(`${this.flag}/Update`, rq, payload);
+    return this.updateBase(rq, payload);
   }
 
   /**

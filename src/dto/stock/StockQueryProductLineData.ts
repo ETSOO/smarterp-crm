@@ -1,8 +1,8 @@
 /**
- * Stock query lines data
- * 库存行查询数据
+ * Stock query product line data
+ * 库存查询产品行数据
  */
-export type StockQueryLinesData = {
+export type StockQueryProductLineData = {
   /**
    * Id
    * 编号
@@ -10,16 +10,16 @@ export type StockQueryLinesData = {
   id: number;
 
   /**
-   * Product id
-   * 产品编号
+   * Stock id
+   * 库存编号
    */
-  productId: number;
+  stockId: number;
 
   /**
-   * Product name
-   * 产品名称
+   * Stock title
+   * 库存标题
    */
-  productName: string;
+  title: string;
 
   /**
    * Qty.

@@ -130,7 +130,7 @@ export class OrderApi extends EntityApi {
    * @returns Result
    */
   update(rq: OrderUpdateRQ, payload?: IdResultPayload) {
-    return this.api.put(`${this.flag}/Update`, rq, payload);
+    return this.updateBase(rq, payload);
   }
 
   /**
