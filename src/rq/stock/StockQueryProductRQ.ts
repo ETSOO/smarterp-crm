@@ -60,4 +60,10 @@ export type StockQueryProductRQ = QueryRQ & {
    * 单位编号
    */
   unitId?: number;
+
+  /**
+   * Has stock qty. or not
+   * 是否有库存数量
+   */
+  hasStockQty?: boolean;
 };
