@@ -311,6 +311,7 @@
   "relationDescription": "关系描述",
   "reporter": "报告人",
   "retailPrice": "零售价",
+  "scrapQty": "报废数量",
   "sendEmail": "发送邮件",
   "sensitiveData": "敏感数据",
   "shippingWarehouse": "发货仓库",

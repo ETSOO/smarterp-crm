@@ -313,6 +313,7 @@
   "relationDescription": "Relation description",
   "reporter": "Reporter",
   "retailPrice": "Retail price",
+  "scrapQty": "Scrap qty.",
   "sendEmail": "Send email",
   "sensitiveData": "Sensitive data",
   "shippingWarehouse": "Shipping warehouse",
