@@ -295,6 +295,7 @@ export * from "./rq/stock/StockQueryProductLineRQ";
 export * from "./rq/stock/StockQueryProductRQ";
 export * from "./rq/stock/StockQueryRQ";
 export * from "./rq/stock/StockReceiveRQ";
+export * from "./rq/stock/StockTakeRQ";
 export * from "./rq/stock/StockTransferRQ";
 export * from "./rq/stock/StockUpdateLineRQ";
 export * from "./rq/stock/StockUpdateRQ";
