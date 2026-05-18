@@ -30,6 +30,12 @@ export type StockTransferRQ = {
   description?: string;
 
   /**
+   * Tracking number
+   * 物流编号
+   */
+  trackingNumber?: string;
+
+  /**
    * Items
    * 项目
    */
