@@ -27,6 +27,7 @@ import { StockCreateLineRQ } from "./rq/stock/StockCreateLineRQ";
 import { StockUpdateLineRQ } from "./rq/stock/StockUpdateLineRQ";
 import { StockQueryProductLineData } from "./dto/stock/StockQueryProductLineData";
 import { StockQueryProductLineRQ } from "./rq/stock/StockQueryProductLineRQ";
+import { StockTakeRQ } from "./rq/stock/StockTakeRQ";
 
 /**
  * Stock API
@@ -189,6 +190,16 @@ export class StockApi extends EntityApi {
    */
   receive(rq: StockReceiveRQ, payload?: IdResultPayload) {
     return this.api.post(`${this.flag}/Receive`, rq, payload);
+  }
+
+  /**
+   * Stock take / 库存盘点
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  take(rq: StockTakeRQ, payload?: StockActionPayload) {
+    return this.api.post(`${this.flag}/Take`, rq, payload);
   }
 
   /**

@@ -338,6 +338,8 @@
   "stockKindStockTransfer": "Stock transfer",
   "stockLines": "Stock lines",
   "stockQty": "Stock qty.",
+  "stockTakingGain": "Stock gain",
+  "stockTakingLoss": "Stock loss",
   "system": "System",
   "systemSettings": "System settings",
   "supplier": "Supplier",

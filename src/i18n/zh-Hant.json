@@ -336,6 +336,8 @@
   "stockKindStockTransfer": "調貨",
   "stockLines": "庫存行記錄",
   "stockQty": "庫存數量",
+  "stockTakingGain": "盤盈",
+  "stockTakingLoss": "盤虧",
   "system": "系統",
   "systemSettings": "系統設置",
   "supplier": "供應商",
