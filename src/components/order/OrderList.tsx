@@ -2,7 +2,7 @@ import { OrderKind } from "../../dto/order/OrderKind";
 import { OrderListRQ } from "../../rq/order/OrderListRQ";
 import { OrderAllList, OrderAllListProps } from "./OrderAllList";
 
-type LocalOrderListRQ = Omit<OrderListRQ, "isOrder">;
+type LocalOrderListRQ = Omit<OrderListRQ, "kind">;
 
 /**
  * Order list properties

@@ -17,6 +17,7 @@ import { OrderDuplicateTestData } from "./dto/order/OrderDuplicateTestData";
 import { OrderViewData } from "./dto/order/OrderViewData";
 import { OrderListAllRQ } from "./rq/order/OrderListAllRQ";
 import { OrderListAllData } from "./dto/order/OrderListAllData";
+import { OrderKind } from "./dto/order/OrderKind";
 
 /**
  * Order API
@@ -61,10 +62,7 @@ export class OrderApi extends EntityApi {
    * @param payload Payload
    * @returns Result
    */
-  list(
-    rq: Omit<OrderListRQ, "isOrder">,
-    payload?: IApiPayload<OrderListData[]>
-  ) {
+  list(rq: Omit<OrderListRQ, "kind">, payload?: IApiPayload<OrderListData[]>) {
     return this.listBase(rq, payload);
   }
 
@@ -85,10 +83,10 @@ export class OrderApi extends EntityApi {
    * @returns Result
    */
   query(
-    rq: Omit<OrderQueryRQ, "isOrder">,
+    rq: Omit<OrderQueryRQ, "kind">,
     payload?: IApiPayload<OrderQueryData[]>
   ) {
-    return this.queryBase({ ...rq, isOrder: true }, payload);
+    return this.queryBase({ ...rq, kind: OrderKind.Order }, payload);
   }
 
   /**
