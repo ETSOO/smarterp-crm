@@ -46,6 +46,12 @@ export type StockQueryOrderLineData = {
   assignedId?: string;
 
   /**
+   * Unit name
+   * 产品单位
+   */
+  unitName: string;
+
+  /**
    * Purchase minimum unit
    * 购买最小单位
    */
