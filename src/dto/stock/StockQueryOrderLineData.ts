@@ -10,10 +10,10 @@ export type StockQueryOrderLineItemData = {
   id: number;
 
   /**
-   * Order title
-   * 订单标题
+   * Order id
+   * 订单编号
    */
-  title: string;
+  orderId: number;
 
   /**
    * Qty
@@ -22,10 +22,10 @@ export type StockQueryOrderLineItemData = {
   qty: number;
 
   /**
-   * Qty delivered
-   * 已交付数量
+   * Pending qty
+   * 待处理数量
    */
-  qtyDelivered: number;
+  pendingQty: number;
 };
 
 /**
@@ -76,10 +76,10 @@ export type StockQueryOrderLineData = {
   orderQty: number;
 
   /**
-   * Qty delivered
-   * 已交付数量
+   * Pending qty
+   * 待处理数量
    */
-  qtyDelivered: number;
+  pendingQty: number;
 
   /**
    * Order line items
