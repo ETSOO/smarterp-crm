@@ -10,6 +10,12 @@ export type StockQueryOrderLineItemData = {
   id: number;
 
   /**
+   * Order title
+   * 订单标题
+   */
+  title: string;
+
+  /**
    * Qty
    * 数量
    */
