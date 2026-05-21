@@ -71,6 +71,7 @@
   "degreePreBachelor": "副學士",
   "deliveredQty": "已發貨",
   "deliveryAddress": "收貨地址",
+  "deliveryQtySetError": "設定的數量 {0} 超過了待入庫或待發貨數量 {1}",
   "deliveryInstruction": "配送指示",
   "dept": "部門",
   "depts": "部門",

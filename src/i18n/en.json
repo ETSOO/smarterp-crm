@@ -71,6 +71,7 @@
   "degreePreBachelor": "Pre-bachelor",
   "deliveredQty": "Delivered",
   "deliveryAddress": "Delivery address",
+  "deliveryQtySetError": "The set quantity {0} exceeds the quantity to be received or shipped {1}",
   "deliveryInstruction": "Delivery instruction",
   "dept": "Department",
   "depts": "Departments",
