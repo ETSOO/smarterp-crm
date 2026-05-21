@@ -190,6 +190,7 @@
   "orderPaymentKindCreditCard": "Credit card",
   "orderPaymentKindOther": "Other",
   "orderPaymentKindWeChatPay": "WeChat Pay",
+  "orderQty": "Order qty.",
   "orders": "Orders",
   "orderSource": "Source",
   "orderSourceId": "Source id",

@@ -190,6 +190,7 @@
   "orderPaymentKindCreditCard": "信用卡",
   "orderPaymentKindOther": "其他",
   "orderPaymentKindWeChatPay": "微信支付",
+  "orderQty": "訂單數量",
   "orders": "訂單",
   "orderSource": "訂單源",
   "orderSourceId": "源編號",
