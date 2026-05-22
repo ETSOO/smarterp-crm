@@ -10,12 +10,6 @@ export type StockCreateLineRQ = {
   stockId: number;
 
   /**
-   * Product id
-   * 产品编号
-   */
-  productId: number;
-
-  /**
    * Qty
    * 数量
    */

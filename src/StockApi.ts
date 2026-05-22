@@ -30,6 +30,7 @@ import { StockQueryProductLineRQ } from "./rq/stock/StockQueryProductLineRQ";
 import { StockTakeRQ } from "./rq/stock/StockTakeRQ";
 import { StockQueryOrderLineRQ } from "./rq/stock/StockQueryOrderLineRQ";
 import { StockQueryOrderLineData } from "./dto/stock/StockQueryOrderLineData";
+import { StockLineViewData } from "./dto/stock/StockLineViewData";
 
 /**
  * Stock API
@@ -196,6 +197,16 @@ export class StockApi extends EntityApi {
    */
   read(id: number, payload?: IApiPayload<StockViewData>) {
     return this.readBase(id, payload);
+  }
+
+  /**
+   * Read stock line data / 读取库存行数据
+   * @param id Stock line id
+   * @param payload Payload
+   * @returns Result
+   */
+  readLine(id: number, payload?: IApiPayload<StockLineViewData>) {
+    return this.api.get(`${this.flag}/ReadLine/${id}`, undefined, payload);
   }
 
   /**

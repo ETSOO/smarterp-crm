@@ -275,6 +275,7 @@ export * from "./rq/promotion/PromotionUpdateRQ";
 export * from "./dto/stock/StockActionPayload";
 export * from "./dto/stock/StockItem";
 export * from "./dto/stock/StockKind";
+export * from "./dto/stock/StockLineViewData";
 export * from "./dto/stock/StockListData";
 export * from "./dto/stock/StockQueryData";
 export * from "./dto/stock/StockQueryLineData";
