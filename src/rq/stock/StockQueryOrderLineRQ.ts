@@ -16,10 +16,10 @@ export type StockQueryOrderLineRQ = {
   locationId: number;
 
   /**
-   * Exclude order line ids
-   * 排除订单行编号
+   * Stock id
+   * 库存编号
    */
-  excludeLineIds?: number[];
+  stockId?: number;
 
   /**
    * Order ids
