@@ -30,6 +30,12 @@ export type OrderLineQueryData = {
   qty: number;
 
   /**
+   * Qty delivered
+   * 已交付数量
+   */
+  qtyDelivered?: number;
+
+  /**
    * Amount
    * 金额
    */

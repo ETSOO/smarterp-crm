@@ -30,6 +30,12 @@ export type StockLineViewData = {
   productId: number;
 
   /**
+   * Purchase minimum unit
+   * 购买最小单位
+   */
+  stepQty?: number;
+
+  /**
    * Order / PO line id
    * 订单 / 采购行编号
    */
