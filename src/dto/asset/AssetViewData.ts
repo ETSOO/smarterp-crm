@@ -1,4 +1,4 @@
-import { EntityStatus } from "@etsoo/appscript";
+import { EntityStatus, IdentityTypeFlags } from "@etsoo/appscript";
 
 /**
  * Asset view data
@@ -16,6 +16,11 @@ export type AssetViewData = {
    * 人员编号
    */
   personId: number;
+
+  /**
+   * Identity type
+   */
+  personIdentityType: IdentityTypeFlags;
 
   /**
    * Person name
