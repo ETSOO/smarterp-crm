@@ -290,6 +290,14 @@ export interface ICrmApp {
   getPersonIdentityType(): IdentityTypeFlags;
 
   /**
+   * Has review permission for the identity
+   * 是否有查看权限
+   * @param identity Identity
+   * @returns Result
+   */
+  hasView(identity: IdentityTypeFlags): boolean;
+
+  /**
    * Owns the permission item
    * 是否有权限项
    * @param item Permission item ID
