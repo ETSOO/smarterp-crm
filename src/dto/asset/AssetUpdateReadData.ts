@@ -1,4 +1,5 @@
 import { EntityStatus } from "@etsoo/appscript";
+import { AssetData } from "./AssetData";
 
 /**
  * Asset update read data
@@ -75,7 +76,7 @@ export type AssetUpdateReadData = {
    * JSON data
    * JSON 数据
    */
-  data?: Record<string, unknown>;
+  data?: AssetData;
 
   /**
    * Status

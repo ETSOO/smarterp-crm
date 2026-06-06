@@ -1,4 +1,5 @@
 import { EntityStatus, IdentityTypeFlags } from "@etsoo/appscript";
+import { AssetData } from "./AssetData";
 
 /**
  * Asset view data
@@ -99,6 +100,12 @@ export type AssetViewData = {
    * 健康检查计划
    */
   healthCheckSchedule?: Date | string;
+
+  /**
+   * JSON data
+   * JSON 数据
+   */
+  data?: AssetData;
 
   /**
    * Status

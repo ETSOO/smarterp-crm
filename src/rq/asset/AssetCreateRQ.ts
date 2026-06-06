@@ -1,4 +1,5 @@
 import { EntityStatus } from "@etsoo/appscript";
+import { AssetData } from "../../dto/asset/AssetData";
 
 /**
  * Create asset request data
@@ -69,7 +70,7 @@ export type AssetCreateRQ = {
    * JSON data
    * JSON 数据
    */
-  data?: Record<string, unknown>;
+  data?: AssetData;
 
   /**
    * Status
