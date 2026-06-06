@@ -40,7 +40,7 @@ export class OrderApi extends EntityApi {
    * @returns Result
    */
   create(rq: OrderCreateRQ, payload?: IdResultPayload) {
-    return this.api.put(`${this.flag}/Create`, rq, payload);
+    return this.createBase(rq, payload);
   }
 
   /**

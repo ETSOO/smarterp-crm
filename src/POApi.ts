@@ -35,7 +35,7 @@ export class POApi extends EntityApi {
    * @returns Result
    */
   create(rq: POCreateRQ, payload?: IdResultPayload) {
-    return this.api.put(`${this.flag}/Create`, rq, payload);
+    return this.createBase(rq, payload);
   }
 
   /**
