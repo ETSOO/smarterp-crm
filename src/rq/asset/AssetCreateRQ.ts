@@ -43,6 +43,12 @@ export type AssetCreateRQ = {
   expiry: string | Date;
 
   /**
+   * Expiry check
+   * 到期检查
+   */
+  expiryCheck?: boolean;
+
+  /**
    * Remaining times
    * 剩余次数
    */

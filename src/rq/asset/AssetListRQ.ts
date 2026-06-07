@@ -24,6 +24,12 @@ export type AssetListRQ = StatusQueryRQ & {
   supplierId?: number;
 
   /**
+   * Expiry check
+   * 到期检查
+   */
+  expiryCheck?: boolean;
+
+  /**
    * Serial number
    * 序列号
    */

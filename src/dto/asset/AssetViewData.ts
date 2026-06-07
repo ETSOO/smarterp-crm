@@ -72,6 +72,12 @@ export type AssetViewData = {
   expiry: Date | string;
 
   /**
+   * Expiry check
+   * 到期检查
+   */
+  expiryCheck?: boolean;
+
+  /**
    * Remaining times
    * 剩余次数
    */
