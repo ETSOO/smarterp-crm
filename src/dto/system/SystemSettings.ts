@@ -46,4 +46,16 @@ export type SystemSettings = {
    * 默认税率
    */
   taxRate?: number;
+
+  /**
+   * Whether order monthly report enabled
+   * 订单月报是否启用
+   */
+  orderMonthlyReportEnabled?: boolean;
+
+  /**
+   * Order daily report start hour, 0-23
+   * 订单日报开始小时
+   */
+  orderDailyReportHour?: number;
 };
