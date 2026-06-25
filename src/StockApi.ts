@@ -1,4 +1,5 @@
 import {
+  AppActionData,
   EntityApi,
   IApi,
   IApiPayload,
@@ -31,6 +32,7 @@ import { StockTakeRQ } from "./rq/stock/StockTakeRQ";
 import { StockQueryOrderLineRQ } from "./rq/stock/StockQueryOrderLineRQ";
 import { StockQueryOrderLineData } from "./dto/stock/StockQueryOrderLineData";
 import { StockLineViewData } from "./dto/stock/StockLineViewData";
+import { DocumentActionRQ } from "./rq/DocumentActionRQ";
 
 /**
  * Stock API
@@ -74,6 +76,17 @@ export class StockApi extends EntityApi {
    */
   delete(id: number, payload?: IdResultPayload) {
     return this.deleteBase(id, payload);
+  }
+
+  /**
+   * Document action data
+   * 文档操作数据
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  documentAction(rq: DocumentActionRQ, payload?: IApiPayload<AppActionData>) {
+    return this.api.post(`${this.flag}/DocumentAction`, rq, payload);
   }
 
   /**
@@ -217,6 +230,16 @@ export class StockApi extends EntityApi {
    */
   receive(rq: StockReceiveRQ, payload?: IdResultPayload) {
     return this.api.post(`${this.flag}/Receive`, rq, payload);
+  }
+
+  /**
+   * Report action data
+   * 报告操作数据
+   * @param payload Payload
+   * @returns Result
+   */
+  reportAction(payload?: IApiPayload<AppActionData>) {
+    return this.api.get(`${this.flag}/ReportAction`, undefined, payload);
   }
 
   /**

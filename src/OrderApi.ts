@@ -1,4 +1,5 @@
 import {
+  AppActionData,
   EntityApi,
   IApi,
   IApiPayload,
@@ -18,6 +19,7 @@ import { OrderViewData } from "./dto/order/OrderViewData";
 import { OrderListAllRQ } from "./rq/order/OrderListAllRQ";
 import { OrderListAllData } from "./dto/order/OrderListAllData";
 import { OrderKind } from "./dto/order/OrderKind";
+import { DocumentActionRQ } from "./rq/DocumentActionRQ";
 
 /**
  * Order API
@@ -41,6 +43,17 @@ export class OrderApi extends EntityApi {
    */
   create(rq: OrderCreateRQ, payload?: IdResultPayload) {
     return this.createBase(rq, payload);
+  }
+
+  /**
+   * Document action data
+   * 文档操作数据
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  documentAction(rq: DocumentActionRQ, payload?: IApiPayload<AppActionData>) {
+    return this.api.post(`${this.flag}/DocumentAction`, rq, payload);
   }
 
   /**
@@ -118,6 +131,16 @@ export class OrderApi extends EntityApi {
    */
   recalculate(id: number, payload?: IdResultPayload) {
     return this.api.put(`${this.flag}/Recalculate/${id}`, undefined, payload);
+  }
+
+  /**
+   * Report action data
+   * 报告操作数据
+   * @param payload Payload
+   * @returns Result
+   */
+  reportAction(payload?: IApiPayload<AppActionData>) {
+    return this.api.get(`${this.flag}/ReportAction`, undefined, payload);
   }
 
   /**

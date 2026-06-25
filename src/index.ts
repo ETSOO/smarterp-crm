@@ -350,6 +350,8 @@ export * from "./rq/user/UserListRQ";
 export * from "./rq/user/UserQueryRQ";
 export * from "./rq/user/UserUpdateRQ";
 
+export * from "./rq/DocumentActionRQ";
+
 // i18n
 export * from "./i18n/CrmCulture";
 

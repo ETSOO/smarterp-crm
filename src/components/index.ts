@@ -66,6 +66,9 @@ export * from "./productCategory/ButtonProductCategories";
 export * from "./productCategory/ProductCategoryAssignedIdDuplicateTest";
 export * from "./productCategory/ProductCategoryTiplist";
 
+// Report
+export * from "./report/OrderReportFieldList";
+
 // Stock
 export * from "./stock/StockKindList";
 
@@ -77,6 +80,7 @@ export * from "./system/AddressDuplicateTest";
 export * from "./system/AssignedIdDuplicateTest";
 export * from "./system/CustomerTypeList";
 export * from "./system/InfoDuplicateTest";
+export * from "./system/LatestYearList";
 export * from "./system/NameDuplicateTest";
 
 // User

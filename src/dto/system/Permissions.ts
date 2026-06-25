@@ -117,9 +117,11 @@ export namespace Permissions {
     List = 6001,
     Query = 6002,
     View = 6003,
+    Report = 6008,
     Add = 6011,
     Edit = 6012,
     Delete = 6013,
+    Document = 6015,
 
     QueryContact = 6081,
     AddContact = 6083,
@@ -190,9 +192,11 @@ export namespace Permissions {
     List = 9001,
     Query = 9002,
     View = 9003,
+    Report = 9008,
     Add = 9011,
     Edit = 9012,
     Delete = 9013,
+    Document = 9015,
 
     Manage = 9200,
     Execute = 9202
@@ -226,9 +230,11 @@ export namespace Permissions {
     List = 11001,
     Query = 11002,
     View = 11003,
+    Report = 11008,
     Add = 11011,
     Edit = 11012,
     Delete = 11013,
+    Document = 11015,
 
     Manage = 11200
   }

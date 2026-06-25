@@ -1,4 +1,5 @@
 import {
+  AppActionData,
   EntityApi,
   IApi,
   IApiPayload,
@@ -14,6 +15,7 @@ import { CustomerUpdateReadData } from "./dto/customer/CustomerUpdateReadData";
 import { CustomerCreateRQ } from "./rq/customer/CustomerCreateRQ";
 import { CustomerReadForSaleData } from "./dto/customer/CustomerReadForSaleData";
 import { CustomerReadForSaleRQ } from "./rq/customer/CustomerReadForSaleRQ";
+import { DocumentActionRQ } from "./rq/DocumentActionRQ";
 
 /**
  * Customer API
@@ -36,6 +38,17 @@ export class CustomerApi extends EntityApi {
    */
   create(rq: CustomerCreateRQ, payload?: IdResultPayload) {
     return this.createBase(rq, payload);
+  }
+
+  /**
+   * Document action data
+   * 文档操作数据
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  documentAction(rq: DocumentActionRQ, payload?: IApiPayload<AppActionData>) {
+    return this.api.post(`${this.flag}/DocumentAction`, rq, payload);
   }
 
   /**
@@ -69,6 +82,16 @@ export class CustomerApi extends EntityApi {
     payload?: IApiPayload<CustomerReadForSaleData>
   ) {
     return this.api.post(`${this.flag}/ReadForSale`, rq, payload);
+  }
+
+  /**
+   * Report action data
+   * 报告操作数据
+   * @param payload Payload
+   * @returns Result
+   */
+  reportAction(payload?: IApiPayload<AppActionData>) {
+    return this.api.get(`${this.flag}/ReportAction`, undefined, payload);
   }
 
   /**
