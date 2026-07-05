@@ -18,6 +18,12 @@ export type OrderPaymentCreateRQ = {
   title: string;
 
   /**
+   * Description
+   * 描述
+   */
+  description?: string;
+
+  /**
    * Is order or not
    * 是否为订单
    */

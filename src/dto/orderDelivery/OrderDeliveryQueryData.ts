@@ -24,6 +24,12 @@ export type OrderDeliveryQueryData = {
   title: string;
 
   /**
+   * Description
+   * 描述
+   */
+  description?: string;
+
+  /**
    * Is valid
    * 是否有效
    */
