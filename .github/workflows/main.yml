@@ -47,17 +47,21 @@ jobs:
       - run: npm run build
 
       # Check if the package is already published
-      - name: Check publish status
-        id: check
-        uses: tehpsalmist/npm-publish-status-action@v1
+      #- name: Check publish status
+      #  id: check
+      #  uses: tehpsalmist/npm-publish-status-action@v1
 
       # Publish to npm
       # For scoped package, make it public for free service
-      - name: Publish if necessary
-        id: publish
-        if: ${{ steps.check.outputs.exists == '0' }} # package version doesn't yet exist, ship it!
-        run: npm publish
+      #- name: Publish if necessary
+      #  id: publish
+      #  if: ${{ steps.check.outputs.exists == '0' }} # package version doesn't yet exist, ship it!
+      #  run: npm publish
 
-      - name: Report publish status
-        if: ${{ steps.check.outputs.exists == '1' }}
-        run: 'echo "package version already exists on npm registry"'
+      #- name: Report publish status
+      #  if: ${{ steps.check.outputs.exists == '1' }}
+      #  run: 'echo "package version already exists on npm registry"'
+
+      # Publish to npm
+      # For scoped package, make it public for free service
+      - run: npm publish
