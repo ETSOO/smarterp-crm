@@ -78,7 +78,9 @@ export class System {
   private getModuleLabel(key: string) {
     return (
       this.crm.app.get("m" + key) ??
-      this.crm.app.get(key.formatInitial(false)) ??
+      this.crm.app.get(
+        key === "PO" ? key.toLowerCase() : key.formatInitial(false)
+      ) ??
       key
     );
   }
