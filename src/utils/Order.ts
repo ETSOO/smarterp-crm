@@ -144,6 +144,56 @@ export class Order {
   }
 
   /**
+   * Get modifiers
+   * 获取定制选项
+   * @param data Modifiers data
+   */
+  getModifiers(data?: Record<string, unknown>) {
+    if (
+      data == null ||
+      data.modifiers == null ||
+      typeof data.modifiers !== "object"
+    )
+      return;
+
+    const modifiers = data.modifiers as Record<string, unknown>;
+
+    return Object.values(modifiers)
+      .reduce<string[]>((acc, val) => {
+        if (typeof val === "string" && !!val) acc.push(val);
+        return acc;
+      }, [])
+      .join(", ");
+  }
+
+  /**
+   * Get modifier SN
+   * 获取定制选项中的唯一编号
+   * @param data Modifiers data
+   */
+  getModifierSn(data?: Record<string, unknown>) {
+    if (
+      data == null ||
+      data.modifiers == null ||
+      typeof data.modifiers !== "object"
+    )
+      return;
+
+    const m = data.modifiers as Record<string, unknown>;
+
+    const snItem = [m.sn, m.Sn, m.SN, m.domain, m.Domain].find(
+      (d) => typeof d === "string" && !!d
+    ) as string | undefined;
+
+    if (snItem) {
+      const url = URL.parse(snItem);
+      if (url != null) return url.hostname;
+    }
+
+    return snItem;
+  }
+
+  /**
    * Get order payment kind label
    * 获取订单付款方式标签
    * @param payment Payment kind
