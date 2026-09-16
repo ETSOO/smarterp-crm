@@ -1,6 +1,6 @@
 {
   "name": "@etsoo/smarterp-crm",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "TypeScript APIs for SmartERP Customer Relationship Management (CRM)",
   "main": "lib/cjs/index.js",
   "module": "lib/mjs/index.js",
@@ -43,7 +43,7 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.1",
-    "baseline-browser-mapping": "^2.11.23",
+    "baseline-browser-mapping": "^2.11.24",
     "jsdom": "^30.0.1",
     "typescript": "^7.0.2",
     "vitest": "^5.0.1"

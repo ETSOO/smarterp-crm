@@ -24,6 +24,12 @@ export type POQueryData = {
   title: string;
 
   /**
+   * Description
+   * 描述
+   */
+  description?: string;
+
+  /**
    * Supplier id
    * 供应商编号
    */

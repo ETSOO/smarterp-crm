@@ -18,6 +18,12 @@ export type POLineQueryData = {
   title: string;
 
   /**
+   * Description
+   * 描述
+   */
+  description?: string;
+
+  /**
    * Price
    * 价格
    */
@@ -76,4 +82,10 @@ export type POLineQueryData = {
    * BOM行编号
    */
   bomId?: number;
+
+  /**
+   * JSON data
+   * JSON 数据
+   */
+  data?: Record<string, unknown>;
 };
