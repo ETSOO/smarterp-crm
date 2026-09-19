@@ -42,18 +42,6 @@ export type AssetQueryData = {
   expiry: string | Date;
 
   /**
-   * Remaining times
-   * 剩余次数
-   */
-  times?: number;
-
-  /**
-   * Remaining amount
-   * 剩余金额
-   */
-  amount?: number;
-
-  /**
    * Status
    * 状况
    */

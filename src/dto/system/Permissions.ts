@@ -248,6 +248,12 @@ export namespace Permissions {
 
     List = 18001,
     Query = 18002,
+    View = 18003,
+    Report = 18008,
+    Add = 18011,
+    Edit = 18012,
+    Delete = 18013,
+    Transaction = 18018,
 
     Manage = 18200
   }

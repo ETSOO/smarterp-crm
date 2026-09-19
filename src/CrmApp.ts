@@ -37,6 +37,7 @@ import { POLineApi } from "./POLineApi";
 import { StockSiteApi } from "./StockSiteApi";
 import { StockApi } from "./StockApi";
 import { Stock } from "./utils/Stock";
+import { FinanceAccountApi } from "./FinanceAccountApi";
 
 /**
  * Get CRM app context hook
@@ -107,6 +108,12 @@ export interface ICrmApp {
    * 权限组接口
    */
   readonly groupApi: GroupApi;
+
+  /**
+   * Finance account API
+   * 财务账户接口
+   */
+  readonly financeAccountApi: FinanceAccountApi;
 
   /**
    * Order
@@ -357,6 +364,15 @@ export class CrmApp implements ICrmApp {
    */
   get groupApi() {
     return (this._groupApi ??= new GroupApi(this.app));
+  }
+
+  private _financeAccountApi?: FinanceAccountApi;
+  /**
+   * Finance account API
+   * 财务账户接口
+   */
+  get financeAccountApi() {
+    return (this._financeAccountApi ??= new FinanceAccountApi(this.app));
   }
 
   private _order?: Order;

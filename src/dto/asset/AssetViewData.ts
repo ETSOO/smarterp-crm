@@ -78,18 +78,6 @@ export type AssetViewData = {
   expiryCheck?: boolean;
 
   /**
-   * Remaining times
-   * 剩余次数
-   */
-  times?: number;
-
-  /**
-   * Remaining amount
-   * 剩余金额
-   */
-  amount?: number;
-
-  /**
    * Sensitive data
    * 敏感数据
    */
