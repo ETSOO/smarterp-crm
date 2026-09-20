@@ -1,4 +1,5 @@
 {
+  "accounts": "账户",
   "addComment": "添加评论",
   "addContact": "添加联系人",
   "addContactInfo": "添加联系信息",
@@ -30,6 +31,7 @@
   "approvedDiscount": "特批折扣",
   "assemblyQty": "组装数量",
   "asset": "资产",
+  "assetExpirationNotice": "资产到期通知",
   "assetQty": "资产数量",
   "assets": "资产",
   "assignee": "经办人",
@@ -171,6 +173,7 @@
   "newShipment": "新发货",
   "newTask": "新任务",
   "nextWeek": "下一周",
+  "noticeInternalOnly": "仅内部通知",
   "noticeOwner": "通知所有者",
   "offerings": "产品和服务",
   "order": "订单",

@@ -1,4 +1,5 @@
 {
+  "accounts": "賬戶",
   "addComment": "添加評論",
   "addContact": "添加聯絡人",
   "addContactInfo": "添加聯絡信息",
@@ -30,6 +31,7 @@
   "approvedDiscount": "特批折扣",
   "assemblyQty": "組裝數量",
   "asset": "資產",
+  "assetExpirationNotice": "資產到期通知",
   "assetQty": "資產數量",
   "assets": "資產",
   "assignee": "經辦人",
@@ -171,6 +173,7 @@
   "newTask": "新任務",
   "newShipment": "新發貨",
   "nextWeek": "下一周",
+  "noticeInternalOnly": "僅內部通知",
   "noticeOwner": "通知所有者",
   "offerings": "產品和服務",
   "order": "訂單",

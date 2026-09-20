@@ -77,6 +77,7 @@ export * from "./supplier/SupplierList";
 
 // System
 export * from "./system/AddressDuplicateTest";
+export * from "./system/AssetExpirationNoticeList";
 export * from "./system/AssignedIdDuplicateTest";
 export * from "./system/CustomerTypeList";
 export * from "./system/InfoDuplicateTest";

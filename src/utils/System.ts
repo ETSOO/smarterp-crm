@@ -26,6 +26,21 @@ export class System {
   }
 
   /**
+   * Get asset expiration notices
+   * 获取资产过期通知
+   */
+  getAssetExpirationNotices(): ListType[] {
+    const { noticeOwner, noticeInternalOnly } = this.crm.app.getLabels(
+      "noticeOwner",
+      "noticeInternalOnly"
+    );
+    return [
+      { id: 1, label: noticeInternalOnly },
+      { id: 2, label: noticeOwner }
+    ];
+  }
+
+  /**
    * Get customer type label
    * 获取客户类型标签
    * @param type Customer type

@@ -1,4 +1,5 @@
 {
+  "accounts": "Accounts",
   "addComment": "Add comment",
   "addContact": "Add contact",
   "addContactInfo": "Add contact info",
@@ -30,6 +31,7 @@
   "approvedDiscount": "Approved discount",
   "assemblyQty": "Assembly qty.",
   "asset": "Asset",
+  "assetExpirationNotice": "Asset expiration notice",
   "assetQty": "Asset qty.",
   "assets": "Assets",
   "assignee": "Assignee",
@@ -171,7 +173,8 @@
   "newTask": "New task",
   "newShipment": "New shipment",
   "nextWeek": "Next week",
-  "noticeOwner": "Notice owner",
+  "noticeInternalOnly": "Notice internal only",
+  "noticeOwner": "Notice owner(s)",
   "offerings": "Offerings",
   "order": "Order",
   "orderAmount": "Order amount",

@@ -58,4 +58,10 @@ export type SystemSettings = {
    * 订单日报开始小时
    */
   orderDailyReportHour?: number;
+
+  /**
+   * Asset expiration notice
+   * 资产到期通知
+   */
+  assetExpirationNotice?: number;
 };
