@@ -46,6 +46,16 @@ export class OrderApi extends EntityApi {
   }
 
   /**
+   * Delete
+   * @param id Id
+   * @param payload Payload
+   * @returns Result
+   */
+  delete(id: number, payload?: IdResultPayload) {
+    return this.deleteBase(id, payload);
+  }
+
+  /**
    * Document action data
    * 文档操作数据
    * @param rq Request data
