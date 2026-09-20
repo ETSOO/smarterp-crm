@@ -22,10 +22,10 @@ export enum FinanceAccountKind {
   Transfer = 2,
 
   /**
-   * Cash and transfer account
-   * 现金和转账账户
+   * Super account
+   * 超级账户
    */
-  CashAndTransfer = 3,
+  Super = 3,
 
   /**
    * Prepaid

@@ -117,7 +117,7 @@
   "field": "Field",
   "finance": "Finance",
   "financeAccountKindCash": "Cash account",
-  "financeAccountKindCashAndTransfer": "Cash and transfer account",
+  "financeAccountKindSuper": "Super account",
   "financeAccountKindNone": "None",
   "financeAccountKindPass": "Pass",
   "financeAccountKindPrepaid": "Prepaid",

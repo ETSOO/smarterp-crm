@@ -8,6 +8,9 @@ export * from "./customer/CustomerList";
 export * from "./dept/ButtonDepts";
 export * from "./dept/DeptTiplist";
 
+// finance
+export * from "./finance/AccountKindList";
+
 // group
 export * from "./group/ButtonGroups";
 export * from "./group/GroupTiplist";

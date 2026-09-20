@@ -117,7 +117,7 @@
   "field": "字段",
   "finance": "财务",
   "financeAccountKindCash": "现金账户",
-  "financeAccountKindCashAndTransfer": "现金和转账账户",
+  "financeAccountKindSuper": "超级账户",
   "financeAccountKindNone": "无",
   "financeAccountKindPass": "次卡",
   "financeAccountKindPrepaid": "储值卡",
