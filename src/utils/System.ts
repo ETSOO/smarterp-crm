@@ -26,6 +26,19 @@ export class System {
   }
 
   /**
+   * Get asset expiration notice
+   * 获取资产过期通知
+   */
+  getAssetExpirationNotice() {
+    const notice = this.crm.app.userData?.system?.assetExpirationNotice;
+
+    const expiryCheck = notice != null && notice > 0;
+    const noticeOwner = notice != null && notice > 1;
+
+    return { expiryCheck, noticeOwner };
+  }
+
+  /**
    * Get asset expiration notices
    * 获取资产过期通知
    */
