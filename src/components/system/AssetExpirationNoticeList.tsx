@@ -26,6 +26,7 @@ export function AssetExpirationNoticeList(
       label={label}
       name={name}
       options={crm.system.getAssetExpirationNotices()}
+      autoAddBlankItem
       {...rest}
     />
   );
