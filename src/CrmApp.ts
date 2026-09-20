@@ -38,6 +38,7 @@ import { StockSiteApi } from "./StockSiteApi";
 import { StockApi } from "./StockApi";
 import { Stock } from "./utils/Stock";
 import { FinanceAccountApi } from "./FinanceAccountApi";
+import { FinanceTransactionApi } from "./FinanceTransactionApi";
 
 /**
  * Get CRM app context hook
@@ -114,6 +115,12 @@ export interface ICrmApp {
    * 财务账户接口
    */
   readonly financeAccountApi: FinanceAccountApi;
+
+  /**
+   * Finance transaction API
+   * 财务交易接口
+   */
+  readonly financeTransactionApi: FinanceTransactionApi;
 
   /**
    * Order
@@ -373,6 +380,17 @@ export class CrmApp implements ICrmApp {
    */
   get financeAccountApi() {
     return (this._financeAccountApi ??= new FinanceAccountApi(this.app));
+  }
+
+  private _financeTransactionApi?: FinanceTransactionApi;
+  /**
+   * Finance transaction API
+   * 财务交易接口
+   */
+  get financeTransactionApi() {
+    return (this._financeTransactionApi ??= new FinanceTransactionApi(
+      this.app
+    ));
   }
 
   private _order?: Order;
