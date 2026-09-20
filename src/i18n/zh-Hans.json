@@ -43,6 +43,7 @@
   "balance": "余额",
   "bank": "开户行",
   "bom": "物料清单(BOM)",
+  "bulkCreateAccounts": "批量创建账户",
   "capQty": "购买上限",
   "category": "分类",
   "categories": "分类",
