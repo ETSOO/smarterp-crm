@@ -1,4 +1,5 @@
 {
+  "accountNumber": "账号",
   "accounts": "账户",
   "addAccount": "添加账户",
   "addCashAccount": "添加现金账户",
@@ -222,6 +223,7 @@
   "orderSourceId": "源编号",
   "originalPrice": "原价",
   "otherParticipants": "其他参与者",
+  "owner": "所有者",
   "parentCategory": "上级分类",
   "parseAddress": "解析地址",
   "participant": "参与者",
@@ -371,6 +373,7 @@
   "stockQty": "库存数量",
   "stockTakingGain": "盘盈",
   "stockTakingLoss": "盘亏",
+  "swift": "SWIFT",
   "system": "系统",
   "systemSettings": "系统设置",
   "supplier": "供应商",

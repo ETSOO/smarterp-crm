@@ -1,4 +1,5 @@
 {
+  "accountNumber": "Account number",
   "accounts": "Accounts",
   "addAccount": "Add account",
   "addCashAccount": "Add cash account",
@@ -222,6 +223,7 @@
   "orderSourceId": "Source id",
   "originalPrice": "Original price",
   "otherParticipants": "Other participants",
+  "owner": "Owner",
   "parentCategory": "Parent category",
   "parseAddress": "Parse address",
   "participant": "Participant",
@@ -373,6 +375,7 @@
   "stockQty": "Stock qty.",
   "stockTakingGain": "Stock gain",
   "stockTakingLoss": "Stock loss",
+  "swift": "SWIFT",
   "system": "System",
   "systemSettings": "System settings",
   "supplier": "Supplier",

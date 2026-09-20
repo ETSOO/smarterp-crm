@@ -1,4 +1,5 @@
 {
+  "accountNumber": "賬號",
   "accounts": "賬戶",
   "addAccount": "添加賬戶",
   "addCashAccount": "添加現金賬戶",
@@ -222,6 +223,7 @@
   "orderSourceId": "源編號",
   "originalPrice": "原價",
   "otherParticipants": "其他參與者",
+  "owner": "所有者",
   "parentCategory": "上級分類",
   "parseAddress": "解析地址",
   "participant": "參與者",
@@ -371,6 +373,7 @@
   "stockQty": "庫存數量",
   "stockTakingGain": "盤盈",
   "stockTakingLoss": "盤虧",
+  "swift": "SWIFT",
   "system": "系統",
   "systemSettings": "系統設置",
   "supplier": "供應商",
