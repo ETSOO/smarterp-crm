@@ -54,16 +54,10 @@ export type FinanceAccountCreateBulkRQ = {
   count: number;
 
   /**
-   * Amount, ignore when equal to 0
-   * 金额，等于 0 时忽略
+   * Balance, ignore when equal to 0
+   * 余额，等于 0 时忽略
    */
-  amount: number;
-
-  /**
-   * Times
-   * 次数
-   */
-  times?: number;
+  balance: number;
 
   /**
    * Product id

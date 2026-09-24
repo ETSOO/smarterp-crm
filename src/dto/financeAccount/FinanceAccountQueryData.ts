@@ -55,12 +55,6 @@ export type FinanceAccountQueryData = {
   description?: string;
 
   /**
-   * Times
-   * 次数
-   */
-  times?: number;
-
-  /**
    * Status
    * 状态
    */

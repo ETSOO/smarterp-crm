@@ -1,11 +1,11 @@
-import { QueryRQ } from "@etsoo/appscript";
+import { StatusQueryRQ } from "@etsoo/appscript";
 import { FinanceAccountKind } from "../../dto/financeAccount/FinanceAccountKind";
 
 /**
  * Finance account list request data
  * 财务账户列表请求数据
  */
-export type FinanceAccountListRQ = QueryRQ & {
+export type FinanceAccountListRQ = StatusQueryRQ & {
   /**
    * Person (owner) id
    * 人员（所有者）编号
