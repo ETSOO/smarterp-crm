@@ -52,13 +52,13 @@ export type FinanceAccountViewData = {
   SWIFT data
   SWIFT 数据
   */
-  swift: string;
+  swift?: string;
 
   /*
   Description
   描述
   */
-  description: string;
+  description?: string;
 
   /*
   Balance
@@ -88,13 +88,13 @@ export type FinanceAccountViewData = {
   Product id
   产品编号
   */
-  productId: number;
+  productId?: number;
 
   /*
   Product name
   产品名称
   */
-  productName: string;
+  productName?: string;
 
   /*
   Refresh time
