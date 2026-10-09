@@ -14,6 +14,7 @@ import { FinanceAccountUpdateReadData } from "./dto/financeAccount/FinanceAccoun
 import { FinanceAccountUpdateRQ } from "./rq/financeAccount/FinanceAccountUpdateRQ";
 import { FinanceAccountCreateBulkRQ } from "./rq/financeAccount/FinanceAccountCreateBulkRQ";
 import { FinanceAccountViewData } from "./dto/financeAccount/FinanceAccountViewData";
+import { FinanceAccountCreateCashRQ } from "./rq/financeAccount/FinanceAccountCreateCashRQ";
 
 /**
  * Finance account API
@@ -46,6 +47,16 @@ export class FinanceAccountApi extends EntityApi {
    */
   create(rq: FinanceAccountCreateRQ, payload?: IdResultPayload) {
     return this.createBase(rq, payload);
+  }
+
+  /**
+   * Create cash account
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  createCash(rq: FinanceAccountCreateCashRQ, payload?: IdResultPayload) {
+    return this.api.post(`${this.flag}/CreateCash`, rq, payload);
   }
 
   /**
