@@ -1,5 +1,4 @@
 import { EntityStatus } from "@etsoo/appscript";
-import { FinanceTransactionItem } from "../financeTransaction/FinanceTransactionItem";
 import { FinanceAccountKind } from "./FinanceAccountKind";
 
 /*
@@ -102,10 +101,4 @@ export type FinanceAccountViewData = {
   刷新时间
   */
   refreshTime: Date | string;
-
-  /*
-  Transactions
-  交易项
-  */
-  transactions: FinanceTransactionItem[];
 };

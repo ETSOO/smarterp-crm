@@ -395,6 +395,7 @@
   "totalQty": "總數量",
   "trackingNumber": "物流單號",
   "transaction": "交易",
+  "transactions": "交易",
   "transferAccount": "轉賬",
   "transferQty": "調貨數量",
   "unitCM": "厘米",

@@ -40,6 +40,7 @@ export * from "./dto/financeAccount/FinanceAccountKind";
 export * from "./dto/financeAccount/FinanceAccountListData";
 export * from "./dto/financeAccount/FinanceAccountQueryData";
 export * from "./dto/financeAccount/FinanceAccountUpdateReadData";
+export * from "./dto/financeAccount/FinanceAccountViewData";
 
 export * from "./rq/financeAccount/FinanceAccountCreateBulkRQ";
 export * from "./rq/financeAccount/FinanceAccountCreateRQ";
