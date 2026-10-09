@@ -13,6 +13,7 @@ import { FinanceAccountQueryData } from "./dto/financeAccount/FinanceAccountQuer
 import { FinanceAccountUpdateReadData } from "./dto/financeAccount/FinanceAccountUpdateReadData";
 import { FinanceAccountUpdateRQ } from "./rq/financeAccount/FinanceAccountUpdateRQ";
 import { FinanceAccountCreateBulkRQ } from "./rq/financeAccount/FinanceAccountCreateBulkRQ";
+import { FinanceAccountViewData } from "./dto/financeAccount/FinanceAccountViewData";
 
 /**
  * Finance account API
@@ -81,6 +82,16 @@ export class FinanceAccountApi extends EntityApi {
     payload?: IApiPayload<FinanceAccountQueryData[]>
   ) {
     return this.queryBase(rq, payload);
+  }
+
+  /**
+   * Read
+   * @param id Id
+   * @param payload Payload
+   * @returns Result
+   */
+  read(id: number, payload?: IApiPayload<FinanceAccountViewData>) {
+    return this.readBase(id, payload);
   }
 
   /**

@@ -16,13 +16,13 @@ export type FinanceAccountQueryData = {
    * Owern person Id
    * 所有人人员编号
    */
-  personId: number;
+  personId?: number;
 
   /**
    * Owner person name
    * 所有者名称
    */
-  personName: string;
+  personName?: string;
 
   /**
    * Kind
