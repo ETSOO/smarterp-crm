@@ -1,3 +1,4 @@
+import { EntityStatus } from "@etsoo/appscript";
 import { FinanceAccountKind } from "../../dto/financeAccount/FinanceAccountKind";
 
 /**
@@ -70,4 +71,16 @@ export type FinanceAccountCreateBulkRQ = {
    * 描述
    */
   description?: string;
+
+  /**
+   * Status
+   * 状态
+   */
+  status?: EntityStatus;
+
+  /**
+   * Expiry
+   * 过期时间
+   */
+  expiry?: Date | string;
 };
