@@ -139,6 +139,7 @@
   "hasInventory": "Has inventory",
   "healthCheckUrl": "Health check URL",
   "healthCheckSchedule": "Health check schedule",
+  "idLength": "ID length",
   "infoMobile": "Mobile",
   "infoPhone": "Phone",
   "infoPin": "PIN",
