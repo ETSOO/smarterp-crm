@@ -1,5 +1,6 @@
 {
   "accountNumber": "賬號",
+  "accountPrefix": "賬號前綴",
   "accounts": "賬戶",
   "addAccount": "添加賬戶",
   "addCashAccount": "添加現金賬戶",
@@ -366,6 +367,7 @@
   "stackable": "可疊加",
   "stakeholders": "相關方",
   "staff": "員工",
+  "startNumber": "起始編號",
   "stepQty": "數量步長",
   "stockByWarehouse": "各倉庫庫存",
   "stockKindAssembly": "快速組裝",

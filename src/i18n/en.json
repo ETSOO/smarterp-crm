@@ -1,5 +1,6 @@
 {
   "accountNumber": "Account number",
+  "accountPrefix": "Account prefix",
   "accounts": "Accounts",
   "addAccount": "Add account",
   "addCashAccount": "Add cash account",
@@ -368,6 +369,7 @@
   "stackable": "Stackable",
   "stakeholders": "Stakeholders",
   "staff": "Staff",
+  "startNumber": "Start number",
   "stepQty": "Step qty.",
   "stockByWarehouse": "Stock by warehouse",
   "stockKindAssembly": "Quick assembly",

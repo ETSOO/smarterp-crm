@@ -1,5 +1,6 @@
 {
   "accountNumber": "账号",
+  "accountPrefix": "账号前缀",
   "accounts": "账户",
   "addAccount": "添加账户",
   "addCashAccount": "添加现金账户",
@@ -366,6 +367,7 @@
   "stackable": "可叠加",
   "stakeholders": "相关方",
   "staff": "员工",
+  "startNumber": "起始编号",
   "stepQty": "数量步长",
   "stockByWarehouse": "各仓库库存",
   "stockKindAssembly": "快速组装",
