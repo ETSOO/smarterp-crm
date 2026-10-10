@@ -30,16 +30,6 @@ export class FinanceAccountApi extends EntityApi {
   }
 
   /**
-   * Bulk create
-   * @param rq Request data
-   * @param payload Payload
-   * @returns Result
-   */
-  bulkCreate(rq: FinanceAccountCreateBulkRQ, payload?: IdResultPayload) {
-    return this.api.post(`${this.flag}/BulkCreate`, rq, payload);
-  }
-
-  /**
    * Create
    * @param rq Request data
    * @param payload Payload
@@ -47,6 +37,16 @@ export class FinanceAccountApi extends EntityApi {
    */
   create(rq: FinanceAccountCreateRQ, payload?: IdResultPayload) {
     return this.createBase(rq, payload);
+  }
+
+  /**
+   * Create bulk
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  createBulk(rq: FinanceAccountCreateBulkRQ, payload?: IdResultPayload) {
+    return this.api.post(`${this.flag}/CreateBulk`, rq, payload);
   }
 
   /**
