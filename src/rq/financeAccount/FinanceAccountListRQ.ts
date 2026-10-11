@@ -19,6 +19,12 @@ export type FinanceAccountListRQ = StatusQueryRQ & {
   kind?: FinanceAccountKind;
 
   /**
+   * Kinds
+   * 类型列表
+   */
+  kinds?: FinanceAccountKind[];
+
+  /**
    * Currency
    * 币种
    */
