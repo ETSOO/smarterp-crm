@@ -325,6 +325,7 @@
   "qtyStart": "Start qty.",
   "query": "Query",
   "queryProfile": "Query profile",
+  "random": "Random",
   "realtimeInventory": "Realtime inventory",
   "recalculate": "Recalculate",
   "receiptTime": "Receipt time",
