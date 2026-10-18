@@ -49,6 +49,14 @@ export * from "./rq/financeAccount/FinanceAccountListRQ";
 export * from "./rq/financeAccount/FinanceAccountQueryRQ";
 export * from "./rq/financeAccount/FinanceAccountUpdateRQ";
 
+// Finance transaction
+
+export * from "./rq/financeTransaction/FinanceTransactionAdjustRQ";
+export * from "./rq/financeTransaction/FinanceTransactionOffsetRQ";
+export * from "./rq/financeTransaction/FinanceTransactionPayOrderRQ";
+export * from "./rq/financeTransaction/FinanceTransactionPayPORQ";
+export * from "./rq/financeTransaction/FinanceTransactionTransferRQ";
+
 // Group
 export * from "./dto/group/GroupListData";
 export * from "./dto/group/GroupQueryData";

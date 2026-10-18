@@ -22,6 +22,12 @@ export enum FinanceTransactionKind {
   Transfer = 3,
 
   /**
+   * Reimbursement
+   * 报销
+   */
+  Reimbursement = 6,
+
+  /**
    * Settlement
    * 月结
    */
