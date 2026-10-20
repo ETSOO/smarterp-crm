@@ -58,10 +58,10 @@ export type FinanceTransactionOrderViewMainData = {
   currency: string;
 
   /**
-   * Total amount to pay
-   * 总金额
+   * Total payable
+   * 应付总额
    */
-  totalAmount: number;
+  totalPayable: number;
 
   /**
    * Paid amount

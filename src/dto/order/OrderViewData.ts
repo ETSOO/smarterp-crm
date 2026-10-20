@@ -79,10 +79,10 @@ export type OrderViewData = {
   amount: number;
 
   /**
-   * Total amount
-   * 总金额
+   * Total payable
+   * 应付总额
    */
-  totalAmount: number;
+  totalPayable: number;
 
   /**
    * Tax amount
