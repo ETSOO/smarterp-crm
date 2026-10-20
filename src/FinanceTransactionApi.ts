@@ -1,9 +1,17 @@
-import { BaseApi, IApi, IApp, IdResultPayload } from "@etsoo/appscript";
+import {
+  BaseApi,
+  IApi,
+  IApiPayload,
+  IApp,
+  IdResultPayload
+} from "@etsoo/appscript";
 import { FinanceTransactionAdjustRQ } from "./rq/financeTransaction/FinanceTransactionAdjustRQ";
 import { FinanceTransactionOffsetRQ } from "./rq/financeTransaction/FinanceTransactionOffsetRQ";
 import { FinanceTransactionTransferRQ } from "./rq/financeTransaction/FinanceTransactionTransferRQ";
 import { FinanceTransactionPayOrderRQ } from "./rq/financeTransaction/FinanceTransactionPayOrderRQ";
 import { FinanceTransactionPayPORQ } from "./rq/financeTransaction/FinanceTransactionPayPORQ";
+import { FinanceTransactionViewOrderData } from "./dto/financeTransaction/FinanceTransactionViewOrderData";
+import { FinanceTransactionViewPOData } from "./dto/financeTransaction/FinanceTransactionViewPOData";
 
 /**
  * Finance transaction API
@@ -73,5 +81,30 @@ export class FinanceTransactionApi extends BaseApi {
    */
   transfer(rq: FinanceTransactionTransferRQ, payload?: IdResultPayload) {
     return this.api.post(`${this.key}/Transfer`, rq, payload);
+  }
+
+  /**
+   * View order for collection
+   * 浏览订单用于收款
+   * @param id Id
+   * @param payload Payload
+   * @returns Data
+   */
+  viewOrder(
+    id: number,
+    payload?: IApiPayload<FinanceTransactionViewOrderData>
+  ) {
+    return this.api.get(`${this.key}/ViewOrder/${id}`, undefined, payload);
+  }
+
+  /**
+   * View purchase order for payment
+   * 浏览采购订单用于付款
+   * @param id Id
+   * @param payload Payload
+   * @returns Data
+   */
+  viewPO(id: number, payload?: IApiPayload<FinanceTransactionViewPOData>) {
+    return this.api.get(`${this.key}/ViewPO/${id}`, undefined, payload);
   }
 }

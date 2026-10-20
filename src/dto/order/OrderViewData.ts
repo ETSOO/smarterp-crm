@@ -73,10 +73,16 @@ export type OrderViewData = {
   currency: string;
 
   /**
-   * Amount
-   * 总金额
+   * Amount excluding discount
+   * 金额（不含折扣）
    */
   amount: number;
+
+  /**
+   * Total amount
+   * 总金额
+   */
+  totalAmount: number;
 
   /**
    * Tax amount

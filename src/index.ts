@@ -36,6 +36,7 @@ export * from "./rq/dept/DeptQueryRQ";
 export * from "./rq/dept/DeptUpdateRQ";
 
 // Finance account
+export * from "./dto/financeAccount/FinanceAccountItem";
 export * from "./dto/financeAccount/FinanceAccountKind";
 export * from "./dto/financeAccount/FinanceAccountListData";
 export * from "./dto/financeAccount/FinanceAccountQueryData";
@@ -50,6 +51,11 @@ export * from "./rq/financeAccount/FinanceAccountQueryRQ";
 export * from "./rq/financeAccount/FinanceAccountUpdateRQ";
 
 // Finance transaction
+export * from "./dto/financeTransaction/FinanceTransactionItem";
+export * from "./dto/financeTransaction/FinanceTransactionKind";
+export * from "./dto/financeTransaction/FinanceTransactionPayItem";
+export * from "./dto/financeTransaction/FinanceTransactionViewOrderData";
+export * from "./dto/financeTransaction/FinanceTransactionViewPOData";
 
 export * from "./rq/financeTransaction/FinanceTransactionAdjustRQ";
 export * from "./rq/financeTransaction/FinanceTransactionOffsetRQ";

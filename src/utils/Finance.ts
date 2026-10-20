@@ -1,5 +1,6 @@
 import { ICrmApp } from "../CrmApp";
 import { FinanceAccountKind } from "../dto/financeAccount/FinanceAccountKind";
+import { FinanceTransactionKind } from "../dto/financeTransaction/FinanceTransactionKind";
 
 /**
  * Finance
@@ -9,8 +10,8 @@ export class Finance {
   constructor(private crm: ICrmApp) {}
 
   /**
-   * Get kind label
-   * 获取类型标签
+   * Get account kind label
+   * 获取账户类型标签
    * @param kind Kind
    * @returns Result
    */
@@ -26,5 +27,28 @@ export class Finance {
    */
   getAccountKinds() {
     return this.crm.app.getEnumList(FinanceAccountKind, "financeAccountKind");
+  }
+
+  /**
+   * Get transaction kind label
+   * 获取交易类型标签
+   * @param kind Kind
+   * @returns Result
+   */
+  getTransactionKind(kind?: FinanceTransactionKind) {
+    if (kind == null) return undefined;
+    const key = FinanceTransactionKind[kind];
+    return this.crm.app.get("financeTransactionKind" + key) ?? key;
+  }
+
+  /**
+   * Get transaction kinds
+   * 获取交易类型
+   */
+  getTransactionKinds() {
+    return this.crm.app.getEnumList(
+      FinanceTransactionKind,
+      "financeTransactionKind"
+    );
   }
 }
