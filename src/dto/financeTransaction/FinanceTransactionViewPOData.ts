@@ -34,12 +34,6 @@ export type FinanceTransactionPOViewMainData = {
   title: string;
 
   /**
-   * Description
-   * 描述
-   */
-  description?: string;
-
-  /**
    * Payment method
    * 付款方式
    */
