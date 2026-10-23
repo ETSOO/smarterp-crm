@@ -28,4 +28,10 @@ export type FinanceTransactionPayPORQ = {
    * 描述
    */
   description?: string;
+
+  /**
+   * Happen date
+   * 发生日期
+   */
+  happenDate?: string | Date;
 };
