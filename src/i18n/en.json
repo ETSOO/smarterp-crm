@@ -134,6 +134,7 @@
   "financeTransactionKindTransfer": "Transfer",
   "foreignDescription": "Foreign description",
   "foreignName": "Foreign name",
+  "fullAmount": "Full amount",
   "genderFemale": "Female",
   "genderMale": "Male",
   "groups": "Belongs to",
