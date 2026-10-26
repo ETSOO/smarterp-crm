@@ -1,10 +1,6 @@
 import { FinanceTransactionKind } from "./FinanceTransactionKind";
 
-/**
- * Finance transaction item
- * 财务交易项
- */
-export type FinanceTransactionItem = {
+export type FinanceTransactionListData = {
   /**
    * Id
    * 编号
@@ -34,4 +30,10 @@ export type FinanceTransactionItem = {
    * 登记时间
    */
   creation: Date | string;
+
+  /**
+   * Happen date
+   * 发生日期
+   */
+  happenDate?: Date | string;
 };
