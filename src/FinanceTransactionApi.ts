@@ -1,5 +1,5 @@
 import {
-  BaseApi,
+  EntityApi,
   IApi,
   IApiPayload,
   IApp,
@@ -12,20 +12,22 @@ import { FinanceTransactionPayOrderRQ } from "./rq/financeTransaction/FinanceTra
 import { FinanceTransactionPayPORQ } from "./rq/financeTransaction/FinanceTransactionPayPORQ";
 import { FinanceTransactionViewOrderData } from "./dto/financeTransaction/FinanceTransactionViewOrderData";
 import { FinanceTransactionViewPOData } from "./dto/financeTransaction/FinanceTransactionViewPOData";
+import { FinanceTransactionQueryRQ } from "./rq/financeTransaction/FinanceTransactionQueryRQ";
+import { FinanceTransactionQueryData } from "./dto/financeTransaction/FinanceTransactionQueryData";
+import { FinanceTransactionListRQ } from "./rq/financeTransaction/FinanceTransactionListRQ";
+import { FinanceTransactionListData } from "./dto/financeTransaction/FinanceTransactionListData";
 
 /**
  * Finance transaction API
  */
-export class FinanceTransactionApi extends BaseApi {
-  private key = "FinanceTransaction";
-
+export class FinanceTransactionApi extends EntityApi {
   /**
    * Constructor
    * @param app Application
    * @param api API
    */
   constructor(app: IApp, api: IApi = app.api) {
-    super(app, api);
+    super("FinanceTransaction", app, api);
   }
 
   /**
@@ -36,7 +38,20 @@ export class FinanceTransactionApi extends BaseApi {
    * @returns Result of the adjustment
    */
   adjust(rq: FinanceTransactionAdjustRQ, payload?: IdResultPayload) {
-    return this.api.post(`${this.key}/Adjust`, rq, payload);
+    return this.api.post(`${this.flag}/Adjust`, rq, payload);
+  }
+
+  /**
+   * List
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  list(
+    rq: FinanceTransactionListRQ,
+    payload?: IApiPayload<FinanceTransactionListData[]>
+  ) {
+    return this.listBase(rq, payload);
   }
 
   /**
@@ -47,7 +62,7 @@ export class FinanceTransactionApi extends BaseApi {
    * @returns Result of the offset
    */
   offset(rq: FinanceTransactionOffsetRQ, payload?: IdResultPayload) {
-    return this.api.post(`${this.key}/Offset`, rq, payload);
+    return this.api.post(`${this.flag}/Offset`, rq, payload);
   }
 
   /**
@@ -58,7 +73,7 @@ export class FinanceTransactionApi extends BaseApi {
    * @returns Result of the payment
    */
   payOrder(rq: FinanceTransactionPayOrderRQ, payload?: IdResultPayload) {
-    return this.api.post(`${this.key}/PayOrder`, rq, payload);
+    return this.api.post(`${this.flag}/PayOrder`, rq, payload);
   }
 
   /**
@@ -69,7 +84,20 @@ export class FinanceTransactionApi extends BaseApi {
    * @returns Result of the payment
    */
   payPO(rq: FinanceTransactionPayPORQ, payload?: IdResultPayload) {
-    return this.api.post(`${this.key}/PayPO`, rq, payload);
+    return this.api.post(`${this.flag}/PayPO`, rq, payload);
+  }
+
+  /**
+   * Query
+   * @param rq Request data
+   * @param payload Payload
+   * @returns Result
+   */
+  query(
+    rq: FinanceTransactionQueryRQ,
+    payload?: IApiPayload<FinanceTransactionQueryData[]>
+  ) {
+    return this.queryBase(rq, payload);
   }
 
   /**
@@ -80,7 +108,7 @@ export class FinanceTransactionApi extends BaseApi {
    * @returns Result of the transfer
    */
   transfer(rq: FinanceTransactionTransferRQ, payload?: IdResultPayload) {
-    return this.api.post(`${this.key}/Transfer`, rq, payload);
+    return this.api.post(`${this.flag}/Transfer`, rq, payload);
   }
 
   /**
@@ -94,7 +122,7 @@ export class FinanceTransactionApi extends BaseApi {
     id: number,
     payload?: IApiPayload<FinanceTransactionViewOrderData>
   ) {
-    return this.api.get(`${this.key}/ViewOrder/${id}`, undefined, payload);
+    return this.api.get(`${this.flag}/ViewOrder/${id}`, undefined, payload);
   }
 
   /**
@@ -105,6 +133,6 @@ export class FinanceTransactionApi extends BaseApi {
    * @returns Data
    */
   viewPO(id: number, payload?: IApiPayload<FinanceTransactionViewPOData>) {
-    return this.api.get(`${this.key}/ViewPO/${id}`, undefined, payload);
+    return this.api.get(`${this.flag}/ViewPO/${id}`, undefined, payload);
   }
 }
