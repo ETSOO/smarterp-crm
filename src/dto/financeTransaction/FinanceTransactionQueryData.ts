@@ -20,6 +20,12 @@ export type FinanceTransactionQueryData = {
   title: string;
 
   /**
+   * Currency
+   * 币种
+   */
+  currency: string;
+
+  /**
    * Amount
    * 金额
    */
