@@ -1,3 +1,4 @@
+import { OrderKind } from "../order/OrderKind";
 import { FinanceTransactionKind } from "./FinanceTransactionKind";
 
 export type FinanceTransactionQueryData = {
@@ -42,6 +43,12 @@ export type FinanceTransactionQueryData = {
    * 关联的订单/采购编号
    */
   orderId?: number;
+
+  /**
+   * Order kind
+   * 订单类型
+   */
+  orderKind?: OrderKind;
 
   /**
    * Target account id
