@@ -51,12 +51,6 @@ export type FinanceTransactionQueryData = {
   orderKind?: OrderKind;
 
   /**
-   * Target account id
-   * 目标账户编号
-   */
-  targetAccountId?: number;
-
-  /**
    * Creation
    * 登记时间
    */
