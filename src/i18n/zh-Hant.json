@@ -128,6 +128,7 @@
   "financeTransactionKindAdjustment": "手工調整",
   "financeTransactionKindCollect": "收款",
   "financeTransactionKindInit": "初始化",
+  "financeTransactionKindOffset": "沖抵",
   "financeTransactionKindPayment": "付款",
   "financeTransactionKindReimbursement": "報銷",
   "financeTransactionKindSettlement": "月結",

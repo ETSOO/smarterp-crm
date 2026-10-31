@@ -128,6 +128,7 @@
   "financeTransactionKindAdjustment": "Adjustment",
   "financeTransactionKindCollect": "Collect",
   "financeTransactionKindInit": "Init",
+  "financeTransactionKindOffset": "Offset",
   "financeTransactionKindPayment": "Payment",
   "financeTransactionKindReimbursement": "Reimbursement",
   "financeTransactionKindSettlement": "Settlement",

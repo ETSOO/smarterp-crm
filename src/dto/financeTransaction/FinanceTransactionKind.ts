@@ -40,6 +40,12 @@ export enum FinanceTransactionKind {
   Adjustment = 77,
 
   /**
+   * Offset
+   * 冲抵
+   */
+  Offset = 89,
+
+  /**
    * Init
    * 初始化
    */
