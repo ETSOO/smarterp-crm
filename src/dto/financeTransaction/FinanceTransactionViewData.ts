@@ -1,6 +1,36 @@
-import { ListType } from "@etsoo/shared";
 import { OrderKind } from "../order/OrderKind";
 import { FinanceTransactionKind } from "./FinanceTransactionKind";
+import { FinanceAccountKind } from "../financeAccount/FinanceAccountKind";
+
+/**
+ * Finance transaction view reference item data
+ * 财务交易浏览引用项目数据
+ */
+export type FinanceTransactionViewDataRefItem = {
+  /**
+   * Id
+   * 编号
+   */
+  id: number;
+
+  /**
+   * Account kind
+   * 账户类型
+   */
+  accountKind: FinanceAccountKind;
+
+  /**
+   * Bank
+   * 开户银行
+   */
+  bank: string;
+
+  /**
+   * Amount
+   * 金额
+   */
+  amount: number;
+};
 
 /**
  * Finance transaction view data
@@ -113,5 +143,5 @@ export type FinanceTransactionViewData = {
    * Inner referred items
    * 内部引用的项目
    */
-  innerRefs?: ListType[];
+  innerRefs?: FinanceTransactionViewDataRefItem[];
 };
