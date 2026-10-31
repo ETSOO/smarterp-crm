@@ -16,6 +16,7 @@ import { FinanceTransactionQueryRQ } from "./rq/financeTransaction/FinanceTransa
 import { FinanceTransactionQueryData } from "./dto/financeTransaction/FinanceTransactionQueryData";
 import { FinanceTransactionListRQ } from "./rq/financeTransaction/FinanceTransactionListRQ";
 import { FinanceTransactionListData } from "./dto/financeTransaction/FinanceTransactionListData";
+import { FinanceTransactionViewData } from "./dto/financeTransaction/FinanceTransactionViewData";
 
 /**
  * Finance transaction API
@@ -98,6 +99,16 @@ export class FinanceTransactionApi extends EntityApi {
     payload?: IApiPayload<FinanceTransactionQueryData[]>
   ) {
     return this.queryBase(rq, payload);
+  }
+
+  /**
+   * Read
+   * @param id Id
+   * @param payload Payload
+   * @returns Result
+   */
+  read(id: number, payload?: IApiPayload<FinanceTransactionViewData>) {
+    return this.readBase(id, payload);
   }
 
   /**

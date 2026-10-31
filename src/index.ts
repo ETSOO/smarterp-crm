@@ -55,6 +55,7 @@ export * from "./dto/financeTransaction/FinanceTransactionKind";
 export * from "./dto/financeTransaction/FinanceTransactionListData";
 export * from "./dto/financeTransaction/FinanceTransactionPayItem";
 export * from "./dto/financeTransaction/FinanceTransactionQueryData";
+export * from "./dto/financeTransaction/FinanceTransactionViewData";
 export * from "./dto/financeTransaction/FinanceTransactionViewOrderData";
 export * from "./dto/financeTransaction/FinanceTransactionViewPOData";
 
