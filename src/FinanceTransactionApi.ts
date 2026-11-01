@@ -3,7 +3,8 @@ import {
   IApi,
   IApiPayload,
   IApp,
-  IdResultPayload
+  IdResultPayload,
+  ResultPayload
 } from "@etsoo/appscript";
 import { FinanceTransactionAdjustRQ } from "./rq/financeTransaction/FinanceTransactionAdjustRQ";
 import { FinanceTransactionOffsetRQ } from "./rq/financeTransaction/FinanceTransactionOffsetRQ";
@@ -17,6 +18,8 @@ import { FinanceTransactionQueryData } from "./dto/financeTransaction/FinanceTra
 import { FinanceTransactionListRQ } from "./rq/financeTransaction/FinanceTransactionListRQ";
 import { FinanceTransactionListData } from "./dto/financeTransaction/FinanceTransactionListData";
 import { FinanceTransactionViewData } from "./dto/financeTransaction/FinanceTransactionViewData";
+import { FinanceTransactionCurrencyExchangeRQ } from "./rq/financeTransaction/FinanceTransactionCurrencyExchangeRQ";
+import { FinanceTransactionReimburseRQ } from "./rq/financeTransaction/FinanceTransactionReimburseRQ";
 
 /**
  * Finance transaction API
@@ -40,6 +43,20 @@ export class FinanceTransactionApi extends EntityApi {
    */
   adjust(rq: FinanceTransactionAdjustRQ, payload?: IdResultPayload) {
     return this.api.post(`${this.flag}/Adjust`, rq, payload);
+  }
+
+  /**
+   * Currency exchange
+   * 货币兑换
+   * @param rq Currency exchange request data
+   * @param payload Optional payload
+   * @returns Result of the currency exchange
+   */
+  currencyExchange(
+    rq: FinanceTransactionCurrencyExchangeRQ,
+    payload?: IdResultPayload
+  ) {
+    return this.api.post(`${this.flag}/CurrencyExchange`, rq, payload);
   }
 
   /**
@@ -109,6 +126,26 @@ export class FinanceTransactionApi extends EntityApi {
    */
   read(id: number, payload?: IApiPayload<FinanceTransactionViewData>) {
     return this.readBase(id, payload);
+  }
+
+  /**
+   * Reimburse
+   * 报销
+   * @param rq Reimburse request data
+   * @param payload Optional payload
+   * @returns Result of the reimbursement
+   */
+  reimburse(rq: FinanceTransactionReimburseRQ, payload?: IdResultPayload) {
+    return this.api.post(`${this.flag}/Reimburse`, rq, payload);
+  }
+
+  /**
+   * Settle
+   * @param payload Payload
+   * @returns Result
+   */
+  settle(payload?: ResultPayload) {
+    return this.api.post(`${this.flag}/Settle`, undefined, payload);
   }
 
   /**

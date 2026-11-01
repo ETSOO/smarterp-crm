@@ -40,6 +40,12 @@ export enum FinanceTransactionKind {
   Adjustment = 77,
 
   /**
+   * Currency exchange
+   * 货币兑换
+   */
+  CurrencyExchange = 80,
+
+  /**
    * Offset
    * 冲抵
    */

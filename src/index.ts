@@ -60,6 +60,7 @@ export * from "./dto/financeTransaction/FinanceTransactionViewOrderData";
 export * from "./dto/financeTransaction/FinanceTransactionViewPOData";
 
 export * from "./rq/financeTransaction/FinanceTransactionAdjustRQ";
+export * from "./rq/financeTransaction/FinanceTransactionCurrencyExchangeRQ";
 export * from "./rq/financeTransaction/FinanceTransactionListRQ";
 export * from "./rq/financeTransaction/FinanceTransactionOffsetRQ";
 export * from "./rq/financeTransaction/FinanceTransactionPayOrderRQ";

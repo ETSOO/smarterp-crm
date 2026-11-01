@@ -10,6 +10,7 @@ export * from "./dept/DeptTiplist";
 
 // finance
 export * from "./finance/AccountKindList";
+export * from "./finance/AccountTiplist";
 
 // group
 export * from "./group/ButtonGroups";

@@ -134,12 +134,6 @@ export type FinanceTransactionViewData = {
   offsetId?: number;
 
   /**
-   * Offset source id
-   * 冲减源编号
-   */
-  offsetSourceId?: number;
-
-  /**
    * Inner referred items
    * 内部引用的项目
    */

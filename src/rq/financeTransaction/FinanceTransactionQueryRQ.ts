@@ -28,4 +28,16 @@ export type FinanceTransactionQueryRQ = FinanceTransactionListRQ & {
    * 发生日期结束
    */
   happenDateEnd?: Date | string;
+
+  /**
+   * Amount start
+   * 金额开始
+   */
+  amountStart?: number;
+
+  /**
+   * Amount end
+   * 金额结束
+   */
+  amountEnd?: number;
 };

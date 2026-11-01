@@ -102,6 +102,12 @@ export type POQueryData = {
   startDate?: Date | string;
 
   /**
+   * End date
+   * 结束日期
+   */
+  endDate?: Date | string;
+
+  /**
    * Creation
    * 登记时间
    */

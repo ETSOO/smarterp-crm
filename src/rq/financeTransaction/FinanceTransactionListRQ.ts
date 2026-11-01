@@ -47,4 +47,10 @@ export type FinanceTransactionListRQ = QueryRQ & {
    * 内部引用编号
    */
   innerRef?: string;
+
+  /**
+   * Author id
+   * 作者编号
+   */
+  authorId?: number;
 };
