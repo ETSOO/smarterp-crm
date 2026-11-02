@@ -22,6 +22,12 @@ export type FinanceTransactionCurrencyExchangeRQ = {
   amount: number;
 
   /**
+   * Exchange currency
+   * 兑换货币
+   */
+  currency: string;
+
+  /**
    * Exchange rate
    * 汇率
    */
@@ -32,6 +38,12 @@ export type FinanceTransactionCurrencyExchangeRQ = {
    * 兑换金额
    */
   exchangeAmount: number;
+
+  /**
+   * Exchange fee, charged by source currency
+   * 兑换手续费，按源币种收取
+   */
+  exchangeFee: number;
 
   /**
    * Description

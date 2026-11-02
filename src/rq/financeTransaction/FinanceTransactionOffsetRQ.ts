@@ -14,4 +14,10 @@ export type FinanceTransactionOffsetRQ = {
    * 描述
    */
   description: string;
+
+  /**
+   * All
+   * 全部
+   */
+  all?: boolean;
 };
