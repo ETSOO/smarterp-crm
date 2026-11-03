@@ -20,7 +20,6 @@ import { FinanceTransactionListData } from "./dto/financeTransaction/FinanceTran
 import { FinanceTransactionViewData } from "./dto/financeTransaction/FinanceTransactionViewData";
 import { FinanceTransactionCurrencyExchangeRQ } from "./rq/financeTransaction/FinanceTransactionCurrencyExchangeRQ";
 import { FinanceTransactionReimburseRQ } from "./rq/financeTransaction/FinanceTransactionReimburseRQ";
-import { FinanceAccountItem } from "./dto/financeAccount/FinanceAccountItem";
 
 /**
  * Finance transaction API
@@ -172,24 +171,6 @@ export class FinanceTransactionApi extends EntityApi {
     payload?: IApiPayload<FinanceTransactionViewOrderData>
   ) {
     return this.api.get(`${this.flag}/ViewOrder/${id}`, undefined, payload);
-  }
-
-  /**
-   * View organization accounts for payment
-   * 浏览机构账户用于付款
-   * @param currency Currency
-   * @param payload Payload
-   * @returns Data
-   */
-  viewOrgAccounts(
-    currency: string,
-    payload?: IApiPayload<FinanceAccountItem[]>
-  ) {
-    return this.api.get(
-      `${this.flag}/ViewOrgAccounts/${currency}`,
-      undefined,
-      payload
-    );
   }
 
   /**

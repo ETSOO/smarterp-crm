@@ -15,6 +15,7 @@ import { FinanceAccountUpdateRQ } from "./rq/financeAccount/FinanceAccountUpdate
 import { FinanceAccountCreateBulkRQ } from "./rq/financeAccount/FinanceAccountCreateBulkRQ";
 import { FinanceAccountViewData } from "./dto/financeAccount/FinanceAccountViewData";
 import { FinanceAccountCreateCashRQ } from "./rq/financeAccount/FinanceAccountCreateCashRQ";
+import { FinanceAccountItem } from "./dto/financeAccount/FinanceAccountItem";
 
 /**
  * Finance account API
@@ -123,5 +124,23 @@ export class FinanceAccountApi extends EntityApi {
    */
   updateRead(id: number, payload?: IApiPayload<FinanceAccountUpdateReadData>) {
     return this.updateReadBase(id, payload);
+  }
+
+  /**
+   * View organization accounts for payment
+   * 浏览机构账户用于付款
+   * @param currency Currency
+   * @param payload Payload
+   * @returns Data
+   */
+  viewOrgAccounts(
+    currency: string,
+    payload?: IApiPayload<FinanceAccountItem[]>
+  ) {
+    return this.api.get(
+      `${this.flag}/ViewOrgAccounts/${currency}`,
+      undefined,
+      payload
+    );
   }
 }
