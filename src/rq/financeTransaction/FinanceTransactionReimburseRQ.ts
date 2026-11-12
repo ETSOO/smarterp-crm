@@ -6,6 +6,12 @@ import { FinanceTransactionPayItem } from "../../dto/financeTransaction/FinanceT
  */
 export type FinanceTransactionReimburseRQ = {
   /**
+   * Currency
+   * 币种
+   */
+  currency: string;
+
+  /**
    * Reimbursement person id
    * 报销人人员编号
    */

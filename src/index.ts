@@ -66,6 +66,7 @@ export * from "./rq/financeTransaction/FinanceTransactionOffsetRQ";
 export * from "./rq/financeTransaction/FinanceTransactionPayOrderRQ";
 export * from "./rq/financeTransaction/FinanceTransactionPayPORQ";
 export * from "./rq/financeTransaction/FinanceTransactionQueryRQ";
+export * from "./rq/financeTransaction/FinanceTransactionReimburseRQ";
 export * from "./rq/financeTransaction/FinanceTransactionTransferRQ";
 
 // Group
